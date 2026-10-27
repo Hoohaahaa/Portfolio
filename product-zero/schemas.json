@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "TaskEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskId",
+        "organizationId",
+        "projectId",
+        "baseRevision",
+        "agentId",
+        "schemaVersion",
+        "inputRefs",
+        "dependencyIds",
+        "permissionScope",
+        "budget"
+      ],
+      "properties": {
+        "taskId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "organizationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "projectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "agentId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schemaVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "dependencyIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "permissionScope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "maxTokens",
+            "maxCost",
+            "deadline"
+          ],
+          "properties": {
+            "maxTokens": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "maxCost": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "deadline": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "ArtifactEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifactId",
+        "projectId",
+        "baseRevision",
+        "producingRunId",
+        "artifactType",
+        "sourceRefs",
+        "requirementRefs",
+        "payloadHash",
+        "payload"
+      ],
+      "properties": {
+        "artifactId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "projectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "producingRunId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "requirementRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "payloadHash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    },
+    "Approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approvalId",
+        "organizationId",
+        "reviewerId",
+        "revision",
+        "artifactHashes",
+        "outcome",
+        "createdAt"
+      ],
+      "properties": {
+        "approvalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "organizationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "artifactHashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "outcome": {
+          "enum": [
+            "accepted",
+            "rejected"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

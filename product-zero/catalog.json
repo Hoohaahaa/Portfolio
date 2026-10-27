@@ -1,0 +1,393 @@
+{
+  "version": "1.0.0",
+  "identity": "PRODUCT / ZERO \u2014 AI Product Design Operating System",
+  "domains": [
+    {
+      "id": "intake",
+      "number": 1,
+      "name": "Intake + framing",
+      "status": "PROPOSED",
+      "inputs": [
+        "Human brief",
+        "business goals"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into problem frame; scope; open questions.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-intake",
+      "outputs": [
+        "Problem frame",
+        "scope",
+        "open questions"
+      ],
+      "dependencies": [],
+      "gate": "Product owner",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "research",
+      "number": 2,
+      "name": "Evidence + research",
+      "status": "PROPOSED",
+      "inputs": [
+        "Approved frame",
+        "supplied sources"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into research plan; evidence registry.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-research",
+      "outputs": [
+        "Research plan",
+        "evidence registry"
+      ],
+      "dependencies": [
+        "intake"
+      ],
+      "gate": "Research lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "understanding",
+      "number": 3,
+      "name": "Benchmarks + users",
+      "status": "PROPOSED",
+      "inputs": [
+        "Source-backed evidence"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into benchmark comparison; user hypotheses.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-understanding",
+      "outputs": [
+        "Benchmark comparison",
+        "user hypotheses"
+      ],
+      "dependencies": [
+        "research"
+      ],
+      "gate": "Research lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "strategy",
+      "number": 4,
+      "name": "Strategy + requirements",
+      "status": "PROPOSED",
+      "inputs": [
+        "Goals",
+        "evidence",
+        "constraints"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into prioritized requirements; acceptance criteria.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-strategy",
+      "outputs": [
+        "Prioritized requirements",
+        "acceptance criteria"
+      ],
+      "dependencies": [
+        "intake",
+        "understanding"
+      ],
+      "gate": "Product lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "concepts",
+      "number": 5,
+      "name": "Concept alternatives",
+      "status": "PROPOSED",
+      "inputs": [
+        "Approved requirements"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into alternatives; trade-offs; decision proposal.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-concepts",
+      "outputs": [
+        "Alternatives",
+        "trade-offs",
+        "decision proposal"
+      ],
+      "dependencies": [
+        "strategy"
+      ],
+      "gate": "Design lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "ux",
+      "number": 6,
+      "name": "Architecture + UX",
+      "status": "PROPOSED",
+      "inputs": [
+        "Accepted concept",
+        "requirements"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into information architecture; typed flows.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-ux",
+      "outputs": [
+        "Information architecture",
+        "typed flows"
+      ],
+      "dependencies": [
+        "concepts"
+      ],
+      "gate": "Design lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "ui",
+      "number": 7,
+      "name": "UI + design systems",
+      "status": "PROPOSED",
+      "inputs": [
+        "Flows",
+        "approved tokens",
+        "components"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into interface states; component changes.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-ui",
+      "outputs": [
+        "Interface states",
+        "component changes"
+      ],
+      "dependencies": [
+        "ux"
+      ],
+      "gate": "Design system owner",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "prototype",
+      "number": 8,
+      "name": "Interactive prototypes",
+      "status": "PROPOSED",
+      "inputs": [
+        "Interface states",
+        "interaction contracts"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into runnable prototype; edge cases.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-prototype",
+      "outputs": [
+        "Runnable prototype",
+        "edge cases"
+      ],
+      "dependencies": [
+        "ui"
+      ],
+      "gate": "Engineering lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "quality",
+      "number": 9,
+      "name": "Accessibility + quality",
+      "status": "PROPOSED",
+      "inputs": [
+        "Artifacts",
+        "requirements",
+        "standards"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into executed checks; unresolved defects.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-quality",
+      "outputs": [
+        "Executed checks",
+        "unresolved defects"
+      ],
+      "dependencies": [
+        "prototype"
+      ],
+      "gate": "Quality owner",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "validation",
+      "number": 10,
+      "name": "Human + field validation",
+      "status": "PROPOSED",
+      "inputs": [
+        "Testable artifacts",
+        "research approval"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into actual observations; human decisions.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-validation",
+      "outputs": [
+        "Actual observations",
+        "human decisions"
+      ],
+      "dependencies": [
+        "quality"
+      ],
+      "gate": "Research lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "handoff",
+      "number": 11,
+      "name": "Handoff + documentation",
+      "status": "PROPOSED",
+      "inputs": [
+        "Reviewed artifacts",
+        "contracts"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into versioned specs; engineering bundle.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-handoff",
+      "outputs": [
+        "Versioned specs",
+        "engineering bundle"
+      ],
+      "dependencies": [
+        "quality",
+        "validation"
+      ],
+      "gate": "Engineering lead",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    },
+    {
+      "id": "iteration",
+      "number": 12,
+      "name": "Analytics + iteration",
+      "status": "PROPOSED",
+      "inputs": [
+        "Approved real telemetry",
+        "feedback"
+      ],
+      "responsibilities": [
+        "Transform approved inputs into revision proposals; impact analysis.",
+        "Preserve source references, uncertainty and revision lineage."
+      ],
+      "agent": "specialist-iteration",
+      "outputs": [
+        "Revision proposals",
+        "impact analysis"
+      ],
+      "dependencies": [
+        "handoff"
+      ],
+      "gate": "Product + data owner",
+      "verification": [
+        "Validate output schema and requirement links.",
+        "Verify every factual claim against authorized source references.",
+        "Require human review; do not treat model critique as research."
+      ],
+      "requiresValidation": [
+        "Organization standards and named reviewers",
+        "Authorized data and tool access"
+      ]
+    }
+  ]
+}

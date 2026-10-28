@@ -1,0 +1,2 @@
+import { authorized } from '@/lib/auth';
+export async function GET(request:Request){return Response.json({authenticated:authorized(request),provider:'Vercel AI Gateway',runtime:'eve / Vercel Workflow',model:'openai/gpt-5.4-mini',evaluator:'google/gemini-3.6-flash',gatewayConfigured:Boolean(process.env.VERCEL_OIDC_TOKEN||process.env.AI_GATEWAY_API_KEY),storage:'Durable workflow session. Workspace index is saved in this browser. Bookmark a run to open it elsewhere.'});}

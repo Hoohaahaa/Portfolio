@@ -1,0 +1,2 @@
+import { defineAgent } from "eve";
+export default defineAgent({model:"openai/gpt-5.4-mini",description:"Turn requirements into coherent IA, named flow graph, journey and edge cases. Edges must reference existing nodes; preserve exact requirement IDs.",defaultTools:false,tool:false,reasoning:"low",limits:{sessionUsage:({window})=>(window.costUsd??0)>=0.65},experimental:{workflow:{retention:"default"}}});

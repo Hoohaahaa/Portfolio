@@ -1,0 +1,3 @@
+import { generateText } from 'ai';import { authorized } from '@/lib/auth';
+export const maxDuration=60;
+export async function POST(request:Request){if(!authorized(request))return Response.json({error:'Workspace access required'},{status:401});if(request.headers.get('origin')&&request.headers.get('origin')!==new URL(request.url).origin)return Response.json({error:'Origin mismatch'},{status:403});try{const r=await generateText({model:'openai/gpt-5.4-mini',prompt:'Reply with exactly READY.',maxOutputTokens:32,reasoning:'none'});return Response.json({ok:true,text:r.text,model:r.response.modelId,usage:r.usage,at:new Date().toISOString()});}catch(e){return Response.json({ok:false,error:e instanceof Error?e.message:'Connection failed'},{status:503});}}

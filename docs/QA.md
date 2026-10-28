@@ -12,9 +12,23 @@
 - A second real inference attempt with catalog-listed `reflection/beam-free` was also rejected by the same policy.
 - No AI-generated research, UX, UI or approval is claimed. No credits were purchased.
 
-## Still being verified
+## Browser checks executed
 
-Responsive viewports, renderer interactions, export and session reload are recorded in the browser QA result when those checks complete.
+- Production operating desk measured inside actual responsive iframe viewports: 320, 375, 390, 430, 768, 1280 and 1440 CSS px. Overview had no horizontal overflow. Classic scrollbar consumed 17 px in most measurements; raw client and scroll widths are in `browser-qa-results.json`.
+- Inspected actual screenshots at narrow mobile and desktop. Mobile uses vertical dependencies and a bottom workspace navigation rather than a shrunken desktop graph.
+- Desktop Overview, Operation, Artifacts, Review and System navigation changed to the expected content.
+- Mobile 320 px navigation was verified through accessibility targets. The browser's frame locator click did not reliably activate fixed navigation; accessibility-index clicks did. This is recorded rather than counted as a product success from the failed click.
+- Found a 5 px overflow in the 320 px Artifacts view. Removed its negative tab-strip margin and retested the released deployment: clientWidth 303, scrollWidth 303. The regression passed.
+- Intake opens at mobile width; Escape closes the native dialog. Dialog width stayed within the frame.
+- Authored renderer fixture tested in none, Ant, Material, Carbon and custom modes: required-field rejection, valid local submission, screen navigation and reset. No fixture is claimed as generated output.
+- Real failed-session reload was previously verified on its deployment. Reconnection restored actual events and provider failure. Successful browser-closed generation, approval and generated exports remain unverified because inference is blocked.
+
+## Not executed / not claimed
+
+- No successful full AI pipeline run or overnight successful generation.
+- No live human approval interaction, generated artifact export or production integration.
+- No OS-level touch device or reduced-motion preference emulation. CSS and GSAP include reduced-motion handling, but that behavior has not been browser-emulated in this QA run.
+- No comprehensive accessibility, security or research-quality certification.
 
 ## Runtime boundary
 
@@ -27,3 +41,7 @@ The managed Next development preview served HTML but did not hydrate even a mini
 ## Storage limitation
 
 Durable execution lives in Vercel Workflow. The workspace index is browser-local, and a shared artifact database is not connected. A Blob creation attempt returned 403 and did not create a store.
+
+## Release
+
+Production deployment `dpl_JCL8WoitobPSDofHBuDXXgRwBmHA` reached READY. It includes the mobile tab gutter correction. Documentation added after deployment records the completed regression; application code is identical.

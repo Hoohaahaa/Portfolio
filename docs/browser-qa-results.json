@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-28",
+  "viewportChecks": [
+    {
+      "requested": 320,
+      "body": 303,
+      "heading": 269,
+      "scroll": 303,
+      "viewport": 303,
+      "pass": true
+    },
+    {
+      "requested": 375,
+      "body": 358,
+      "heading": 314,
+      "scroll": 358,
+      "viewport": 358,
+      "pass": true
+    },
+    {
+      "requested": 390,
+      "body": 373,
+      "heading": 329,
+      "scroll": 373,
+      "viewport": 373,
+      "pass": true
+    },
+    {
+      "requested": 430,
+      "body": 413,
+      "heading": 369,
+      "scroll": 413,
+      "viewport": 413,
+      "pass": true
+    },
+    {
+      "requested": 768,
+      "body": 751,
+      "heading": 358.765625,
+      "scroll": 751,
+      "viewport": 751,
+      "pass": true
+    },
+    {
+      "requested": 1280,
+      "body": 1263,
+      "heading": 611.5625,
+      "scroll": 1263,
+      "viewport": 1263,
+      "pass": true
+    },
+    {
+      "requested": 1440,
+      "body": 1423,
+      "heading": 705.921875,
+      "scroll": 1423,
+      "viewport": 1423,
+      "pass": true
+    }
+  ],
+  "adapters": [
+    {
+      "adapter": "none",
+      "submission": "Save session\nView preparation\n\nSaved in this prototype session. No external transaction was performed.\n\n",
+      "navigation": true,
+      "reset": true,
+      "bounds": {
+        "client": 303,
+        "scroll": 303
+      },
+      "submissionPassed": true
+    },
+    {
+      "adapter": "ant",
+      "submission": "Save session\nView preparation\n\nSaved in this prototype session. No external transaction was performed.\n\n",
+      "navigation": true,
+      "reset": true,
+      "bounds": {
+        "client": 318,
+        "scroll": 318
+      },
+      "submissionPassed": true
+    },
+    {
+      "adapter": "material",
+      "submission": "",
+      "navigation": true,
+      "reset": true,
+      "bounds": {
+        "client": 303,
+        "scroll": 303
+      },
+      "submissionPassed": true
+    },
+    {
+      "adapter": "carbon",
+      "submission": "Save session\nView preparation\n\nSaved in this prototype session. No external transaction was performed.\n\n",
+      "navigation": true,
+      "reset": true,
+      "bounds": {
+        "client": 303,
+        "scroll": 303
+      },
+      "submissionPassed": true
+    },
+    {
+      "adapter": "custom",
+      "submission": "Save session\nView preparation\n\nSaved in this prototype session. No external transaction was performed.\n\n",
+      "navigation": true,
+      "reset": true,
+      "bounds": {
+        "client": 303,
+        "scroll": 303
+      },
+      "submissionPassed": true
+    }
+  ],
+  "mobileViews": [
+    {
+      "view": "Operation",
+      "client": 303,
+      "heading": "Your operation, connected.",
+      "scroll": 303
+    },
+    {
+      "view": "Artifacts",
+      "client": 303,
+      "heading": "Inspect the work.",
+      "scroll": 308
+    },
+    {
+      "view": "Review",
+      "client": 303,
+      "heading": "Quality is a loop.",
+      "scroll": 303
+    },
+    {
+      "view": "Overview",
+      "client": 303,
+      "heading": "One brief.\nA coordinated\ndesign operation.",
+      "scroll": 303
+    }
+  ],
+  "requiredFieldRejection": true,
+  "escapeClosesDialog": true,
+  "notes": [
+    "Iframe automated locator click did not activate fixed mobile nav; accessibility-index click did activate it.",
+    "Material submit success was separately rechecked in accessibility output.",
+    "Screenshots are real production UI. No AI output was generated."
+  ]
+}

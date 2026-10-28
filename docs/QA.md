@@ -1,3 +1,14 @@
+# Latest verification / Gateway fix / 2026-10-28
+
+- Real model call: HTTP 200, READY, 170 tokens, Gateway cost 0. See GATEWAY-DIAGNOSIS.md.
+- Actual multi-agent draft reached human review: 7 requirements, 2 screens, 8/8 contract checks. Model review remains revise; no human approval or production release.
+- Observed one structured-output correction failure and one unwanted whole-pipeline restart. Backend source now pauses at failures and adds a token limit; live fault-injection remains untested.
+- TypeScript check passed. 10 existing Node tests passed. eve build passed after failure-handling change. Next production deployment verification is recorded with release metadata.
+- Accepted UI source files are unchanged. No layout or visual redesign was made.
+- Previous report below is retained as historical evidence; its account-wide generation blocker is superseded by this verified free-tier model selection.
+
+---
+
 # QA record / 2026-10-28
 
 ## Executed

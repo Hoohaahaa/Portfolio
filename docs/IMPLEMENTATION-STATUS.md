@@ -1,3 +1,11 @@
+# Gateway activation update / 2026-10-28
+
+Model access is now verified with the eligible zero-priced trial model. The real synthetic operation produced a draft and reached review, with unresolved model findings. See GATEWAY-DIAGNOSIS.md and actual-run-summary.json. Human approval, confidential-data use, production release, broad accessibility and organizational validation remain unverified. Voice intake is specified in VOICE-INTAKE.md and is not implemented.
+
+The original inventory below predates this correction; model-access blocker entries are historical, not current.
+
+---
+
 # Implementation status / v0.1 / 2026-10-28
 
 | Surface | Code status | Executed evidence |

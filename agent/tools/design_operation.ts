@@ -6,6 +6,7 @@ export default defineWorkflowTool({
   'use workflow';
   const call=async(name:string,prompt:string,schema:any)=>{const child=ctx.agent(name);const delivery=await child.send(prompt,{outputSchema:schema,signal:ctx.abortSignal});const result=await delivery.result();if(result.status!=='completed'||result.data===undefined)throw new Error(`${name}: ${result.error?.message??'No structured output returned'}`);return schema.parse(result.data);};
   let s:Snapshot={kind:'design-operation',version:1,phase:'discovery',brief,approval:'pending'};yield s;
+  try {
   const context=JSON.stringify(brief);
   const [research,technology,rubric]=await Promise.all([call('research',`Produce problem framing, research plan, evidence ledger, requirements with acceptance criteria, alternatives and risks. Brief: ${context}`,ResearchSchema),call('technology',`Investigate technologies and interaction affordances. Brief: ${context}`,TechnologySchema),call('evaluator',`Design a blocking evaluation rubric BEFORE any solution is available. Do not report evaluation results. Brief: ${context}`,RubricSchema)]);
   s={...s,phase:'architecture',research,technology,rubric};yield s;
@@ -17,5 +18,14 @@ export default defineWorkflowTool({
   const blocked=s.checks?.some(c=>!c.pass)||s.review?.verdict==='revise';
   const answer=await ctx.ask({prompt:blocked?'Unresolved checks or reviewer findings prevent approval. Retain this version as a draft.':'Review this version before accepting it as a pilot draft. Approval does not authorize a production release or establish real-world validation.',display:'confirmation',options:blocked?[{id:'retain',label:'Keep as draft'}]:[{id:'approve',label:'Approve this draft',style:'primary'},{id:'retain',label:'Keep as draft'}]});
   s={...s,phase:'complete',approval:answer.status==='answered'&&answer.optionId==='approve'&&!blocked?'approved':'rejected'};yield s;return s;
+  } catch(error) {
+   if(ctx.abortSignal.aborted)throw error;
+   const detail=error instanceof Error?error.message:String(error);
+   s={...s,phase:'failed',summary:`The operation stopped: ${detail}. Earlier artifacts are retained as an unapproved draft.`};yield s;
+   // A real durable pause prevents a weak coordinator from restarting the whole
+   // operation after a specialist failure. Never silently retry the entire DAG.
+   await ctx.ask({prompt:s.summary!,display:'confirmation',options:[{id:'retain',label:'Keep failed draft'}]});
+   s={...s,approval:'rejected'};yield s;return s;
+  }
  }
 });

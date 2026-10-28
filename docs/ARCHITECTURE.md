@@ -14,7 +14,7 @@ idle -> discovery (3 parallel specialists) -> architecture -> interface -> evalu
 
 ## Evaluations
 
-Independent reviewer context uses Gemini 3.6 Flash in a separate session, producer roles GPT 5.4 Mini. This reduces shared-context bias but does not prove independence or product quality. Code checks flow IDs/edges, screen navigation, requirement references, evidence IDs, citation URL shape, unique field IDs and body token contrast. They do not verify facts, research quality, usability or complete WCAG compliance.
+The zero-cost trial uses Nemotron 3.5 Lightning Free for reviewer and producer roles, each in separate sessions. This is context separation, not model diversity. This reduces shared-context bias but does not prove independence or product quality. Code checks flow IDs/edges, screen navigation, requirement references, evidence IDs, citation URL shape, unique field IDs and body token contrast. They do not verify facts, research quality, usability or complete WCAG compliance.
 
 ## Prototype boundary
 
@@ -24,5 +24,6 @@ A UI artifact is a set of screens and typed blocks with navigate/submit actions.
 
 Production identity/RBAC; persistent cross-device artifact registry; document/file ingestion and redaction; complete design-system adapters/Figma sync; sandboxed arbitrary component generation and browser execution; retrieval quality metrics; source snapshot storage; organization-approved research recruitment; signed release gates; external integration transactions; budget-reservation ledger and server-side launch throttling; retention and backups.
 
-## Model access required
-Actual GPT 5.4 Mini and promotional Beam Free inference attempts were both rejected by this account's AI Gateway free-tier policy. No generation success is claimed. No purchase or upgrade was performed. Enable appropriate Gateway account access or credits before generation. Set `PRODUCER_MODEL` and `EVALUATOR_MODEL` to catalog model IDs and redeploy to change models. Defaults are GPT 5.4 Mini and Gemini 3.6 Flash in separate contexts.
+## Current model access
+
+Free-tier-compatible Nemotron 3.5 Lightning Free returned one verified real response at Gateway cost 0. No payment or upgrade was required. The previous GPT mini, Gemini Flash and Beam Free selection was ineligible for this account tier. See `GATEWAY-DIAGNOSIS.md`. This trial endpoint permits prompt retention and training; confidential organizational use requires a different reviewed configuration.

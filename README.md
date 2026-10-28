@@ -39,5 +39,12 @@ Model-budget guards pause before another call once reported usage crosses $2 per
 
 `npm test`, `npm run typecheck`, `npm run build:eve`, `npm run build`. See `docs/QA.md` for actual verification, including limits. Tests use authored fixtures and are never displayed as AI-produced work.
 
-## Model access required
-Actual GPT 5.4 Mini and promotional Beam Free inference attempts were both rejected by this account's AI Gateway free-tier policy. No generation success is claimed. No purchase or upgrade was performed. Enable appropriate Gateway account access or credits before generation. Set `PRODUCER_MODEL` and `EVALUATOR_MODEL` to catalog model IDs and redeploy to change models. Defaults are GPT 5.4 Mini and Gemini 3.6 Flash in separate contexts.
+## Gateway diagnosis and zero-cost pilot
+
+The previous defaults (GPT 5.4 Mini, Gemini 3.6 Flash) and promotional Beam Free are in the public catalog but marked `availableToFreeTier: false`. Zero price did not imply free-tier eligibility.
+
+The default now uses `nvidia/nemotron-3.5-lightning-free` for production and review in separate contexts. Both live catalog checks confirm free-tier eligibility and zero input/output price. One real deployed request returned READY with 170 tokens, HTTP 200 and Gateway cost 0. The account credit read returned balance 5, totalUsed 0. No purchase, Pro upgrade, budget increase or paid fallback was enabled.
+
+This NVIDIA endpoint is trial-only: prompts and outputs are logged for product improvement. Use synthetic, non-confidential briefs only. It is not the production model recommendation for organizational data. Promotional availability may change; recheck before reuse. `PRODUCER_MODEL` and `EVALUATOR_MODEL` remain configurable via server environment and redeployment.
+
+See `docs/GATEWAY-DIAGNOSIS.md` for the executed evidence and the status of the multi-agent smoke run.

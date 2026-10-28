@@ -1,0 +1,100 @@
+{
+  "GET": {
+    "httpStatus": 200,
+    "body": {
+      "projectId": "prj_V02TOMJzE5iidGAYlIuDnXiHgqp9",
+      "environment": "production",
+      "oidcPresent": false,
+      "gatewayKeyPresent": false,
+      "producer": "nvidia/nemotron-3.5-lightning-free",
+      "evaluator": "nvidia/nemotron-3.5-lightning-free",
+      "credits": {
+        "ok": true,
+        "balance": "5",
+        "totalUsed": "0"
+      },
+      "at": "2026-10-28T08:46:55.050Z"
+    }
+  },
+  "POST": {
+    "httpStatus": 200,
+    "body": {
+      "ok": true,
+      "text": "READY",
+      "model": "nvidia/nemotron-3.5-lightning-free",
+      "usage": {
+        "inputTokens": 22,
+        "inputTokenDetails": {
+          "noCacheTokens": 22,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 148,
+        "outputTokenDetails": {
+          "textTokens": 4,
+          "reasoningTokens": 144
+        },
+        "totalTokens": 170,
+        "raw": {
+          "prompt_tokens": 22,
+          "completion_tokens": 148,
+          "total_tokens": 170,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": null
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 144,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null,
+            "audio_tokens": null
+          }
+        }
+      },
+      "providerMetadata": {
+        "nvidia": {},
+        "gateway": {
+          "routing": {
+            "originalModelId": "nvidia/nemotron-3.5-lightning-free",
+            "resolvedProvider": "nvidia",
+            "fallbacksAvailable": [],
+            "planningReasoning": "System credentials planned for: nvidia. Total execution order: nvidia(system)",
+            "canonicalSlug": "nvidia/nemotron-3.5-lightning-free",
+            "finalProvider": "nvidia",
+            "modelAttemptCount": 1,
+            "modelAttempts": [
+              {
+                "canonicalSlug": "nvidia/nemotron-3.5-lightning-free",
+                "success": true,
+                "providerAttemptCount": 1,
+                "providerAttempts": [
+                  {
+                    "provider": "nvidia",
+                    "credentialType": "system",
+                    "success": true,
+                    "startTime": 1793177225649,
+                    "endTime": 1793177226598,
+                    "providerRequestId": "f14b0f30-b439-4c39-af4c-2cf575f28e13",
+                    "statusCode": 200,
+                    "providerResponseId": "chatcmpl-97a7779e-bc50-4b95-8b3f-47db3432d301"
+                  }
+                ]
+              }
+            ],
+            "totalProviderAttemptCount": 1,
+            "affinity": {
+              "outcome": "skipped_below_min_prefix"
+            },
+            "clientSessionId": "f72ebd9b69421a205332809e2aca8b91",
+            "clientSessionIdSource": "fingerprint"
+          },
+          "cost": "0",
+          "marketCost": "0",
+          "surchargeCost": "0",
+          "gatewayCost": "0",
+          "generationId": "gen_01M60V222DETWBG65NYK1BF4JV"
+        }
+      },
+      "at": "2026-10-28T08:47:06.625Z"
+    }
+  }
+}

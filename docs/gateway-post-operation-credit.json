@@ -1,0 +1,14 @@
+{
+  "projectId": "prj_V02TOMJzE5iidGAYlIuDnXiHgqp9",
+  "environment": "production",
+  "oidcPresent": false,
+  "gatewayKeyPresent": false,
+  "producer": "nvidia/nemotron-3.5-lightning-free",
+  "evaluator": "nvidia/nemotron-3.5-lightning-free",
+  "credits": {
+    "ok": true,
+    "balance": "5",
+    "totalUsed": "0"
+  },
+  "at": "2026-10-28T09:00:11.653Z"
+}

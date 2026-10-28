@@ -1,7 +1,8 @@
 import { defineAgent } from "eve";
+import {producerModel} from "../lib/model-config";
 
 export default defineAgent({
-  model: "openai/gpt-5.4-mini",
+  model: producerModel,
   defaultTools: false,
   reasoning: 'low',
   limits: {sessionUsage:({window})=>(window.costUsd??0)>=2},

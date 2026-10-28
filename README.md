@@ -38,3 +38,6 @@ Model-budget guards pause before another call once reported usage crosses $2 per
 ### Verification
 
 `npm test`, `npm run typecheck`, `npm run build:eve`, `npm run build`. See `docs/QA.md` for actual verification, including limits. Tests use authored fixtures and are never displayed as AI-produced work.
+
+## Model access required
+Actual GPT 5.4 Mini and promotional Beam Free inference attempts were both rejected by this account's AI Gateway free-tier policy. No generation success is claimed. No purchase or upgrade was performed. Enable appropriate Gateway account access or credits before generation. Set `PRODUCER_MODEL` and `EVALUATOR_MODEL` to catalog model IDs and redeploy to change models. Defaults are GPT 5.4 Mini and Gemini 3.6 Flash in separate contexts.

@@ -1,0 +1,4 @@
+// Public authored runtime fixture. No user input, sessions, credentials, or stored artifacts.
+import {starterFiles,controlsSource,hash,buildApplication} from '@/lib/product/instrument';
+export const runtime='nodejs';
+export function GET(req:Request){const files=starterFiles();if(new URL(req.url).searchParams.get('variant')==='triangle'){const file=files.find(f=>f.path==='controls.js')!;file.content=controlsSource(true);file.sha256=hash(file.content);}return new Response(buildApplication(files),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','Content-Security-Policy':"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'",'Permissions-Policy':'camera=(), microphone=()'}});}

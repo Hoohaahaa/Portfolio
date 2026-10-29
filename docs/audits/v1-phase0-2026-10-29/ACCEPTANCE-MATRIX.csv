@@ -1,0 +1,11 @@
+Mission behavior,Current status,Current evidence,Implementation gate,Required demonstration
+Create a project from a brief,Partial,"Brief creates operation/session, no persistent canonical project",S1,"Project ID, brief, accepted manifest survive reopening"
+Receive a working application,Not met,Only semantic UI schema/export; camera/audio behavior absent,S3,Executable source and successful build; declared unsupported capabilities
+Open and interact with application,Not met for claimed use case,Generic fields/navigation exist; not the instrument behavior,S3,Actual keyboard note/start/wave/mute browser assertions
+Select component or flow,Absent,No source-linked scope selection,S4,Stable entity ID resolves to source and requirements
+Describe change and lock unrelated areas,Absent,No lock manifest or impact transaction,S4,Unrelated-file mutation rejected by code
+Review plan and approve execution,Absent as scoped transaction,"Generic workflow questions exist, approval types conflated",S2/S4,Exact plan digest and separate compute approval
+"Receive revised app, tests and comparison",Absent,Full-schema correction is not a tested source revision,S3/S4,Candidate build and behavior report tied to version/digest
+Accept or revert,Absent as version transaction,Approval field exists; no product head/revert,S5,Atomic acceptance plus traceable restoring version
+Reopen project and continue same version,Not met,Recent browser session index is not product persistence,S1/S5,Fresh browser loads accepted project/source head
+"Understand state, evidence and cost",Partial/failing,Existing summaries conflate failures/readiness/approval,S2/S5,"Typed states, exact evidence links and cost/approval records"

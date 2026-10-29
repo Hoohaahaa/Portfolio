@@ -1,0 +1,40 @@
+Capability,Status,Actual implementation,Source or evidence,Boundary
+Brief intake,Implemented and tested,"Typed title, brief, audience, evidence and design-foundation inputs",lib/contracts.ts; source/tests/contracts.test.ts,10 original contract tests passed; no current live creation
+Specialist inference,Implemented and tested,Root and five real specialist model contexts,agent/subagents/; execution/studio-session/events.sanitized.json,Historical execution only; no new inference in this audit
+Dependency scheduling,Implemented and tested,"Research, technology and rubric parallel; UX/UI/review sequential",agent/tools/design_operation.ts,Historical stream and source; not a dynamic dependency scheduler
+Durable sessions,Partially implemented,eve/Vercel workflow checkpoints and reconnect,next.config.ts; app/workspace.tsx,Not a canonical project/version store; current private-session reopening not reverified
+Research provenance,Partially implemented,"Evidence IDs, source URLs and assumptions in schema",lib/contracts.ts; agent/subagents/research/,HTTPS shape validation; retrieval and claims not independently verified
+Web research permissions,Partially implemented,"Search tool installed, brief webResearch influences prompt",agent/subagents/research/tools/web_search.ts,Permission/cost not enforced as a deterministic tool boundary
+Requirements,Partially implemented,IDs and textual acceptance criteria,lib/contracts.ts; evidence/music-snapshot.json,Contradictory 150/100/50ms targets not detected
+IA and flows,Partially implemented,"Graph nodes/edges, screen/requirement references",lib/contracts.ts,Reference tests pass; no behavioral reachability/criterion execution
+Design-system foundations,Partially implemented,"Ant, Carbon, Material and custom tokens supported by renderer",app/_components/prototype.tsx; package.json,No external organizational design-system import or sync
+Semantic UI renderer,Implemented and tested,"Limited functional fields, navigation and generic submit",app/_components/prototype.tsx; source/evidence/,Earlier renderer fixture evidence; music hardware behavior absent
+Standalone HTML export,Implemented and tested,Actual self-contained semantic HTML draft with embedded snapshot,lib/export.ts; evidence/music-original.html,Static inspection this audit; not an executable source-project builder
+Camera/music application,Implemented but failing,"Export does not implement camera, gesture recognition or audio",evidence/music-original.html; tests/current-gap-probes.test.mjs,Actual claimed core interactions missing
+Camera/pitch/mute controls,UI-only,Labels and generic UI blocks representing desired behavior,evidence/music-snapshot.json,"No MediaStream, hand tracking or AudioContext implementation"
+Designer correction,Implemented but failing,Actual music v2 records designer schema failure,evidence/music-snapshot.json,Exact invalid candidate/path unavailable; retained earlier artifacts
+Structural validator,Implemented and tested,"Eight reference, ID, source-shape and contrast checks",lib/contracts.ts; evidence/baseline-contract-tests.txt,Passing does not establish functional application success
+Functional validation,Planned but absent,No generated app browser/build test runner,lib/contracts.ts; agent/tools/design_operation.ts,All eight structural checks pass for failed music output
+Independent model review,Implemented but failing,Actual candidate critique and correction recommendation,source/docs/actual-generated-draft.json; execution/studio-session/,Reviewer describes four screens for a two-screen candidate
+Human approval,Partially implemented,Workflow interaction and recorded approval value,agent/tools/design_operation.ts; app/workspace.tsx,No actor/digest-typed approval; serialized rejected does not establish human action
+Execution-state projection,Implemented but failing,State ternary and generic errors in current desk,app/workspace.tsx:41-43,Failed/cancelled states not mapped explicitly; schema failures misdirected to model guidance
+Approval/readiness separation,Partially implemented,Review and approval fields exist,app/workspace.tsx:61-65,Compute continuation and artifact acceptance share rendering; rejection summary becomes Pending
+Recent operation index,Partially implemented,Browser-local pz-runs capped at 30 records,app/workspace.tsx,Server session history is separate; no cross-device project registry
+Shared product model,Partially implemented,Snapshot joins brief/research/technology/UX/UI/checks/review,lib/contracts.ts,"No canonical project/workspace IDs, source registry or accepted head"
+Versions,Partially implemented,Workflow-local v1/v2 and exports,agent/tools/design_operation.ts; app/workspace.tsx,Integer-only export dedup can collapse distinct attempts
+Persistent product registry,Planned but absent,No ProjectStore or accepted project head,app/workspace.tsx; lib/contracts.ts,Source/data migration must preserve legacy sessions
+Application source/build pipeline,Planned but absent,"No file manifest, source generator or isolated build runner",agent/subagents/designer/instructions.md; lib/contracts.ts,"Designer emits UI schema, not executable application modules"
+Component/flow source selection,Planned but absent,Preview is not source-linked editing,app/_components/prototype.tsx,No stable entity-to-source editing path
+Scoped change planning and locks,Planned but absent,No change-set/impact graph/locked-path transaction,lib/contracts.ts; agent/tools/design_operation.ts,Current correction can regenerate the full UI schema
+Compare/accept/revert,Planned but absent,"No accepted-head transaction, code diff or rollback",app/workspace.tsx; lib/contracts.ts,No traceable scoped version loop
+Schema validation,Implemented and tested,Zod structured specialist outputs,lib/contracts.ts; agent/tools/design_operation.ts,Actual schema failure captured; precise issue payload not retained in music export
+Recovery and retries,Partially implemented,Framework durability; one correction; later failure pause,agent/tools/design_operation.ts,No app-level once-only operation guard; historical whole-DAG restart
+Model configuration,Partially implemented,Environment-selected Gateway model and current free default,agent/agent.ts; agent/subagents/; evidence/public-model-catalog.json,Public catalog input/output zero; account eligibility not freshly inferred
+Operation budgeting,Partially implemented,Root dollar/token thresholds and child dollar limits,agent/agent.ts; agent/subagents/,Parent counts workflow children at tool completion; no atomic budget reservation
+Project cost/privacy policy,Planned but absent,No persistent project ledger or sensitivity admission,agent/agent.ts; lib/contracts.ts,No hard zero-priced fallback policy; provider privacy must be checked
+Provider adapters,Planned but absent,Model name override only,agent/agent.ts,No replaceable business-logic-neutral cloud/BYOK/local adapters
+Owner access control,Partially implemented,Owner key and HTTPOnly secure cookie,lib/auth.ts; app/api/access/route.ts,Single owner; no workspace RBAC or new permission change
+GitHub/Figma/team sync,Planned but absent,No application integration adapter,source/ agent and API inventory,Work connector checkpoint does not grant deployed app credentials
+Voice intake,Planned but absent,Documented future work,source/docs/VOICE-INTAKE.md,No verified audio recording/transcription controls
+Existing visual shell,Implemented and tested,Navigation and empty responsive shell retained,evidence/responsive-baseline.json; evidence/deployed-browser-navigation.json,Unauthenticated inspection only; exact widths differ by 2px
+Source build health,Implemented and tested,Tests/typecheck/Next/eve build successful,evidence/*-tests.txt; evidence/production-build.txt; evidence/agent-build.txt,Four Carbon CSS warnings; no V1 acceptance claimed

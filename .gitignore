@@ -5,3 +5,12 @@ node_modules/
 .vercel/
 .env*
 *.tsbuildinfo
+node_modules
+.next
+.output
+*.tsbuildinfo
+.data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env.local

@@ -1,0 +1,25 @@
+import {DatabaseSync} from 'node:sqlite';
+import {mkdirSync} from 'node:fs';
+import {dirname,isAbsolute} from 'node:path';
+import {RegistrySchema,ProductError,type Registry} from './model.ts';
+const empty=():Registry=>({schemaVersion:1,projects:[]});
+export interface ProjectStore {kind:string; read():Promise<Registry>; transact<T>(fn:(state:Registry)=>T):Promise<T>;}
+export class SQLiteProjectStore implements ProjectStore {
+ kind='sqlite-persistent-server';db:DatabaseSync;
+ constructor(path:string){if(!isAbsolute(path))throw new ProductError('PZ_DATABASE_PATH must be an absolute persistent server path.',503);mkdirSync(dirname(path),{recursive:true});this.db=new DatabaseSync(path);this.db.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS registry (id INTEGER PRIMARY KEY CHECK(id=1), body TEXT NOT NULL)');this.db.prepare('INSERT OR IGNORE INTO registry(id,body) VALUES(1,?)').run(JSON.stringify(empty()));}
+ async read(){return RegistrySchema.parse(JSON.parse((this.db.prepare('SELECT body FROM registry WHERE id=1').get() as {body:string}).body));}
+ async transact<T>(fn:(s:Registry)=>T){this.db.exec('BEGIN IMMEDIATE');try{const state=RegistrySchema.parse(JSON.parse((this.db.prepare('SELECT body FROM registry WHERE id=1').get() as {body:string}).body));const result=fn(state);RegistrySchema.parse(state);this.db.prepare('UPDATE registry SET body=? WHERE id=1').run(JSON.stringify(state));this.db.exec('COMMIT');return result;}catch(e){this.db.exec('ROLLBACK');throw e;}}
+ close(){this.db.close();}
+}
+// One private JSON registry, CAS-protected by GitHub's blob SHA. No model tool has this token.
+export class GitHubProjectStore implements ProjectStore {
+ kind='github-private-cas';private config:{repo:string;branch:string;token:string;path:string};constructor(config:{repo:string;branch:string;token:string;path:string}){this.config=config;if(!/^[\w.-]+\/[\w.-]+$/.test(config.repo)||!/^pz-state\//.test(config.branch)||config.path!=='product-registry.json')throw new ProductError('Store must use a dedicated pz-state/ branch and product-registry.json.',503);}
+ private async request(path:string,init:RequestInit={}){return fetch('https://api.github.com'+path,{...init,headers:{Accept:'application/vnd.github+json',Authorization:`Bearer ${this.config.token}`,'X-GitHub-Api-Version':'2022-11-28',...init.headers},cache:'no-store',signal:AbortSignal.timeout(15000)});}
+ private verified=false;
+ private async snapshot(){const c=this.config;if(!this.verified){const meta=await this.request(`/repos/${c.repo}`);if(!meta.ok||(await meta.json()).private!==true)throw new ProductError('Project store must be an accessible private repository.',503);this.verified=true;}const r=await this.request(`/repos/${c.repo}/contents/${c.path}?ref=${encodeURIComponent(c.branch)}`);if(r.status===404)throw new ProductError('Private state branch/file is not initialized. Follow docs/v1/STORAGE.md.',503);if(!r.ok)throw new ProductError(`Persistent GitHub store read failed (${r.status}).`,503);const v=await r.json();return {state:RegistrySchema.parse(JSON.parse(Buffer.from(v.content,'base64').toString())),sha:v.sha as string};}
+ async read(){return (await this.snapshot()).state;}
+ async transact<T>(fn:(s:Registry)=>T){for(let i=0;i<3;i++){const {state,sha}=await this.snapshot();const result=fn(state);RegistrySchema.parse(state);const body=JSON.stringify(state);if(Buffer.byteLength(body)>750000)throw new ProductError('Pilot registry capacity reached. Export and configure a database adapter; no data was discarded.',413);const c=this.config;const r=await this.request(`/repos/${c.repo}/contents/${c.path}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'PRODUCT / ZERO state checkpoint',branch:c.branch,sha,content:Buffer.from(body).toString('base64')})});if(r.ok)return result;if(![409,422].includes(r.status))throw new ProductError(`Persistent store write failed (${r.status}).`,503);}throw new ProductError('Concurrent project update. Reload the accepted version and retry.');}
+}
+let singleton:ProjectStore|undefined;
+export function storeConfig(){return {kind:process.env.PZ_STORE_GITHUB_TOKEN?'github-private-cas':!process.env.VERCEL&&process.env.PZ_DATABASE_PATH?'sqlite-persistent-server':'unconfigured',configured:Boolean(process.env.PZ_STORE_GITHUB_TOKEN&&process.env.PZ_STORE_GITHUB_REPO&&process.env.PZ_STORE_GITHUB_BRANCH||!process.env.VERCEL&&process.env.PZ_DATABASE_PATH),blocker:'No persistent project store is connected. Configure a scoped private GitHub store or a persistent Node server with SQLite. Browser and Vercel temporary disk are never used.'};}
+export function projectStore(){if(singleton)return singleton;const e=process.env;if(e.PZ_STORE_GITHUB_TOKEN&&e.PZ_STORE_GITHUB_REPO&&e.PZ_STORE_GITHUB_BRANCH)return singleton=new GitHubProjectStore({token:e.PZ_STORE_GITHUB_TOKEN,repo:e.PZ_STORE_GITHUB_REPO,branch:e.PZ_STORE_GITHUB_BRANCH,path:'product-registry.json'});if(!e.VERCEL&&e.PZ_DATABASE_PATH)return singleton=new SQLiteProjectStore(e.PZ_DATABASE_PATH);throw new ProductError(storeConfig().blocker,503);}

@@ -1,0 +1,6 @@
+const R=6371008.8,rad=Math.PI/180,deg=180/Math.PI;
+const norm=a=>(a%360+360)%360;
+function geodesic(lat1,lon1,lat2,lon2){const p=lat1*rad,q=lat2*rad,dlat=(lat2-lat1)*rad,dlon=(lon2-lon1)*rad;const h=Math.sin(dlat/2)**2+Math.cos(p)*Math.cos(q)*Math.sin(dlon/2)**2;const distance=2*R*Math.asin(Math.min(1,Math.sqrt(h)));const y=Math.sin(dlon)*Math.cos(q),x=Math.cos(p)*Math.sin(q)-Math.sin(p)*Math.cos(q)*Math.cos(dlon);return {distance,bearing:norm(Math.atan2(y,x)*deg)}}
+// Approximate spherical Earth geometry, heights relative to mean sea level.
+function apparent(observer,surface){const {distance,bearing}=geodesic(observer.lat,observer.lon,surface.lat,surface.lon);const observerHeight=observer.altitude??0;const earthDrop=distance*distance/(2*R);const bottom=surface.altitude-observerHeight-earthDrop,top=bottom+surface.height;const elevationBottom=Math.atan2(bottom,distance)*deg,elevationTop=Math.atan2(top,distance)*deg;const widthAngle=2*Math.atan2(surface.width/2,Math.max(1,distance))*deg;const faceDelta=Math.abs(((bearing+180-surface.heading+540)%360)-180);return {distance,bearing,earthDrop,elevationBottom,elevationTop,widthAngle,heightAngle:elevationTop-elevationBottom,aboveGeometricHorizon:top>0,frontFacing:faceDelta<=90,terrainChecked:false,alignmentVerified:false};}
+module.exports={geodesic,apparent};

@@ -1,5 +1,7 @@
 # MONUMENT
 
+Canonical source: https://github.com/Hoohaahaa/Portfolio/tree/monument/main . This isolated branch does not modify the repository default branch or PRODUCT / ZERO branches.
+
 Canonical continuation of Spatial 22, with the accepted V18 local Sky geometry retained. Production project: `prj_PmLdYwtatZGy5HuiQ92U9tTt6s0C`. Neon project: `dry-bread-48106461`.
 
 ## Run
@@ -23,7 +25,8 @@ Create an account with a password of at least 12 characters. Store the one-time 
 - V18 `computeAnchor` and `vertices` are preserved in `xr.js`. The rejected screen-fixed camera-composite fallback is removed. This is session-local AR, not persistent geographic registration. No occlusion. Baseline source is retained in `baseline/xr-v18.js`.
 - Venue QR camera mode tracks the exact QR in 2D. It is not a calibrated 3D exhibit anchor. Unsupported QR detection or camera denial leaves useful content accessible.
 - Offline explicitly saves published text/menu on a previously connected device. Shell assets are cached. Images/audio/map tiles are not downloaded. Browser storage can be evicted. Revocation cannot recall already downloaded copies; expiry is checked against the device clock.
-- First-time offline visitors require a locally operated server and local network. A city-wide resilient deployment additionally needs power, hardware, connectivity/backhaul and operational ownership. This release does not provision that infrastructure.
+- A standalone HTML reading copy can also be downloaded and transferred offline. It labels its snapshot time and blocks expired content using the device clock; it cannot receive corrections or revocations.
+- First-time offline visitors without a downloaded copy require a locally operated server and local network. A city-wide resilient deployment additionally needs power, hardware, connectivity/backhaul and operational ownership. This release does not provision that infrastructure.
 - Source credits are required for news/sponsored publication. There is no autonomous news collector or fact-checking claim. No translation is generated automatically.
 - Accounts have no email verification, MFA or administrative moderation console. This is a controlled pilot, not an unrestricted high-volume public publishing service.
 

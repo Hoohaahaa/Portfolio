@@ -1,0 +1,1 @@
+const {db,headers}=require('../lib/server.cjs');module.exports=async(req,res)=>{headers(res);if(req.method!=='GET')return res.status(405).json({error:'Method not allowed'});try{await db()`SELECT 1 AS ready`;res.json({status:'ok',storage:'reachable',product:'MONUMENT'})}catch{res.status(503).json({status:'degraded',storage:'unreachable'})}};

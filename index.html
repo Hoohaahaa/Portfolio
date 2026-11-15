@@ -109,6 +109,12 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
   const byId=Object.fromEntries(projects.map(p=>[p.id,p]));
   const encodePath=path=>root+path.split('/').map(encodeURIComponent).join('/');
   const cards=[...document.querySelectorAll('.project[data-project]')];
+  // Manifest order is the single source of truth for the landing-page sequence.
+  const cardHost=cards[0]?.parentElement;
+  if(cardHost){
+    cards.sort((a,b)=>(byId[a.dataset.project]?.order??999)-(byId[b.dataset.project]?.order??999));
+    cards.forEach(card=>cardHost.appendChild(card));
+  }
   cards.forEach(card=>{
     const id=card.dataset.project, data=byId[id];
     if(!data){card.hidden=true;return;}

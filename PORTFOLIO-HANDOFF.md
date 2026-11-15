@@ -6,7 +6,7 @@
 Repository: https://github.com/Hoohaahaa/Portfolio
 
 ## Preview / deployment
-Preview is deployed and READY: https://mo-portfolio-1dvrhns5e-mos-projects-efbc27a5.vercel.app
+Preview is deployed and READY: https://mo-portfolio-dz2qtxokq-mos-projects-efbc27a5.vercel.app
 Stable staging alias: https://mo-portfolio-mos-projects-efbc27a5.vercel.app
 The preview was uploaded directly to Vercel because the Git-connected auto-deploy was blocked by Vercel's verified-commit policy. The GitHub branch remains the editable source of truth. Do not merge to `main` until assets and responsive behavior have been reviewed.
 

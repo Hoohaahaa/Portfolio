@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "projectOrder": [
     "pinket",
     "mirana",
@@ -63,7 +63,7 @@
     "file_00000000af5482109fa29a77406a37b2.png",
     "file_00000000e9e481f59743effb7a130c95.png"
   ],
-  "notes": "Source archives and original PNG exports are stored at the root of this feature branch. Keep the originals unchanged. Asset ordering and manual image-to-project assignments can be edited in the on-site Asset Desk and exported as this file.",
+  "notes": "Keep source ZIPs as untouched backups. Use project folders and an explicit manifest for production images; never guess image ownership from generic filenames. Case-study metadata is evidence-based and empty fields remain hidden.",
   "projectGroups": {
     "Commerce": [
       "pinket"
@@ -118,5 +118,38 @@
     "wideImageMotion": "subtle horizontal drift, no cropping",
     "longScreens": "one full-height viewport per image; no long-page thumbnail strips",
     "caseStudy": "passport + context + challenge + approach + scope; verify copy against supplied text source files"
+  },
+  "caseStudySchema": {
+    "purpose": "Editorial project passport and appendix. Populate only fields supported by the user's resume, project notes, or confirmed details. Empty fields stay hidden.",
+    "passportFields": [
+      "year",
+      "period",
+      "client",
+      "role",
+      "discipline",
+      "team",
+      "platform",
+      "engagement"
+    ],
+    "appendixFields": [
+      "context",
+      "challenge",
+      "approach",
+      "scope",
+      "contribution",
+      "deliverables",
+      "outcome"
+    ],
+    "imagePipeline": {
+      "folderPattern": "assets/{project-id}/",
+      "cover": "assets/{project-id}/cover.webp",
+      "gallery": "assets/{project-id}/gallery/01-short-descriptive-name.webp",
+      "thumbnail": "assets/{project-id}/thumbs/01-short-descriptive-name.webp",
+      "originalArchive": "originals/{project-id}.zip",
+      "preserveAspectRatio": true,
+      "neverCropOriginals": true,
+      "landingLoads": "cover.webp only; pre-sized thumbnails for project cards",
+      "projectLoads": "gallery images only when the project is opened; one active image at a time"
+    }
   }
 }

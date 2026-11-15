@@ -81,3 +81,15 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Current limitations: archive asset matching is still heuristic for multi-project ZIPs; the Asset Desk remains the manual correction path. Review the selected Pinket cover and the Mirana / JobVision / Rastar assignments on desktop and mobile before promoting this branch.
 
 - Latest mobile/cinematic preview deployment (READY): https://mo-portfolio-290aod6wd-mos-projects-efbc27a5.vercel.app
+
+
+## Revision 04 — navigation and source assignment correction
+- Removed the pinned, scroll-scrubbed project sequence. The selected-work deck is now a normal-height section; previous/next arrows are the primary navigation and touch swipe is supported.
+- Fixed the deck index handler so arrow navigation moves exactly one project and wraps at both ends.
+- Added a quick directional GSAP deck turn for arrow/swipe navigation. The previous continuous WebGL render loop is disabled to avoid spending mobile GPU time on a decorative background.
+- Removed the slow image drift animation. Source images remain stable; original proportions are preserved.
+- Replaced fuzzy substring assignment with exact project-token matching, preferring the deepest matching archive folder. In particular, generic words like "dashboard", "pipeline", and "recruit" no longer cause JobVision ATS images to leak into the wrong project. Unmatched/ambiguous images are kept in Unassigned Sources instead of guessed into a project.
+- Pinket cover auto-guessing is disabled. The first image in a project's Asset Desk order is the cover; it is explicitly marked COVER / 01.
+- Asset Desk is accessible on mobile, supports assigning unassigned sources, moving an incorrect image back to Unassigned, reordering images, and exporting/importing portfolio.config.json.
+- Project-detail thumbnail rail has no thumbnail borders; the detail gallery displays one source at a time with compact editorial navigation.
+- Important source-audit limitation: the ZIP binaries are present in the repository but this editing session's GitHub file reader cannot decode binary ZIP contents for visual inspection. The code now prevents speculative cross-project assignment; actual per-image visual verification still needs the Asset Desk source previews. Do not claim every image has been visually audited.

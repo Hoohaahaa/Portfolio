@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-15",
+  "notes": [
+    "Paths are relative to the repository root.",
+    "Original uploaded files are referenced in place; no source image is resized, cropped, recompressed, or renamed.",
+    "Entity is intentionally excluded from the active portfolio.",
+    "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed."
+  ],
+  "projects": [
+    {
+      "id": "pinket",
+      "order": 1,
+      "displayTitle": "FMCG Marketplace",
+      "client": "Pinket",
+      "discipline": "Retail systems",
+      "cover": "mono-assets/pinket dashboard stores-cover.png",
+      "gallery": [
+        "mono-assets/pinket dashboard stores-cover.png",
+        "mono-assets/pinket dashboard shoppers.png",
+        "mono-assets/pinket dashboard item.png",
+        "mono-assets/pinket dashboard report.png",
+        "mono-assets/pinket shopper app user journey.png"
+      ]
+    },
+    {
+      "id": "pulse",
+      "order": 2,
+      "displayTitle": "Employee Experience Platform",
+      "client": "Pulse Check",
+      "discipline": "People analytics",
+      "cover": "mono-assets/pulsecheck dashboard - cover.png",
+      "gallery": [
+        "mono-assets/pulsecheck dashboard - cover.png",
+        "mono-assets/pulsecheck home.png",
+        "mono-assets/pulsecheck home-active survey.png",
+        "mono-assets/pulsecheck surveys report-heatmap.png",
+        "mono-assets/pulsecheck survey report landing-cando.png",
+        "mono-assets/pulsecheck survey report-comments-cando.png"
+      ]
+    },
+    {
+      "id": "veblen",
+      "order": 3,
+      "displayTitle": "Parametric Garment System",
+      "client": "Veblen",
+      "discipline": "Creative technology",
+      "cover": "mono-assets/veblen cover.jpg",
+      "gallery": [
+        "mono-assets/veblen cover.jpg",
+        "mono-assets/veblen.jpg",
+        "mono-assets/veblen 2 .png",
+        "mono-assets/veblen 3.jpg",
+        "mono-assets/veblen 4.jpg",
+        "mono-assets/veblen 5.jpg",
+        "mono-assets/veblen 6.jpg"
+      ]
+    },
+    {
+      "id": "humaani",
+      "order": 4,
+      "displayTitle": "AI Creative Workspace",
+      "client": "Humaani",
+      "discipline": "Generative AI",
+      "cover": "mono-assets/humani cover.png",
+      "gallery": [
+        "mono-assets/humani cover.png",
+        "mono-assets/humani home.png",
+        "mono-assets/humani farsi.png",
+        "mono-assets/humani mobile.png"
+      ]
+    },
+    {
+      "id": "mirana",
+      "order": 5,
+      "displayTitle": "Executive Talent Platform",
+      "client": "Mirana",
+      "discipline": "Talent & recruitment",
+      "cover": "mono-assets/mirana -cover.png",
+      "gallery": [
+        "mono-assets/mirana -cover.png",
+        "mono-assets/mirana-mobile.png",
+        "mono-assets/miarana mobile 2.png",
+        "mono-assets/mirana contact.png"
+      ]
+    },
+    {
+      "id": "iran",
+      "order": 6,
+      "displayTitle": "Interactive Cultural Atlas",
+      "client": "Iran Unseen",
+      "discipline": "Digital experience",
+      "cover": "mono-assets/iran-unseen-cover.jpg",
+      "gallery": [
+        "mono-assets/iran-unseen-cover.jpg",
+        "mono-assets/iran-unseen 1.jpg",
+        "mono-assets/iran-unseen 2.jpg",
+        "mono-assets/iran-unseen 3.jpg",
+        "mono-assets/iran-unseen 5.jpg"
+      ]
+    },
+    {
+      "id": "ats",
+      "order": 7,
+      "displayTitle": "Applicant Tracking System",
+      "client": "Jobvision",
+      "discipline": "Recruitment operations",
+      "cover": "mono-assets/ats dashboard-cover.png",
+      "gallery": [
+        "mono-assets/ats dashboard-cover.png",
+        "mono-assets/ats mobile view.png"
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "file": "mono-assets/mono audio visual engine.jpg",
+      "reason": "Project identity not confirmed; intentionally not displayed or assigned to FIELD/another project."
+    }
+  ]
+}

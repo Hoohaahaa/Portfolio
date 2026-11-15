@@ -310,9 +310,79 @@ body.fa .detail-top-meta{direction:rtl}
  .appendix-heading{position:static!important}
  .focus-item{grid-template-columns:30px 1fr!important;gap:10px!important;font-size:19px!important;padding:14px 0!important}
 }
+
+/* Swiss editorial light theme */
+.header-actions{display:flex;align-items:center;gap:18px}
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;border:0;background:none;color:var(--fg);padding:8px 0;cursor:pointer;font:9px var(--mono);letter-spacing:.13em}
+.theme-mark{font:16px var(--sans);line-height:1}
+:root[data-theme="light"]{--bg:#efeee9;--fg:#171715;--muted:#72716c;--line:#17171528;color-scheme:light}
+:root[data-theme="light"] html,:root[data-theme="light"] body{background:#efeee9;color:#171715}
+:root[data-theme="light"] header{background:#efeee9ed;border-color:#17171524}
+:root[data-theme="light"] .brand span{color:#999}
+:root[data-theme="light"] .nav a,:root[data-theme="light"] .lang{color:#4e4d49}
+:root[data-theme="light"] .hero{background:#efeee9!important;color:#171715}
+:root[data-theme="light"] .hero:before{background-image:linear-gradient(90deg,transparent calc(25% - .5px),#1717150b 25%,transparent calc(25% + .5px)),linear-gradient(0deg,transparent calc(25% - .5px),#1717150a 25%,transparent calc(25% + .5px))}
+:root[data-theme="light"] .hero-kicker,:root[data-theme="light"] .hero-signature,:root[data-theme="light"] .hero-visual-caption{color:#777!important}
+:root[data-theme="light"] .hero h1{color:#171715}
+:root[data-theme="light"] .hero h1 em{color:#8b8983!important}
+:root[data-theme="light"] .hero-note{color:#5c5b56!important}
+:root[data-theme="light"] .hero-visual-frame{background:#e5e4de!important;border:1px solid #17171518}
+:root[data-theme="light"] #cinema{background:#efeee9;color:#171715}
+:root[data-theme="light"] .cinema-pin{background:radial-gradient(ellipse at 55% 45%,#f8f7f2,#e9e8e2 75%)}
+:root[data-theme="light"] .cinema-head,:root[data-theme="light"] .cinema-caption,:root[data-theme="light"] .cinema-controls{color:#555}
+:root[data-theme="light"] .orbit,:root[data-theme="light"] .orbit:before,:root[data-theme="light"] .orbit:after{border-color:#17171512}
+:root[data-theme="light"] .project-card{background:#e8e7e1;border:1px solid #17171538;box-shadow:0 28px 70px #28271f24}
+:root[data-theme="light"] .project-card .media{background:#e2e1db}
+:root[data-theme="light"] .project-card .meta{background:#efeee9;border-top:1px solid #17171522;color:#171715}
+:root[data-theme="light"] .project-card .meta small{color:#777}
+:root[data-theme="light"] .progress{background:#17171524}
+:root[data-theme="light"] .progress span{background:#171715}
+:root[data-theme="light"] .section{border-color:#17171520}
+:root[data-theme="light"] .section:not(.about){background:#efeee9;color:#171715}
+:root[data-theme="light"] .section-title em{color:#777}
+:root[data-theme="light"] .work-visual{background:#e6e5df;border-color:#17171520}
+:root[data-theme="light"] .work-meta span,:root[data-theme="light"] .work-desc{color:#777}
+:root[data-theme="light"] #about{background:#e5e4de!important;color:#171715!important}
+:root[data-theme="light"] #about .cap-head{border-color:#17171535!important;color:#666!important}
+:root[data-theme="light"] #about .cap-list{border-color:#17171538!important}
+:root[data-theme="light"] #about .cap-list>div{border-color:#17171524!important;color:#aaa!important}
+:root[data-theme="light"] #about .cap-list>div.is-active{color:#171715!important}
+:root[data-theme="light"] #about .cap-list>div.is-past{color:#666!important}
+:root[data-theme="light"] #about .cap-list>div:before{background:#171715}
+:root[data-theme="light"] .contact{background:#171715;color:#efeee9}
+:root[data-theme="light"] .contact .mono{color:#aaa}
+:root[data-theme="light"] .contact h2 em{color:#8e8d88}
+:root[data-theme="light"] .contact-foot{border-color:#ffffff35}
+:root[data-theme="light"] .detail{background:#efeee9;color:#171715}
+:root[data-theme="light"] .detail-top{background:#efeee9ed;border-color:#17171524;color:#171715}
+:root[data-theme="light"] .detail-close{border:0;background:transparent;color:#171715;padding:9px 0}
+:root[data-theme="light"] .detail-intro-copy{color:#5f5e59}
+:root[data-theme="light"] .passport{border-color:#17171525;background:linear-gradient(120deg,#e8e7e1,#f3f2ed)}
+:root[data-theme="light"] .passport div{border-color:#17171520}
+:root[data-theme="light"] .passport b{color:#777}
+:root[data-theme="light"] .passport span{color:#24231f}
+:root[data-theme="light"] .detail-gallery figure{background:#e5e4de;border-color:#17171520}
+:root[data-theme="light"] .appendix{background:#efeee9;color:#171715}
+:root[data-theme="light"] .appendix-content{border-color:#17171530!important}
+:root[data-theme="light"] .focus-item{color:#24231f;border-color:#17171525}
+:root[data-theme="light"] .focus-index{color:#777}
+:root[data-theme="light"] .lightbox{background:#efeee9f5}
+:root[data-theme="light"] .lightbox button{border:0;background:transparent;color:#171715}
+:root[data-theme="light"] .lightbox-help,:root[data-theme="light"] .lightbox-count{color:#555}
+:root[data-theme="light"] .theme-toggle{color:#171715}
+:root[data-theme="light"] .shader-field{opacity:.13;mix-blend-mode:multiply}
+@media(max-width:760px){
+ .header-actions{gap:13px}.theme-toggle{font-size:8px;gap:5px}
+ .hero{background:#efeee9!important}
+ .hero-visual-frame img{object-fit:contain!important}
+ .project-card{width:78vw!important;height:56svh!important;min-height:320px!important;max-height:520px!important;top:45%!important}
+ #cinema .cinema-pin{min-height:650px!important}
+ .cinema-caption{max-width:180px!important}
+ :root[data-theme="light"] .project-card .meta{background:#efeee9!important}
+}
 </style></head>
 <body>
-<header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><div style="display:flex;gap:9px"><button class="lang" id="lang">FA / EN</button><button class="lang" id="editOpen" title="Asset editor">ASSETS ↗</button></div></header>
+<header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"><span class="theme-mark">◐</span><span id="themeLabel">LIGHT</span></button><button class="lang" id="editOpen" title="Asset editor">ASSETS ↗</button></div></header>
 <main>
 <section class="hero" id="top"><div class="hero-kicker mono" data-en="INDEPENDENT PRODUCT DESIGNER — 2026" data-fa="طراح مستقل محصول — ۲۰۲۶">INDEPENDENT PRODUCT DESIGNER — 2026</div><div class="hero-copy"><div class="hero-signature mono">MONO<span>.</span> / PRODUCT DESIGN</div><h1 data-en="Structure<br>before<br><em>surface.</em>" data-fa="ساختار،<br>پیش از<br><em>ظاهر.</em>">Structure<br>before<br><em>surface.</em></h1><p class="hero-note" data-en="Product systems · UX/UI · Creative technology" data-fa="سیستم‌های محصول · طراحی تجربه و رابط · فناوری خلاق">Product systems · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span class="scroll-dot">↓</span><span data-en="SELECTED WORK" data-fa="پروژه‌های منتخب">SELECTED WORK</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected project"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span data-en="01 / SELECTED WORK" data-fa="۰۱ / پروژه منتخب">01 / SELECTED WORK</span><span>VEBLEN — PARAMETRIC GARMENT SYSTEM</span></div></div></section>
 <section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
@@ -341,7 +411,11 @@ async function inspectAsset(asset,blob){try{const bitmap=await createImageBitmap
 function coverScore(a,p){const n=(a.name||'').toLowerCase();let score=0;if(/dashboard|overview|home|main|desktop|web app|workspace|panel/.test(n))score+=35;if(/dark|night/.test(n))score+=20;if(/light/.test(n))score-=6;if(/flow|wireframe|user.?flow|login|otp|onboard|mobile|phone|step|screen.?0?[2-9]/.test(n))score-=24;if(a.brightness!=null&&a.brightness<.48)score+=22;if(a.brightness!=null&&a.brightness>.78)score-=8;if(a.ratio&&a.ratio<.72)score-=22;if(a.ratio&&a.ratio>.85&&a.ratio<1.8)score+=12;if(p.id==='pinket'&&/dashboard|overview|home|seller|shop/.test(n))score+=18;return score}
 function chooseProjectCovers(){for(const p of projects){if(assetOrder[p.id]?.length)continue;const a=getAssets(p.id).filter(x=>x.brightness!=null||/dashboard|overview|home|dark/i.test(x.name));if(a.length){a.sort((x,y)=>coverScore(y,p)-coverScore(x,p));const best=a[0];assetOrder[p.id]=[best.name,...getAssets(p.id).filter(x=>x.name!==best.name).map(x=>x.name)]}}}
 function renderWorks(){}
-function deckPose(i){return [
+function deckPose(i){const mobile=matchMedia('(max-width:760px)').matches;if(mobile)return [
+ {xPercent:-50,yPercent:-50,rotationY:0,rotationZ:-.5,z:110,scale:1,opacity:1},
+ {xPercent:43,yPercent:-50,rotationY:4,rotationZ:2,z:-35,scale:.88,opacity:.92},
+ {xPercent:-143,yPercent:-50,rotationY:-4,rotationZ:-2,z:-35,scale:.88,opacity:.78}
+][i];return [
  {xPercent:-50,yPercent:-50,rotationY:-5,rotationZ:-2,z:170,scale:1,opacity:1},
  {xPercent:50,yPercent:-50,rotationY:13,rotationZ:8,z:-90,scale:.78,opacity:.72},
  {xPercent:-150,yPercent:-50,rotationY:-13,rotationZ:-8,z:-90,scale:.78,opacity:.72}
@@ -418,7 +492,7 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
 
 
 
-function renderHeroVisual(){const node=document.querySelector('.hero-visual-frame'),asset=cover('veblen');if(node&&asset)node.innerHTML=imageMarkup(asset,'Veblen — Parametric Garment System');if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy > *',{y:18,opacity:0,duration:.8,stagger:.08,ease:'power3.out',delay:.08});gsap.from('.hero-visual-frame',{clipPath:'inset(0 0 8% 0)',opacity:0,duration:.9,ease:'power3.out',delay:.16})}}
+function renderHeroVisual(){const node=document.querySelector('.hero-visual-frame');if(node){const src=fileURL('mono-assets/mono audio visual engine.jpg');node.innerHTML='<img loading="eager" decoding="async" fetchpriority="high" src="'+esc(src)+'" alt="MONO Audio Visual Engine — particle field interface" onload="fitFrame(this)">'}const caption=document.querySelector('.hero-visual-caption span:last-child');if(caption)caption.textContent='MONO / AUDIO-VISUAL ENGINE';if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy > *',{y:18,opacity:0,duration:.8,stagger:.08,ease:'power3.out',delay:.08});gsap.from('.hero-visual-frame',{clipPath:'inset(0 0 8% 0)',opacity:0,duration:.9,ease:'power3.out',delay:.16})}}
 function initCapabilities(){const items=[...document.querySelectorAll('.cap-list>div')];if(!items.length)return;if(!window.ScrollTrigger||!window.gsap){items.forEach(x=>x.classList.add('is-active'));return}gsap.registerPlugin(ScrollTrigger);items.forEach(el=>ScrollTrigger.create({trigger:el,start:'top 72%',end:'bottom 38%',onEnter:()=>el.classList.add('is-active'),onEnterBack:()=>el.classList.add('is-active'),onLeave:()=>{el.classList.remove('is-active');el.classList.add('is-past')},onLeaveBack:()=>{el.classList.remove('is-active','is-past')}}))}
 function initShader(){const canvas=document.getElementById('shaderCanvas');if(!canvas||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const gl=canvas.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power'});if(!gl)return;const compile=(type,source)=>{const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);return gl.getShaderParameter(sh,gl.COMPILE_STATUS)?sh:null};const vs=compile(gl.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}');const fs=compile(gl.FRAGMENT_SHADER,'precision mediump float;uniform vec2 r;uniform float t;float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=(uv-.5)*vec2(r.x/r.y,1.);float d=length(p-vec2(.12*sin(t*.16),.08*cos(t*.12)));float glow=exp(-d*3.1)*.13;float grain=(hash(floor(gl_FragCoord.xy*.5))-.5)*.018;float ring=sin(length(p)*21.-t*.45)*.012;vec3 col=vec3(.025,.028,.04)+vec3(.32,.29,.25)*glow+vec3(ring)+vec3(grain);gl_FragColor=vec4(col,1.);}');if(!vs||!fs)return;const prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;gl.useProgram(prog);const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);const res=gl.getUniformLocation(prog,'r'),time=gl.getUniformLocation(prog,'t');let raf=0,start=performance.now();const draw=now=>{const dpr=Math.min(devicePixelRatio||1,1.5),w=Math.floor(canvas.clientWidth*dpr),h=Math.floor(canvas.clientHeight*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}gl.uniform2f(res,w,h);gl.uniform1f(time,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,6);raf=requestAnimationFrame(draw)};raf=requestAnimationFrame(draw);document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else{start=performance.now();raf=requestAnimationFrame(draw)}})}
 /* WebGL background animation disabled on this pass: keep mobile rendering responsive. */
@@ -473,6 +547,6 @@ document.querySelectorAll('[data-assign]').forEach(b=>b.onclick=()=>{const i=+b.
 }
 function exportConfig(){const cfg={version:2,projectOrder:projects.map(p=>p.id),assetAssignments:Object.fromEntries(projects.map(p=>[p.id,getAssets(p.id).map(a=>a.name)])),projects:projects.map(p=>({id:p.id,title:p.title,brand:p.brand,category:p.category,group:p.group,description:p.desc,role:p.role,scope:p.scope,archive:p.archive||null,files:p.files||[],assetOrder:assetOrder[p.id]||getAssets(p.id).map(a=>a.name)}))};const blob=new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='portfolio.config.json';a.click();URL.revokeObjectURL(url)}
 document.getElementById('exportConfig').onclick=exportConfig;document.getElementById('resetConfig').onclick=()=>{assetOrder={};renderEditor();renderDeck();renderWorks()};document.getElementById('importConfig').onchange=async e=>{try{const cfg=JSON.parse(await e.target.files[0].text());if(cfg.projectOrder){const rank=new Map(cfg.projectOrder.map((id,i)=>[id,i]));projects.sort((a,b)=>(rank.get(a.id)??999)-(rank.get(b.id)??999))}if(cfg.assetAssignments)savedAssignments=cfg.assetAssignments;for(const p of cfg.projects||[])if(p.assetOrder)assetOrder[p.id]=p.assetOrder;applySavedAssignments();renderEditor();renderDeck();renderWorks()}catch(err){alert('Invalid config file: '+err.message)}};
-document.getElementById('lang').onclick=()=>{currentLang=currentLang==='en'?'fa':'en';document.body.classList.toggle('fa',currentLang==='fa');document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==='fa'?'rtl':'ltr';document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=el.dataset[currentLang]);document.getElementById('lang').textContent=currentLang==='en'?'FA / EN':'EN / FA';const active=document.getElementById('detail').dataset.project;if(active){const p=projects.find(x=>x.id===active);if(p)renderProjectCopy(p)}};
+const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'DARK':'LIGHT';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.querySelector('.theme-mark').textContent=light?'☼':'◐';try{localStorage.setItem('mono-theme',theme)}catch(e){}}let savedTheme='dark';try{savedTheme=localStorage.getItem('mono-theme')||'dark'}catch(e){}applyTheme(savedTheme);themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
 loadArchives();
 </script></body></html>

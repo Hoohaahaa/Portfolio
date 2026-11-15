@@ -95,3 +95,13 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Important source-audit limitation: the ZIP binaries are present in the repository but this editing session's GitHub file reader cannot decode binary ZIP contents for visual inspection. The code now prevents speculative cross-project assignment; actual per-image visual verification still needs the Asset Desk source previews. Do not claim every image has been visually audited.
 
 - Latest Revision 04 preview (Vercel READY): https://mo-portfolio-myqsxuxax-mos-projects-efbc27a5.vercel.app
+
+
+## Revision 05 — image presentation and automatic cover selection
+- Fixed the project-detail gallery's image sizing: original images are contained without cropping or stretching; the viewport now uses the available mobile height and preserves each image's natural aspect ratio.
+- The gallery supports horizontal swipe, previous/next controls, and a compact horizontal thumbnail rail. Double-tap / double-click toggles native-size zoom; when zoomed, the image can be panned by scrolling inside the viewer.
+- Corrected the earlier CSS override that set `max-width:none` on all gallery images and could clip screenshots at the sides.
+- ZIP images are sampled at a tiny analysis resolution (original files remain unchanged) to estimate average luminance and aspect ratio. Cover selection ranks likely dashboard/overview files, prefers dark-looking screens, and penalizes long flow/mobile screens. Pinket gets an additional dashboard/shops/seller preference.
+- After archive processing, the asset status line reports per-project image counts and the unassigned count, so missing mappings are visible rather than silently assumed.
+- This is a heuristic cover picker, not a claim that every image has been visually understood. Asset Desk remains the manual override for any incorrect cover or assignment.
+- New conceptual website explorations should be kept separate from product screenshots. Suggested future upload: one `concepts.zip` archive with folders named by concept (or individual files prefixed with the concept name). Do not rename existing project ZIPs or their source files.

@@ -1,0 +1,69 @@
+{
+  "projects": [
+    {
+      "slug": "pinket",
+      "company": "Pinket",
+      "assets": "projects/pinket/originals/ + projects/pinket/web/"
+    },
+    {
+      "slug": "pulse-check",
+      "company": "JobVision",
+      "assets": "projects/pulse-check/originals/ + projects/pulse-check/web/"
+    },
+    {
+      "slug": "veblen",
+      "company": "MONO",
+      "assets": "projects/veblen/originals/ + projects/veblen/web/"
+    },
+    {
+      "slug": "field",
+      "company": "MONO",
+      "assets": "projects/field/originals/ + projects/field/web/"
+    },
+    {
+      "slug": "humaani-arzhang",
+      "company": "RASTAR",
+      "assets": "projects/humaani-arzhang/originals/ + projects/humaani-arzhang/web/",
+      "sourceFiles": [
+        "Group 1000002159.png",
+        "Group 1000002160 1.png",
+        "Group 1000002161.png",
+        "Group 1000002162.png",
+        "Group 1000002163.png",
+        "arzhang-1.png",
+        "arzhang-2.png",
+        "arzhang.png",
+        "hum.png"
+      ]
+    },
+    {
+      "slug": "maani-ject",
+      "company": "RASTAR",
+      "assets": "projects/maani-ject/originals/ + projects/maani-ject/web/",
+      "sourceFiles": [
+        "humaani-1.png",
+        "mobile-1.png"
+      ]
+    },
+    {
+      "slug": "mirana",
+      "company": "JobVision",
+      "assets": "projects/mirana/originals/ + projects/mirana/web/"
+    },
+    {
+      "slug": "iran-unseen",
+      "company": "MONO LAB",
+      "assets": "projects/iran-unseen/originals/ + projects/iran-unseen/web/"
+    },
+    {
+      "slug": "entity",
+      "company": "MONO LAB",
+      "assets": "projects/entity/originals/ + projects/entity/web/"
+    },
+    {
+      "slug": "ats-dashboard",
+      "company": "JobVision",
+      "assets": "projects/ats-dashboard/originals/ + projects/ats-dashboard/web/"
+    }
+  ]
+}

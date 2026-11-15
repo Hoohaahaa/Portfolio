@@ -382,6 +382,13 @@ body.fa .detail-top-meta{direction:rtl}
 }
 
 /* MONO refinement: complete image fitting, mobile project index, and balanced theme tokens */
+:root:not([data-theme="light"]) #about{background:#080808!important;color:#f1f0eb!important}
+:root:not([data-theme="light"]) #about .cap-head{border-color:#ffffff35!important;color:#92918c!important}
+:root:not([data-theme="light"]) #about .cap-list{border-color:#ffffff35!important}
+:root:not([data-theme="light"]) #about .cap-list>div{border-color:#ffffff24!important;color:#666!important}
+:root:not([data-theme="light"]) #about .cap-list>div.is-active{color:#f1f0eb!important}
+:root:not([data-theme="light"]) #about .cap-list>div.is-past{color:#92918c!important}
+
 .project-card .media{padding:18px!important;background:var(--media-bg,#101010)!important}
 .project-card .media img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;flex:0 1 auto!important;transform:none!important;animation:none!important}
 .project-card .media:after{display:none!important}
@@ -496,7 +503,7 @@ function renderMobileProjectGrid(){
  if(!grid)return;
  grid.innerHTML=projects.map((p,i)=>{
   const asset=cover(p.id);
-  return '<button class="mobile-project-item '+(i===activeProject?'is-active':'')+'" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+imageMarkup(asset,p.title)+'</span><span class="mobile-project-meta"><small>'+String(i+1).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i></span></button>';
+  return '<button class="mobile-project-item '+(i===activeProject?'is-active':'')+'" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+imageMarkup(asset,p.title).replace('loading="eager"','loading="lazy"').replace('fetchpriority="high"','fetchpriority="low"')+'</span><span class="mobile-project-meta"><small>'+String(i+1).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i></span></button>';
  }).join('');
  grid.querySelectorAll('[data-mobile-project]').forEach(card=>card.addEventListener('click',()=>openDetail(card.dataset.mobileProject)));
 }

@@ -73,10 +73,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Rebuilt mobile-specific typography, header, pinned card dimensions, controls, work cards and spacing instead of compressing desktop rules.
 - Added a lightweight real WebGL fragment-shader canvas behind the cinematic project deck (with a reduced-motion / no-WebGL fallback).
 - ScrollTrigger now scrubs the orbit and deck tilt while advancing the active project; card transitions remain GSAP-driven.
+- Project-card and editorial-card images now have a restrained independent 2px float; extra-wide captures keep horizontal drift. No image is stretched or recompressed.
 - Added restrained editorial image grading / glass-mask overlays and preserved native aspect ratios.
 - Pinket cover is now selected from its own archive by landscape/dashboard-like aspect ratio and filename hints, after saved assignments are applied. Verify visually that the selected frame is an actual dashboard, not a mockup.
 - Replaced long case-study blocks with a compact context / scope / contribution strip and one large image carousel with selectable thumbnail rail, previous/next controls and click-to-zoom.
 - Gallery shows one source image at a time; no contact-sheet wall and no automatic image recompression.
 - Current limitations: archive asset matching is still heuristic for multi-project ZIPs; the Asset Desk remains the manual correction path. Review the selected Pinket cover and the Mirana / JobVision / Rastar assignments on desktop and mobile before promoting this branch.
 
-- Latest mobile/cinematic preview deployment (READY): https://mo-portfolio-gffo8h8pj-mos-projects-efbc27a5.vercel.app
+- Latest mobile/cinematic preview deployment (READY): https://mo-portfolio-290aod6wd-mos-projects-efbc27a5.vercel.app

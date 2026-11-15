@@ -103,3 +103,18 @@ Edit `manifest.json`:
 - Keep each image under the correct project ID.
 
 No source image needs to be renamed to reorder a gallery.
+
+
+## Project passport dates and role context
+
+| Project | Period shown | Organization / context | Role | Basis |
+|---|---|---|---|---|
+| Pinket | 2022–2023 | Pinket | UI/UX Designer | Résumé: Jan 2022–Jun 2023 |
+| Pulse Check | 2023–2025 | Jobvision | Product Designer | Jobvision employment window; exact project dates not specified |
+| ATS | 2023–2025 | Jobvision | Product Designer | Jobvision employment window; exact project dates not specified |
+| Mirana | 2023–2025 | Jobvision | Product Designer | Owner confirmation; exact project dates not specified |
+| Humaani | 2025 | Rastar | Product Designer | Owner confirmation: Rastar employment window, May–Sep 2025 |
+| Veblen | 2025–2026 | Independent / MoNo | Product Designer · Creative Technology | Period confirmed by owner |
+| Iran Unseen | 2025–2026 (provisional) | Independent / MoNo | Independent Product Designer | Independent status confirmed; years estimated from MoNo period, exact dates unknown |
+
+See `passport` in `manifest.json` for the detailed basis. Treat ranges inherited from an employer's résumé dates as project-period estimates, not verified project start/end dates. Do not invent team size, client identities beyond those listed, or impact metrics.

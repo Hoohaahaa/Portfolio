@@ -48,3 +48,18 @@ The asset layer replaces synthetic project-card artwork with the selected cover 
 - Refine the project detail page into the requested compact editorial passport + appendix layout.
 - Add verified project year, client, role, team, scope and outcomes only when supported by the owner's résumé or project materials.
 - Confirm whether the unassigned Mono Audio Visual Engine image belongs to FIELD or another concept.
+
+
+## Project passport metadata (résumé + owner confirmations)
+
+| Project | Display period | Organization / context | Role | Date confidence |
+|---|---|---|---|---|
+| Pinket — FMCG Marketplace | 2022–2023 | Pinket | UI/UX Designer | Confirmed employment dates (Jan 2022–Jun 2023) |
+| Pulse Check — Employee Experience Platform | 2023–2025 | Jobvision | Product Designer | Jobvision employment window; exact project dates unknown |
+| Jobvision — Applicant Tracking System | 2023–2025 | Jobvision | Product Designer | Jobvision employment window; exact project dates unknown |
+| Mirana — Executive Talent Platform | 2023–2025 | Jobvision | Product Designer | Owner confirmed Jobvision period; exact project dates unknown |
+| Humaani — AI Creative Workspace | 2025 | Rastar | Product Designer | Owner confirmed Rastar period (May–Sep 2025) |
+| Veblen — Parametric Garment System | 2025–2026 | Independent / MoNo | Product Designer · Creative Technology | Period explicitly confirmed by owner |
+| Iran Unseen — Interactive Cultural Atlas | 2025–2026 (provisional) | Independent / MoNo | Independent Product Designer | Independent status confirmed; years estimated, exact dates unconfirmed |
+
+The machine-readable passport metadata lives in each project's `passport` object in `mono-assets/manifest.json`. Do not present employment-window dates as exact project dates. Iran Unseen's 2025–2026 range is provisional and must be replaced if the owner supplies more precise dates. Team size, collaborators, outcomes and metrics remain unspecified unless supported by project files or owner confirmation.

@@ -78,3 +78,5 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Replaced long case-study blocks with a compact context / scope / contribution strip and one large image carousel with selectable thumbnail rail, previous/next controls and click-to-zoom.
 - Gallery shows one source image at a time; no contact-sheet wall and no automatic image recompression.
 - Current limitations: archive asset matching is still heuristic for multi-project ZIPs; the Asset Desk remains the manual correction path. Review the selected Pinket cover and the Mirana / JobVision / Rastar assignments on desktop and mobile before promoting this branch.
+
+- Latest mobile/cinematic preview deployment (READY): https://mo-portfolio-gffo8h8pj-mos-projects-efbc27a5.vercel.app

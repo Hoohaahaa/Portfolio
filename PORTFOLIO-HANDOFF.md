@@ -121,3 +121,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Pinket and Pulse Check are recorded as two-person design teams. JobVision's existing Nov 2023—Apr 2025 period and Humaani's May—Sep 2025 period are retained from existing project notes.
 - Future resume intake should populate the same schema, not require a layout rewrite.
 - Important: the current source ZIPs remain original archives and are still read client-side. The final optimized production image pipeline should replace ZIP-at-runtime with named project folders, explicit manifest entries, lightweight cover/thumbnail WebP files, and full-resolution gallery files loaded only inside a project. Do not start that migration until the user uploads the normalized image pack.
+
+
+## Revision 07 delivery
+- Preview deployment: https://mo-portfolio-oes8v0d8p-mos-projects-efbc27a5.vercel.app (Vercel READY).
+- One-time image preparation instructions: `ASSET-IMPORT-GUIDE.md`.
+- Explicit project image manifest template: `assets/manifest.template.json`.
+- Next required user input: upload one `mono-assets.zip` with project-separated folders and chosen `cover.webp` files. Do not delete or overwrite the original ZIP archives.
+- The production migration from runtime ZIP parsing to static manifest + thumbnail/cover/gallery assets is intentionally pending until that normalized asset pack exists. This avoids another speculative assignment pass.

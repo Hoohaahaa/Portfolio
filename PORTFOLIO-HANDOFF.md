@@ -105,3 +105,6 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - After archive processing, the asset status line reports per-project image counts and the unassigned count, so missing mappings are visible rather than silently assumed.
 - This is a heuristic cover picker, not a claim that every image has been visually understood. Asset Desk remains the manual override for any incorrect cover or assignment.
 - New conceptual website explorations should be kept separate from product screenshots. Suggested future upload: one `concepts.zip` archive with folders named by concept (or individual files prefixed with the concept name). Do not rename existing project ZIPs or their source files.
+
+- Automatic cover ranking is applied as the initial Asset Desk order only. Reordering assets manually overrides the automatic choice; the first image becomes the cover, and export/import persists the ordering.
+- Latest Revision 05 preview (Vercel READY): https://mo-portfolio-p6qohocoa-mos-projects-efbc27a5.vercel.app

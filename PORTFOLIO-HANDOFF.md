@@ -9,17 +9,17 @@ Asset directory: `mono-assets/`
 
 The portfolio uses a static `index.html` site. A manifest-driven asset layer has been added to load real project images from `/mono-assets/manifest.json`.
 
-## Active projects
+## Active projects — presentation order
 
-1. Pinket — FMCG Marketplace
+1. Veblen — Parametric Garment System
 2. Pulse Check — Employee Experience Platform
-3. Veblen — Parametric Garment System
-4. Humaani — AI Creative Workspace
-5. Mirana — Executive Talent Platform
-6. Iran Unseen — Interactive Cultural Atlas
-7. Jobvision — Applicant Tracking System
+3. Iran Unseen — Interactive Cultural Atlas
+4. Jobvision — Applicant Tracking System
+5. Humaani — AI Creative Workspace
+6. Mirana — Executive Talent Platform
+7. Pinket — FMCG Marketplace
 
-Entity is intentionally excluded for now. The image `mono audio visual engine.jpg` is unassigned until the owner confirms its project.
+The owner explicitly requested this sequence. The `order` property in `mono-assets/manifest.json` is the source of truth and the landing-page cards are reordered from it at runtime.
 
 ## Source of truth
 

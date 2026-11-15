@@ -1,16 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "projectOrder": [
     "pinket",
+    "mirana",
+    "jobvis",
+    "ats",
     "pulse",
     "veblen",
     "field",
     "humaani",
     "maani",
-    "jobvis",
     "iran",
-    "entity",
-    "ats"
+    "entity"
   ],
   "assetOrder": {},
   "sourceArchives": [
@@ -62,5 +63,60 @@
     "file_00000000af5482109fa29a77406a37b2.png",
     "file_00000000e9e481f59743effb7a130c95.png"
   ],
-  "notes": "Source archives and original PNG exports are stored at the root of this feature branch. Keep the originals unchanged. Asset ordering and manual image-to-project assignments can be edited in the on-site Asset Desk and exported as this file."
+  "notes": "Source archives and original PNG exports are stored at the root of this feature branch. Keep the originals unchanged. Asset ordering and manual image-to-project assignments can be edited in the on-site Asset Desk and exported as this file.",
+  "projectGroups": {
+    "Commerce": [
+      "pinket"
+    ],
+    "Talent": [
+      "mirana",
+      "jobvis",
+      "ats"
+    ],
+    "Rastar": [
+      "humaani",
+      "maani"
+    ],
+    "AI & Workflows": [
+      "pulse",
+      "veblen",
+      "field"
+    ],
+    "MONO LAB": [
+      "iran",
+      "entity"
+    ]
+  },
+  "projectTaxonomy": {
+    "pinket": {
+      "productType": "FMCG Marketplace",
+      "brand": "Pinket"
+    },
+    "mirana": {
+      "productType": "Executive Talent Platform",
+      "brand": "Mirana"
+    },
+    "jobvis": {
+      "productType": "Recruitment & ATS Platform",
+      "brand": "JobVision"
+    },
+    "ats": {
+      "productType": "Talent Acquisition Dashboard",
+      "brand": "JobVision"
+    },
+    "entity": {
+      "productType": "Gestural Audio Instrument",
+      "brand": "Entity"
+    },
+    "iran": {
+      "productType": "Interactive Cultural Atlas",
+      "brand": "Iran Unseen"
+    }
+  },
+  "presentation": {
+    "imageFit": "native aspect ratio; image height fills media viewport",
+    "wideImageMotion": "subtle horizontal drift, no cropping",
+    "longScreens": "one full-height viewport per image; no long-page thumbnail strips",
+    "caseStudy": "passport + context + challenge + approach + scope; verify copy against supplied text source files"
+  }
 }

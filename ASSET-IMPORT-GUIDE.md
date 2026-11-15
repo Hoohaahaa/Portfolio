@@ -9,6 +9,10 @@ mono-assets/
   manifest.json
   pinket/
     cover.webp
+    thumbs/
+      cover.webp
+      01.webp
+      02.webp
     gallery/
       01-dashboard-overview.webp
       02-order-management.webp

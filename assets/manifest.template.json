@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "projects": {
+    "pinket": {
+      "cover": "pinket/cover.webp",
+      "thumbnail": "pinket/thumbs/cover.webp",
+      "gallery": []
+    },
+    "mirana": {
+      "cover": "mirana/cover.webp",
+      "thumbnail": "mirana/thumbs/cover.webp",
+      "gallery": []
+    },
+    "jobvis": {
+      "cover": "jobvis/cover.webp",
+      "thumbnail": "jobvis/thumbs/cover.webp",
+      "gallery": []
+    },
+    "ats": {
+      "cover": "ats/cover.webp",
+      "thumbnail": "ats/thumbs/cover.webp",
+      "gallery": []
+    },
+    "pulse": {
+      "cover": "pulse/cover.webp",
+      "thumbnail": "pulse/thumbs/cover.webp",
+      "gallery": []
+    },
+    "veblen": {
+      "cover": "veblen/cover.webp",
+      "thumbnail": "veblen/thumbs/cover.webp",
+      "gallery": []
+    },
+    "field": {
+      "cover": "field/cover.webp",
+      "thumbnail": "field/thumbs/cover.webp",
+      "gallery": []
+    },
+    "humaani": {
+      "cover": "humaani/cover.webp",
+      "thumbnail": "humaani/thumbs/cover.webp",
+      "gallery": []
+    },
+    "maani": {
+      "cover": "maani/cover.webp",
+      "thumbnail": "maani/thumbs/cover.webp",
+      "gallery": []
+    },
+    "iran": {
+      "cover": "iran/cover.webp",
+      "thumbnail": "iran/thumbs/cover.webp",
+      "gallery": []
+    },
+    "entity": {
+      "cover": "entity/cover.webp",
+      "thumbnail": "entity/thumbs/cover.webp",
+      "gallery": []
+    },
+    "concepts": {
+      "cover": "concepts/cover.webp",
+      "thumbnail": "concepts/thumbs/cover.webp",
+      "gallery": []
+    }
+  }
+}

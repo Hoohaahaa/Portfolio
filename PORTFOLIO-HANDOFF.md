@@ -14,20 +14,23 @@ The preview was uploaded directly to Vercel because the Git-connected auto-deplo
 - Dark editorial MONO. visual direction, bilingual English/Persian toggle, RTL support.
 - Pinned cinematic project stage: scroll progress advances the active project while three overlapping 3D cards rotate/reposition.
 - Previous/next controls, click-to-open project detail, full-screen image zoom, responsive layout and reduced-motion fallback.
-- Project cards and galleries use `object-fit: contain`, auto dimensions and max bounds only. No forced crop or aspect-ratio distortion.
+- Project media uses natural image proportions. Images fill the available media height; wide screenshots receive subtle horizontal drift while tall screens remain fully visible. No forced crop or aspect-ratio distortion.
+- Work index is grouped by Commerce, Talent, Rastar, AI & Workflows and MONO LAB. Product type is the headline; brand/client is secondary.
+- Project detail pages use a compact passport (product type, brand, scope, role), then context, design challenge, approach and scope, followed by full-height image frames with click-to-zoom.
 - Original archive files are loaded from the repository's `main` branch through raw.githubusercontent.com and unpacked client-side with JSZip. The archives are not recompressed or modified.
 
 ## Project order (editable)
-1. Pinket
-2. Pulse Check
-3. VEBLEN
-4. FIELD
-5. Humaani / Arzhang (Rastar)
-6. MaaniJect (Rastar)
-7. Mirana / JobVision
-8. Iran Unseen (MONO LAB)
-9. Entity (MONO LAB)
-10. ATS Dashboard
+1. FMCG Marketplace — Pinket
+2. Executive Talent Platform — Mirana
+3. Recruitment & ATS Platform — JobVision
+4. Talent Acquisition Dashboard — JobVision
+5. Employee Experience Platform — Pulse Check
+6. Parametric Fashion System — VEBLEN
+7. Generative Audio Instrument — FIELD
+8. Generative AI Workspace — Humaani (Rastar)
+9. Product Content Studio — MaaniJect (Rastar)
+10. Interactive Cultural Atlas — Iran Unseen (MONO LAB)
+11. Gestural Audio Instrument — Entity (MONO LAB)
 
 Humaani and MaaniJect are distinct Rastar products and must not share case-study galleries. Iran Unseen and Entity belong under MONO LAB — AI Workflows.
 
@@ -50,7 +53,16 @@ Standalone source PNGs are also in the repository root. Their names and current 
 
 ## Important limitations / next verification
 - The ZIP archives and standalone PNGs are included in this feature branch. Keep their filenames and root paths stable; the page reads them from this branch.
+- Case-study copy is currently a concise editorial scaffold based on known project descriptions and supplied context. Before calling it final, inspect the text/brief files inside the original ZIPs and replace generic challenge/approach copy with verified project-specific facts. Do not invent metrics, outcomes or client claims.
 - Some ZIP entries may not contain project-identifying filenames. Confirm each file's assignment before launch; do not combine Humaani and MaaniJect.
 - The current first pass does not compress or transform image files. Very large archives may take a few seconds to download and unpack.
 - Test raw GitHub CORS, all archive requests, mobile layout, keyboard access and reduced-motion behavior on the actual Vercel Preview URL before promoting.
 - Never modify `main` or unrelated projects while continuing this work.
+
+
+## Current editing pass (2026-11-15)
+- Updated card media to fill the media viewport by height while retaining intrinsic aspect ratio. Extra-wide images drift horizontally in a restrained loop; no image is cropped or recompressed.
+- Replaced brand-led headlines with product-type headlines and subdued brand labels.
+- Split Mirana from JobVision and added Talent / Rastar / MONO LAB / AI & Workflows grouping.
+- Added Project Passport and structured case-study sections. Generic challenge/approach text is intentionally a scaffold until the source text files are reviewed.
+- Next: validate archive filename mapping (especially JobVision vs Mirana vs ATS), review source text files, then test mobile scroll/GSAP and keyboard/reduced-motion behavior.

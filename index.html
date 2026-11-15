@@ -70,4 +70,129 @@ function draw(t){const d=Math.min(devicePixelRatio||1,2),W=w/d,H=h/d;ctx.clearRe
 resize();window.addEventListener('resize',resize);draw(0);
 if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.registerPlugin(ScrollTrigger);gsap.from('.hero h1',{y:60,opacity:0,duration:1.1,ease:'power3.out',delay:.15});gsap.from('.hero-right',{y:30,opacity:0,duration:.9,ease:'power2.out',delay:.45});gsap.utils.toArray('.project').forEach((el)=>gsap.from(el,{y:45,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}}));gsap.from('.about-grid > *',{y:35,opacity:0,duration:.8,stagger:.15,scrollTrigger:{trigger:'.about',start:'top 75%'}})}
 </script>
+
+<!-- MONO ASSET SYSTEM: generated from mono-assets/manifest.json -->
+<style id="mono-asset-system-style">
+.project-visual{background:#111!important;position:relative;overflow:hidden}
+.project-visual .mono-cover{display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:clamp(8px,1.5vw,22px);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease;filter:saturate(.88)}
+.project:hover .mono-cover{transform:scale(1.018);filter:saturate(1)}
+.project-info h3{font-size:clamp(19px,2vw,25px);font-weight:500;letter-spacing:-.055em}
+.project-info p{font-size:11px;letter-spacing:.015em}
+.mono-gallery{margin:34px 0 52px}
+.mono-gallery-head{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #ffffff35;padding-bottom:12px;margin-bottom:16px}
+.mono-gallery-label{font:10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#b9bbb3}
+.mono-gallery-count{font:10px var(--mono);color:#a5a79f}
+.mono-gallery-stage{height:min(68vh,760px);min-height:280px;background:#090a09;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.mono-gallery-stage img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;cursor:zoom-in}
+.mono-gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.mono-gallery-thumbs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;flex:1;padding:3px 0 8px}
+.mono-gallery-thumb{border:0;background:transparent;padding:0;flex:0 0 auto;width:74px;height:58px;opacity:.55;cursor:pointer}
+.mono-gallery-thumb[aria-current=true]{opacity:1}
+.mono-gallery-thumb img{width:100%;height:100%;object-fit:contain;display:block;background:#171817}
+.mono-gallery-nav{display:flex;gap:7px}
+.mono-gallery-nav button{width:38px;height:38px;border:1px solid #ffffff55;background:transparent;color:#f5f3ec;font-size:17px;cursor:pointer}
+.mono-lightbox{position:fixed;inset:0;background:#050605f5;z-index:80;display:none;align-items:center;justify-content:center;padding:4vh 5vw}
+.mono-lightbox.open{display:flex}
+.mono-lightbox img{max-width:100%;max-height:90vh;width:auto;height:auto;object-fit:contain}
+.mono-lightbox button{position:absolute;top:20px;border:1px solid #ffffff66;background:#111;color:#fff;padding:10px 14px;cursor:pointer}
+.mono-lightbox .close{right:20px}.mono-lightbox .prev{left:20px;top:50%}.mono-lightbox .next{right:20px;top:50%}
+@media(max-width:800px){.mono-gallery{margin:25px 0 38px}.mono-gallery-stage{height:62vh;min-height:250px}.mono-gallery-thumb{width:62px;height:52px}.mono-gallery-controls{align-items:flex-start}.mono-gallery-nav button{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){.project-visual .mono-cover{transition:none}}
+</style>
+<script id="mono-asset-system">
+(async function(){
+  const root='/';
+  let manifest;
+  try{const response=await fetch(root+'mono-assets/manifest.json',{cache:'no-cache'});if(!response.ok)throw new Error('Manifest HTTP '+response.status);manifest=await response.json();}
+  catch(error){console.error('[MONO assets] Manifest unavailable:',error);return;}
+  const projects=manifest.projects||[];
+  const byId=Object.fromEntries(projects.map(p=>[p.id,p]));
+  const encodePath=path=>root+path.split('/').map(encodeURIComponent).join('/');
+  const cards=[...document.querySelectorAll('.project[data-project]')];
+  cards.forEach(card=>{
+    const id=card.dataset.project, data=byId[id];
+    if(!data){card.hidden=true;return;}
+    const visual=card.querySelector('.project-visual');
+    if(visual){
+      visual.replaceChildren();
+      const img=document.createElement('img');
+      img.className='project-shot mono-cover';
+      img.src=encodePath(data.cover);
+      img.alt=data.displayTitle+' — '+data.client;
+      img.loading='lazy';img.decoding='async';
+      img.addEventListener('error',()=>{img.alt='Image unavailable: '+data.cover;visual.dataset.assetError='true';});
+      visual.appendChild(img);
+    }
+    const heading=card.querySelector('.project-info h3');
+    const sub=card.querySelector('.project-info p');
+    if(heading)heading.textContent=data.displayTitle;
+    if(sub)sub.textContent=data.client+' · '+data.discipline;
+    const idx=card.querySelector('.project-index');
+    if(idx)idx.textContent=String(data.order).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0')+' ↗';
+  });
+  const sectionMeta=document.querySelector('#work .section-head > p');
+  if(sectionMeta)sectionMeta.innerHTML=projects.length+' PROJECTS<br>SELECTED PRODUCT SYSTEMS';
+  const fieldCard=document.querySelector('.project[data-project="field"]');
+  if(fieldCard)fieldCard.hidden=true;
+  const entityCard=document.querySelector('.project[data-project="entity"]');
+  if(entityCard)entityCard.remove();
+  const gallery=document.createElement('section');
+  gallery.className='mono-gallery';
+  gallery.innerHTML='<div class="mono-gallery-head"><span class="mono-gallery-label">PROJECT VISUALS / GALLERY</span><span class="mono-gallery-count" aria-live="polite"></span></div><div class="mono-gallery-stage"><img alt="" draggable="false"></div><div class="mono-gallery-controls"><div class="mono-gallery-thumbs"></div><div class="mono-gallery-nav"><button type="button" aria-label="Previous image">←</button><button type="button" aria-label="Next image">→</button></div></div>';
+  const lightbox=document.createElement('div');
+  lightbox.className='mono-lightbox';
+  lightbox.innerHTML='<button class="close" type="button">CLOSE ×</button><button class="prev" type="button" aria-label="Previous image">←</button><img alt=""><button class="next" type="button" aria-label="Next image">→</button>';
+  document.body.appendChild(lightbox);
+  const stage=gallery.querySelector('.mono-gallery-stage img'),thumbs=gallery.querySelector('.mono-gallery-thumbs'),count=gallery.querySelector('.mono-gallery-count');
+  let activeProject=null,activeIndex=0;
+  function show(index){
+    if(!activeProject)return;
+    const list=activeProject.gallery;activeIndex=(index+list.length)%list.length;
+    const path=list[activeIndex];stage.src=encodePath(path);stage.alt=activeProject.displayTitle+' — image '+(activeIndex+1);
+    count.textContent=String(activeIndex+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0');
+    [...thumbs.children].forEach((b,i)=>b.setAttribute('aria-current',String(i===activeIndex)));
+    const lb=lightbox.querySelector('img');lb.src=stage.src;lb.alt=stage.alt;
+  }
+  function open(key){
+    const data=byId[key];if(!data)return;
+    activeProject=data;activeIndex=0;thumbs.replaceChildren();
+    data.gallery.forEach((path,i)=>{
+      const b=document.createElement('button');b.type='button';b.className='mono-gallery-thumb';b.setAttribute('aria-label','Show image '+(i+1));
+      const im=document.createElement('img');im.src=encodePath(path);im.alt='';im.loading='lazy';b.appendChild(im);
+      b.addEventListener('click',()=>show(i));thumbs.appendChild(b);
+    });
+    const detail=document.getElementById('detail');
+    const target=detail.querySelector('.detail-grid');
+    if(target)target.parentNode.insertBefore(gallery,target);
+    show(0);
+  }
+  function closeLightbox(){lightbox.classList.remove('open');}
+  gallery.querySelector('[aria-label="Previous image"]').addEventListener('click',()=>show(activeIndex-1));
+  gallery.querySelector('[aria-label="Next image"]').addEventListener('click',()=>show(activeIndex+1));
+  stage.addEventListener('dblclick',()=>{if(activeProject){show(activeIndex);lightbox.classList.add('open');}});
+  lightbox.querySelector('.close').addEventListener('click',closeLightbox);
+  lightbox.querySelector('.prev').addEventListener('click',()=>{show(activeIndex-1);lightbox.classList.add('open');});
+  lightbox.querySelector('.next').addEventListener('click',()=>{show(activeIndex+1);lightbox.classList.add('open');});
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+  document.addEventListener('keydown',e=>{
+    if(lightbox.classList.contains('open')){
+      if(e.key==='Escape')closeLightbox();
+      if(e.key==='ArrowLeft')show(activeIndex-1);
+      if(e.key==='ArrowRight')show(activeIndex+1);
+    }
+  });
+  const originalOpen=window.openProject;
+  if(typeof originalOpen==='function'){
+    window.openProject=function(key){originalOpen(key);open(key);};
+  }else{
+    document.querySelectorAll('.project[data-project]').forEach(card=>card.addEventListener('click',()=>open(card.dataset.project)));
+  }
+  // The original inline function is global in classic scripts; wrap its click path as a safety net.
+  document.querySelectorAll('.project[data-project]').forEach(card=>{
+    const key=card.dataset.project;
+    card.addEventListener('click',()=>{if(byId[key])open(key);});
+  });
+})();
+</script>
+
 </body></html>

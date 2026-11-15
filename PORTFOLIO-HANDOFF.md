@@ -93,3 +93,5 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Asset Desk is accessible on mobile, supports assigning unassigned sources, moving an incorrect image back to Unassigned, reordering images, and exporting/importing portfolio.config.json.
 - Project-detail thumbnail rail has no thumbnail borders; the detail gallery displays one source at a time with compact editorial navigation.
 - Important source-audit limitation: the ZIP binaries are present in the repository but this editing session's GitHub file reader cannot decode binary ZIP contents for visual inspection. The code now prevents speculative cross-project assignment; actual per-image visual verification still needs the Asset Desk source previews. Do not claim every image has been visually audited.
+
+- Latest Revision 04 preview (Vercel READY): https://mo-portfolio-myqsxuxax-mos-projects-efbc27a5.vercel.app

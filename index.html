@@ -380,14 +380,66 @@ body.fa .detail-top-meta{direction:rtl}
  .cinema-caption{max-width:180px!important}
  :root[data-theme="light"] .project-card .meta{background:#efeee9!important}
 }
+
+/* MONO refinement: complete image fitting, mobile project index, and balanced theme tokens */
+.project-card .media{padding:18px!important;background:var(--media-bg,#101010)!important}
+.project-card .media img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;flex:0 1 auto!important;transform:none!important;animation:none!important}
+.project-card .media:after{display:none!important}
+.mobile-project-grid{display:none}
+.footer-theme-toggle{margin-left:auto;display:inline-flex;align-items:center;gap:9px;padding:8px 0;border:0;background:transparent;color:inherit;cursor:pointer;font:9px var(--mono);letter-spacing:.14em;white-space:nowrap}
+.footer-theme-toggle .theme-mark{font-size:17px;line-height:1}
+#editOpen,.editor{display:none!important}
+:root[data-theme="light"]{--media-bg:#e4e3dc}
+:root[data-theme="light"] .cinema-pin{background:#efeee9;color:#171715}
+:root[data-theme="light"] .cinema-head,:root[data-theme="light"] .cinema-caption{color:#171715}
+:root[data-theme="light"] .cinema-caption p{color:#66645e}
+:root[data-theme="light"] .cinema-controls button{background:transparent;border-color:#17171555;color:#171715}
+:root[data-theme="light"] .cinema-controls button:hover{background:#171715;color:#efeee9}
+:root[data-theme="light"] .project-card .media{background:#e4e3dc!important}
+:root[data-theme="light"] .project-card .media img{filter:none!important}
+:root[data-theme="light"] .detail-top,:root[data-theme="light"] .editorial-heading,:root[data-theme="light"] .detail-gallery{background:#efeee9;color:#171715}
+:root[data-theme="light"] .gallery-stage{background:#e5e4de!important}
+:root[data-theme="light"] .gallery-rail{border-color:#17171525!important}
+:root[data-theme="light"] .gallery-thumb{background:#e5e4de;border-color:#17171522}
+:root[data-theme="light"] .gallery-arrows button{color:#171715!important}
+:root[data-theme="light"] .appendix-heading{color:#171715}
+:root[data-theme="light"] .focus-item{background:transparent}
+:root[data-theme="light"] .contact-foot{color:#c7c5be}
+:root[data-theme="light"] .footer-theme-toggle{color:#efeee9}
+:root[data-theme="light"] .lightbox{background:#efeee9!important;color:#171715}
+:root[data-theme="light"] .lightbox>img{background:transparent}
+:root[data-theme="light"] .lightbox-controls button{color:#171715!important}
+:root[data-theme="light"] .detail-close{color:#171715!important}
+:root[data-theme="light"] .passport{background:#e8e7e1}
+:root[data-theme="light"] .detail-gallery figure{background:#e5e4de}
+@media(max-width:760px){
+ #cinema{height:auto!important;min-height:0!important;background:var(--bg)}
+ #cinema .cinema-pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important;overflow:visible!important;padding:0 0 46px!important;perspective:none!important;background:var(--bg)!important}
+ #cinema .cinema-head{position:relative!important;top:auto!important;left:auto!important;width:auto!important;margin:0 5vw;padding:30px 0 20px!important;color:var(--fg)!important}
+ #cinema .cinema-head span:last-child{color:var(--muted)!important}
+ #cinema .shader-field,#cinema .orbit,#cinema .deck,#cinema .cinema-caption,#cinema .cinema-controls,#cinema .progress{display:none!important}
+ #cinema .mobile-project-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px;margin:0 5vw}
+ .mobile-project-item{display:block;min-width:0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--fg);text-align:left;cursor:pointer}
+ .mobile-project-media{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1.18;background:var(--media-bg,#111);overflow:hidden;padding:9px}
+ .mobile-project-media img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain!important;object-position:center!important;transform:none!important;animation:none!important}
+ .mobile-project-meta{position:relative;display:grid;grid-template-columns:1fr auto;gap:5px 8px;padding:10px 1px 12px}
+ .mobile-project-meta small{grid-column:1/-1;font:8px var(--mono);letter-spacing:.12em;color:var(--muted)}
+ .mobile-project-meta b{font-size:12px;line-height:1.25;font-weight:600;letter-spacing:-.025em}
+ .mobile-project-meta i{font-style:normal;font-size:17px;align-self:center}
+ .mobile-project-item.is-active .mobile-project-media{outline:1px solid var(--fg);outline-offset:-1px}
+ :root[data-theme="light"] .mobile-project-media{background:#e4e3dc}
+ .contact-foot{flex-wrap:wrap;gap:16px 20px}
+ .footer-theme-toggle{margin-left:0;flex-basis:100%;justify-content:flex-start;border-top:1px solid #ffffff30;padding-top:16px}
+ :root[data-theme="light"] .footer-theme-toggle{border-color:#ffffff30}
+}
 </style></head>
 <body>
-<header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"><span class="theme-mark">◐</span><span id="themeLabel">LIGHT</span></button><button class="lang" id="editOpen" title="Asset editor">ASSETS ↗</button></div></header>
+<header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
 <section class="hero" id="top"><div class="hero-kicker mono" data-en="INDEPENDENT PRODUCT DESIGNER — 2026" data-fa="طراح مستقل محصول — ۲۰۲۶">INDEPENDENT PRODUCT DESIGNER — 2026</div><div class="hero-copy"><div class="hero-signature mono">MONO<span>.</span> / PRODUCT DESIGN</div><h1 data-en="Structure<br>before<br><em>surface.</em>" data-fa="ساختار،<br>پیش از<br><em>ظاهر.</em>">Structure<br>before<br><em>surface.</em></h1><p class="hero-note" data-en="Product systems · UX/UI · Creative technology" data-fa="سیستم‌های محصول · طراحی تجربه و رابط · فناوری خلاق">Product systems · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span class="scroll-dot">↓</span><span data-en="SELECTED WORK" data-fa="پروژه‌های منتخب">SELECTED WORK</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected project"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span data-en="01 / SELECTED WORK" data-fa="۰۱ / پروژه منتخب">01 / SELECTED WORK</span><span>VEBLEN — PARAMETRIC GARMENT SYSTEM</span></div></div></section>
-<section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
+<section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
 <section class="section about" id="about"><div class="cap-head mono"><span data-en="PRACTICE" data-fa="حوزه‌های کار">PRACTICE</span><span>PRODUCT / INTERFACE / EXPERIENCE</span></div><h2 class="cap-title" data-en="Practice." data-fa="حوزه‌ی کار.">Practice.</h2><div class="cap-list"><div data-en="Product strategy" data-fa="استراتژی محصول">Product strategy</div><div data-en="Information architecture" data-fa="معماری اطلاعات">Information architecture</div><div data-en="UX research" data-fa="پژوهش تجربه کاربر">UX research</div><div data-en="UX / UI design" data-fa="طراحی تجربه و رابط">UX / UI design</div><div data-en="Design systems" data-fa="سیستم‌های طراحی">Design systems</div><div data-en="Responsive interfaces" data-fa="رابط‌های واکنش‌گرا">Responsive interfaces</div><div data-en="Interactive prototyping" data-fa="نمونه‌سازی تعاملی">Interactive prototyping</div><div data-en="Motion & interaction" data-fa="موشن و تعامل">Motion & interaction</div><div data-en="Creative technology" data-fa="فناوری خلاق">Creative technology</div></div></section>
-<section class="contact" id="contact"><div class="mono">04 / HAVE A GOOD PROBLEM?</div><h2>Let's make<br>it <em>clear.</em></h2><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span></div></section>
+<section class="contact" id="contact"><div class="mono">04 / HAVE A GOOD PROBLEM?</div><h2>Let's make<br>it <em>clear.</em></h2><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
 </main>
 <div class="detail" id="detail" aria-hidden="true"><div class="detail-top mono"><div class="detail-top-meta"><span id="detailIndex">PROJECT / 01</span><span id="detailRoleHeader">PRODUCT DESIGN</span></div><button class="detail-close" id="detailClose">CLOSE ×</button></div><section class="editorial-heading"><div class="editorial-title"><div class="mono" id="detailType">PRODUCT / SELECTED WORK</div><h2 id="detailTitle">Project</h2><div class="editorial-client mono" id="detailClient"></div><p class="detail-intro-copy" id="detailIntro"></p></div><div class="passport" id="detailPassport"></div></section><div class="detail-gallery" id="detailGallery"><div class="gallery-stage" id="galleryStage"></div><div class="gallery-rail" id="galleryRail"></div></div><section class="appendix"><div class="appendix-heading"><span class="mono" id="focusEyebrow">DESIGN SCOPE</span><h3 id="focusTitle">In the interface</h3></div><div class="appendix-content" id="detailAppendix"></div></section></div>
 <div class="lightbox" id="lightbox"><button id="lightboxClose">CLOSE <span>×</span></button><span class="lightbox-count mono"></span><img alt="Expanded project image"><div class="lightbox-controls"><button id="lightboxPrev" aria-label="Previous image">←</button><button id="lightboxNext" aria-label="Next image">→</button></div><span class="lightbox-help mono">SWIPE / ARROWS TO NAVIGATE · TAP TO ZOOM</span></div>
@@ -437,6 +489,16 @@ function renderDeck(){
   if(window.gsap)gsap.set(card,{left:'50%',top:'44%',...pose,transformPerspective:1200});
   else Object.assign(card.style,{left:'50%',top:'44%',transform:'translate('+pose.xPercent+'%,'+pose.yPercent+'%) rotate('+pose.rotationZ+'deg) scale('+pose.scale+')',zIndex:3-i,opacity:pose.opacity});
  });
+ renderMobileProjectGrid();
+}
+function renderMobileProjectGrid(){
+ const grid=document.getElementById('mobileProjectGrid');
+ if(!grid)return;
+ grid.innerHTML=projects.map((p,i)=>{
+  const asset=cover(p.id);
+  return '<button class="mobile-project-item '+(i===activeProject?'is-active':'')+'" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+imageMarkup(asset,p.title)+'</span><span class="mobile-project-meta"><small>'+String(i+1).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i></span></button>';
+ }).join('');
+ grid.querySelectorAll('[data-mobile-project]').forEach(card=>card.addEventListener('click',()=>openDetail(card.dataset.mobileProject)));
 }
 function renderProjectCopy(p){const fa=currentLang==='fa',put=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||''};put('detailIndex',(fa?'پروژه / ':'PROJECT / ')+String(projects.indexOf(p)+1).padStart(2,'0'));put('detailRoleHeader',p.roleLabel||p.discipline||p.role||'PRODUCT DESIGN');put('detailType',(p.productType||p.title)+' / '+(fa?'پروژه‌ی منتخب':'SELECTED WORK'));put('detailTitle',p.title);put('detailClient',(p.client||p.brand?(fa?'کارفرما / ':'CLIENT / ')+(p.client||p.brand):''));put('detailIntro',fa?(p.introFa||''):(p.intro||''));const labels=fa?['بازه‌ی مرتبط','سازمان','نقش','تیم','نوع همکاری']:['ASSOCIATED PERIOD','ORGANIZATION','ROLE','TEAM','ENGAGEMENT'];const values=[p.period,p.organization,p.role,p.team,p.engagement];document.getElementById('detailPassport').innerHTML=values.map((v,i)=>v?'<div><b>'+labels[i]+'</b><span>'+esc(v)+'</span></div>':'').join('');const focus=fa?(p.focusFa||[]):(p.focus||[]);put('focusTitle',fa?'در رابط کاربری':'In the interface');put('focusEyebrow',fa?'دامنه‌ی طراحی':'DESIGN SCOPE');document.getElementById('detailAppendix').innerHTML=focus.map((item,i)=>'<div class="focus-item"><span class="focus-index">'+String(i+1).padStart(2,'0')+'</span><span>'+esc(item)+'</span></div>').join('')}
 function openDetail(id){stopDeckAuto();const p=projects.find(x=>x.id===id);if(!p)return;galleryAssets=getAssets(id);galleryIndex=0;const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value||''};document.getElementById('detail').dataset.project=id;renderProjectCopy(p);renderGallery();document.getElementById('detail').classList.add('open');document.getElementById('detail').setAttribute('aria-hidden','false');document.getElementById('detail').scrollTop=0;document.body.style.overflow='hidden'}
@@ -547,6 +609,6 @@ document.querySelectorAll('[data-assign]').forEach(b=>b.onclick=()=>{const i=+b.
 }
 function exportConfig(){const cfg={version:2,projectOrder:projects.map(p=>p.id),assetAssignments:Object.fromEntries(projects.map(p=>[p.id,getAssets(p.id).map(a=>a.name)])),projects:projects.map(p=>({id:p.id,title:p.title,brand:p.brand,category:p.category,group:p.group,description:p.desc,role:p.role,scope:p.scope,archive:p.archive||null,files:p.files||[],assetOrder:assetOrder[p.id]||getAssets(p.id).map(a=>a.name)}))};const blob=new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='portfolio.config.json';a.click();URL.revokeObjectURL(url)}
 document.getElementById('exportConfig').onclick=exportConfig;document.getElementById('resetConfig').onclick=()=>{assetOrder={};renderEditor();renderDeck();renderWorks()};document.getElementById('importConfig').onchange=async e=>{try{const cfg=JSON.parse(await e.target.files[0].text());if(cfg.projectOrder){const rank=new Map(cfg.projectOrder.map((id,i)=>[id,i]));projects.sort((a,b)=>(rank.get(a.id)??999)-(rank.get(b.id)??999))}if(cfg.assetAssignments)savedAssignments=cfg.assetAssignments;for(const p of cfg.projects||[])if(p.assetOrder)assetOrder[p.id]=p.assetOrder;applySavedAssignments();renderEditor();renderDeck();renderWorks()}catch(err){alert('Invalid config file: '+err.message)}};
-const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'DARK':'LIGHT';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.querySelector('.theme-mark').textContent=light?'☼':'◐';try{localStorage.setItem('mono-theme',theme)}catch(e){}}let savedTheme='dark';try{savedTheme=localStorage.getItem('mono-theme')||'dark'}catch(e){}applyTheme(savedTheme);themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
+const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'LIGHT':'DARK';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.title=light?'Switch to dark mode':'Switch to light mode';themeButton.querySelector('.theme-mark').textContent=light?'☾':'☼';try{localStorage.setItem('mono-theme',theme)}catch(e){}}let savedTheme='dark';try{savedTheme=localStorage.getItem('mono-theme')||'dark'}catch(e){}applyTheme(savedTheme);themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
 loadArchives();
 </script></body></html>

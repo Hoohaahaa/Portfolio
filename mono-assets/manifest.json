@@ -5,7 +5,8 @@
     "Paths are relative to the repository root.",
     "Original uploaded files are referenced in place; no source image is resized, cropped, recompressed, or renamed.",
     "Entity is intentionally excluded from the active portfolio.",
-    "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed."
+    "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed.",
+    "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates."
   ],
   "projects": [
     {
@@ -21,7 +22,15 @@
         "mono-assets/pinket dashboard item.png",
         "mono-assets/pinket dashboard report.png",
         "mono-assets/pinket shopper app user journey.png"
-      ]
+      ],
+      "passport": {
+        "period": "2022–2023",
+        "periodDetail": "January 2022 – June 2023",
+        "periodBasis": "Confirmed by résumé employment dates at Pinket.",
+        "organization": "Pinket",
+        "role": "UI/UX Designer",
+        "engagement": "Employment"
+      }
     },
     {
       "id": "pulse",
@@ -37,7 +46,15 @@
         "mono-assets/pulsecheck surveys report-heatmap.png",
         "mono-assets/pulsecheck survey report landing-cando.png",
         "mono-assets/pulsecheck survey report-comments-cando.png"
-      ]
+      ],
+      "passport": {
+        "period": "2023–2025",
+        "periodDetail": "November 2023 – April 2025 (employment window)",
+        "periodBasis": "Project is listed under Jobvision experience; exact project dates are not separately stated.",
+        "organization": "Jobvision",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
     },
     {
       "id": "veblen",
@@ -54,7 +71,15 @@
         "mono-assets/veblen 4.jpg",
         "mono-assets/veblen 5.jpg",
         "mono-assets/veblen 6.jpg"
-      ]
+      ],
+      "passport": {
+        "period": "2025–2026",
+        "periodDetail": "2025 – 2026",
+        "periodBasis": "Period explicitly confirmed by the user.",
+        "organization": "Independent / MoNo",
+        "role": "Product Designer · Creative Technology",
+        "engagement": "Independent project"
+      }
     },
     {
       "id": "humaani",
@@ -68,7 +93,15 @@
         "mono-assets/humani home.png",
         "mono-assets/humani farsi.png",
         "mono-assets/humani mobile.png"
-      ]
+      ],
+      "passport": {
+        "period": "2025",
+        "periodDetail": "May 2025 – September 2025",
+        "periodBasis": "User confirmed this project belongs to the Rastar period; dates follow résumé employment dates.",
+        "organization": "Rastar",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
     },
     {
       "id": "mirana",
@@ -82,7 +115,15 @@
         "mono-assets/mirana-mobile.png",
         "mono-assets/miarana mobile 2.png",
         "mono-assets/mirana contact.png"
-      ]
+      ],
+      "passport": {
+        "period": "2023–2025",
+        "periodDetail": "November 2023 – April 2025 (employment window)",
+        "periodBasis": "User confirmed this project belongs to the Jobvision period; exact project dates are not separately stated.",
+        "organization": "Jobvision",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
     },
     {
       "id": "iran",
@@ -97,7 +138,15 @@
         "mono-assets/iran-unseen 2.jpg",
         "mono-assets/iran-unseen 3.jpg",
         "mono-assets/iran-unseen 5.jpg"
-      ]
+      ],
+      "passport": {
+        "period": "2025–2026",
+        "periodDetail": "2025 – 2026 (provisional estimate)",
+        "periodBasis": "User confirmed this is an independent project. The year range is a provisional estimate aligned with the MoNo independent-work period beginning September 2025; exact project dates remain unconfirmed.",
+        "organization": "Independent / MoNo",
+        "role": "Independent Product Designer",
+        "engagement": "Independent project"
+      }
     },
     {
       "id": "ats",
@@ -109,7 +158,15 @@
       "gallery": [
         "mono-assets/ats dashboard-cover.png",
         "mono-assets/ats mobile view.png"
-      ]
+      ],
+      "passport": {
+        "period": "2023–2025",
+        "periodDetail": "November 2023 – April 2025 (employment window)",
+        "periodBasis": "Associated with Jobvision; exact project dates are not separately stated.",
+        "organization": "Jobvision",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
     }
   ],
   "unassigned": [

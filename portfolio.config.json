@@ -1,155 +1,64 @@
 {
-  "version": 3,
+  "version": 4,
+  "source": "mono-assets/manifest.json",
   "projectOrder": [
-    "pinket",
-    "mirana",
-    "jobvis",
-    "ats",
-    "pulse",
     "veblen",
-    "field",
-    "humaani",
-    "maani",
+    "pulse",
     "iran",
-    "entity"
+    "ats",
+    "humaani",
+    "mirana",
+    "pinket"
   ],
-  "assetOrder": {},
-  "sourceArchives": [
-    {
-      "file": "pinket.zip",
-      "projects": [
-        "pinket"
-      ]
-    },
-    {
-      "file": "jobvis.zip",
-      "projects": [
-        "jobvis",
-        "ats"
-      ]
-    },
-    {
-      "file": "rastar.zip",
-      "projects": [
-        "humaani",
-        "maani"
-      ]
-    },
-    {
-      "file": "ai works.zip",
-      "projects": [
-        "pulse",
-        "veblen",
-        "field"
-      ]
-    }
-  ],
-  "standaloneOriginals": [
-    "iran-unseen.vercel.app_ (2).png",
-    "iran-unseen.vercel.app_atlas_view=compose (2).png",
-    "entity-hand-instrument.vercel.app_ (3).png",
-    "entity-hand-instrument.vercel.app_ (4).png",
-    "entity-hand-instrument.vercel.app_ (5).png",
-    "ChatGPT Image Aug 1, 2026, 04_40_17 AM.png",
-    "ChatGPT Image Aug 1, 2026, 05_49_41 PM.png",
-    "ChatGPT Image Aug 17, 2026, 03_07_27 PM.png",
-    "ChatGPT Image Aug 17, 2026, 03_10_28 PM.png",
-    "ChatGPT Image Jul 16, 2026, 01_50_51 PM.png",
-    "Mono_ Experimental Design Portfolio.png",
-    "Untitled design.png",
-    "2e0558fe-83a0-438a-a5f8-b402e30de81a.png",
-    "file_000000000dac8210af015db0219f0d69.png",
-    "file_0000000037e88243be7f4e343a70683f.png",
-    "file_00000000af5482109fa29a77406a37b2.png",
-    "file_00000000e9e481f59743effb7a130c95.png"
-  ],
-  "notes": "Keep source ZIPs as untouched backups. Use project folders and an explicit manifest for production images; never guess image ownership from generic filenames. Case-study metadata is evidence-based and empty fields remain hidden.",
-  "projectGroups": {
-    "Commerce": [
-      "pinket"
+  "assetOrder": {
+    "veblen": [
+      "mono-assets/veblen cover.jpg",
+      "mono-assets/veblen.jpg",
+      "mono-assets/veblen 2 .png",
+      "mono-assets/veblen 3.jpg",
+      "mono-assets/veblen 4.jpg",
+      "mono-assets/veblen 5.jpg",
+      "mono-assets/veblen 6.jpg"
     ],
-    "Talent": [
-      "mirana",
-      "jobvis",
-      "ats"
+    "pulse": [
+      "mono-assets/pulsecheck dashboard - cover.png",
+      "mono-assets/pulsecheck home.png",
+      "mono-assets/pulsecheck home-active survey.png",
+      "mono-assets/pulsecheck surveys report-heatmap.png",
+      "mono-assets/pulsecheck survey report landing-cando.png",
+      "mono-assets/pulsecheck survey report-comments-cando.png"
     ],
-    "Rastar": [
-      "humaani",
-      "maani"
+    "iran": [
+      "mono-assets/iran-unseen-cover.jpg",
+      "mono-assets/iran-unseen 1.jpg",
+      "mono-assets/iran-unseen 2.jpg",
+      "mono-assets/iran-unseen 3.jpg",
+      "mono-assets/iran-unseen 5.jpg"
     ],
-    "AI & Workflows": [
-      "pulse",
-      "veblen",
-      "field"
+    "ats": [
+      "mono-assets/ats dashboard-cover.png",
+      "mono-assets/ats mobile view.png"
     ],
-    "MONO LAB": [
-      "iran",
-      "entity"
+    "humaani": [
+      "mono-assets/humani cover.png",
+      "mono-assets/humani home.png",
+      "mono-assets/humani farsi.png",
+      "mono-assets/humani mobile.png"
+    ],
+    "mirana": [
+      "mono-assets/mirana -cover.png",
+      "mono-assets/mirana-mobile.png",
+      "mono-assets/miarana mobile 2.png",
+      "mono-assets/mirana contact.png"
+    ],
+    "pinket": [
+      "mono-assets/pinket dashboard stores-cover.png",
+      "mono-assets/pinket dashboard shoppers.png",
+      "mono-assets/pinket dashboard item.png",
+      "mono-assets/pinket dashboard report.png",
+      "mono-assets/pinket shopper app user journey.png"
     ]
   },
-  "projectTaxonomy": {
-    "pinket": {
-      "productType": "FMCG Marketplace",
-      "brand": "Pinket"
-    },
-    "mirana": {
-      "productType": "Executive Talent Platform",
-      "brand": "Mirana"
-    },
-    "jobvis": {
-      "productType": "Recruitment & ATS Platform",
-      "brand": "JobVision"
-    },
-    "ats": {
-      "productType": "Talent Acquisition Dashboard",
-      "brand": "JobVision"
-    },
-    "entity": {
-      "productType": "Gestural Audio Instrument",
-      "brand": "Entity"
-    },
-    "iran": {
-      "productType": "Interactive Cultural Atlas",
-      "brand": "Iran Unseen"
-    }
-  },
-  "presentation": {
-    "imageFit": "native aspect ratio; image height fills media viewport",
-    "wideImageMotion": "subtle horizontal drift, no cropping",
-    "longScreens": "one full-height viewport per image; no long-page thumbnail strips",
-    "caseStudy": "passport + context + challenge + approach + scope; verify copy against supplied text source files"
-  },
-  "caseStudySchema": {
-    "purpose": "Editorial project passport and appendix. Populate only fields supported by the user's resume, project notes, or confirmed details. Empty fields stay hidden.",
-    "passportFields": [
-      "year",
-      "period",
-      "client",
-      "role",
-      "discipline",
-      "team",
-      "platform",
-      "engagement"
-    ],
-    "appendixFields": [
-      "context",
-      "challenge",
-      "approach",
-      "scope",
-      "contribution",
-      "deliverables",
-      "outcome"
-    ],
-    "imagePipeline": {
-      "folderPattern": "assets/{project-id}/",
-      "cover": "assets/{project-id}/cover.webp",
-      "gallery": "assets/{project-id}/gallery/01-short-descriptive-name.webp",
-      "thumbnail": "assets/{project-id}/thumbs/01-short-descriptive-name.webp",
-      "originalArchive": "originals/{project-id}.zip",
-      "preserveAspectRatio": true,
-      "neverCropOriginals": true,
-      "landingLoads": "cover.webp only; pre-sized thumbnails for project cards",
-      "projectLoads": "gallery images only when the project is opened; one active image at a time"
-    }
-  }
+  "assetAssignments": {},
+  "notes": "Production portfolio uses original, unmodified images directly from mono-assets. Preserve source filenames and aspect ratios."
 }

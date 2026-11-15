@@ -31,7 +31,7 @@ The preview was uploaded directly to Vercel because the Git-connected auto-deplo
 
 Humaani and MaaniJect are distinct Rastar products and must not share case-study galleries. Iran Unseen and Entity belong under MONO LAB — AI Workflows.
 
-## Source archives currently in main
+## Source archives included in this feature branch
 - `pinket.zip`
 - `jobvis.zip`
 - `rastar.zip`
@@ -49,7 +49,7 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - The exported config is a local download. To make changes permanent for every visitor, commit the exported file to the branch.
 
 ## Important limitations / next verification
-- The ZIP archives are loaded from the public `main` branch, not copied into this feature branch. Keep those source archives in place.
+- The ZIP archives and standalone PNGs are included in this feature branch. Keep their filenames and root paths stable; the page reads them from this branch.
 - Some ZIP entries may not contain project-identifying filenames. Confirm each file's assignment before launch; do not combine Humaani and MaaniJect.
 - The current first pass does not compress or transform image files. Very large archives may take a few seconds to download and unpack.
 - Test raw GitHub CORS, all archive requests, mobile layout, keyboard access and reduced-motion behavior on the actual Vercel Preview URL before promoting.

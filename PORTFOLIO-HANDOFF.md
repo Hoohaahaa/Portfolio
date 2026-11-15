@@ -6,7 +6,7 @@
 Repository: https://github.com/Hoohaahaa/Portfolio
 
 ## Preview / deployment
-Preview is deployed and READY: https://mo-portfolio-dz2qtxokq-mos-projects-efbc27a5.vercel.app
+Preview is deployed and READY: https://mo-portfolio-iv51055f7-mos-projects-efbc27a5.vercel.app
 Stable staging alias: https://mo-portfolio-mos-projects-efbc27a5.vercel.app
 The preview was uploaded directly to Vercel because the Git-connected auto-deploy was blocked by Vercel's verified-commit policy. The GitHub branch remains the editable source of truth. Do not merge to `main` until assets and responsive behavior have been reviewed.
 
@@ -60,9 +60,10 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Never modify `main` or unrelated projects while continuing this work.
 
 
-## Current editing pass (2026-11-15)
+## Current editing pass (2026-11-15 · second visual pass)
 - Updated card media to fill the media viewport by height while retaining intrinsic aspect ratio. Extra-wide images drift horizontally in a restrained loop; no image is cropped or recompressed.
 - Replaced brand-led headlines with product-type headlines and subdued brand labels.
 - Split Mirana from JobVision and added Talent / Rastar / MONO LAB / AI & Workflows grouping.
 - Added Project Passport and structured case-study sections. Generic challenge/approach text is intentionally a scaffold until the source text files are reviewed.
-- Next: validate archive filename mapping (especially JobVision vs Mirana vs ATS), review source text files, then test mobile scroll/GSAP and keyboard/reduced-motion behavior.
+- Next: validate archive filename mapping (especially JobVision vs Mirana vs ATS), inspect the text/brief files inside ZIP archives and replace generic case-study scaffold copy with verified project-specific facts, then test mobile scroll/GSAP and keyboard/reduced-motion behavior.
+- Latest staging deployment: https://mo-portfolio-iv51055f7-mos-projects-efbc27a5.vercel.app (READY). Stable staging alias remains https://mo-portfolio-mos-projects-efbc27a5.vercel.app.

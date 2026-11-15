@@ -111,3 +111,13 @@ Standalone source PNGs are also in the repository root. Their names and current 
 
 - Single-project archives now assign their root-level images to their only project even when individual filenames contain no project keyword. This means `pinket.zip` does not require any renaming or internal folder changes.
 - Added a dedicated `Digital Product Concepts` project slot and optional `concepts.zip` archive. The user can upload one archive with all conceptual website screenshots; the images will appear as one separate Concepts project, preserving source files. Existing ZIP names and image filenames do not need to be changed.
+
+
+## Revision 07 — editorial project detail and permanent content model
+- Rebuilt the project detail view as a restrained editorial case study: compact top bar with project index and role, large product-type title, small client label, minimal image viewer, borderless thumbnail rail, then an Appendix section below the visuals.
+- Removed the previous summary-card cluster and duplicated description blocks. The project page is now image-first; explanatory copy lives below the gallery.
+- Added an evidence-based passport data model: year/period, client, role, discipline, team, platform, engagement. Empty fields are hidden automatically.
+- Added Appendix fields: overview/context, challenge, approach, scope, contribution, deliverables, outcome. Only populated fields render; no unknown dates, clients, metrics or outcomes are invented.
+- Pinket and Pulse Check are recorded as two-person design teams. JobVision's existing Nov 2023—Apr 2025 period and Humaani's May—Sep 2025 period are retained from existing project notes.
+- Future resume intake should populate the same schema, not require a layout rewrite.
+- Important: the current source ZIPs remain original archives and are still read client-side. The final optimized production image pipeline should replace ZIP-at-runtime with named project folders, explicit manifest entries, lightweight cover/thumbnail WebP files, and full-resolution gallery files loaded only inside a project. Do not start that migration until the user uploads the normalized image pack.

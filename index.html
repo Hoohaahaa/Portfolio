@@ -187,11 +187,6 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
   }else{
     document.querySelectorAll('.project[data-project]').forEach(card=>card.addEventListener('click',()=>open(card.dataset.project)));
   }
-  // The original inline function is global in classic scripts; wrap its click path as a safety net.
-  document.querySelectorAll('.project[data-project]').forEach(card=>{
-    const key=card.dataset.project;
-    card.addEventListener('click',()=>{if(byId[key])open(key);});
-  });
 })();
 </script>
 

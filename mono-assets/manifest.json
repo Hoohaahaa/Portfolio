@@ -6,30 +6,33 @@
     "Original uploaded files are referenced in place; no source image is resized, cropped, recompressed, or renamed.",
     "Entity is intentionally excluded from the active portfolio.",
     "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed.",
-    "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates."
+    "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates.",
+    "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels."
   ],
   "projects": [
     {
-      "id": "pinket",
+      "id": "veblen",
       "order": 1,
-      "displayTitle": "FMCG Marketplace",
-      "client": "Pinket",
-      "discipline": "Retail systems",
-      "cover": "mono-assets/pinket dashboard stores-cover.png",
+      "displayTitle": "Parametric Garment System",
+      "client": "Veblen",
+      "discipline": "Creative technology",
+      "cover": "mono-assets/veblen cover.jpg",
       "gallery": [
-        "mono-assets/pinket dashboard stores-cover.png",
-        "mono-assets/pinket dashboard shoppers.png",
-        "mono-assets/pinket dashboard item.png",
-        "mono-assets/pinket dashboard report.png",
-        "mono-assets/pinket shopper app user journey.png"
+        "mono-assets/veblen cover.jpg",
+        "mono-assets/veblen.jpg",
+        "mono-assets/veblen 2 .png",
+        "mono-assets/veblen 3.jpg",
+        "mono-assets/veblen 4.jpg",
+        "mono-assets/veblen 5.jpg",
+        "mono-assets/veblen 6.jpg"
       ],
       "passport": {
-        "period": "2022–2023",
-        "periodDetail": "January 2022 – June 2023",
-        "periodBasis": "Confirmed by résumé employment dates at Pinket.",
-        "organization": "Pinket",
-        "role": "UI/UX Designer",
-        "engagement": "Employment"
+        "period": "2025–2026",
+        "periodDetail": "2025 – 2026",
+        "periodBasis": "Period explicitly confirmed by the user.",
+        "organization": "Independent / MoNo",
+        "role": "Product Designer · Creative Technology",
+        "engagement": "Independent project"
       }
     },
     {
@@ -57,77 +60,8 @@
       }
     },
     {
-      "id": "veblen",
-      "order": 3,
-      "displayTitle": "Parametric Garment System",
-      "client": "Veblen",
-      "discipline": "Creative technology",
-      "cover": "mono-assets/veblen cover.jpg",
-      "gallery": [
-        "mono-assets/veblen cover.jpg",
-        "mono-assets/veblen.jpg",
-        "mono-assets/veblen 2 .png",
-        "mono-assets/veblen 3.jpg",
-        "mono-assets/veblen 4.jpg",
-        "mono-assets/veblen 5.jpg",
-        "mono-assets/veblen 6.jpg"
-      ],
-      "passport": {
-        "period": "2025–2026",
-        "periodDetail": "2025 – 2026",
-        "periodBasis": "Period explicitly confirmed by the user.",
-        "organization": "Independent / MoNo",
-        "role": "Product Designer · Creative Technology",
-        "engagement": "Independent project"
-      }
-    },
-    {
-      "id": "humaani",
-      "order": 4,
-      "displayTitle": "AI Creative Workspace",
-      "client": "Humaani",
-      "discipline": "Generative AI",
-      "cover": "mono-assets/humani cover.png",
-      "gallery": [
-        "mono-assets/humani cover.png",
-        "mono-assets/humani home.png",
-        "mono-assets/humani farsi.png",
-        "mono-assets/humani mobile.png"
-      ],
-      "passport": {
-        "period": "2025",
-        "periodDetail": "May 2025 – September 2025",
-        "periodBasis": "User confirmed this project belongs to the Rastar period; dates follow résumé employment dates.",
-        "organization": "Rastar",
-        "role": "Product Designer",
-        "engagement": "In-house product work"
-      }
-    },
-    {
-      "id": "mirana",
-      "order": 5,
-      "displayTitle": "Executive Talent Platform",
-      "client": "Mirana",
-      "discipline": "Talent & recruitment",
-      "cover": "mono-assets/mirana -cover.png",
-      "gallery": [
-        "mono-assets/mirana -cover.png",
-        "mono-assets/mirana-mobile.png",
-        "mono-assets/miarana mobile 2.png",
-        "mono-assets/mirana contact.png"
-      ],
-      "passport": {
-        "period": "2023–2025",
-        "periodDetail": "November 2023 – April 2025 (employment window)",
-        "periodBasis": "User confirmed this project belongs to the Jobvision period; exact project dates are not separately stated.",
-        "organization": "Jobvision",
-        "role": "Product Designer",
-        "engagement": "In-house product work"
-      }
-    },
-    {
       "id": "iran",
-      "order": 6,
+      "order": 3,
       "displayTitle": "Interactive Cultural Atlas",
       "client": "Iran Unseen",
       "discipline": "Digital experience",
@@ -150,7 +84,7 @@
     },
     {
       "id": "ats",
-      "order": 7,
+      "order": 4,
       "displayTitle": "Applicant Tracking System",
       "client": "Jobvision",
       "discipline": "Recruitment operations",
@@ -166,6 +100,73 @@
         "organization": "Jobvision",
         "role": "Product Designer",
         "engagement": "In-house product work"
+      }
+    },
+    {
+      "id": "humaani",
+      "order": 5,
+      "displayTitle": "AI Creative Workspace",
+      "client": "Humaani",
+      "discipline": "Generative AI",
+      "cover": "mono-assets/humani cover.png",
+      "gallery": [
+        "mono-assets/humani cover.png",
+        "mono-assets/humani home.png",
+        "mono-assets/humani farsi.png",
+        "mono-assets/humani mobile.png"
+      ],
+      "passport": {
+        "period": "2025",
+        "periodDetail": "May 2025 – September 2025",
+        "periodBasis": "User confirmed this project belongs to the Rastar period; dates follow résumé employment dates.",
+        "organization": "Rastar",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
+    },
+    {
+      "id": "mirana",
+      "order": 6,
+      "displayTitle": "Executive Talent Platform",
+      "client": "Mirana",
+      "discipline": "Talent & recruitment",
+      "cover": "mono-assets/mirana -cover.png",
+      "gallery": [
+        "mono-assets/mirana -cover.png",
+        "mono-assets/mirana-mobile.png",
+        "mono-assets/miarana mobile 2.png",
+        "mono-assets/mirana contact.png"
+      ],
+      "passport": {
+        "period": "2023–2025",
+        "periodDetail": "November 2023 – April 2025 (employment window)",
+        "periodBasis": "User confirmed this project belongs to the Jobvision period; exact project dates are not separately stated.",
+        "organization": "Jobvision",
+        "role": "Product Designer",
+        "engagement": "In-house product work"
+      }
+    },
+    {
+      "id": "pinket",
+      "order": 7,
+      "displayTitle": "FMCG Marketplace",
+      "client": "Pinket",
+      "discipline": "Retail systems",
+      "cover": "mono-assets/pinket dashboard stores-cover.png",
+      "gallery": [
+        "mono-assets/pinket dashboard stores-cover.png",
+        "mono-assets/pinket dashboard shoppers.png",
+        "mono-assets/pinket dashboard item.png",
+        "mono-assets/pinket dashboard report.png",
+        "mono-assets/pinket shopper app user journey.png"
+      ],
+      "passport": {
+        "period": "2022–2023",
+        "periodDetail": "January 2022 – June 2023",
+        "periodBasis": "Confirmed by résumé employment dates at Pinket.",
+        "organization": "Pinket",
+        "role": "UI/UX Designer",
+        "engagement": "Employment"
       }
     }
   ],

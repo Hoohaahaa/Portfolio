@@ -33,6 +33,14 @@
         "organization": "Independent / MoNo",
         "role": "Product Designer · Creative Technology",
         "engagement": "Independent project"
+      },
+      "editorial": {
+        "intro": "A parametric garment system built around body form, measurements and adjustable design parameters.",
+        "focus": [
+          "3D body visualization",
+          "Measurement mapping",
+          "Parametric garment exploration"
+        ]
       }
     },
     {
@@ -57,6 +65,15 @@
         "organization": "Jobvision",
         "role": "Product Designer",
         "engagement": "In-house product work"
+      },
+      "editorial": {
+        "intro": "An employee experience platform connecting survey creation, feedback and people analytics.",
+        "focus": [
+          "Survey setup",
+          "Employee feedback",
+          "Heatmaps & reporting",
+          "Open comments"
+        ]
       }
     },
     {
@@ -80,6 +97,15 @@
         "organization": "Independent / MoNo",
         "role": "Independent Product Designer",
         "engagement": "Independent project"
+      },
+      "editorial": {
+        "intro": "A map-led guide to discovering places, routes and local experiences across Iran.",
+        "focus": [
+          "Map-based discovery",
+          "Place cards & categories",
+          "Routes and saved places",
+          "Local experiences"
+        ]
       }
     },
     {
@@ -100,6 +126,14 @@
         "organization": "Jobvision",
         "role": "Product Designer",
         "engagement": "In-house product work"
+      },
+      "editorial": {
+        "intro": "A recruitment workspace for managing applicant information and hiring workflows.",
+        "focus": [
+          "Recruitment dashboard",
+          "Applicant overview",
+          "Mobile interface"
+        ]
       }
     },
     {
@@ -122,6 +156,15 @@
         "organization": "Rastar",
         "role": "Product Designer",
         "engagement": "In-house product work"
+      },
+      "editorial": {
+        "intro": "An AI creative workspace presented across desktop, Persian-language and mobile interfaces.",
+        "focus": [
+          "Creative workspace",
+          "AI-assisted creation",
+          "Persian interface",
+          "Responsive mobile UI"
+        ]
       }
     },
     {
@@ -144,6 +187,14 @@
         "organization": "Jobvision",
         "role": "Product Designer",
         "engagement": "In-house product work"
+      },
+      "editorial": {
+        "intro": "An executive talent platform with a focus on talent discovery and contact flows.",
+        "focus": [
+          "Executive talent interface",
+          "Mobile experience",
+          "Contact flow"
+        ]
       }
     },
     {
@@ -167,6 +218,16 @@
         "organization": "Pinket",
         "role": "UI/UX Designer",
         "engagement": "Employment"
+      },
+      "editorial": {
+        "intro": "An FMCG marketplace spanning store operations, shopper data and reporting.",
+        "focus": [
+          "Store dashboard",
+          "Shopper overview",
+          "Product information",
+          "Reporting",
+          "Shopper journey"
+        ]
       }
     }
   ],

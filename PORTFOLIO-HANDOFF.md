@@ -6,7 +6,9 @@
 Repository: https://github.com/Hoohaahaa/Portfolio
 
 ## Preview / deployment
-This branch contains a new root `index.html`. Do not merge to `main` until its assets and responsive behavior have been reviewed. The Vercel project is `mo-portfolio`; confirm that its Git integration is connected to this repository and create a Preview deployment for this branch.
+Preview is deployed and READY: https://mo-portfolio-1dvrhns5e-mos-projects-efbc27a5.vercel.app
+Stable staging alias: https://mo-portfolio-mos-projects-efbc27a5.vercel.app
+The preview was uploaded directly to Vercel because the Git-connected auto-deploy was blocked by Vercel's verified-commit policy. The GitHub branch remains the editable source of truth. Do not merge to `main` until assets and responsive behavior have been reviewed.
 
 ## Design / interaction
 - Dark editorial MONO. visual direction, bilingual English/Persian toggle, RTL support.
@@ -40,8 +42,9 @@ Standalone source PNGs are also in the repository root. Their names and current 
 ## Editing
 - Open **ASSETS ↗** in the header.
 - Select a project; drag its image tiles to reorder.
-- Remove a tile from the visible gallery without deleting its source.
 - Drag project names to change project order.
+- Open **UNASSIGNED SOURCES** to manually assign archive images whose filenames do not identify a project.
+- Remove a tile from the visible gallery without deleting its source.
 - Export `portfolio.config.json` after changes; import it to restore a saved ordering.
 - The exported config is a local download. To make changes permanent for every visitor, commit the exported file to the branch.
 

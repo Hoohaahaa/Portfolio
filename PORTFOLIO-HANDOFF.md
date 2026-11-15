@@ -108,3 +108,6 @@ Standalone source PNGs are also in the repository root. Their names and current 
 
 - Automatic cover ranking is applied as the initial Asset Desk order only. Reordering assets manually overrides the automatic choice; the first image becomes the cover, and export/import persists the ordering.
 - Latest Revision 05 preview (Vercel READY): https://mo-portfolio-p6qohocoa-mos-projects-efbc27a5.vercel.app
+
+- Single-project archives now assign their root-level images to their only project even when individual filenames contain no project keyword. This means `pinket.zip` does not require any renaming or internal folder changes.
+- Added a dedicated `Digital Product Concepts` project slot and optional `concepts.zip` archive. The user can upload one archive with all conceptual website screenshots; the images will appear as one separate Concepts project, preserving source files. Existing ZIP names and image filenames do not need to be changed.

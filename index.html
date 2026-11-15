@@ -183,7 +183,7 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
   });
   const originalOpen=window.openProject;
   if(typeof originalOpen==='function'){
-    window.openProject=function(key){originalOpen(key);open(key);};
+    window.openProject=function(key){originalOpen(key);const p=byId[key];if(!p)return;document.getElementById('d-index').textContent='PROJECT / '+String(p.order).padStart(2,'0')+' — '+p.client.toUpperCase();document.getElementById('d-title').textContent=p.displayTitle;open(key);};
   }else{
     document.querySelectorAll('.project[data-project]').forEach(card=>card.addEventListener('click',()=>open(card.dataset.project)));
   }

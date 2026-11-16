@@ -123,3 +123,11 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Hero changed to a single-column editorial layout: MONO wordmark and practice metadata above; Selected Work image frame spans the full content width below. Both selected covers are 16:9 and use a 16:9 frame with cover fit, no crop expected at source ratio. The two preloaded layers still crossfade every 4 seconds with the progress line retained.
 - Contact title contrast is fixed in light mode (contact panel remains dark, type uses warm off-white with a muted lavender-grey accent).
 - Latest source commit: `1e972aca097c384bbed93675d17be41477605dc8`. Deployment READY, HTTP 200, stable alias `https://mono-selected.vercel.app`. Verified markup/CSS includes the full-width hero, canvas, new headline, and light-theme text override.
+
+
+## Latest update — 2026-11-16 (remove duplicate header wordmark)
+- User approved the existing overall design and asked for only one adjustment: the extra MONO wordmark in the landing header felt repetitive, while WORK / ABOUT / CONTACT navigation should remain.
+- Removed only the header's MONO brand anchor. Kept WORK / ABOUT / CONTACT in the header as the sole navigation. The large MONO wordmark in the hero remains.
+- Increased mobile hero breathing room and vertical height: 112svh minimum, larger top/bottom padding, more spacing between identity copy and Selected Work image, and slightly wider side margins. Kept existing hero content, artwork, animation, theme behavior, and all other sections untouched.
+- Deployment READY; stable alias remains `https://mono-selected.vercel.app`. Verified the header brand anchor is absent, all three nav links remain, and the mobile whitespace override is present.
+- Source commit: `5667fef70ac462ada896a939910a2f267e3d174e`.

@@ -82,3 +82,13 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Hero layout is explicit two-column desktop and single-column mobile; icon field is bounded, clipped within its own region, and does not overflow viewport. Hero visual is constrained on mobile.
 - Deployed production code commit: `07d37ffeb9fe88dad22cec3c6a3ac59e683df70a`; Vercel deployment `dpl_3eQE6xJPnhQS3bSRwNpGksF7m9ZE`; stable alias `https://mono-selected.vercel.app`. Server fetch verified HTTP 200 and presence of icon initializer, manifest loading, and high-specificity mobile flex rules.
 - Remaining: user-side Android visual/touch check is still required. Do not claim physical-device QA based only on HTML fetch.
+
+
+## Latest update — 2026-11-16
+- Added a separate **Selected Works** highlight stage between the hero and the main cinematic project carousel. It is a contained viewport with a thin bottom progress line, project title, category, description and external-open affordance.
+- Current highlighted project: **ENTITY / 01 — Gestural instrument · Field / Resonance**. Preview points to the existing public project at `https://entity-bymo.vercel.app`. This is an embedded live preview, not a flattened screenshot. The user has earlier Entity screenshots in the conversation Library named `entity-hand-instrument.vercel.app_ (3).png`, `(4).png`, and `(5).png`; use these exact images if a static screenshot-based carousel is implemented later.
+- **FIELD is excluded** from this section because the user does not want the music-related FIELD project represented here. Do not confuse FIELD with ENTITY; the user explicitly asked to include ENTITY for now.
+- The highlight rotator is configured for a 6.5-second cycle, pauses on hover/focus and while the tab is hidden, and respects reduced motion. Current list has one slide only; add each further confirmed one-screen project to the `slides` array in `initFeaturedWork()`. Do not invent project names or add FIELD.
+- Main cinematic project carousel caption is now much larger and more editorial, with GSAP fade / lift / blur transition on next/previous. Keep controls visible and separate from the title block, including on mobile.
+- Removed the small `04 / HAVE A GOOD PROBLEM?` kicker above the contact typewriter. Contact itself and its contact links remain.
+- Latest public alias remains `https://mono-selected.vercel.app`; deployment from commit `0c95ca1f6f0175714acf4805b2c15294e8b777d8` returned HTTP 200 and was assigned to the stable alias.

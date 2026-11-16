@@ -713,17 +713,134 @@ header{justify-content:flex-end!important;border-bottom:0!important;height:64px!
 :root[data-theme="light"] .profile-facts,:root[data-theme="light"] .profile-fact{border-color:#c9c7bf}
 @media(max-width:900px){.profile-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.profile-fact{padding:17px 14px 18px 0}.profile-fact:not(:first-child){padding-left:14px}.profile-fact:nth-child(2n){border-right:0}.profile-fact:last-child{grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}}
 @media(max-width:760px){.hero-wordmark{font-size:clamp(44px,11.5vw,72px)!important;letter-spacing:-.075em!important}.profile-band{padding:34px 6vw 40px}.profile-band-head{margin-bottom:22px}.profile-facts{grid-template-columns:1fr 1fr}.profile-fact{padding:15px 12px 16px 0}.profile-fact:not(:first-child){padding-left:12px}.profile-fact:nth-child(2n){border-right:0}.profile-fact strong{font-size:12px}.profile-fact:last-child{grid-column:1/-1;padding-left:0}}
+
+/* MO SHAHMOHAMADI — hiring-first editorial / Swiss card system */
+:root{--bg:#efeee9;--fg:#171715;--muted:#74736d;--line:#17171524;--media-bg:#e4e3dc}
+body{background:var(--bg);color:var(--fg)}
+header{position:sticky;top:0;height:68px;padding:0 5vw;background:#efeee9f2;border-bottom:1px solid #17171520;backdrop-filter:blur(16px)}
+header .brand{font-size:18px;font-weight:800;letter-spacing:-.08em;color:#171715}
+header .brand span{color:#9a9891}
+header .nav{gap:clamp(14px,2.6vw,34px)}
+header .nav a{color:#5e5d57;font-size:9px}
+.hero{height:auto!important;min-height:calc(100svh - 68px)!important;max-height:none!important;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr)!important;gap:5vw!important;padding:clamp(64px,9vh,110px) 6vw 58px!important;background:#efeee9!important;color:#171715!important}
+.hero-copy{align-self:center;max-width:760px}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;color:#77756e;margin-bottom:24px}
+.hero-eyebrow i{width:7px;height:7px;border-radius:50%;background:#8a9a73;display:inline-block}
+.hero-wordmark{font-size:clamp(54px,7.5vw,112px)!important;line-height:.9!important;letter-spacing:-.085em!important;color:#171715!important;max-width:850px;overflow-wrap:anywhere}
+.hero-wordmark span{color:#77766f!important;font-weight:500!important}
+.hero-note{max-width:570px!important;margin:24px 0 30px!important;font-size:clamp(14px,1.35vw,18px)!important;line-height:1.7!important;color:#55544f!important}
+.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:30px 0 26px}
+.proof-card{position:relative;min-height:120px;padding:15px 13px 13px;border:1px solid #17171520;border-radius:15px;background:#f7f6f1;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 5px 18px #24231c08}
+.proof-icon{font-size:16px;color:#85837b}
+.proof-card strong{font-size:clamp(18px,2vw,28px);font-weight:700;letter-spacing:-.06em;white-space:nowrap}
+.proof-card strong span{font-size:.7em;color:#8b8a82}
+.proof-card strong i{font-style:normal;color:#a5a39a}
+.proof-card small{font:8px var(--mono);line-height:1.5;letter-spacing:.045em;color:#77756e}
+.hero-scroll{color:#5e5d57!important;font-size:9px!important;letter-spacing:.1em}
+.hero-scroll .scroll-dot{border-color:#8a8880!important;color:#35342f}
+.hero-visual{height:min(58vh,570px)!important;min-height:360px!important}
+.hero-visual-frame{inset:0 0 26px!important;border-radius:22px!important;background:#e2e1db!important;border:1px solid #17171518!important;overflow:hidden}
+.hero-visual-caption{color:#77756e!important}
+#cinema{background:#efeee9!important;border-color:#17171520!important}
+.cinema-pin{background:#efeee9!important;color:#171715!important}
+.cinema-head,.cinema-caption{color:#555!important}
+.cinema-caption p{color:#696861!important}
+.cinema-controls button{background:#f7f6f1!important;color:#171715!important;border-color:#17171530!important;border-radius:50%!important}
+.project-card{border-radius:22px!important;background:#f7f6f1!important;border:1px solid #17171524!important;box-shadow:0 24px 65px #27261f1b!important;overflow:hidden!important}
+.project-card .media{inset:0 0 31%!important;padding:16px!important;background:#e4e3dc!important}
+.project-card .media img{border-radius:12px!important}
+.project-card .meta{height:31%!important;min-height:150px!important;padding:14px 17px!important;background:#f7f6f1!important;color:#171715!important;border-top:1px solid #17171515!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:space-between!important;gap:8px!important}
+.project-card .meta-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.project-card .meta b{display:block;font-size:clamp(13px,1.2vw,17px)!important;line-height:1.2!important;letter-spacing:-.035em}
+.project-card .meta small{display:block!important;font:8px var(--mono)!important;color:#77756e!important;letter-spacing:.08em;margin:0 0 6px!important}
+.project-card .card-index{font:9px var(--mono);color:#99978f}
+.project-card .card-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.project-card .meta-tags{display:flex;gap:5px;flex-wrap:wrap}
+.project-card .meta-tags span,.mobile-project-tags em{font:7px var(--mono);font-style:normal;letter-spacing:.04em;color:#55544e;background:#eeede7;border:1px solid #17171513;border-radius:999px;padding:6px 8px}
+.project-card .card-action,.mobile-project-action{font:8px var(--mono);letter-spacing:.06em;color:#373630;white-space:nowrap}
+#cinema .mobile-project-grid{display:none}
+.experience-section{background:#f7f6f1!important;color:#171715!important;padding:clamp(70px,9vw,120px) 7vw!important}
+.section-kicker{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #17171524;padding-bottom:14px}
+.section-kicker .mono{color:#77756e}
+.experience-title{font-size:clamp(52px,8vw,108px);line-height:.9;letter-spacing:-.08em;font-weight:600;margin:34px 0 54px}
+.experience-title span{color:#99978f}
+.experience-list{border-top:1px solid #17171528}
+.experience-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:23px 0;border-bottom:1px solid #17171520}
+.experience-role h3{font-size:clamp(18px,2vw,25px);font-weight:600;letter-spacing:-.045em;margin:0 0 7px}
+.experience-role p{font-size:12px;color:#77756e;margin:0}
+.experience-role p span{color:#99978f}
+.experience-row time{font:10px var(--mono);color:#77756e;white-space:nowrap}
+#about{background:#e8e7e1!important;color:#171715!important}
+#about .cap-head{border-color:#17171528!important;color:#77756e!important}
+#about .cap-list{border-color:#17171528!important}
+#about .cap-list>div{border-color:#1717151e!important;color:#aaa89f!important}
+#about .cap-list>div.is-active{color:#171715!important}
+#about .cap-list>div.is-past{color:#6d6b65!important}
+.contact{background:#171715!important;color:#f5f4ef!important;padding:clamp(70px,9vw,115px) 6vw 28px!important}
+.contact .contact-heading{margin-bottom:45px}
+.contact .contact-label{color:#aaa89f!important}
+.contact h2{font-size:clamp(64px,11vw,150px)!important;line-height:.86!important;letter-spacing:-.09em!important;margin:28px 0 0!important}
+.contact h2 .accent{color:#aaa89f!important}
+.contact-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:40px 0 50px}
+.contact-method{display:flex;align-items:center;gap:14px;min-width:0;padding:20px;border:1px solid #ffffff2a;border-radius:16px;background:#22221f;transition:background .25s,border-color .25s}
+.contact-method:hover{background:#2c2c28;border-color:#ffffff60}
+.contact-icon{width:40px;height:40px;flex:0 0 40px;border:1px solid #ffffff35;border-radius:12px;display:grid;place-items:center;font-size:18px;color:#dddcd5}
+.contact-method-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.contact-method-copy small{font:8px var(--mono);letter-spacing:.12em;color:#a6a49c}
+.contact-method-copy strong{font-size:clamp(11px,1.1vw,14px);font-weight:600;overflow-wrap:anywhere}
+.contact-method>i{font-style:normal;margin-left:auto;color:#aaa}
+.contact-foot{color:#c7c5be!important;border-color:#ffffff35!important;padding-top:18px!important}
+.footer-theme-toggle{color:#efeee9!important}
+:root[data-theme="light"] .project-card .meta{background:#f7f6f1!important}
+@media(max-width:1050px){.hero{grid-template-columns:minmax(0,1fr) minmax(260px,.8fr)!important;gap:3vw!important}.hero-proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-card{min-height:102px}.project-card .meta{min-height:142px!important}.contact-methods{grid-template-columns:1fr}}
+@media(max-width:760px){
+ header{height:60px;padding:0 5vw}.nav{gap:12px!important}.nav a{font-size:8px!important}
+ .hero{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:24px!important;padding:88px 5vw 30px!important;min-height:0!important;height:auto!important}
+ .hero-wordmark{font-size:clamp(48px,12.2vw,75px)!important;overflow-wrap:anywhere}
+ .hero-note{font-size:14px!important;margin:18px 0 22px!important}
+ .hero-proof{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:22px 0}
+ .proof-card{min-height:100px;padding:12px;border-radius:13px}
+ .proof-card strong{font-size:23px}
+ .proof-card small{font-size:7px}
+ .hero-visual{width:100%;height:58vw!important;min-height:230px!important}
+ .hero-visual-frame{border-radius:16px!important}
+ .hero-scroll{margin-top:8px}
+ #cinema{height:auto!important;min-height:0!important}
+ #cinema .cinema-pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important;padding:34px 0 42px;overflow:visible!important}
+ #cinema .cinema-head{position:relative;top:auto;left:auto;width:auto;margin:0 5vw 22px}
+ #cinema .shader-field,#cinema .orbit,#cinema .deck,#cinema .cinema-caption,#cinema .cinema-controls,#cinema .progress{display:none!important}
+ #cinema .mobile-project-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;margin:0 5vw}
+ .mobile-project-item{display:block;min-width:0;padding:0;border:1px solid #17171518!important;border-radius:15px!important;background:#f7f6f1!important;color:#171715!important;overflow:hidden;text-align:left;cursor:pointer;box-shadow:0 6px 18px #24231c08}
+ .mobile-project-media{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1.05;background:#e4e3dc!important;overflow:hidden;padding:8px}
+ .mobile-project-media img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain!important}
+ .mobile-project-meta{display:grid;grid-template-columns:1fr auto;gap:7px 6px;padding:12px 11px 13px}
+ .mobile-project-meta small{grid-column:1/-1;font:7px var(--mono);letter-spacing:.08em;color:#77756e}
+ .mobile-project-meta b{font-size:12px;line-height:1.3;font-weight:700;letter-spacing:-.025em}
+ .mobile-project-meta i{font-style:normal;font-size:16px}
+ .mobile-project-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px}
+ .mobile-project-tags em{font-size:6px;padding:5px 6px}
+ .mobile-project-action{grid-column:1/-1;font-size:7px;padding-top:6px;border-top:1px solid #17171515}
+ .experience-section{padding:64px 5vw!important}
+ .experience-title{margin:28px 0 38px}
+ .experience-row{align-items:flex-start;flex-direction:column;gap:8px;padding:19px 0}
+ .experience-role h3{font-size:19px}
+ .experience-row time{font-size:9px}
+ .contact{padding:70px 5vw 24px!important}
+ .contact h2{font-size:clamp(56px,13vw,88px)!important}
+ .contact-methods{gap:9px;margin:28px 0 38px}
+ .contact-method{padding:16px;border-radius:13px}
+ .contact-foot{gap:14px;align-items:flex-start}
+}
 </style></head>
 <body>
-<header><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#profile" data-en="PROFILE" data-fa="پروفایل">PROFILE</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
+<header><a class="brand" href="#top" aria-label="Mo Shahmohamadi home">MO<span>.</span></a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
-<section class="hero" id="top"><canvas class="hero-atoms" id="heroAtoms" aria-hidden="true"></canvas><span class="hero-index mono" aria-label="Section index">01 / 03</span><div class="hero-copy"><h1 class="hero-wordmark">MO <span>SHAHMOHAMADI.</span></h1><p class="hero-note">Product Designer<br>Digital products · UX/UI · Interaction design</p></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">MONO / AUDIO-VISUAL ENGINE</span></div></div></section>
+<section class="hero" id="top"><canvas class="hero-atoms" id="heroAtoms" aria-hidden="true"></canvas><span class="hero-index mono" aria-label="Section index">01 / 04</span><div class="hero-copy"><span class="hero-eyebrow mono"><i></i> PRODUCT DESIGNER / DIGITAL PRODUCTS</span><h1 class="hero-wordmark">MO <span>SHAHMOHAMADI.</span></h1><p class="hero-note">I design digital products, complex workflows and clear interfaces — from early product structure to polished UI and developer handoff.</p><div class="hero-proof"><article class="proof-card"><span class="proof-icon">↗</span><strong>4<span>+</span></strong><small>YEARS IN PRODUCT DESIGN</small></article><article class="proof-card"><span class="proof-icon">▦</span><strong>7</strong><small>SELECTED PROJECTS</small></article><article class="proof-card"><span class="proof-icon">◫</span><strong>B2B <i>·</i> B2C</strong><small>SAAS · AI · MARKETPLACES</small></article><article class="proof-card"><span class="proof-icon">⌘</span><strong>UX → UI</strong><small>SYSTEMS · PROTOTYPES · HANDOFF</small></article></div><a class="hero-scroll" href="#cinema"><span class="scroll-dot">↓</span><span>EXPLORE SELECTED WORK</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">VEBLEN / PRODUCT SYSTEM</span></div></div></section>
 
-<section class="profile-band" id="profile" aria-label="Professional profile"><div class="profile-band-head"><span class="mono">PROFILE / 01</span><span class="mono">MO SHAHMOHAMADI</span></div><div class="profile-facts"><div class="profile-fact"><small>ROLE</small><strong>Product Designer</strong></div><div class="profile-fact"><small>CORE DISCIPLINES</small><strong>Product strategy · UX/UI · Interaction design</strong></div><div class="profile-fact"><small>PRODUCT CONTEXT</small><strong>SaaS · Marketplaces · Digital experiences · Creative technology</strong></div><div class="profile-fact"><small>TEAM EXPERIENCE</small><strong>Two-person design teams — Pinket &amp; Pulse Check</strong></div><div class="profile-fact"><small>DEFINED PROJECT SCOPE</small><strong>Jobvision — ATS dashboard design</strong></div></div></section>
-
-<section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
+<section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div class="meta-top"><div><small class="card-client"></small><b></b></div><span class="card-index"></span></div><div class="card-bottom"><div class="meta-tags"></div><span class="card-action">VIEW PROJECT ↗</span></div></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div class="meta-top"><div><small class="card-client"></small><b></b></div><span class="card-index"></span></div><div class="card-bottom"><div class="meta-tags"></div><span class="card-action">VIEW PROJECT ↗</span></div></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div class="meta-top"><div><small class="card-client"></small><b></b></div><span class="card-index"></span></div><div class="card-bottom"><div class="meta-tags"></div><span class="card-action">VIEW PROJECT ↗</span></div></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
+<section class="section experience-section" id="experience"><div class="section-kicker"><span class="mono">02 / CAREER HISTORY</span><span class="mono">SELECTED EXPERIENCE</span></div><h2 class="experience-title">Experience<span>.</span></h2><div class="experience-list"><article class="experience-row"><div class="experience-role"><h3>Independent Product Designer</h3><p>MoNo <span>· Remote</span></p></div><time>Sep 2025 — Present</time></article><article class="experience-row"><div class="experience-role"><h3>Product Designer</h3><p>Rastar <span>· Generative AI Startup</span></p></div><time>May 2025 — Sep 2025</time></article><article class="experience-row"><div class="experience-role"><h3>Product Designer</h3><p>Jobvision <span>· Recruitment Platform</span></p></div><time>Nov 2023 — Apr 2025</time></article><article class="experience-row"><div class="experience-role"><h3>UI/UX Designer</h3><p>Pinket <span>· FMCG Marketplace</span></p></div><time>Jan 2022 — Jun 2023</time></article></div></section>
 <section class="section about" id="about"><div class="cap-head mono"><span data-en="PRACTICE" data-fa="حوزه‌های کار">PRACTICE</span><span>PRODUCT / INTERFACE / EXPERIENCE</span></div><h2 class="cap-title" data-en="Practice." data-fa="حوزه‌ی کار.">Practice.</h2><div class="cap-list"><div data-en="Product strategy" data-fa="استراتژی محصول">Product strategy</div><div data-en="Information architecture" data-fa="معماری اطلاعات">Information architecture</div><div data-en="UX research" data-fa="پژوهش تجربه کاربر">UX research</div><div data-en="UX / UI design" data-fa="طراحی تجربه و رابط">UX / UI design</div><div data-en="Design systems" data-fa="سیستم‌های طراحی">Design systems</div><div data-en="Responsive interfaces" data-fa="رابط‌های واکنش‌گرا">Responsive interfaces</div><div data-en="Interactive prototyping" data-fa="نمونه‌سازی تعاملی">Interactive prototyping</div><div data-en="Motion & interaction" data-fa="موشن و تعامل">Motion & interaction</div><div data-en="Creative technology" data-fa="فناوری خلاق">Creative technology</div></div></section>
-<section class="contact" id="contact"><div class="contact-heading"><span class="contact-label mono">POSITION&nbsp; / &nbsp;INDEPENDENT DESIGNER</span><h2 class="contact-title"><span>I DESIGN</span><span class="accent">DIGITAL SYSTEMS,</span><span>PHYSICAL OBJECTS</span><span class="accent">+ VISUAL EXPERIENCES.</span></h2></div><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
+<section class="contact" id="contact"><div class="contact-heading"><span class="contact-label mono">03 / GET IN TOUCH</span><h2 class="contact-title"><span>LET’S MAKE</span><span class="accent">GOOD THINGS</span><span>WORK.</span></h2></div><div class="contact-methods"><a class="contact-method" href="mailto:mono@monomatter.dev"><span class="contact-icon">✉</span><span class="contact-method-copy"><small>EMAIL ME</small><strong>mono@monomatter.dev</strong></span><i>↗</i></a><a class="contact-method" href="tel:+989912484717"><span class="contact-icon">⌕</span><span class="contact-method-copy"><small>CALL / WHATSAPP</small><strong>+98 991 248 4717</strong></span><i>↗</i></a><a class="contact-method" href="https://monomatter.dev" target="_blank" rel="noreferrer"><span class="contact-icon">◎</span><span class="contact-method-copy"><small>PORTFOLIO / MORE WORK</small><strong>monomatter.dev</strong></span><i>↗</i></a></div><div class="contact-foot mono"><span>BASED REMOTELY · OPEN TO PRODUCT DESIGN OPPORTUNITIES</span><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
 </main>
 <div class="detail" id="detail" aria-hidden="true"><div class="detail-top mono"><div class="detail-top-meta"><span id="detailIndex">PROJECT / 01</span><span id="detailRoleHeader">PRODUCT DESIGN</span></div><button class="detail-close" id="detailClose">CLOSE ×</button></div><section class="editorial-heading"><div class="editorial-title"><div class="mono" id="detailType">PRODUCT / SELECTED WORK</div><h2 id="detailTitle">Project</h2><div class="editorial-client mono" id="detailClient"></div><p class="detail-intro-copy" id="detailIntro"></p></div><div class="passport" id="detailPassport"></div></section><div class="detail-gallery" id="detailGallery"><div class="gallery-stage" id="galleryStage"></div><div class="gallery-rail" id="galleryRail"></div></div><section class="appendix"><div class="appendix-heading"><span class="mono" id="focusEyebrow">DESIGN SCOPE</span><h3 id="focusTitle">In the interface</h3></div><div class="appendix-content" id="detailAppendix"></div></section></div>
 <div class="lightbox" id="lightbox"><button id="lightboxClose">CLOSE <span>×</span></button><span class="lightbox-count mono"></span><img alt="Expanded project image"><div class="lightbox-controls"><button id="lightboxPrev" aria-label="Previous image">←</button><button id="lightboxNext" aria-label="Next image">→</button></div><span class="lightbox-help mono">SWIPE / ARROWS TO NAVIGATE · TAP TO ZOOM</span></div>
@@ -768,7 +885,9 @@ function renderDeck(){
   card.dataset.project=pr.id;
   card.querySelector('.media').innerHTML=imageMarkup(asset,pr.title);
   card.querySelector('.meta b').textContent=pr.title;
-  card.querySelector('.meta small').textContent=pr.category;
+  card.querySelector('.meta small').textContent=pr.client||pr.brand||pr.category;
+  const tags=card.querySelector('.meta-tags');if(tags)tags.innerHTML=(pr.tags||[]).map(tag=>'<span>'+esc(tag)+'</span>').join('');
+  const idx=card.querySelector('.card-index');if(idx)idx.textContent=String(ix+1).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0');
   card.onclick=()=>openDetail(pr.id);
   if(window.gsap)gsap.set(card,{left:'50%',top:'44%',...pose,transformPerspective:1200});
   else Object.assign(card.style,{left:'50%',top:'44%',transform:'translate('+pose.xPercent+'%,'+pose.yPercent+'%) rotate('+pose.rotationZ+'deg) scale('+pose.scale+')',zIndex:3-i,opacity:pose.opacity});
@@ -779,7 +898,7 @@ function renderMobileProjectGrid(){
  const grid=document.getElementById("mobileProjectGrid");if(!grid)return;
  grid.innerHTML=projects.map((p,i)=>{
   const asset=cover(p.id),img=imageMarkup(asset,p.title).replace('loading="eager"','loading="lazy"').replace('fetchpriority="high"','fetchpriority="low"');
-  return '<button class="mobile-project-item" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+img+'</span><span class="mobile-project-meta"><small>'+String(i+1).padStart(2,'0')+' / '+String(projects.length).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i></span></button>';
+  return '<button class="mobile-project-item" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+img+'</span><span class="mobile-project-meta"><small>'+esc(p.client||p.brand||'SELECTED WORK')+' · '+String(i+1).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i><span class="mobile-project-tags">'+(p.tags||[]).map(tag=>'<em>'+esc(tag)+'</em>').join('')+'</span><span class="mobile-project-action">VIEW PROJECT ↗</span></span></button>';
  }).join("");
  grid.querySelectorAll("[data-mobile-project]").forEach(card=>card.addEventListener("click",()=>openDetail(card.dataset.mobileProject)));
 }
@@ -914,9 +1033,10 @@ async function loadArchives(){
     if(!response.ok) throw new Error('Manifest HTTP '+response.status);
     const manifest=await response.json();
     const groupById={veblen:'Selected Work',pulse:'Selected Work',iran:'Selected Work',ats:'Selected Work',humaani:'Selected Work',mirana:'Selected Work',pinket:'Selected Work'};
+    const businessTypes={veblen:['CREATIVE TECHNOLOGY','3D / WEBGL'],pulse:['B2B','HR TECH / SAAS'],iran:['B2C','CULTURE / MAP EXPERIENCE'],ats:['B2B','RECRUITMENT / SAAS'],humaani:['AI','CREATIVE SAAS'],mirana:['B2B','EXECUTIVE TALENT'],pinket:['COMMERCE','FMCG MARKETPLACE']};
     projects=(manifest.projects||[]).slice().sort((a,b)=>a.order-b.order).map(p=>({
       id:p.id,title:p.displayTitle,brand:p.client,client:p.client,category:p.discipline||'Product design',
-      group:groupById[p.id]||'Selected Work',desc:p.discipline||p.displayTitle,
+      group:groupById[p.id]||'Selected Work',desc:p.editorial?.intro||p.discipline||p.displayTitle,productType:(businessTypes[p.id]||[]).join(' / '),tags:businessTypes[p.id]||[],
       role:p.passport?.role||'',team:(p.id==='pinket'||p.id==='pulse')?'2-person design team':'',
       period:p.passport?.period||'',periodLabel:'ASSOCIATED PERIOD',
       organization:p.passport?.organization||'',engagement:p.passport?.engagement||'',
@@ -960,7 +1080,7 @@ function exportConfig(){const cfg={version:2,projectOrder:projects.map(p=>p.id),
 document.getElementById('exportConfig').onclick=exportConfig;document.getElementById('resetConfig').onclick=()=>{assetOrder={};renderEditor();renderDeck();renderWorks()};document.getElementById('importConfig').onchange=async e=>{try{const cfg=JSON.parse(await e.target.files[0].text());if(cfg.projectOrder){const rank=new Map(cfg.projectOrder.map((id,i)=>[id,i]));projects.sort((a,b)=>(rank.get(a.id)??999)-(rank.get(b.id)??999))}if(cfg.assetAssignments)savedAssignments=cfg.assetAssignments;for(const p of cfg.projects||[])if(p.assetOrder)assetOrder[p.id]=p.assetOrder;applySavedAssignments();renderEditor();renderDeck();renderWorks()}catch(err){alert('Invalid config file: '+err.message)}};
 const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'LIGHT':'DARK';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.title=light?'Switch to dark mode':'Switch to light mode';themeButton.querySelector('.theme-mark').textContent=light?'☾':'☼';try{localStorage.setItem('mono-theme',theme)}catch(e){}}function themeForLocalTime(){const hour=new Date().getHours();return hour>=7&&hour<19?'light':'dark'}
 let savedTheme=null;try{savedTheme=localStorage.getItem('mono-theme')}catch(e){}
-applyTheme(savedTheme==='light'||savedTheme==='dark'?savedTheme:themeForLocalTime());
+applyTheme(savedTheme==='dark'?'dark':'light');
 themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
 
 function initHeroSymbols(){

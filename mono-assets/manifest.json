@@ -314,31 +314,48 @@
       "platform": "Web · Mobile · Persian / English",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "A workspace for AI-assisted creativity",
-          "body": "Humaani is an AI creative workspace designed to bring creative tools and related workflows into a coherent product environment."
+          "label": "01 / PROJECT CONTEXT",
+          "title": "One workspace. Multiple creative capabilities.",
+          "body": "Humaani is an AI creative workspace bringing creative tools and related workflows into one product environment. The design task was to make that breadth feel like a coherent workspace."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Make multiple capabilities feel like one product",
-          "body": "The core challenge was to organise distinct creative modules into a system users could understand and move through, while maintaining consistency across languages and screen sizes."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "The challenge was connection, not just individual screens.",
+          "body": "Distinct capabilities needed a shared structure. Without clear relationships between modules, navigation and user journeys, the workspace could feel like a collection of separate tools."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Start with structure, then build consistency",
-          "body": "I worked end to end across information architecture, navigation, cross-module flows and a shared design system, including Persian and English experiences and responsive mobile layouts."
+          "label": "03 / EXPERIENCE ARCHITECTURE",
+          "title": "Map the product before polishing the interface.",
+          "body": "I worked on the information architecture, navigation hierarchy and cross-module flows, organising how the different parts of the workspace relate and how users move between them."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A connected, multi-surface workspace",
-          "body": "The design establishes a consistent foundation across the workspace, its modules, bilingual interfaces and mobile experience."
+          "label": "04 / SYSTEM DESIGN",
+          "title": "Create consistency that can scale across modules.",
+          "body": "I developed a shared design system and reusable interface patterns to establish consistent visual and interaction rules across the product, rather than treating each area as a separate design problem."
         },
         {
-          "label": "ROLE & SCOPE",
-          "title": "Product Designer · end-to-end design",
-          "body": "End-to-end product design during a four-month engagement at Rastar, from information architecture and navigation through interface design and design-system work."
+          "label": "05 / EXPERIENCE ADAPTATION",
+          "title": "One product language across two languages and screens.",
+          "body": "The experience was designed for Persian and English, with responsive mobile layouts. The work considered language direction, hierarchy and layout adaptation as part of the product experience."
+        },
+        {
+          "label": "06 / DESIGN OUTCOME",
+          "title": "A more coherent foundation for an AI workspace.",
+          "body": "The resulting design connects product structure, navigation, interface patterns and responsive bilingual experiences. This describes the delivered design scope—not a claim of measured business or usability uplift."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "The footprint of the design work",
+        "note": "Verified project-scope indicators. These are not conversion, retention or usability performance metrics.",
+        "metrics": [
+          {"value": "04", "unit": "MONTHS", "detail": "May — September 2025"},
+          {"value": "02", "unit": "LANGUAGES", "detail": "Persian + English"},
+          {"value": "02", "unit": "SURFACES", "detail": "Web + Mobile"},
+          {"value": "01", "unit": "DESIGN SYSTEM", "detail": "Shared product foundation"}
+        ],
+        "foot": "Impact is expressed through the design foundation delivered: connected architecture, consistent interface patterns and a bilingual, responsive workspace—not through invented outcome statistics."
+      }
     },
     {
       "id": "mirana",

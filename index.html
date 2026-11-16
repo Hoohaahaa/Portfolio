@@ -898,7 +898,7 @@ function renderMobileProjectGrid(){
  const grid=document.getElementById("mobileProjectGrid");if(!grid)return;
  grid.innerHTML=projects.map((p,i)=>{
   const asset=cover(p.id),img=imageMarkup(asset,p.title).replace('loading="eager"','loading="lazy"').replace('fetchpriority="high"','fetchpriority="low"');
-  return '<button class="mobile-project-item" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+img+'</span><span class="mobile-project-meta"><small>'+esc(p.client||p.brand||'SELECTED WORK')+' · '+String(i+1).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i><span class="mobile-project-tags">'+(p.tags||[]).map(tag=>'<em>'+esc(tag)+'</em>').join('')+'</span><span class="mobile-project-action">VIEW PROJECT ↗</span></span></button>';
+  return '<button class="mobile-project-item" type="button" data-mobile-project="'+esc(p.id)+'"><span class="mobile-project-media">'+img+'</span><span class="mobile-project-meta"><small>CLIENT / '+esc(p.client||p.brand||'SELECTED WORK')+' · '+String(i+1).padStart(2,'0')+'</small><b>'+esc(p.title)+'</b><i aria-hidden="true">↗</i><span class="mobile-project-desc">'+esc(p.desc||'')+'</span><span class="mobile-project-role">ROLE / '+esc(p.role||'Product Designer')+'</span><span class="mobile-project-tags">'+(p.tags||[]).map(tag=>'<em>'+esc(tag)+'</em>').join('')+'</span><span class="mobile-project-action">VIEW PROJECT ↗</span></span></button>';
  }).join("");
  grid.querySelectorAll("[data-mobile-project]").forEach(card=>card.addEventListener("click",()=>openDetail(card.dataset.mobileProject)));
 }

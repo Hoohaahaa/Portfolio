@@ -576,6 +576,34 @@ body.fa .detail-top-meta{direction:rtl}
 }
 @media(prefers-reduced-motion:reduce){.featured-progress span{transition:none!important}}
 
+
+/* MONO — quiet typographic hero and two-cover rotation (final cascade) */
+.hero{background:var(--bg)!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:7vw!important;padding:15vh 6vw 9vh!important;min-height:100svh!important}
+.hero:before{opacity:.07!important;background-size:25% 25%!important}
+.hero-kicker{top:10%!important;left:6vw!important;font-size:9px!important;letter-spacing:.14em!important;color:var(--muted)!important;font-weight:400!important}
+.hero-copy{max-width:560px!important;padding-top:0!important}
+.hero-wordmark{margin:0!important;font-size:clamp(58px,9vw,116px)!important;line-height:.9!important;letter-spacing:-.075em!important;font-weight:400!important;color:var(--fg)!important}
+.hero-wordmark span{font-weight:300!important;color:var(--muted)!important}
+.hero-note{margin:22px 0 26px!important;max-width:380px!important;font-size:12px!important;line-height:1.9!important;color:var(--muted)!important;font-weight:400!important;letter-spacing:.015em!important}
+.hero-scroll{display:flex!important;gap:12px!important;align-items:center!important;color:var(--muted)!important;font-size:8px!important;letter-spacing:.14em!important}
+.hero-scroll span:last-child{font-size:13px!important}
+.hero-visual{height:min(54vh,540px)!important;min-height:300px!important;perspective:none!important}
+.hero-visual-frame{position:absolute!important;inset:0 0 23px!important;overflow:hidden!important;background:var(--bg)!important;border:0!important}
+.hero-visual-frame img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;filter:none!important;transform:none!important}
+.hero-visual-caption{font-size:8px!important;letter-spacing:.12em!important;color:var(--muted)!important}
+.hero-image-progress{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);display:block}
+.hero-image-progress i{display:block;width:0;height:100%;background:var(--fg);transition:width .08s linear}
+@media(max-width:760px){
+ .hero{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto!important;gap:22px!important;min-height:100svh!important;height:auto!important;padding:118px 6vw 24px!important;align-content:start!important}
+ .hero-kicker{top:78px!important;left:6vw!important;font-size:8px!important}
+ .hero-copy{padding:0!important;max-width:none!important}
+ .hero-wordmark{font-size:clamp(56px,14vw,82px)!important;line-height:.9!important}
+ .hero-note{margin:14px 0 15px!important;font-size:10px!important;line-height:1.8!important}
+ .hero-scroll{font-size:7px!important;margin:0!important}
+ .hero-visual{height:clamp(170px,30svh,260px)!important;min-height:170px!important;max-height:260px!important;margin:0!important}
+ .hero-visual-frame{inset:0 0 19px!important}
+ .hero-visual-caption{font-size:7px!important;bottom:0!important}
+}
 </style></head>
 <body>
 <header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>

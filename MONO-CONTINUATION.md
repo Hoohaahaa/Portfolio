@@ -105,3 +105,11 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Main cinematic carousel, project pages, About/services, Contact and theme system are retained.
 - Stable alias: `https://mono-selected.vercel.app`.
 - Latest deployed commit: `efc17e1a4feb20ccf8f70b845f28f0884f2f6a51`. Verified READY, HTTP 200; verified no glyph grid, no featured-work section, two cover sources in one hero frame, and cinema section still present.
+
+
+## Latest update — 2026-11-16 (hero image + contact refinement)
+- Hero preview now uses two preloaded image layers, not one image whose src is replaced. Crossfade opacity transition prevents blank/flash/jump during the 4-second rotation.
+- Hero preview frame is a fixed 16:9 responsive viewport; both covers are contained without cropping. Caption is in normal flow directly under the image; progress line is 1px at the bottom edge of the image. On mobile it stays full width and compact.
+- Contact ending no longer has the rotating typewriter slogan or “beautiful problem” copy. It is a clean oversized “Contact.” heading with a small “GET IN TOUCH / 2026” label. Original email and website links are retained.
+- No other project, carousel, About, service, or theme sections changed.
+- Latest deployed commit: `99abe6768f8e6bfa3299e80be5b44f176f003b0a`; deployment READY and verified HTTP 200 at `https://mono-selected.vercel.app`.

@@ -113,3 +113,13 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Contact ending no longer has the rotating typewriter slogan or “beautiful problem” copy. It is a clean oversized “Contact.” heading with a small “GET IN TOUCH / 2026” label. Original email and website links are retained.
 - No other project, carousel, About, service, or theme sections changed.
 - Latest deployed commit: `99abe6768f8e6bfa3299e80be5b44f176f003b0a`; deployment READY and verified HTTP 200 at `https://mono-selected.vercel.app`.
+
+
+## Latest update — 2026-11-16 (hero layout, orbital field, contact copy)
+- Reviewed the user's newly uploaded repo sources on `main`: `landing-v2 (1).html` and `option-hero.jpg`. Do not import the Landing V2 page wholesale.
+- Extracted only the requested visual mechanics from Landing V2: a fine modular grid, concentric elliptical orbital paths, a central point, and a small satellite that follows pointer position with spring easing. Rebuilt this as a lightweight responsive canvas in the existing MONO hero; it adapts to dark/light mode, respects reduced-motion, and does not bring over Landing V2's surrounding copy or layout.
+- The Option Hero JPEG's headline copy is now used in the footer contact area: “I DESIGN / DIGITAL SYSTEMS, / PHYSICAL OBJECTS / + VISUAL EXPERIENCES.” Kept the existing contact links. Accent is restrained and theme-aware.
+- Removed the redundant hero “SCROLL TO EXPLORE” control. Header nav remains the only navigation; added a quiet “01 / 03” section index opposite the small practice kicker instead.
+- Hero changed to a single-column editorial layout: MONO wordmark and practice metadata above; Selected Work image frame spans the full content width below. Both selected covers are 16:9 and use a 16:9 frame with cover fit, no crop expected at source ratio. The two preloaded layers still crossfade every 4 seconds with the progress line retained.
+- Contact title contrast is fixed in light mode (contact panel remains dark, type uses warm off-white with a muted lavender-grey accent).
+- Latest source commit: `1e972aca097c384bbed93675d17be41477605dc8`. Deployment READY, HTTP 200, stable alias `https://mono-selected.vercel.app`. Verified markup/CSS includes the full-width hero, canvas, new headline, and light-theme text override.

@@ -92,3 +92,16 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Main cinematic project carousel caption is now much larger and more editorial, with GSAP fade / lift / blur transition on next/previous. Keep controls visible and separate from the title block, including on mobile.
 - Removed the small `04 / HAVE A GOOD PROBLEM?` kicker above the contact typewriter. Contact itself and its contact links remain.
 - Latest public alias remains `https://mono-selected.vercel.app`; deployment from commit `0c95ca1f6f0175714acf4805b2c15294e8b777d8` returned HTTP 200 and was assigned to the stable alias.
+
+
+## Latest update — 2026-11-16 (quiet hero correction)
+- Removed the animated icon/glyph field completely. Hero is now a restrained MONO. wordmark with small metadata: INDEPENDENT PRACTICE / 2026, Independent product designer, Product design · UX/UI · Creative technology.
+- Removed the separate Selected Works / featured project section entirely. Do not reintroduce it.
+- The existing hero visual frame is the ONLY rotating image area. It alternates in-place every 4 seconds between:
+  1. `mono-assets/mono audio visual engine.jpg`
+  2. `https://raw.githubusercontent.com/Hoohaahaa/Portfolio/main/mono-assets/entity-hand-instrument-1600.jpg`
+- Entity is represented by its 1600px cover image only. It is not a project detail, iframe, clickable link, card, or separate section. No click-through is currently intended.
+- The image frame retains one fixed position and size, a small caption, and a 1px progress line. Mobile hero is simplified and shows a portion of the image so the next scroll section is apparent.
+- Main cinematic carousel, project pages, About/services, Contact and theme system are retained.
+- Stable alias: `https://mono-selected.vercel.app`.
+- Latest deployed commit: `efc17e1a4feb20ccf8f70b845f28f0884f2f6a51`. Verified READY, HTTP 200; verified no glyph grid, no featured-work section, two cover sources in one hero frame, and cinema section still present.

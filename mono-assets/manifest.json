@@ -117,6 +117,36 @@
           }
         ],
         "foot": "Calibration involved one pattern and two pattern makers. The project is an independent concept exploration, not a production deployment."
+      },
+      "galleryCaptions": {
+        "mono-assets/veblen cover.jpg": {
+          "title": "Project overview",
+          "description": "A visual overview of the independent parametric garment-system exploration."
+        },
+        "mono-assets/veblen.jpg": {
+          "title": "Garment system",
+          "description": "A closer look at the garment concept and its digital construction."
+        },
+        "mono-assets/veblen 2 .png": {
+          "title": "Pattern development",
+          "description": "A project frame documenting the pattern-development exploration."
+        },
+        "mono-assets/veblen 3.jpg": {
+          "title": "Parametric construction",
+          "description": "A visual from the process of connecting measurements and garment geometry."
+        },
+        "mono-assets/veblen 4.jpg": {
+          "title": "Garment details",
+          "description": "A closer view of the garment form and construction details."
+        },
+        "mono-assets/veblen 5.jpg": {
+          "title": "Pattern study",
+          "description": "A supporting view from the pattern and calibration work."
+        },
+        "mono-assets/veblen 6.jpg": {
+          "title": "Final exploration",
+          "description": "A final visual from the Veblen concept exploration."
+        }
       }
     },
     {
@@ -223,6 +253,32 @@
           }
         ],
         "foot": "The product was shipped and used in production. No actual participation, favorability, eNPS or improvement figures are claimed from demo screens."
+      },
+      "galleryCaptions": {
+        "mono-assets/pulsecheck dashboard - cover.png": {
+          "title": "People analytics dashboard",
+          "description": "The main workspace for understanding employee feedback and people analytics."
+        },
+        "mono-assets/pulsecheck home.png": {
+          "title": "Platform overview",
+          "description": "The home view that brings survey activity and key areas of the product together."
+        },
+        "mono-assets/pulsecheck home-active survey.png": {
+          "title": "Active survey",
+          "description": "The survey experience used to collect employee feedback."
+        },
+        "mono-assets/pulsecheck surveys report-heatmap.png": {
+          "title": "Survey results & heatmap",
+          "description": "A report view for exploring results and patterns across measurable indices."
+        },
+        "mono-assets/pulsecheck survey report landing-cando.png": {
+          "title": "Insight overview",
+          "description": "A focused view of findings and the actions connected to them."
+        },
+        "mono-assets/pulsecheck survey report-comments-cando.png": {
+          "title": "Comments & evidence",
+          "description": "Qualitative employee comments that add context to the reported results."
+        }
       }
     },
     {
@@ -330,6 +386,28 @@
           }
         ],
         "foot": "Local requests currently arrive by email to the project owner. The implemented request flow is not represented as a scaled automated marketplace."
+      },
+      "galleryCaptions": {
+        "mono-assets/iran-unseen-cover.jpg": {
+          "title": "Destination experience",
+          "description": "The main visual introducing the Iran Unseen travel-planning experience."
+        },
+        "mono-assets/iran-unseen 1.jpg": {
+          "title": "Trip planning",
+          "description": "A view from the destination and trip-planning journey."
+        },
+        "mono-assets/iran-unseen 2.jpg": {
+          "title": "Explore the destination",
+          "description": "A supporting screen from the destination discovery experience."
+        },
+        "mono-assets/iran-unseen 3.jpg": {
+          "title": "Local recommendations",
+          "description": "A view from the experience for discovering relevant local options."
+        },
+        "mono-assets/iran-unseen 5.jpg": {
+          "title": "Travel details",
+          "description": "A supporting screen from the travel-planning flow."
+        }
       }
     },
     {
@@ -434,6 +512,16 @@
           }
         ],
         "foot": "HR feedback was positive and task handling felt substantially faster to the user, but no measured time saving or percentage is claimed."
+      },
+      "galleryCaptions": {
+        "mono-assets/ats dashboard-cover.png": {
+          "title": "Recruitment dashboard",
+          "description": "The integrated ATS overview for candidate status, tasks and recruitment activity."
+        },
+        "mono-assets/ats mobile view.png": {
+          "title": "Mobile recruitment view",
+          "description": "The mobile presentation of the applicant-tracking experience."
+        }
       }
     },
     {
@@ -533,6 +621,24 @@
           }
         ],
         "foot": "Impact is expressed through the design foundation delivered: connected architecture, consistent interface patterns and a bilingual, responsive workspace—not through invented outcome statistics."
+      },
+      "galleryCaptions": {
+        "mono-assets/humani cover.png": {
+          "title": "Creative workspace",
+          "description": "The main view of Humaani’s AI-powered creative workspace."
+        },
+        "mono-assets/humani home.png": {
+          "title": "Workspace home",
+          "description": "The home experience for navigating the creative workspace."
+        },
+        "mono-assets/humani farsi.png": {
+          "title": "Persian interface",
+          "description": "The Persian-language version of the product experience."
+        },
+        "mono-assets/humani mobile.png": {
+          "title": "Mobile experience",
+          "description": "The responsive mobile presentation of Humaani."
+        }
       }
     },
     {
@@ -637,6 +743,24 @@
           }
         ],
         "foot": "Employer-side product design is explicitly excluded. Traffic volume and recruitment outcomes are not quantified."
+      },
+      "galleryCaptions": {
+        "mono-assets/mirana -cover.png": {
+          "title": "Candidate experience",
+          "description": "The main candidate-facing experience for the executive talent platform."
+        },
+        "mono-assets/mirana-mobile.png": {
+          "title": "Mobile candidate view",
+          "description": "A mobile view of the candidate-side experience."
+        },
+        "mono-assets/miarana mobile 2.png": {
+          "title": "Candidate profile",
+          "description": "A further mobile view from the candidate experience."
+        },
+        "mono-assets/mirana contact.png": {
+          "title": "Contact flow",
+          "description": "The candidate contact experience."
+        }
       }
     },
     {
@@ -744,6 +868,28 @@
           }
         ],
         "foot": "Two-person design team. Later company pivot and subsequent platform scale are outside this case study’s scope."
+      },
+      "galleryCaptions": {
+        "mono-assets/pinket dashboard stores-cover.png": {
+          "title": "Store dashboard",
+          "description": "The store-facing dashboard for the FMCG marketplace."
+        },
+        "mono-assets/pinket dashboard shoppers.png": {
+          "title": "Shopper operations",
+          "description": "The shopper overview and operational experience."
+        },
+        "mono-assets/pinket dashboard item.png": {
+          "title": "Product information",
+          "description": "A view of product-level information in the store workflow."
+        },
+        "mono-assets/pinket dashboard report.png": {
+          "title": "Store reports",
+          "description": "Reporting views for store and marketplace operations."
+        },
+        "mono-assets/pinket shopper app user journey.png": {
+          "title": "Shopper app journey",
+          "description": "The shopper-facing mobile journey for selecting and handling products."
+        }
       }
     }
   ],

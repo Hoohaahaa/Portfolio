@@ -631,15 +631,56 @@ body.fa .detail-top-meta{direction:rtl}
  .contact-title{font-size:clamp(70px,18vw,132px)!important}
 }
 @media(prefers-reduced-motion:reduce){.hero-visual-frame .hero-slide{transition:none!important}}
+
+/* MONO — full-width selected image, restrained orbital field, one navigation */
+.hero{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto auto!important;align-content:start!important;gap:clamp(20px,3vw,34px)!important;min-height:0!important;height:auto!important;padding:clamp(112px,13vh,160px) 5vw clamp(48px,6vh,76px)!important;position:relative!important;overflow:hidden!important}
+.hero-atoms{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0!important;pointer-events:none!important;opacity:.78!important}
+.hero-kicker,.hero-index,.hero-copy,.hero-visual{position:relative!important;z-index:1!important}
+.hero-kicker{position:absolute!important;top:38px!important;left:5vw!important}
+.hero-index{position:absolute!important;top:38px!important;right:5vw!important;color:var(--muted)!important;font-size:9px!important;letter-spacing:.14em!important}
+.hero-copy{max-width:none!important;padding:0!important}
+.hero-wordmark{font-size:clamp(68px,10vw,138px)!important;line-height:.86!important;letter-spacing:-.085em!important}
+.hero-note{margin:18px 0 0!important;max-width:420px!important;font-size:12px!important;line-height:1.8!important}
+.hero-scroll{display:none!important}
+.hero-visual{width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:clamp(8px,2vw,20px) 0 0!important;align-self:stretch!important}
+.hero-visual-frame{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:16/9!important;overflow:hidden!important;background:var(--bg)!important;border:0!important}
+.hero-visual-frame .hero-slide{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important;opacity:0!important;transition:opacity .85s ease!important;will-change:opacity!important}
+.hero-visual-frame .hero-slide.is-visible{opacity:1!important}
+.hero-visual-caption{position:static!important;left:auto!important;right:auto!important;bottom:auto!important;margin-top:10px!important;min-height:12px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;color:var(--muted)!important;font-size:8px!important;letter-spacing:.13em!important}
+.hero-image-progress{position:absolute!important;left:0!important;right:0!important;bottom:0!important;height:1px!important;background:var(--line)!important;display:block!important}
+.hero-image-progress i{display:block!important;width:100%!important;height:100%!important;background:var(--fg)!important;transform:scaleX(0);transform-origin:left center;transition:none!important}
+.contact{background:#080808!important;color:#f1f0eb!important}
+.contact-title{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:.02em!important;font-size:clamp(42px,8.4vw,122px)!important;line-height:.91!important;letter-spacing:-.075em!important;font-weight:500!important;text-transform:uppercase!important;color:#f1f0eb!important;margin:0!important}
+.contact-title>span{display:block!important}
+.contact-title .accent{color:#a6a8b0!important}
+.contact-label{color:#92918c!important}
+:root[data-theme="light"] .contact{background:#171715!important;color:#efeee9!important}
+:root[data-theme="light"] .contact-title{color:#efeee9!important}
+:root[data-theme="light"] .contact-title .accent{color:#aeb5df!important}
+:root[data-theme="light"] .contact-label{color:#aaa9a2!important}
+@media(max-width:760px){
+ .hero{grid-template-columns:minmax(0,1fr)!important;gap:22px!important;padding:112px 6vw 30px!important;min-height:0!important;align-content:start!important}
+ .hero-kicker{top:34px!important;left:6vw!important;font-size:8px!important}
+ .hero-index{top:34px!important;right:6vw!important;font-size:8px!important}
+ .hero-wordmark{font-size:clamp(64px,17vw,92px)!important}
+ .hero-note{margin-top:14px!important;font-size:10px!important;line-height:1.75!important}
+ .hero-visual{margin-top:8px!important;width:100%!important}
+ .hero-visual-frame{aspect-ratio:16/9!important}
+ .hero-visual-caption{font-size:7px!important;margin-top:8px!important}
+ .contact{padding:92px 6vw 24px!important}
+ .contact-heading{margin-bottom:58px!important}
+ .contact-title{font-size:clamp(36px,10.4vw,72px)!important;line-height:.98!important;letter-spacing:-.065em!important}
+}
+@media(prefers-reduced-motion:reduce){.hero-visual-frame .hero-slide{transition:none!important}}
 </style></head>
 <body>
 <header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
-<section class="hero" id="top"><div class="hero-kicker mono">INDEPENDENT PRACTICE&nbsp; / &nbsp;2026</div><div class="hero-copy"><h1 class="hero-wordmark">MONO<span>.</span></h1><p class="hero-note">Independent product designer<br>Product design · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">MONO / AUDIO-VISUAL ENGINE</span></div></div></section>
+<section class="hero" id="top"><canvas class="hero-atoms" id="heroAtoms" aria-hidden="true"></canvas><div class="hero-kicker mono">INDEPENDENT PRACTICE&nbsp; / &nbsp;2026</div><span class="hero-index mono" aria-label="Section index">01 / 03</span><div class="hero-copy"><h1 class="hero-wordmark">MONO<span>.</span></h1><p class="hero-note">Independent product designer<br>Product design · UX/UI · Creative technology</p></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">MONO / AUDIO-VISUAL ENGINE</span></div></div></section>
 
 <section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
 <section class="section about" id="about"><div class="cap-head mono"><span data-en="PRACTICE" data-fa="حوزه‌های کار">PRACTICE</span><span>PRODUCT / INTERFACE / EXPERIENCE</span></div><h2 class="cap-title" data-en="Practice." data-fa="حوزه‌ی کار.">Practice.</h2><div class="cap-list"><div data-en="Product strategy" data-fa="استراتژی محصول">Product strategy</div><div data-en="Information architecture" data-fa="معماری اطلاعات">Information architecture</div><div data-en="UX research" data-fa="پژوهش تجربه کاربر">UX research</div><div data-en="UX / UI design" data-fa="طراحی تجربه و رابط">UX / UI design</div><div data-en="Design systems" data-fa="سیستم‌های طراحی">Design systems</div><div data-en="Responsive interfaces" data-fa="رابط‌های واکنش‌گرا">Responsive interfaces</div><div data-en="Interactive prototyping" data-fa="نمونه‌سازی تعاملی">Interactive prototyping</div><div data-en="Motion & interaction" data-fa="موشن و تعامل">Motion & interaction</div><div data-en="Creative technology" data-fa="فناوری خلاق">Creative technology</div></div></section>
-<section class="contact" id="contact"><div class="contact-heading"><span class="contact-label mono">GET IN TOUCH&nbsp; / &nbsp;2026</span><h2 class="contact-title">Contact<span>.</span></h2></div><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
+<section class="contact" id="contact"><div class="contact-heading"><span class="contact-label mono">POSITION&nbsp; / &nbsp;INDEPENDENT DESIGNER</span><h2 class="contact-title"><span>I DESIGN</span><span class="accent">DIGITAL SYSTEMS,</span><span>PHYSICAL OBJECTS</span><span class="accent">+ VISUAL EXPERIENCES.</span></h2></div><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
 </main>
 <div class="detail" id="detail" aria-hidden="true"><div class="detail-top mono"><div class="detail-top-meta"><span id="detailIndex">PROJECT / 01</span><span id="detailRoleHeader">PRODUCT DESIGN</span></div><button class="detail-close" id="detailClose">CLOSE ×</button></div><section class="editorial-heading"><div class="editorial-title"><div class="mono" id="detailType">PRODUCT / SELECTED WORK</div><h2 id="detailTitle">Project</h2><div class="editorial-client mono" id="detailClient"></div><p class="detail-intro-copy" id="detailIntro"></p></div><div class="passport" id="detailPassport"></div></section><div class="detail-gallery" id="detailGallery"><div class="gallery-stage" id="galleryStage"></div><div class="gallery-rail" id="galleryRail"></div></div><section class="appendix"><div class="appendix-heading"><span class="mono" id="focusEyebrow">DESIGN SCOPE</span><h3 id="focusTitle">In the interface</h3></div><div class="appendix-content" id="detailAppendix"></div></section></div>
 <div class="lightbox" id="lightbox"><button id="lightboxClose">CLOSE <span>×</span></button><span class="lightbox-count mono"></span><img alt="Expanded project image"><div class="lightbox-controls"><button id="lightboxPrev" aria-label="Previous image">←</button><button id="lightboxNext" aria-label="Next image">→</button></div><span class="lightbox-help mono">SWIPE / ARROWS TO NAVIGATE · TAP TO ZOOM</span></div>
@@ -785,6 +826,42 @@ function renderHeroVisual(){
  if(!reduce)requestAnimationFrame(tick);else if(progress)progress.style.transform='scaleX(1)';
  if(window.gsap&&!reduce)gsap.from('.hero-copy > *',{y:12,opacity:0,duration:.9,stagger:.12,ease:'power2.out',delay:.08});
 }
+function initHeroAtoms(){
+ const canvas=document.getElementById('heroAtoms'),hero=document.querySelector('.hero');if(!canvas||!hero)return;
+ const ctx=canvas.getContext('2d',{alpha:true});if(!ctx)return;
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let w=0,h=0,dpr=1,t=0,raf=0,px=.76,py=.43,vx=0,vy=0,tx=px,ty=py,near=false;
+ const resize=()=>{const r=hero.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));ctx.setTransform(dpr,0,0,dpr,0,0)};
+ const ro=new ResizeObserver(resize);ro.observe(hero);resize();
+ const move=e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;near=true};
+ const leave=()=>{near=false};
+ hero.addEventListener('pointermove',move,{passive:true});hero.addEventListener('pointerleave',leave,{passive:true});
+ const draw=()=>{
+  const light=document.documentElement.dataset.theme==='light';
+  const ink=light?'23,23,21':'241,240,235',accent=light?'105,112,155':'174,177,190';
+  ctx.clearRect(0,0,w,h);
+  const step=Math.max(42,Math.min(100,w/12));
+  ctx.lineWidth=1;ctx.strokeStyle='rgba('+ink+',.055)';
+  for(let x=step*.5;x<w;x+=step){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}
+  for(let y=step*.5;y<h;y+=step){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+  const cx=w*.77,cy=h*.34,R=Math.min(w*.22,h*.38);
+  for(let i=1;i<=8;i++){const k=i/8;ctx.beginPath();ctx.ellipse(cx,cy,R*k*1.5,R*k,0,0,Math.PI*2);ctx.strokeStyle='rgba('+ink+','+(.035+k*.025)+')';ctx.stroke()}
+  ctx.beginPath();ctx.arc(cx,cy,3,0,Math.PI*2);ctx.fillStyle='rgba('+ink+',.65)';ctx.fill();
+  const gx=near?tx*w:cx+Math.cos(t*.52)*R*1.35,gy=near?ty*h:cy+Math.sin(t*.52)*R*.78;
+  vx+=(gx-px*w)*.035;vy+=(gy-py*h)*.035;vx*=.82;vy*=.82;px+=vx/w;py+=vy/h;
+  const sx=px*w,sy=py*h;
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(sx,sy);ctx.setLineDash([2,5]);ctx.strokeStyle='rgba('+accent+',.58)';ctx.stroke();ctx.setLineDash([]);
+  const speed=Math.min(1,Math.hypot(vx,vy)/8);
+  ctx.beginPath();ctx.arc(sx,sy,5+speed*5,0,Math.PI*2);ctx.fillStyle='rgba('+accent+',.13)';ctx.fill();
+  ctx.beginPath();ctx.arc(sx,sy,3.2,0,Math.PI*2);ctx.fillStyle='rgba('+accent+',.92)';ctx.fill();
+  if(!reduce)t+=.016;
+  if(!reduce)raf=requestAnimationFrame(draw);
+ };
+ draw();
+ if(!reduce)raf=requestAnimationFrame(draw);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else if(!reduce)raf=requestAnimationFrame(draw)});
+ return()=>{cancelAnimationFrame(raf);ro.disconnect();hero.removeEventListener('pointermove',move);hero.removeEventListener('pointerleave',leave)};
+}
 function initCapabilities(){const items=[...document.querySelectorAll('.cap-list>div')];if(!items.length)return;if(!window.ScrollTrigger||!window.gsap){items.forEach(x=>x.classList.add('is-active'));return}gsap.registerPlugin(ScrollTrigger);items.forEach(el=>ScrollTrigger.create({trigger:el,start:'top 72%',end:'bottom 38%',onEnter:()=>el.classList.add('is-active'),onEnterBack:()=>el.classList.add('is-active'),onLeave:()=>{el.classList.remove('is-active');el.classList.add('is-past')},onLeaveBack:()=>{el.classList.remove('is-active','is-past')}}))}
 function initShader(){const canvas=document.getElementById('shaderCanvas');if(!canvas||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const gl=canvas.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power'});if(!gl)return;const compile=(type,source)=>{const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);return gl.getShaderParameter(sh,gl.COMPILE_STATUS)?sh:null};const vs=compile(gl.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}');const fs=compile(gl.FRAGMENT_SHADER,'precision mediump float;uniform vec2 r;uniform float t;float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=(uv-.5)*vec2(r.x/r.y,1.);float d=length(p-vec2(.12*sin(t*.16),.08*cos(t*.12)));float glow=exp(-d*3.1)*.13;float grain=(hash(floor(gl_FragCoord.xy*.5))-.5)*.018;float ring=sin(length(p)*21.-t*.45)*.012;vec3 col=vec3(.025,.028,.04)+vec3(.32,.29,.25)*glow+vec3(ring)+vec3(grain);gl_FragColor=vec4(col,1.);}');if(!vs||!fs)return;const prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;gl.useProgram(prog);const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);const res=gl.getUniformLocation(prog,'r'),time=gl.getUniformLocation(prog,'t');let raf=0,start=performance.now();const draw=now=>{const dpr=Math.min(devicePixelRatio||1,1.5),w=Math.floor(canvas.clientWidth*dpr),h=Math.floor(canvas.clientHeight*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}gl.uniform2f(res,w,h);gl.uniform1f(time,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,6);raf=requestAnimationFrame(draw)};raf=requestAnimationFrame(draw);document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else{start=performance.now();raf=requestAnimationFrame(draw)}})}
 /* WebGL background animation disabled on this pass: keep mobile rendering responsive. */
@@ -817,7 +894,7 @@ async function loadArchives(){
     }
     activeProject=0;
     setStatus('MONO ASSETS / '+projects.length+' PROJECTS / '+projects.reduce((n,p)=>n+(p.files||[]).length,0)+' ORIGINAL IMAGES');
-    renderDeck();renderWorks();renderHeroVisual();initCapabilities();startDeckAuto();
+    renderDeck();renderWorks();renderHeroVisual();initHeroAtoms();initCapabilities();startDeckAuto();
   } catch(error) {
     console.error('mono-assets manifest failed',error);
     setStatus('Could not load mono-assets: '+error.message);

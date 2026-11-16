@@ -525,14 +525,61 @@ body.fa .detail-top-meta{direction:rtl}
  .contact{width:100%!important;max-width:100vw!important;overflow:hidden!important}
 }
 
+
+/* Selected-work highlight: one contained viewport, no card stack */
+.featured-work{position:relative;padding:76px 4vw 90px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);overflow:hidden}
+.featured-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 22px}
+.featured-stage{position:relative;width:100%;height:clamp(340px,58vw,680px);max-height:76svh;min-height:320px;overflow:hidden;background:#e9e8e0;border:1px solid var(--line);isolation:isolate}
+.featured-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#e9e8e0;pointer-events:none}
+.featured-shade{position:absolute;inset:48% 0 0;background:linear-gradient(0deg,#050505ed,transparent);pointer-events:none}
+.featured-caption{position:absolute;left:clamp(18px,3vw,48px);right:clamp(18px,3vw,48px);bottom:clamp(25px,4vw,54px);z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:24px;row-gap:8px;color:#fff}
+.featured-caption .mono{grid-column:1/-1;color:#c3c3c3}
+.featured-caption h2{margin:0;font-size:clamp(38px,7vw,92px);line-height:.88;letter-spacing:-.085em;font-weight:600}
+.featured-caption h2 span{font:12px var(--mono);letter-spacing:.08em;color:#bcbcbc;vertical-align:middle}
+.featured-caption p{margin:9px 0 0;color:#c7c7c7;font-size:clamp(12px,1.3vw,16px)}
+.featured-caption>a{grid-column:2;grid-row:2/4;align-self:center;display:grid;place-items:center;width:52px;height:52px;font-size:30px;color:#fff;text-decoration:none}
+.featured-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:#ffffff38;z-index:3}
+.featured-progress span{display:block;width:0;height:100%;background:#fff;transform-origin:left}
+.cinema-caption{left:4vw;right:clamp(150px,20vw,300px);bottom:8%;max-width:none;width:auto}
+.cinema-caption strong{display:block;max-width:100%;font-size:clamp(34px,6.3vw,86px);line-height:.9;letter-spacing:-.075em;font-weight:600;margin:12px 0 10px;overflow-wrap:anywhere}
+.cinema-caption p{font-size:clamp(12px,1.35vw,16px);line-height:1.5;max-width:70ch;color:#aaa}
+.cinema-controls{right:4vw;bottom:8%;gap:18px}
+.cinema-controls button{width:52px;height:52px;border:0;border-radius:50%;background:transparent;font-size:27px;transition:transform .25s ease,background .25s ease}
+.cinema-controls button:hover{background:#ffffff12;color:#fff;transform:translateX(2px)}
+.cinema-controls button:first-child:hover{transform:translateX(-2px)}
+@media(max-width:760px){
+ .featured-work{padding:56px 5vw 62px}
+ .featured-head{margin-bottom:15px}
+ .featured-stage{height:clamp(330px,112vw,520px);max-height:68svh;min-height:320px}
+ .featured-caption{left:18px;right:18px;bottom:28px;column-gap:8px}
+ .featured-caption h2{font-size:clamp(38px,11vw,62px)}
+ .featured-caption p{font-size:12px}
+ .featured-caption>a{width:42px;height:42px;font-size:25px}
+ .cinema-caption{left:5vw;right:116px;bottom:10%;width:auto}
+ .cinema-caption strong{font-size:clamp(29px,8.5vw,48px);line-height:.94;margin:8px 0}
+ .cinema-caption p{font-size:12px;line-height:1.45}
+ .cinema-controls{right:5vw;bottom:10%;gap:5px}
+ .cinema-controls button{width:42px;height:48px;font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){.featured-progress span{transition:none!important}}
+
 </style></head>
 <body>
 <header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
 <section class="hero" id="top"><div class="hero-kicker mono" data-en="INDEPENDENT PRODUCT DESIGNER — 2026" data-fa="طراح مستقل محصول — ۲۰۲۶">INDEPENDENT PRODUCT DESIGNER — 2026</div><div class="hero-copy"><div class="hero-signature mono">MONO<span>.</span> / PRODUCT DESIGN</div><div class="hero-glyph-field" id="heroGlyphField" role="img" aria-label="A changing field of product design symbols and ideas"><div class="glyph-grid" id="glyphGrid"></div><div class="glyph-word" id="glyphWord" aria-hidden="true"></div><span class="sr-only">Product, systems, interface, experience, interaction, motion and creative technology.</span></div><p class="hero-note" data-en="Product systems · UX/UI · Creative technology" data-fa="سیستم‌های محصول · طراحی تجربه و رابط · فناوری خلاق">Product systems · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span class="scroll-dot">↓</span><span data-en="SELECTED WORK" data-fa="پروژه‌های منتخب">SELECTED WORK</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected project"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span data-en="01 / SELECTED WORK" data-fa="۰۱ / پروژه منتخب">01 / SELECTED WORK</span><span>VEBLEN — PARAMETRIC GARMENT SYSTEM</span></div></div></section>
+<section class="featured-work" id="selected-work" aria-label="Selected work highlights">
+ <div class="featured-head mono"><span>02 / SELECTED WORKS</span><span id="featuredCounter">01 / 01</span></div>
+ <div class="featured-stage" id="featuredStage">
+  <iframe id="featuredFrame" title="ENTITY — Gestural instrument preview" src="https://entity-bymo.vercel.app" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1" aria-hidden="true"></iframe>
+  <div class="featured-shade"></div>
+  <div class="featured-caption"><span class="mono" id="featuredType">AI / CREATIVE TECHNOLOGY</span><h2 id="featuredTitle">ENTITY<span> / 01</span></h2><p id="featuredDescription">Gestural instrument · Field / Resonance</p><a href="https://entity-bymo.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Entity project">↗</a></div>
+  <div class="featured-progress"><span id="featuredProgress"></span></div>
+ </div>
+</section>
 <section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
 <section class="section about" id="about"><div class="cap-head mono"><span data-en="PRACTICE" data-fa="حوزه‌های کار">PRACTICE</span><span>PRODUCT / INTERFACE / EXPERIENCE</span></div><h2 class="cap-title" data-en="Practice." data-fa="حوزه‌ی کار.">Practice.</h2><div class="cap-list"><div data-en="Product strategy" data-fa="استراتژی محصول">Product strategy</div><div data-en="Information architecture" data-fa="معماری اطلاعات">Information architecture</div><div data-en="UX research" data-fa="پژوهش تجربه کاربر">UX research</div><div data-en="UX / UI design" data-fa="طراحی تجربه و رابط">UX / UI design</div><div data-en="Design systems" data-fa="سیستم‌های طراحی">Design systems</div><div data-en="Responsive interfaces" data-fa="رابط‌های واکنش‌گرا">Responsive interfaces</div><div data-en="Interactive prototyping" data-fa="نمونه‌سازی تعاملی">Interactive prototyping</div><div data-en="Motion & interaction" data-fa="موشن و تعامل">Motion & interaction</div><div data-en="Creative technology" data-fa="فناوری خلاق">Creative technology</div></div></section>
-<section class="contact" id="contact"><div class="mono">04 / HAVE A GOOD PROBLEM?</div><h2 class="contact-loop" aria-label="Let’s make it clear. Or make a beautiful problem."><span class="contact-loop-lines" id="contactLoop" aria-hidden="true"><span class="contact-line"></span><span class="contact-line"></span></span><span class="contact-dots" aria-hidden="true"><i></i><i></i><i></i></span></h2><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
+<section class="contact" id="contact"><h2 class="contact-loop" aria-label="Let’s make it clear. Or make a beautiful problem."><span class="contact-loop-lines" id="contactLoop" aria-hidden="true"><span class="contact-line"></span><span class="contact-line"></span></span><span class="contact-dots" aria-hidden="true"><i></i><i></i><i></i></span></h2><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
 </main>
 <div class="detail" id="detail" aria-hidden="true"><div class="detail-top mono"><div class="detail-top-meta"><span id="detailIndex">PROJECT / 01</span><span id="detailRoleHeader">PRODUCT DESIGN</span></div><button class="detail-close" id="detailClose">CLOSE ×</button></div><section class="editorial-heading"><div class="editorial-title"><div class="mono" id="detailType">PRODUCT / SELECTED WORK</div><h2 id="detailTitle">Project</h2><div class="editorial-client mono" id="detailClient"></div><p class="detail-intro-copy" id="detailIntro"></p></div><div class="passport" id="detailPassport"></div></section><div class="detail-gallery" id="detailGallery"><div class="gallery-stage" id="galleryStage"></div><div class="gallery-rail" id="galleryRail"></div></div><section class="appendix"><div class="appendix-heading"><span class="mono" id="focusEyebrow">DESIGN SCOPE</span><h3 id="focusTitle">In the interface</h3></div><div class="appendix-content" id="detailAppendix"></div></section></div>
 <div class="lightbox" id="lightbox"><button id="lightboxClose">CLOSE <span>×</span></button><span class="lightbox-count mono"></span><img alt="Expanded project image"><div class="lightbox-controls"><button id="lightboxPrev" aria-label="Previous image">←</button><button id="lightboxNext" aria-label="Next image">→</button></div><span class="lightbox-help mono">SWIPE / ARROWS TO NAVIGATE · TAP TO ZOOM</span></div>
@@ -632,7 +679,7 @@ function go(n){
  const destination=delta>0?[deckPose(2),deckPose(0),deckPose(1)]:[deckPose(1),deckPose(2),deckPose(0)];
  const finish=()=>{
   if(delta>0)deckCards.push(deckCards.shift());else deckCards.unshift(deckCards.pop());
-  activeProject=target;renderDeck();deckBusy=false;
+  activeProject=target;renderDeck();if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const title=document.getElementById('activeTitle'),desc=document.getElementById('activeDesc');gsap.fromTo([title,desc],{y:24,opacity:0,filter:'blur(5px)'},{y:0,opacity:1,filter:'blur(0px)',duration:.58,stagger:.07,ease:'power3.out',overwrite:true})}deckBusy=false;
  };
  if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   const tl=gsap.timeline({onComplete:finish});
@@ -647,6 +694,19 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
 
 
 
+function initFeaturedWork(){
+ const stage=document.getElementById('featuredStage'),bar=document.getElementById('featuredProgress'),counter=document.getElementById('featuredCounter');
+ if(!stage||!bar||stage.dataset.ready)return;stage.dataset.ready='1';
+ // Add new one-screen projects here; music-led FIELD is intentionally excluded.
+ const slides=[{title:'ENTITY',index:'01',type:'AI / CREATIVE TECHNOLOGY',description:'Gestural instrument · Field / Resonance',url:'https://entity-bymo.vercel.app'}];
+ let current=0,start=0,raf=0,paused=false,cycle=6500;
+ const title=document.getElementById('featuredTitle'),type=document.getElementById('featuredType'),desc=document.getElementById('featuredDescription'),frame=document.getElementById('featuredFrame');
+ function show(i){current=i;const p=slides[current];title.innerHTML=p.title+'<span> / '+p.index+'</span>';type.textContent=p.type;desc.textContent=p.description;counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');if(frame.src!==p.url)frame.src=p.url;if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches)gsap.fromTo([type,title,desc],{y:15,opacity:0},{y:0,opacity:1,duration:.5,stagger:.06,ease:'power3.out'});}
+ function tick(now){if(!start)start=now;if(!paused&&!document.hidden){const progress=Math.min(1,(now-start)/cycle);bar.style.width=(progress*100)+'%';if(progress>=1){show((current+1)%slides.length);start=now;}}raf=requestAnimationFrame(tick)}
+ const pause=()=>{paused=true};const resume=()=>{paused=false;start=performance.now()};
+ stage.addEventListener('mouseenter',pause);stage.addEventListener('mouseleave',resume);stage.addEventListener('focusin',pause);stage.addEventListener('focusout',resume);document.addEventListener('visibilitychange',()=>{if(!document.hidden)start=performance.now()});
+ show(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)raf=requestAnimationFrame(tick);else bar.style.width='100%';
+}
 function initHeroGlyphs(){
  const grid=document.getElementById("glyphGrid"),word=document.getElementById("glyphWord");if(!grid||!word)return;
  const shapes=[
@@ -725,7 +785,7 @@ async function loadArchives(){
     }
     activeProject=0;
     setStatus('MONO ASSETS / '+projects.length+' PROJECTS / '+projects.reduce((n,p)=>n+(p.files||[]).length,0)+' ORIGINAL IMAGES');
-    renderDeck();renderWorks();renderHeroVisual();initHeroGlyphs();initContactLoop();initCapabilities();startDeckAuto();
+    renderDeck();renderWorks();renderHeroVisual();initFeaturedWork();initHeroGlyphs();initContactLoop();initCapabilities();startDeckAuto();
   } catch(error) {
     console.error('mono-assets manifest failed',error);
     setStatus('Could not load mono-assets: '+error.message);

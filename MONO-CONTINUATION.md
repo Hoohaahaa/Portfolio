@@ -1,0 +1,74 @@
+# MONO. Portfolio — Continuation Handoff
+Last updated: 2026-11-16
+Status: active implementation; do not restart from a template.
+
+## Canonical project state
+- Repository: `Hoohaahaa/Portfolio`
+- Working branch: `chatgpt/mono-scroll-portfolio-2026-11-15`
+- Current implementation file: `index.html`
+- Asset source of truth: `mono-assets/manifest.json` on `main` (seven projects, original image paths and order); do not rename or crop originals.
+- Asset register: `mono-assets/ASSET-REGISTER.md`
+- Main branch must not be overwritten or used as the design source. It has an older light editorial template.
+- Vercel project: `mo-portfolio` / project ID `prj_F5vSmSRBm3P1fzl9b71M4uyseaeA`
+- Share URL alias: `https://mono-selected.vercel.app`
+- Latest implementation commit at time of this note: `ff98ea749f951e26dbc943c58f95384e2d9cc46c`
+- Keep the stable alias and deploy only from the working branch.
+
+## Product/design intent
+MONO. is a portfolio, not a template demo. Preserve the existing dark cinematic visual identity and the Swiss/editorial restraint where it helps, but avoid generic slogans, decorative clutter, fake metrics, invented impact, and fake case-study narratives. Keep copy short, precise, factual, and in English for now. Persian localization is intentionally disabled: the previous Persian translation was inconsistent and weak. Do not reintroduce a language toggle until a fully rewritten Persian experience and proper RTL layouts are ready.
+
+## Current project order and content
+1. Veblen — Parametric Garment System
+2. Pulse Check — Employee Experience Platform
+3. Iran Unseen — Interactive Cultural Atlas
+4. ATS — Applicant Tracking System
+5. Humaani — AI Creative Workspace
+6. Mirana — Executive Talent Platform
+7. Pinket — FMCG Marketplace
+
+Seven project covers and galleries come from `mono-assets/manifest.json`. Preserve exact filenames, native aspect ratios, and complete screenshots. Use `object-fit: contain` for UI screens; never crop source UI just to fill a card. Pinket and Pulse Check were two-person design teams. Do not invent business impact or metrics. The separate file `mono audio visual engine.jpg` is a visual signature/hero asset, not an eighth case study unless explicitly confirmed.
+
+## Implemented in latest working commit
+- Replaced generic “Structure before surface” hero headline with a changing field of UI/product-design line symbols. The symbol field periodically resolves into short terms (PRODUCT, SYSTEMS, INTERACTION, EXPERIENCE, MOTION, INTERFACE, CREATIVE). Motion should feel organic and controlled, not like a random screensaver.
+- Preserved the MONO Audio Visual Engine image as the hero visual; do not reuse Veblen cover in the hero.
+- Replaced static “Let’s make it clear” contact headline with a fixed-height typewriter loop:
+  - “Let's make it” / “clear” with three blinking loading dots after “clear”
+  - “Or make a” / “beautiful problem.”
+  - It must loop without the heading container changing size or causing layout shift.
+- Mobile project navigation is a horizontal snap carousel/rail, not a two-column grid and not the desktop 3D deck shrunk down. Cards should reveal the next item slightly, show one project clearly, keep the full cover image visible, and open the matching project detail on tap.
+- Project detail gallery uses a bounded stage, contain-fit image, thumb rail, arrows, tap-to-expand lightbox, keyboard navigation and swipe navigation. The stage must not stretch to full viewport height. Keep controls minimal and borderless.
+- Existing theme system supports dark and light palettes; theme toggle belongs in the footer only. Check every section, project detail, gallery, lightbox, and controls in both themes. Never leave dark-only text or surfaces unreadable in light mode.
+- The Asset Desk/editor is hidden from the public UI.
+
+## Remaining QA / acceptance checklist
+1. Open `https://mono-selected.vercel.app` on a real Android phone and verify the latest deployment is served (hard refresh if cached).
+2. Hero: icon matrix is visible, symbols animate/rotate/change, and words resolve cleanly; no old “Structure before surface” copy remains. Verify no overlap with hero image or navigation.
+3. Contact: verify exact phrase sequence and that dots sit immediately after “clear”; typewriter does not resize the section, jump the footer, or clip the second phrase on narrow devices.
+4. Mobile Work: one horizontal carousel row, not a grid; adjacent card peeks in; all seven covers load; no card overlaps the Practice heading; tapping any card opens its own case study.
+5. Desktop Work: preserve existing 3D deck behavior unless a bug is found; do not change it just to match mobile.
+6. Project detail: image stage is a compact bounded area, never full-height by accident; images fit entirely; thumbnails scroll horizontally; arrows work; swipe changes image; tapping image opens lightbox; lightbox arrows, swipe, close and zoom work.
+7. Verify all seven project galleries and the final Pinket card specifically; ensure the gallery does not render beyond the stage or collide with Practice.
+8. Test light and dark mode across landing, Work, About/Practice, Contact, project detail, gallery, and lightbox. Theme control only in footer; preference persists.
+9. Check reduced-motion behavior, keyboard focus, touch target size, no console errors, and no broken image requests.
+10. Only after checks pass, describe the site as ready to share. Do not claim real-device testing unless it was actually performed.
+
+## Do not do
+- Do not deploy the old `main` branch or replace the current MONO design with the beige starter template.
+- Do not reintroduce the disliked mobile two-column project grid.
+- Do not make the mobile deck a scaled-down desktop 3D carousel.
+- Do not crop project UI screenshots or modify original assets.
+- Do not add unsupported impact numbers, testimonials, or generic case-study copy.
+- Do not re-enable incomplete Persian translation.
+- Do not add the Audio Visual Engine as a project without confirmation.
+- Do not move the theme toggle back into the header.
+- Do not silently change project order, cover assignments, or metadata.
+
+## User's latest explicit requests
+- Hero should use a lively but refined field of changing UI/open-source-style interface symbols, sometimes resolving into relevant words from the design practice.
+- Contact copy should communicate both possibilities: clarify/solve a problem, or create a beautiful problem worth solving. The exact intended pair is “Let's make it clear” and “Or make a beautiful problem.”
+- Fix the overlapping mobile project grid; user dislikes it. Choose a more considered mobile presentation inspired by compact multi-collection navigation, with visible distinct projects and full images.
+- Fix the project-detail gallery: no full-height stage/label strip; bounded image container; smoother carousel/swipe/thumbnail/lightbox UX.
+- Preserve the rest of the current site; clean and refine rather than redesign from scratch.
+
+## Continuation protocol
+Before editing, fetch the latest `index.html` from the working branch and read this file. Make sequential writes to the same file only (fetch latest SHA before update). Deploy from the working branch, then verify the stable alias. If the conversation context is lost, this handoff plus the working branch is the source of truth.

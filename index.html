@@ -671,6 +671,14 @@ body.fa .detail-top-meta{direction:rtl}
  .contact-heading{margin-bottom:58px!important}
  .contact-title{font-size:clamp(36px,10.4vw,72px)!important;line-height:.98!important;letter-spacing:-.065em!important}
 }
+/* MONO — automatic local-time theme default + precise light hero contrast */
+:root[data-theme="light"] .hero-kicker,
+:root[data-theme="light"] .hero-index,
+:root[data-theme="light"] .hero-visual-caption,
+:root[data-theme="light"] .hero-note{color:#66645e!important}
+:root[data-theme="light"] .hero-wordmark{color:#171715!important}
+:root[data-theme="light"] .hero-wordmark span{color:#85837d!important}
+:root[data-theme="light"] .hero-visual-caption .mono{color:#66645e!important}
 /* MONO — single wordmark, quiet navigation, more mobile breathing room */
 header{justify-content:flex-end!important;border-bottom:0!important;height:64px!important;padding-inline:6vw!important}
 .nav{gap:clamp(20px,4vw,38px)!important}
@@ -931,7 +939,10 @@ document.querySelectorAll('[data-assign]').forEach(b=>b.onclick=()=>{const i=+b.
 }
 function exportConfig(){const cfg={version:2,projectOrder:projects.map(p=>p.id),assetAssignments:Object.fromEntries(projects.map(p=>[p.id,getAssets(p.id).map(a=>a.name)])),projects:projects.map(p=>({id:p.id,title:p.title,brand:p.brand,category:p.category,group:p.group,description:p.desc,role:p.role,scope:p.scope,archive:p.archive||null,files:p.files||[],assetOrder:assetOrder[p.id]||getAssets(p.id).map(a=>a.name)}))};const blob=new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='portfolio.config.json';a.click();URL.revokeObjectURL(url)}
 document.getElementById('exportConfig').onclick=exportConfig;document.getElementById('resetConfig').onclick=()=>{assetOrder={};renderEditor();renderDeck();renderWorks()};document.getElementById('importConfig').onchange=async e=>{try{const cfg=JSON.parse(await e.target.files[0].text());if(cfg.projectOrder){const rank=new Map(cfg.projectOrder.map((id,i)=>[id,i]));projects.sort((a,b)=>(rank.get(a.id)??999)-(rank.get(b.id)??999))}if(cfg.assetAssignments)savedAssignments=cfg.assetAssignments;for(const p of cfg.projects||[])if(p.assetOrder)assetOrder[p.id]=p.assetOrder;applySavedAssignments();renderEditor();renderDeck();renderWorks()}catch(err){alert('Invalid config file: '+err.message)}};
-const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'LIGHT':'DARK';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.title=light?'Switch to dark mode':'Switch to light mode';themeButton.querySelector('.theme-mark').textContent=light?'☾':'☼';try{localStorage.setItem('mono-theme',theme)}catch(e){}}let savedTheme='dark';try{savedTheme=localStorage.getItem('mono-theme')||'dark'}catch(e){}applyTheme(savedTheme);themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
+const themeButton=document.getElementById('themeToggle'),themeLabel=document.getElementById('themeLabel');function applyTheme(theme){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeLabel.textContent=light?'LIGHT':'DARK';themeButton.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');themeButton.title=light?'Switch to dark mode':'Switch to light mode';themeButton.querySelector('.theme-mark').textContent=light?'☾':'☼';try{localStorage.setItem('mono-theme',theme)}catch(e){}}function themeForLocalTime(){const hour=new Date().getHours();return hour>=7&&hour<19?'light':'dark'}
+let savedTheme=null;try{savedTheme=localStorage.getItem('mono-theme')}catch(e){}
+applyTheme(savedTheme==='light'||savedTheme==='dark'?savedTheme:themeForLocalTime());
+themeButton.onclick=()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
 
 function initHeroSymbols(){
  const host=document.getElementById('glyphGrid');if(!host||host.dataset.ready)return;host.dataset.ready='1';

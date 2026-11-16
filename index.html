@@ -2054,6 +2054,39 @@ header .header-contact{justify-self:end!important;white-space:nowrap!important;m
  .experience-row time{font-size:8px!important;white-space:normal!important;text-align:right;max-width:110px;line-height:1.5!important}
 }
 
+
+/* Experience accent + image-specific gallery captions */
+.experience-panel{
+ background:#c75a2a!important;color:#21150f!important;border:1px solid #a84620!important;
+ border-radius:24px!important;padding:clamp(28px,5vw,64px)!important;
+ box-shadow:inset 0 1px 0 #ffffff35!important;
+}
+.experience-section{background:transparent!important}
+.experience-panel .section-kicker,.experience-panel .section-kicker .mono,
+.experience-panel .experience-title,.experience-panel .experience-title span,
+.experience-panel .experience-role h3,.experience-panel .experience-role p,
+.experience-panel .experience-role p span,.experience-panel .experience-row time{
+ color:#21150f!important;border-color:#21150f45!important;
+}
+.experience-panel .experience-title{font-size:clamp(42px,6vw,76px)!important;margin:28px 0 34px!important}
+.experience-panel .experience-list{border-color:#21150f45!important}
+.experience-panel .experience-row{border-color:#21150f35!important;padding:26px 0!important}
+.experience-panel .experience-role h3{font-weight:700!important;font-size:clamp(19px,2vw,25px)!important}
+.experience-panel .experience-role p{font-size:13px!important;opacity:.82}
+.experience-panel .experience-row time{font-weight:600!important}
+.gallery-copy{padding:26px clamp(18px,3vw,38px) 30px;border-bottom:1px solid var(--line);min-height:142px}
+.gallery-copy .mono{font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.gallery-copy h3{font-size:clamp(21px,3vw,32px);line-height:1.15;letter-spacing:-.045em;margin:12px 0 8px;font-weight:600}
+.gallery-copy p{max-width:68ch;font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+@media(max-width:760px){
+ .experience-panel{padding:23px 18px!important;border-radius:18px!important}
+ .experience-panel .experience-title{font-size:clamp(38px,10vw,54px)!important;margin:22px 0 25px!important}
+ .experience-panel .experience-row{padding:20px 0!important}
+ .gallery-copy{padding:19px 16px 22px;min-height:132px}
+ .gallery-copy h3{font-size:23px}
+ .gallery-copy p{font-size:13px;line-height:1.6}
+}
+
 </style></head>
 <body>
 <header><a class="brand" href="#top" aria-label="MO home">MO</a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a><a class="header-cv" href="/cv.pdf" target="_blank" rel="noopener" aria-disabled="true" data-en="CV" data-fa="CV" title="CV PDF will be added">CV</a></nav><a class="header-contact" href="#contact"><span>CONTACT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
@@ -2157,7 +2190,9 @@ function renderGallery(){
  const stage=document.getElementById('galleryStage'),rail=document.getElementById('galleryRail');
  if(!galleryAssets.length){stage.innerHTML='<div class="mono">NO PROJECT IMAGES</div>';rail.innerHTML='';return}
  const a=galleryAssets[galleryIndex];
- stage.innerHTML=imageMarkup(a,a.name)+'<span class="gallery-count">'+String(galleryIndex+1).padStart(2,'0')+' / '+String(galleryAssets.length).padStart(2,'0')+'</span><span class="gallery-hint">TAP IMAGE TO EXPAND</span><div class="gallery-arrows"><button id="galleryPrev" aria-label="Previous image">←</button><button id="galleryNext" aria-label="Next image">→</button></div>';
+ const p=projects.find(x=>x.id===document.getElementById('detail').dataset.project);const copy=p?.galleryCaptions?.[a.path||a.name]||{title:'Project screen '+String(galleryIndex+1).padStart(2,'0'),description:'A supporting screen from this project.'};
+ stage.innerHTML=imageMarkup(a,copy.title)+'<span class="gallery-count">'+String(galleryIndex+1).padStart(2,'0')+' / '+String(galleryAssets.length).padStart(2,'0')+'</span><span class="gallery-hint">TAP IMAGE TO EXPAND</span><div class="gallery-arrows"><button id="galleryPrev" aria-label="Previous image">←</button><button id="galleryNext" aria-label="Next image">→</button></div>';
+ let copyEl=document.getElementById('galleryCopy');if(!copyEl){copyEl=document.createElement('div');copyEl.id='galleryCopy';copyEl.className='gallery-copy';stage.insertAdjacentElement('afterend',copyEl)}copyEl.innerHTML='<span class="mono">SCREEN / '+String(galleryIndex+1).padStart(2,'0')+'</span><h3>'+esc(copy.title)+'</h3><p>'+esc(copy.description)+'</p>';if(window.gsap){gsap.fromTo(copyEl,{y:10,autoAlpha:0},{y:0,autoAlpha:1,duration:.32,ease:'power2.out'})}
  const img=stage.querySelector('img');if(img)img.onclick=()=>openLightbox(galleryIndex);let stageTouchX=null;stage.ontouchstart=e=>{stageTouchX=e.touches[0].clientX};stage.ontouchend=e=>{if(stageTouchX===null)return;const dx=e.changedTouches[0].clientX-stageTouchX;stageTouchX=null;if(Math.abs(dx)>48){galleryIndex=(galleryIndex+(dx<0?1:-1)+galleryAssets.length)%galleryAssets.length;renderGallery()}};
  rail.innerHTML=galleryAssets.map((asset,i)=>'<button class="gallery-thumb '+(i===galleryIndex?'active':'')+'" data-thumb="'+i+'" aria-label="Show image '+(i+1)+'">'+imageMarkup(asset,asset.name)+'</button>').join('');
  rail.querySelectorAll('[data-thumb]').forEach(b=>b.onclick=()=>{galleryIndex=+b.dataset.thumb;renderGallery()});
@@ -2292,7 +2327,7 @@ async function loadArchives(){
       organization:p.passport?.organization||'',engagement:p.passport?.engagement||'',
       discipline:p.discipline||'',scope:p.passport?.scope||p.discipline||'',
       intro:p.editorial?.intro||'',introFa:p.editorial?.introFa||'',
-      focus:p.editorial?.focus||[],focusFa:p.editorial?.focusFa||[],impact:p.impact||null,
+      focus:p.editorial?.focus||[],focusFa:p.editorial?.focusFa||[],impact:p.impact||null,galleryCaptions:p.galleryCaptions||{},
       files:(p.gallery||[]).slice(),coverPath:p.cover
     }));
     assetMap={};assetOrder={};unassignedAssets=[];

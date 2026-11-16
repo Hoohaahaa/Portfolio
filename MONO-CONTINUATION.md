@@ -131,3 +131,11 @@ Before editing, fetch the latest `index.html` from the working branch and read t
 - Increased mobile hero breathing room and vertical height: 112svh minimum, larger top/bottom padding, more spacing between identity copy and Selected Work image, and slightly wider side margins. Kept existing hero content, artwork, animation, theme behavior, and all other sections untouched.
 - Deployment READY; stable alias remains `https://mono-selected.vercel.app`. Verified the header brand anchor is absent, all three nav links remain, and the mobile whitespace override is present.
 - Source commit: `5667fef70ac462ada896a939910a2f267e3d174e`.
+
+
+## Latest update — 2026-11-16 (light default + local-time theme)
+- User requested the light theme as the default, but also asked for automatic day/night behavior based on the visitor's phone/device local time.
+- On first visit (no saved manual preference), the site now uses the device's local clock: 07:00–18:59 = light; 19:00–06:59 = dark. The existing footer theme toggle remains and a manual choice is saved in localStorage, so it overrides the automatic first-visit default on later visits.
+- Added explicit light-mode contrast overrides for the hero kicker, section index, hero wordmark, supporting copy and Selected Work caption so they no longer inherit muted dark-mode colors.
+- No layout, content, images, animation or other sections changed.
+- Deployment READY and stable alias `https://mono-selected.vercel.app` updated. Source commit: `5876b911a79a8695727a862eec4e1094f1127b8e`.

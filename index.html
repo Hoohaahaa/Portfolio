@@ -1041,7 +1041,7 @@ async function loadArchives(){
     if(!response.ok) throw new Error('Manifest HTTP '+response.status);
     const manifest=await response.json();
     const groupById={veblen:'Selected Work',pulse:'Selected Work',iran:'Selected Work',ats:'Selected Work',humaani:'Selected Work',mirana:'Selected Work',pinket:'Selected Work'};
-    const businessTypes={veblen:['CREATIVE TECHNOLOGY','3D / WEBGL'],pulse:['B2B','HR TECH / SAAS','1,000+ EMPLOYEE ORG'],iran:['B2C','CULTURE / MAP EXPERIENCE'],ats:['B2B','RECRUITMENT / SAAS'],humaani:['AI','CREATIVE SAAS'],mirana:['B2B','EXECUTIVE TALENT'],pinket:['COMMERCE','FMCG MARKETPLACE']};
+    const businessTypes={veblen:['CREATIVE TECHNOLOGY','3D / WEBGL'],pulse:['B2B','HR TECH / SAAS','20-PERSON TEAM','1,000+ EMPLOYEE ORG'],iran:['B2C','CULTURE / MAP EXPERIENCE'],ats:['B2B','RECRUITMENT / SAAS'],humaani:['AI','CREATIVE SAAS'],mirana:['B2B','EXECUTIVE TALENT'],pinket:['COMMERCE','FMCG MARKETPLACE']};
     projects=(manifest.projects||[]).slice().sort((a,b)=>a.order-b.order).map(p=>({
       id:p.id,title:p.displayTitle,brand:p.client,client:p.client,category:p.discipline||'Product design',
       group:groupById[p.id]||'Selected Work',desc:p.editorial?.intro||p.discipline||p.displayTitle,productType:(businessTypes[p.id]||[]).join(' / '),tags:businessTypes[p.id]||[],

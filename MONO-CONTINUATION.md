@@ -11,7 +11,7 @@ Status: active implementation; do not restart from a template.
 - Main branch must not be overwritten or used as the design source. It has an older light editorial template.
 - Vercel project: `mo-portfolio` / project ID `prj_F5vSmSRBm3P1fzl9b71M4uyseaeA`
 - Share URL alias: `https://mono-selected.vercel.app`
-- Latest implementation commit at time of this note: `ff98ea749f951e26dbc943c58f95384e2d9cc46c`
+- Latest implementation commit at time of this note: `0adea8bde478aed6d4a3daba2c037a1d64425847`
 - Keep the stable alias and deploy only from the working branch.
 
 ## Product/design intent

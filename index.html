@@ -255,6 +255,33 @@ body.fa .detail-top-meta{direction:rtl}
  .hero-visual-caption{font-size:7px!important;bottom:0!important}
 }
 
+/* MONO — quiet typographic hero and two-cover rotation */
+.hero{background:var(--bg)!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:7vw!important;padding:15vh 6vw 9vh!important;min-height:100svh!important}
+.hero:before{opacity:.07!important;background-size:25% 25%!important}
+.hero-kicker{top:10%!important;left:6vw!important;font-size:9px!important;letter-spacing:.14em!important;color:var(--muted)!important;font-weight:400!important}
+.hero-copy{max-width:560px!important;padding-top:0!important}
+.hero-wordmark{margin:0!important;font-size:clamp(58px,9vw,116px)!important;line-height:.9!important;letter-spacing:-.075em!important;font-weight:400!important;color:var(--fg)!important}
+.hero-wordmark span{font-weight:300!important;color:var(--muted)!important}
+.hero-note{margin:22px 0 26px!important;max-width:380px!important;font-size:12px!important;line-height:1.9!important;color:var(--muted)!important;font-weight:400!important;letter-spacing:.015em!important}
+.hero-scroll{display:flex!important;gap:12px!important;align-items:center!important;color:var(--muted)!important;font-size:8px!important;letter-spacing:.14em!important}
+.hero-scroll span:last-child{font-size:13px!important}
+.hero-visual{height:min(54vh,540px)!important;min-height:300px!important;perspective:none!important}
+.hero-visual-frame{position:absolute!important;inset:0 0 23px!important;overflow:hidden!important;background:var(--bg)!important;border:0!important}
+.hero-visual-frame img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;filter:none!important;transform:none!important}
+.hero-visual-caption{font-size:8px!important;letter-spacing:.12em!important;color:var(--muted)!important}
+.hero-image-progress{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);display:block}
+.hero-image-progress i{display:block;width:0;height:100%;background:var(--fg);transition:width .08s linear}
+@media(max-width:760px){
+ .hero{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto!important;gap:22px!important;min-height:100svh!important;height:auto!important;padding:118px 6vw 24px!important;align-content:start!important}
+ .hero-kicker{top:78px!important;left:6vw!important;font-size:8px!important}
+ .hero-copy{padding:0!important;max-width:none!important}
+ .hero-wordmark{font-size:clamp(56px,14vw,82px)!important;line-height:.9!important}
+ .hero-note{margin:14px 0 15px!important;font-size:10px!important;line-height:1.8!important}
+ .hero-scroll{font-size:7px!important;margin:0!important}
+ .hero-visual{height:clamp(170px,30svh,260px)!important;min-height:170px!important;max-height:260px!important;margin:0!important}
+ .hero-visual-frame{inset:0 0 19px!important}
+ .hero-visual-caption{font-size:7px!important;bottom:0!important}
+}
 /* MONO — final editorial pass */
 .hero{background:#080808!important;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;gap:5vw!important;padding:13vh 5vw 8vh!important}
 .hero:before{opacity:.18!important;background-size:25% 25%!important}
@@ -526,20 +553,6 @@ body.fa .detail-top-meta{direction:rtl}
 }
 
 
-/* Selected-work highlight: one contained viewport, no card stack */
-.featured-work{position:relative;padding:76px 4vw 90px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);overflow:hidden}
-.featured-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 22px}
-.featured-stage{position:relative;width:100%;height:clamp(340px,58vw,680px);max-height:76svh;min-height:320px;overflow:hidden;background:#e9e8e0;border:1px solid var(--line);isolation:isolate}
-.featured-stage #featuredImage{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#080808;display:block;pointer-events:none}
-.featured-shade{position:absolute;inset:48% 0 0;background:linear-gradient(0deg,#050505ed,transparent);pointer-events:none}
-.featured-caption{position:absolute;left:clamp(18px,3vw,48px);right:clamp(18px,3vw,48px);bottom:clamp(25px,4vw,54px);z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:24px;row-gap:8px;color:#fff}
-.featured-caption .mono{grid-column:1/-1;color:#c3c3c3}
-.featured-caption h2{margin:0;font-size:clamp(38px,7vw,92px);line-height:.88;letter-spacing:-.085em;font-weight:600}
-.featured-caption h2 span{font:12px var(--mono);letter-spacing:.08em;color:#bcbcbc;vertical-align:middle}
-.featured-caption p{margin:9px 0 0;color:#c7c7c7;font-size:clamp(12px,1.3vw,16px)}
-.featured-caption>a{grid-column:2;grid-row:2/4;align-self:center;display:grid;place-items:center;width:52px;height:52px;font-size:30px;color:#fff;text-decoration:none}
-.featured-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:#ffffff38;z-index:3}
-.featured-progress span{display:block;width:0;height:100%;background:#fff;transform-origin:left}
 .cinema-caption{left:4vw;right:clamp(150px,20vw,300px);bottom:8%;max-width:none;width:auto}
 .cinema-caption strong{display:block;max-width:100%;font-size:clamp(34px,6.3vw,86px);line-height:.9;letter-spacing:-.075em;font-weight:600;margin:12px 0 10px;overflow-wrap:anywhere}
 .cinema-caption p{font-size:clamp(12px,1.35vw,16px);line-height:1.5;max-width:70ch;color:#aaa}
@@ -567,16 +580,8 @@ body.fa .detail-top-meta{direction:rtl}
 <body>
 <header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
-<section class="hero" id="top"><div class="hero-kicker mono" data-en="INDEPENDENT PRODUCT DESIGNER — 2026" data-fa="طراح مستقل محصول — ۲۰۲۶">INDEPENDENT PRODUCT DESIGNER — 2026</div><div class="hero-copy"><div class="hero-signature mono">MONO<span>.</span> / PRODUCT DESIGN</div><div class="hero-glyph-field" id="heroGlyphField" role="img" aria-label="A changing field of product design symbols and ideas"><div class="glyph-grid" id="glyphGrid"></div><div class="glyph-word" id="glyphWord" aria-hidden="true"></div><span class="sr-only">Product, systems, interface, experience, interaction, motion and creative technology.</span></div><p class="hero-note" data-en="Product systems · UX/UI · Creative technology" data-fa="سیستم‌های محصول · طراحی تجربه و رابط · فناوری خلاق">Product systems · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span class="scroll-dot">↓</span><span data-en="SELECTED WORK" data-fa="پروژه‌های منتخب">SELECTED WORK</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected project"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span data-en="01 / SELECTED WORK" data-fa="۰۱ / پروژه منتخب">01 / SELECTED WORK</span><span>VEBLEN — PARAMETRIC GARMENT SYSTEM</span></div></div></section>
-<section class="featured-work" id="selected-work" aria-label="Selected work highlights">
- <div class="featured-head mono"><span>02 / SELECTED WORKS</span><span id="featuredCounter">01 / 01</span></div>
- <div class="featured-stage" id="featuredStage">
-  <img id="featuredImage" src="mono-assets/mono audio visual engine.jpg" alt="MONO Audio Visual Engine" loading="eager" decoding="async">
-  <div class="featured-shade"></div>
-  <div class="featured-caption"><span class="mono" id="featuredType">AI / CREATIVE TECHNOLOGY</span><h2 id="featuredTitle">ENTITY<span> / 01</span></h2><p id="featuredDescription">Gestural instrument · Field / Resonance</p><a href="https://entity-bymo.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Entity project">↗</a></div>
-  <div class="featured-progress"><span id="featuredProgress"></span></div>
- </div>
-</section>
+<section class="hero" id="top"><div class="hero-kicker mono">INDEPENDENT PRACTICE&nbsp; / &nbsp;2026</div><div class="hero-copy"><h1 class="hero-wordmark">MONO<span>.</span></h1><p class="hero-note">Independent product designer<br>Product design · UX/UI · Creative technology</p><a class="hero-scroll mono" href="#cinema"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">MONO / AUDIO-VISUAL ENGINE</span></div></div></section>
+
 <section id="cinema" aria-label="Cinematic project navigation"><div class="cinema-pin"><div class="cinema-head mono"><span data-en="01 / THE SELECTED WORK" data-fa="۰۱ / پروژه‌های منتخب">01 / THE SELECTED WORK</span><span id="counter">01 — 10</span></div><canvas class="shader-field" id="shaderCanvas" aria-hidden="true"></canvas><div class="orbit"></div><div class="deck" id="deck"><article class="project-card" data-slot="0"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="1"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article><article class="project-card" data-slot="2"><div class="media"></div><div class="meta"><div><b></b><small></small></div><i>↗</i></div></article></div><div class="mobile-project-grid" id="mobileProjectGrid" aria-label="All selected projects"></div><div class="cinema-caption"><span class="mono" id="activeNo">01 / 10</span><strong id="activeTitle">Pinket</strong><p id="activeDesc">Retail systems & connected commerce</p></div><div class="cinema-controls"><button id="prev" aria-label="Previous project">←</button><button id="next" aria-label="Next project">→</button></div><div class="progress"><span id="progress"></span></div></div></section>
 <section class="section about" id="about"><div class="cap-head mono"><span data-en="PRACTICE" data-fa="حوزه‌های کار">PRACTICE</span><span>PRODUCT / INTERFACE / EXPERIENCE</span></div><h2 class="cap-title" data-en="Practice." data-fa="حوزه‌ی کار.">Practice.</h2><div class="cap-list"><div data-en="Product strategy" data-fa="استراتژی محصول">Product strategy</div><div data-en="Information architecture" data-fa="معماری اطلاعات">Information architecture</div><div data-en="UX research" data-fa="پژوهش تجربه کاربر">UX research</div><div data-en="UX / UI design" data-fa="طراحی تجربه و رابط">UX / UI design</div><div data-en="Design systems" data-fa="سیستم‌های طراحی">Design systems</div><div data-en="Responsive interfaces" data-fa="رابط‌های واکنش‌گرا">Responsive interfaces</div><div data-en="Interactive prototyping" data-fa="نمونه‌سازی تعاملی">Interactive prototyping</div><div data-en="Motion & interaction" data-fa="موشن و تعامل">Motion & interaction</div><div data-en="Creative technology" data-fa="فناوری خلاق">Creative technology</div></div></section>
 <section class="contact" id="contact"><h2 class="contact-loop" aria-label="Let’s make it clear. Or make a beautiful problem."><span class="contact-loop-lines" id="contactLoop" aria-hidden="true"><span class="contact-line"></span><span class="contact-line"></span></span><span class="contact-dots" aria-hidden="true"><i></i><i></i><i></i></span></h2><div class="contact-foot mono"><a href="mailto:mono@monomatter.dev">MONO@MONOMATTER.DEV ↗</a><a href="https://monomatter.dev" target="_blank" rel="noreferrer">MONOMATTER.DEV ↗</a><span>© MO SHAHMOHAMADI · 2026</span><button class="theme-toggle footer-theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme"><span class="theme-mark" aria-hidden="true">◐</span><span id="themeLabel">LIGHT</span></button></div></section>
@@ -707,41 +712,6 @@ function initFeaturedWork(){
  stage.addEventListener('mouseenter',pause);stage.addEventListener('mouseleave',resume);stage.addEventListener('focusin',pause);stage.addEventListener('focusout',resume);document.addEventListener('visibilitychange',()=>{if(!document.hidden)start=performance.now()});
  show(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(tick);else bar.style.width='100%';
 }
-function initHeroGlyphs(){
- const grid=document.getElementById("glyphGrid"),word=document.getElementById("glyphWord");if(!grid||!word)return;
- const shapes=[
- '<path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h16"/>',
- '<circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 4"/>',
- '<path d="M4 6h16M4 12h10M4 18h16"/><circle cx="18" cy="12" r="2"/>',
- '<path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/>',
- '<path d="M4 18 10 6l4 8 2-4 4 8"/>',
- '<circle cx="12" cy="12" r="2"/><circle cx="5" cy="6" r="1.5"/><circle cx="19" cy="6" r="1.5"/><circle cx="5" cy="18" r="1.5"/><circle cx="19" cy="18" r="1.5"/><path d="m7 7 3.5 3.5M17 7l-3.5 3.5M7 17l3.5-3.5M17 17l-3.5-3.5"/>',
- '<path d="M4 7h16M4 17h16M8 4v6M16 14v6"/>',
- '<path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/>',
- '<path d="m4 12 5-5 4 4 7-7"/><path d="M14 4h6v6"/>',
- '<path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="7"/>',
- '<path d="M4 5h16v14H4z"/><path d="M4 10h16M10 5v14"/>',
- '<path d="M4 16c3-8 5 8 8 0s5 8 8-4"/>'
- ];
- const labels=["PRODUCT","SYSTEMS","INTERACTION","EXPERIENCE","MOTION","INTERFACE","CREATIVE"];
- grid.innerHTML=Array.from({length:12},(_,i)=>'<span class="glyph-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">'+shapes[i]+'</svg></span>').join("");
- const cells=[...grid.children];let index=0,wordMode=false;
- const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- function shuffle(){
-  wordMode=!wordMode;
-  if(wordMode){
-   grid.classList.add("is-dispersed");word.textContent=labels[index%labels.length];word.classList.add("is-visible");
-   if(window.gsap&&!reduce)gsap.fromTo(word,{opacity:0,y:12,letterSpacing:".22em"},{opacity:1,y:0,letterSpacing:"-.065em",duration:.55,ease:"power3.out"});
-   cells.forEach(el=>el.style.setProperty("--turn",(Math.random()*100-50)+"deg"));
-  }else{
-   word.classList.remove("is-visible");grid.classList.remove("is-dispersed");
-   cells.forEach(el=>{el.querySelector("svg").innerHTML=shapes[Math.floor(Math.random()*shapes.length)];el.style.setProperty("--turn",(Math.random()*70-35)+"deg")});
-   index++;
-  }
- }
- cells.forEach(el=>{el.style.setProperty("--turn",(Math.random()*40-20)+"deg");el.style.setProperty("--delay",(Math.random()*.35)+"s")});
- if(!reduce){setInterval(shuffle,2800);setTimeout(shuffle,1300)}
-}
 function initContactLoop(){
  const root=document.getElementById("contactLoop"),dots=document.querySelector(".contact-dots");if(!root||root.dataset.ready)return;root.dataset.ready="1";
  const lines=[...root.querySelectorAll(".contact-line")],phrases=[["Let's make it","clear"],["Or make a","beautiful problem."]];
@@ -752,7 +722,21 @@ function initContactLoop(){
  async function cycle(){while(true){const pair=phrases[phrase];await typeLine(lines[0],pair[0]);await typeLine(lines[1],pair[1]);if(dots&&phrase===0){const rr=root.getBoundingClientRect(),lr=lines[1].getBoundingClientRect();dots.style.left=(lr.right-rr.left+10)+"px";dots.style.bottom=(root.clientHeight-(lr.bottom-rr.top)-2)+"px";dots.classList.add("is-blinking")}await wait(phrase===0?2400:2600);if(dots)dots.classList.remove("is-blinking");await eraseLine(lines[1]);await eraseLine(lines[0]);phrase=(phrase+1)%phrases.length}}
  if(matchMedia("(prefers-reduced-motion: reduce)").matches){lines[0].textContent=phrases[0][0];lines[1].textContent=phrases[0][1];return}cycle();
 }
-function renderHeroVisual(){const node=document.querySelector('.hero-visual-frame');if(node){const src=fileURL('mono-assets/mono audio visual engine.jpg');node.innerHTML='<img loading="eager" decoding="async" fetchpriority="high" src="'+esc(src)+'" alt="MONO Audio Visual Engine — particle field interface" onload="fitFrame(this)">'}const caption=document.querySelector('.hero-visual-caption span:last-child');if(caption)caption.textContent='MONO / AUDIO-VISUAL ENGINE';if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy > *',{y:18,opacity:0,duration:.8,stagger:.08,ease:'power3.out',delay:.08});gsap.from('.hero-visual-frame',{clipPath:'inset(0 0 8% 0)',opacity:0,duration:.9,ease:'power3.out',delay:.16})}}
+function renderHeroVisual(){
+ const frame=document.querySelector('.hero-visual-frame'),caption=document.getElementById('heroVisualTitle');if(!frame)return;
+ const slides=[
+  {src:fileURL('mono-assets/mono audio visual engine.jpg'),alt:'MONO Audio-Visual Engine',title:'MONO / AUDIO-VISUAL ENGINE'},
+  {src:'https://raw.githubusercontent.com/Hoohaahaa/Portfolio/main/mono-assets/entity-hand-instrument-1600.jpg',alt:'ENTITY hand instrument cover',title:'ENTITY / GESTURAL INSTRUMENT'}
+ ];
+ frame.innerHTML='<img id="heroPreviewImage" loading="eager" decoding="async" fetchpriority="high" alt="'+slides[0].alt+'" src="'+esc(slides[0].src)+'" onload="fitFrame(this)"><span class="hero-image-progress" aria-hidden="true"><i id="heroImageProgress"></i></span>';
+ let current=0,started=performance.now(),paused=false;const image=document.getElementById('heroPreviewImage'),progress=document.getElementById('heroImageProgress'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(caption)caption.textContent=slides[0].title;
+ function change(){current=(current+1)%slides.length;const next=slides[current];const swap=()=>{image.src=next.src;image.alt=next.alt;if(caption)caption.textContent=next.title;started=performance.now();if(progress)progress.style.width='0%';if(window.gsap&&!reduce){gsap.fromTo(image,{opacity:.2,scale:1.008},{opacity:1,scale:1,duration:.65,ease:'power2.out',overwrite:true});if(caption)gsap.fromTo(caption,{opacity:0,y:5},{opacity:1,y:0,duration:.45,ease:'power2.out'})}};if(window.gsap&&!reduce)gsap.to(image,{opacity:0,duration:.22,onComplete:swap});else swap()}
+ function tick(now){if(!paused&&!document.hidden){const p=Math.min(1,(now-started)/4000);if(progress)progress.style.width=(p*100)+'%';if(p>=1)change()}requestAnimationFrame(tick)}
+ frame.addEventListener('mouseenter',()=>paused=true);frame.addEventListener('mouseleave',()=>{paused=false;started=performance.now()});document.addEventListener('visibilitychange',()=>{if(!document.hidden)started=performance.now()});
+ if(!reduce)requestAnimationFrame(tick);
+ if(window.gsap&&!reduce){gsap.from('.hero-copy > *',{y:12,opacity:0,duration:.9,stagger:.12,ease:'power2.out',delay:.08});gsap.from('.hero-visual-frame',{opacity:0,duration:1,ease:'power2.out',delay:.18})}
+}
 function initCapabilities(){const items=[...document.querySelectorAll('.cap-list>div')];if(!items.length)return;if(!window.ScrollTrigger||!window.gsap){items.forEach(x=>x.classList.add('is-active'));return}gsap.registerPlugin(ScrollTrigger);items.forEach(el=>ScrollTrigger.create({trigger:el,start:'top 72%',end:'bottom 38%',onEnter:()=>el.classList.add('is-active'),onEnterBack:()=>el.classList.add('is-active'),onLeave:()=>{el.classList.remove('is-active');el.classList.add('is-past')},onLeaveBack:()=>{el.classList.remove('is-active','is-past')}}))}
 function initShader(){const canvas=document.getElementById('shaderCanvas');if(!canvas||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const gl=canvas.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power'});if(!gl)return;const compile=(type,source)=>{const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);return gl.getShaderParameter(sh,gl.COMPILE_STATUS)?sh:null};const vs=compile(gl.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}');const fs=compile(gl.FRAGMENT_SHADER,'precision mediump float;uniform vec2 r;uniform float t;float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=(uv-.5)*vec2(r.x/r.y,1.);float d=length(p-vec2(.12*sin(t*.16),.08*cos(t*.12)));float glow=exp(-d*3.1)*.13;float grain=(hash(floor(gl_FragCoord.xy*.5))-.5)*.018;float ring=sin(length(p)*21.-t*.45)*.012;vec3 col=vec3(.025,.028,.04)+vec3(.32,.29,.25)*glow+vec3(ring)+vec3(grain);gl_FragColor=vec4(col,1.);}');if(!vs||!fs)return;const prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;gl.useProgram(prog);const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);const res=gl.getUniformLocation(prog,'r'),time=gl.getUniformLocation(prog,'t');let raf=0,start=performance.now();const draw=now=>{const dpr=Math.min(devicePixelRatio||1,1.5),w=Math.floor(canvas.clientWidth*dpr),h=Math.floor(canvas.clientHeight*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}gl.uniform2f(res,w,h);gl.uniform1f(time,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,6);raf=requestAnimationFrame(draw)};raf=requestAnimationFrame(draw);document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else{start=performance.now();raf=requestAnimationFrame(draw)}})}
 /* WebGL background animation disabled on this pass: keep mobile rendering responsive. */
@@ -785,7 +769,7 @@ async function loadArchives(){
     }
     activeProject=0;
     setStatus('MONO ASSETS / '+projects.length+' PROJECTS / '+projects.reduce((n,p)=>n+(p.files||[]).length,0)+' ORIGINAL IMAGES');
-    renderDeck();renderWorks();renderHeroVisual();initFeaturedWork();initHeroGlyphs();initContactLoop();initCapabilities();startDeckAuto();
+    renderDeck();renderWorks();renderHeroVisual();initContactLoop();initCapabilities();startDeckAuto();
   } catch(error) {
     console.error('mono-assets manifest failed',error);
     setStatus('Could not load mono-assets: '+error.message);

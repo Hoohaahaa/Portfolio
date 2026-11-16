@@ -530,7 +530,7 @@ body.fa .detail-top-meta{direction:rtl}
 .featured-work{position:relative;padding:76px 4vw 90px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);overflow:hidden}
 .featured-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 22px}
 .featured-stage{position:relative;width:100%;height:clamp(340px,58vw,680px);max-height:76svh;min-height:320px;overflow:hidden;background:#e9e8e0;border:1px solid var(--line);isolation:isolate}
-.featured-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#e9e8e0;pointer-events:none}
+.featured-stage #featuredImage{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#080808;display:block;pointer-events:none}
 .featured-shade{position:absolute;inset:48% 0 0;background:linear-gradient(0deg,#050505ed,transparent);pointer-events:none}
 .featured-caption{position:absolute;left:clamp(18px,3vw,48px);right:clamp(18px,3vw,48px);bottom:clamp(25px,4vw,54px);z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:24px;row-gap:8px;color:#fff}
 .featured-caption .mono{grid-column:1/-1;color:#c3c3c3}
@@ -571,7 +571,7 @@ body.fa .detail-top-meta{direction:rtl}
 <section class="featured-work" id="selected-work" aria-label="Selected work highlights">
  <div class="featured-head mono"><span>02 / SELECTED WORKS</span><span id="featuredCounter">01 / 01</span></div>
  <div class="featured-stage" id="featuredStage">
-  <iframe id="featuredFrame" title="ENTITY — Gestural instrument preview" src="https://entity-bymo.vercel.app" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1" aria-hidden="true"></iframe>
+  <img id="featuredImage" src="mono-assets/mono audio visual engine.jpg" alt="MONO Audio Visual Engine" loading="eager" decoding="async">
   <div class="featured-shade"></div>
   <div class="featured-caption"><span class="mono" id="featuredType">AI / CREATIVE TECHNOLOGY</span><h2 id="featuredTitle">ENTITY<span> / 01</span></h2><p id="featuredDescription">Gestural instrument · Field / Resonance</p><a href="https://entity-bymo.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Entity project">↗</a></div>
   <div class="featured-progress"><span id="featuredProgress"></span></div>
@@ -697,15 +697,15 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
 function initFeaturedWork(){
  const stage=document.getElementById('featuredStage'),bar=document.getElementById('featuredProgress'),counter=document.getElementById('featuredCounter');
  if(!stage||!bar||stage.dataset.ready)return;stage.dataset.ready='1';
- // Add new one-screen projects here; music-led FIELD is intentionally excluded.
- const slides=[{title:'ENTITY',index:'01',type:'AI / CREATIVE TECHNOLOGY',description:'Gestural instrument · Field / Resonance',url:'https://entity-bymo.vercel.app'}];
- let current=0,start=0,raf=0,paused=false,cycle=6500;
- const title=document.getElementById('featuredTitle'),type=document.getElementById('featuredType'),desc=document.getElementById('featuredDescription'),frame=document.getElementById('featuredFrame');
- function show(i){current=i;const p=slides[current];title.innerHTML=p.title+'<span> / '+p.index+'</span>';type.textContent=p.type;desc.textContent=p.description;counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');if(frame.src!==p.url)frame.src=p.url;if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches)gsap.fromTo([type,title,desc],{y:15,opacity:0},{y:0,opacity:1,duration:.5,stagger:.06,ease:'power3.out'});}
- function tick(now){if(!start)start=now;if(!paused&&!document.hidden){const progress=Math.min(1,(now-start)/cycle);bar.style.width=(progress*100)+'%';if(progress>=1){show((current+1)%slides.length);start=now;}}raf=requestAnimationFrame(tick)}
+ // The carousel is cover-image only. Add ENTITY here once its actual cover asset is available.
+ const slides=[{title:'MONO',index:'01',type:'CREATIVE TECHNOLOGY',description:'Audio-visual engine',image:'mono-assets/mono audio visual engine.jpg'}];
+ let current=0,start=0,paused=false,cycle=4000;
+ const title=document.getElementById('featuredTitle'),type=document.getElementById('featuredType'),desc=document.getElementById('featuredDescription'),img=document.getElementById('featuredImage');
+ function show(i){current=i;const p=slides[current];title.innerHTML=p.title+'<span> / '+p.index+'</span>';type.textContent=p.type;desc.textContent=p.description;counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');if(img.getAttribute('src')!==p.image)img.src=p.image;if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.fromTo(img,{opacity:.35,scale:1.012},{opacity:1,scale:1,duration:.65,ease:'power2.out',overwrite:true});gsap.fromTo([type,title,desc],{y:12,opacity:0},{y:0,opacity:1,duration:.45,stagger:.05,ease:'power3.out'});}}
+ function tick(now){if(!start)start=now;if(!paused&&!document.hidden){const progress=Math.min(1,(now-start)/cycle);bar.style.width=(progress*100)+'%';if(progress>=1){show((current+1)%slides.length);start=now;}}requestAnimationFrame(tick)}
  const pause=()=>{paused=true};const resume=()=>{paused=false;start=performance.now()};
  stage.addEventListener('mouseenter',pause);stage.addEventListener('mouseleave',resume);stage.addEventListener('focusin',pause);stage.addEventListener('focusout',resume);document.addEventListener('visibilitychange',()=>{if(!document.hidden)start=performance.now()});
- show(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)raf=requestAnimationFrame(tick);else bar.style.width='100%';
+ show(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(tick);else bar.style.width='100%';
 }
 function initHeroGlyphs(){
  const grid=document.getElementById("glyphGrid"),word=document.getElementById("glyphWord");if(!grid||!word)return;

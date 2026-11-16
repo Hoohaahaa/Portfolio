@@ -8,7 +8,8 @@
     "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed.",
     "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates.",
     "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels.",
-    "Case-study narratives and scope infographics expanded on 2026-11-16. Metrics are limited to documented portfolio visuals, confirmed scope dimensions, project periods, platforms and team structure; no product-performance uplift is fabricated."
+    "Case-study narratives and scope infographics expanded on 2026-11-16. Metrics are limited to documented portfolio visuals, confirmed scope dimensions, project periods, platforms and team structure; no product-performance uplift is fabricated.",
+    "Project narratives revised on 2026-11-16 from user-confirmed retrospective details. See docs/project-knowledge/README.md and per-project records for source-of-truth, evidence levels, caveats and open questions."
   ],
   "projects": [
     {
@@ -36,79 +37,86 @@
         "engagement": "Independent project"
       },
       "editorial": {
-        "intro": "A parametric garment system built around body form, measurements and adjustable design parameters.",
+        "intro": "An independent parametric garment-system exploration connecting body measurements, garment construction and exportable pattern geometry.",
         "focus": [
-          "3D body visualization",
-          "Measurement mapping",
-          "Parametric garment exploration"
+          "Body measurement mapping",
+          "Parametric garment calibration",
+          "Pattern-maker collaboration",
+          "DXF export for CLO 3D"
         ],
-        "introFa": "یک سیستم پارامتریک طراحی پوشاک بر پایه‌ی فرم بدن، اندازه‌ها و پارامترهای قابل تنظیم.",
+        "introFa": "کاوش مستقل یک سیستم پارامتریک پوشاک برای اتصال اندازه‌های بدن، کالیبراسیون الگو و خروجی DXF قابل استفاده در CLO 3D.",
         "focusFa": [
-          "نمایش سه‌بعدی بدن",
-          "نقشه‌ی اندازه‌ها",
-          "کاوش فرم پارامتریک پوشاک"
+          "نگاشت اندازه‌های بدن",
+          "کالیبراسیون الگوی پارامتریک",
+          "همکاری با الگوسازها",
+          "خروجی DXF برای CLO 3D"
         ]
       },
       "platform": "Interactive digital system · 3D",
       "caseStudy": [
         {
           "label": "01 / PROJECT CONTEXT",
-          "title": "Exploring how a garment can respond to the body",
-          "body": "Veblen is an independent exploration of a parametric garment system, connecting body form, measurements and adjustable design parameters in a digital environment."
+          "title": "Exploring a parametric garment workflow",
+          "body": "Veblen is an independent concept project exploring how body measurements and adjustable garment parameters can be connected in a digital pattern workflow. It is a design and technical exploration, not a production-deployed product."
         },
         {
           "label": "02 / PROBLEM FRAMING",
-          "title": "Make the relationship between body, input and outcome legible",
-          "body": "The central design question was how to help someone understand the connection between a body model, its measurements and the garment form those inputs can influence—without exposing the system as a set of disconnected technical controls."
+          "title": "Make body measurements translate into usable pattern geometry",
+          "body": "The central challenge was to connect body reference points, measurement inputs and garment construction logic in a way that could be calibrated and exported, rather than leaving the system as a visual-only 3D concept."
         },
         {
-          "label": "03 / EXPERIENCE MODEL",
-          "title": "Organise the experience around a clear sequence",
-          "body": "I framed the concept around three connected parts: visualising the body, mapping measurements and exploring garment variations. This gives the interaction a comprehensible structure from input to visual outcome."
+          "label": "03 / CALIBRATION & COLLABORATION",
+          "title": "Test the system with pattern-making expertise",
+          "body": "I ran multiple calibration tests on one pattern and worked with two pattern makers, who were involved and informed during the exploration. Their pattern-making knowledge helped ground the technical direction in garment-construction requirements."
         },
         {
-          "label": "04 / INTERACTION & VISUALISATION",
-          "title": "Make abstract parameters easier to read",
-          "body": "The design exploration uses 3D body visualisation and measurement mapping to give the parametric system a more tangible interface. Garment exploration is presented as a visual process rather than an isolated set of values."
+          "label": "04 / TECHNICAL DECISION",
+          "title": "Treat export as part of the design workflow",
+          "body": "The system generated DXF output intended for use in CLO 3D. This connected the parametric exploration to a downstream garment-visualisation workflow, rather than ending at an on-screen preview."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A connected model for parametric exploration",
-          "body": "The concept brings body representation, measurement inputs and garment variation into one product direction. Its value is the clarity of the proposed interaction model—not a claim of production deployment or measured user impact."
+          "label": "05 / VALIDATION EVIDENCE",
+          "title": "Documented reference geometry and export checks",
+          "body": "The project documentation records seven body-measurement reference points, a maximum 0.03% deviation for the size-M reference avatar geometry, and zero structural errors in the documented DXF/SVG validation. These figures describe specific documented checks, not universal fit accuracy across body types."
         },
         {
-          "label": "06 / ROLE & SCOPE",
-          "title": "Independent product design exploration",
-          "body": "Concept direction and product-interface exploration across the parametric garment system. Independent project, 2025–2026."
+          "label": "06 / DESIGN OUTCOME",
+          "title": "A technically grounded concept with a downstream file output",
+          "body": "Veblen brought body representation, parametric calibration, pattern-maker input and DXF export into one exploration. The output was suitable for the intended CLO 3D workflow; this case study does not claim production adoption or validation across all sizes and body types."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
+          "title": "Independent Product Designer · Creative Technology",
+          "body": "Concept direction, product-interface exploration, calibration work and collaboration with two pattern makers. Independent project, 2025–2026."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "The structure behind the exploration",
-        "note": "Counts describe the documented design scope and portfolio evidence—not production usage or business performance.",
+        "label": "DOCUMENTED TECHNICAL EVIDENCE",
+        "title": "From body references to exportable geometry",
+        "note": "Figures are limited to specific project documentation and tests; they are not generalised fit-accuracy claims.",
         "metrics": [
           {
             "value": "07",
-            "unit": "PROJECT VISUALS",
-            "detail": "Supplied Veblen gallery assets"
+            "unit": "BODY REFERENCE POINTS",
+            "detail": "Documented measurement references"
           },
           {
-            "value": "03",
-            "unit": "CORE DIMENSIONS",
-            "detail": "Body · Measurements · Garment form"
+            "value": "0.03%",
+            "unit": "MAX. DEVIATION",
+            "detail": "Size-M reference avatar geometry only"
           },
           {
-            "value": "01",
-            "unit": "3D MODEL",
-            "detail": "Body visualisation as the spatial reference"
+            "value": "0",
+            "unit": "STRUCTURAL ERRORS",
+            "detail": "In documented DXF/SVG validation"
           },
           {
-            "value": "01",
-            "unit": "PARAMETRIC SYSTEM",
-            "detail": "One connected concept direction"
+            "value": "DXF",
+            "unit": "CLO 3D WORKFLOW",
+            "detail": "Generated export intended for CLO 3D"
           }
         ],
-        "foot": "The impact is expressed through a coherent model for exploring form and fit. No adoption, accuracy or conversion uplift is claimed."
+        "foot": "Calibration involved one pattern and two pattern makers. The project is an independent concept exploration, not a production deployment."
       }
     },
     {
@@ -153,69 +161,74 @@
       "platform": "Web · B2B SaaS",
       "caseStudy": [
         {
-          "label": "01 / PROJECT CONTEXT",
-          "title": "From employee feedback to actionable understanding",
-          "body": "Pulse Check is an employee experience platform connecting survey creation, employee feedback and people analytics for HR teams."
+          "label": "01 / PRODUCT CONTEXT",
+          "title": "Employee feedback needed to lead somewhere",
+          "body": "Pulse Check is an employee experience platform built from zero, shipped and used in production. It connected survey creation and employee feedback with a path for HR teams to interpret findings and act on them."
         },
         {
           "label": "02 / PROBLEM FRAMING",
-          "title": "Keep the feedback loop understandable end to end",
-          "body": "The experience spans survey setup, active participation and the interpretation of results. The design challenge was to make these stages feel connected, so collecting feedback and understanding it are parts of one workflow."
+          "title": "A dashboard full of numbers is not the same as an actionable insight",
+          "body": "The product challenge was not simply to display survey results. HR needed to understand what a signal meant, why it mattered, who should respond and whether an action changed the next measurement."
         },
         {
-          "label": "03 / WORKFLOW DESIGN",
-          "title": "Structure the journey from collection to interpretation",
-          "body": "I worked across survey setup, active survey states, reporting, heatmaps and open comments. The design narrative follows the information as it moves from a survey into quantitative patterns and qualitative feedback."
+          "label": "03 / REJECTED DIRECTION",
+          "title": "Avoid stopping at static reports",
+          "body": "The product direction moved beyond a conventional reporting dashboard or a screen filled with disconnected metrics. Instead, the experience was structured around the full lifecycle of an insight, from the question that produced feedback to the action taken in response."
         },
         {
-          "label": "04 / INFORMATION HIERARCHY",
-          "title": "Let summary and detail support each other",
-          "body": "The reporting experience brings visual patterns and written comments into the same broader context. Heatmaps help surface response patterns, while open comments preserve the detail behind those patterns."
+          "label": "04 / EXPERIENCE MODEL",
+          "title": "Connect survey, signal, priority and action",
+          "body": "The experience links survey creation, supported survey frameworks, measurable indices, heatmaps, priority mapping and insight cards. An insight can carry response evidence and raw comments, then be assigned an owner, an action and a deadline."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A more connected feedback and reporting experience",
-          "body": "The designed surfaces connect survey operations with reporting and employee comments, helping HR teams move between an overview of responses and the feedback that adds context. This is a design outcome, not a measured engagement or decision-making uplift."
+          "label": "05 / CLOSE THE LOOP",
+          "title": "Make follow-through part of the product",
+          "body": "An action tracker represents proposed, in-progress and completed actions, with re-measurement in the next survey cycle. The intention is to keep an insight alive after the report is read, rather than leaving it as a static observation."
         },
         {
-          "label": "06 / ROLE & SCOPE",
+          "label": "06 / DESIGN OUTCOME",
+          "title": "From collecting feedback to giving an insight a life",
+          "body": "The shipped product connects quantitative patterns and qualitative evidence to ownership and follow-through. Six survey frameworks are supported in the documented product. Sample dashboard values shown in portfolio screens are demo data and are not presented as company results."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
           "title": "Product Designer · primary design ownership",
-          "body": "I led the product design work within a two-person design team. The second designer’s involvement was primarily feedback and critique. Project shown within the Jobvision employment period, 2023–2025."
+          "body": "I led product design within a two-person design team; the second designer mainly contributed feedback and critique. The project sits within my Jobvision employment period, November 2023–April 2025; exact project dates are not separately confirmed."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "A feedback loop, represented in one system",
-        "note": "Scope indicators are based on the supplied project screens and confirmed team structure; they are not product-performance metrics.",
+        "label": "PRODUCT DESIGN OUTCOME",
+        "title": "Give an insight a life beyond the report",
+        "note": "Capabilities documented in the product experience. Sample dashboard figures are illustrative and are not real company outcomes.",
         "metrics": [
           {
-            "value": "06",
-            "unit": "PROJECT VISUALS",
-            "detail": "Supplied Pulse Check gallery assets"
+            "value": "QUESTION",
+            "unit": "COLLECT FEEDBACK",
+            "detail": "Survey creation and supported frameworks"
           },
           {
-            "value": "04",
-            "unit": "WORKFLOW AREAS",
-            "detail": "Survey · Active state · Reports · Comments"
+            "value": "SIGNAL",
+            "unit": "UNDERSTAND PATTERNS",
+            "detail": "Indices, heatmaps and priority mapping"
           },
           {
-            "value": "02",
-            "unit": "DESIGN TEAM",
-            "detail": "Two-person team"
+            "value": "OWNER",
+            "unit": "TURN INSIGHT INTO ACTION",
+            "detail": "Evidence, responsibility and deadline"
           },
           {
-            "value": "01",
-            "unit": "PRIMARY DESIGN OWNER",
-            "detail": "Design execution led by me"
+            "value": "RE-MEASURE",
+            "unit": "CLOSE THE LOOP",
+            "detail": "Track action and review the next cycle"
           }
         ],
-        "foot": "The design contribution connects survey operations with quantitative reporting and qualitative feedback. No survey completion, engagement or retention uplift is inferred."
+        "foot": "The product was shipped and used in production. No actual participation, favorability, eNPS or improvement figures are claimed from demo screens."
       }
     },
     {
       "id": "iran",
       "order": 3,
-      "displayTitle": "Interactive Cultural Atlas",
+      "displayTitle": "Travel Planning & Local Experiences",
       "client": "Iran Unseen",
       "discipline": "Digital experience",
       "cover": "mono-assets/iran-unseen-cover.jpg",
@@ -235,81 +248,88 @@
         "engagement": "Independent project"
       },
       "editorial": {
-        "intro": "A map-led guide to discovering places, routes and local experiences across Iran.",
+        "intro": "A travel platform connecting destination discovery, trip planning, local recommendations and access to people who know the place.",
         "focus": [
-          "Map-based discovery",
-          "Place cards & categories",
-          "Routes and saved places",
-          "Local experiences"
+          "Destination discovery",
+          "Distance & trip-cost estimation",
+          "Contextual offers and nearby suggestions",
+          "Local connection requests",
+          "Local host onboarding"
         ],
-        "introFa": "راهنمایی نقشه‌محور برای کشف مکان‌ها، مسیرها و تجربه‌های محلی در ایران.",
+        "introFa": "پلتفرم برنامه‌ریزی سفر برای کشف مقصد، تخمین هزینه و مسافت، پیشنهادهای محلی و ارتباط با افراد بومی.",
         "focusFa": [
-          "کشف مبتنی بر نقشه",
-          "کارت مکان‌ها و دسته‌بندی‌ها",
-          "مسیرها و مکان‌های ذخیره‌شده",
-          "تجربه‌های محلی"
+          "انتخاب و کشف مقصد",
+          "تخمین مسافت و هزینه سفر",
+          "پیشنهادها و آفرهای اطراف مقصد",
+          "ثبت درخواست ارتباط با Local",
+          "ثبت‌نام و ورود افراد محلی"
         ]
       },
-      "platform": "Web · Map-led experience",
+      "platform": "Web · Travel planning · Local marketplace",
       "caseStudy": [
         {
-          "label": "01 / PROJECT CONTEXT",
-          "title": "A cultural atlas built around discovery",
-          "body": "Iran Unseen is an independent, map-led digital experience for discovering places, routes and local experiences across Iran."
+          "label": "01 / PROJECT ORIGIN",
+          "title": "The questions that begin after booking",
+          "body": "Iran Unseen started from my own experience of spending three months in Yerevan. Through conversations with people there, I noticed how many practical questions travelers have about everyday local life—payments, shopping, places to visit and experiences that typical booking platforms rarely explain."
         },
         {
           "label": "02 / PROBLEM FRAMING",
-          "title": "A map needs context to become useful",
-          "body": "A map can show where something is, but discovery also depends on understanding what a place offers and how it relates to other places. The design challenge was to connect geographic orientation with the information needed to choose a next step."
+          "title": "A destination is not the same as understanding a place",
+          "body": "Traditional travel platforms often help people choose and book a destination, but leave much of the local context unanswered. Travelers may still feel uncertain about how things work, what is worth exploring nearby, and who they can safely ask for guidance."
         },
         {
-          "label": "03 / DISCOVERY MODEL",
-          "title": "Make the map the organising layer",
-          "body": "I framed the experience around map-based discovery, supported by place cards and categories. This keeps geographic context present while people browse individual destinations."
+          "label": "03 / PRODUCT DIRECTION",
+          "title": "Bring the human and local layer into trip planning",
+          "body": "I shaped Iran Unseen around a broader journey: choose a destination, understand the trip, discover relevant options around it, and request a connection with someone local. The goal is to make the experience more informed and human before the traveler arrives."
         },
         {
-          "label": "04 / JOURNEY & SUPPORTING ELEMENTS",
-          "title": "Connect places, routes and saved locations",
-          "body": "The concept brings routes and saved places into the discovery model, extending the experience beyond a single point on a map and giving exploration a structure that can continue."
+          "label": "04 / TRIP PLANNING",
+          "title": "Turn a destination into a set of useful next steps",
+          "body": "The implemented experience includes destination selection, distance and estimated trip-cost information, plus contextual suggestions and offers for additional options around the selected destination and along the journey."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A connected framework for local exploration",
-          "body": "The design establishes a map-led model that links places, categories, routes and saved locations. It presents geographic discovery and place information as parts of one experience, without claiming validated travel outcomes."
+          "label": "05 / LOCAL PARTICIPATION",
+          "title": "Design both sides of the local connection",
+          "body": "Travelers can submit a request to connect with a local. A separate registration experience is also designed for locals who want to join the platform and receive offers. Requests currently reach the project owner by email; the request path is implemented, but this should not be presented as a scaled, automated local marketplace."
         },
         {
-          "label": "06 / ROLE & SCOPE",
-          "title": "Independent Product Designer",
-          "body": "Independent product and experience design exploration. The project is listed under 2025–2026 as a provisional period; exact project dates remain unconfirmed."
+          "label": "06 / DESIGN OUTCOME",
+          "title": "A usable travel-planning platform, beyond destination booking",
+          "body": "The live product brings destination choice, distance and cost estimation, contextual recommendations, local-request submission and local onboarding into one experience. The project has no confirmed user or booking metrics yet, so its outcome is described through implemented capabilities rather than adoption claims."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
+          "title": "Independent product design and implementation",
+          "body": "Independent project. Product concept, experience structure and interface design across traveler planning and local registration journeys. Exact project dates remain to be confirmed."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "Four building blocks for discovery",
-        "note": "These numbers describe the concept structure and the supplied portfolio material—not usage, destination coverage or travel outcomes.",
+        "label": "PRODUCT CAPABILITIES / IMPLEMENTED EXPERIENCE",
+        "title": "From choosing a place to feeling prepared for it",
+        "note": "These are implemented product capabilities, not user-growth or booking-performance metrics.",
         "metrics": [
           {
-            "value": "05",
-            "unit": "PROJECT VISUALS",
-            "detail": "Supplied Iran Unseen gallery assets"
+            "value": "PLAN",
+            "unit": "TRIP ESTIMATION",
+            "detail": "Distance and estimated travel cost"
           },
           {
-            "value": "04",
-            "unit": "DISCOVERY ELEMENTS",
-            "detail": "Map · Places · Routes · Saved locations"
+            "value": "DISCOVER",
+            "unit": "CONTEXTUAL SUGGESTIONS",
+            "detail": "Offers and options around the destination"
           },
           {
-            "value": "01",
-            "unit": "MAP-LED MODEL",
-            "detail": "Geography as the organising layer"
+            "value": "CONNECT",
+            "unit": "LOCAL REQUESTS",
+            "detail": "Traveler can submit a request to a local"
           },
           {
-            "value": "01",
-            "unit": "INDEPENDENT PROJECT",
-            "detail": "Product and experience exploration"
+            "value": "JOIN",
+            "unit": "LOCAL ONBOARDING",
+            "detail": "A separate registration experience for locals"
           }
         ],
-        "foot": "The design impact is the proposed connection between geographic context and place information. No visitor, booking or engagement metrics are claimed."
+        "foot": "Local requests currently arrive by email to the project owner. The implemented request flow is not represented as a scaled automated marketplace."
       }
     },
     {
@@ -332,79 +352,88 @@
         "engagement": "In-house product work"
       },
       "editorial": {
-        "intro": "A recruitment workspace for managing applicant information and hiring workflows.",
+        "intro": "An ATS dashboard designed to help HR teams see recruitment work, candidate status and priorities in one operational view.",
         "focus": [
-          "Recruitment dashboard",
-          "Applicant overview",
-          "Mobile interface"
+          "Integrated HR dashboard",
+          "Recruitment data visualisation",
+          "Task tracking and reminders",
+          "Candidate status and overdue labels",
+          "Mobile dashboard presentation"
         ],
-        "introFa": "فضای کاری جذب نیرو برای مدیریت اطلاعات متقاضیان و فرایندهای استخدام.",
+        "introFa": "داشبورد ATS برای اینکه تیم منابع انسانی وضعیت استخدام، متقاضیان و اولویت‌های کاری را در یک نمای عملیاتی ببیند.",
         "focusFa": [
-          "داشبورد استخدام",
-          "نمای کلی متقاضیان",
-          "رابط موبایل"
+          "داشبورد یکپارچه منابع انسانی",
+          "نمایش بصری داده‌های استخدام",
+          "پیگیری وظایف و یادآورها",
+          "وضعیت کاندیدا و برچسب تأخیر",
+          "نمایش موبایل داشبورد"
         ]
       },
       "platform": "Web dashboard · Responsive mobile view",
       "caseStudy": [
         {
-          "label": "01 / PROJECT CONTEXT",
-          "title": "A focused view into recruitment operations",
-          "body": "Jobvision’s Applicant Tracking System supports recruitment operations. This case study deliberately focuses on the dashboard experience and its mobile presentation."
+          "label": "01 / THE PROBLEM",
+          "title": "Recruitment work was scattered across spreadsheets and reports",
+          "body": "HR teams were relying on Excel and fragmented information to follow recruitment work. Tasks, candidate statuses and reporting were spread across different places, making it difficult to understand what needed attention first."
         },
         {
-          "label": "02 / PROBLEM FRAMING",
-          "title": "Make a dense overview easier to scan",
-          "body": "Recruitment dashboards bring jobs, applicants and changing statuses into one operational space. The design challenge addressed here was how to establish visual priority across the overview without losing the context of the information."
+          "label": "02 / FIELD INPUT",
+          "title": "Designing alongside the people doing the work",
+          "body": "I worked directly with HR staff, listened to their feedback and iterated on the dashboard around the information they needed to see. Their feedback exposed missing candidate context in the first-view overview and made prioritisation a central requirement."
         },
         {
-          "label": "03 / INFORMATION HIERARCHY",
-          "title": "Separate the overview from supporting detail",
-          "body": "The dashboard design focuses on grouping related information and creating a clear distinction between summary content and supporting detail. The aim is to make the overall workspace easier to read at a glance."
+          "label": "03 / REJECTED DIRECTION",
+          "title": "Separate report pages would preserve the fragmentation",
+          "body": "I explored the idea of giving each report its own page, but moved away from it. That approach would keep HR moving between separate views instead of helping them understand the state of recruitment from one place."
         },
         {
-          "label": "04 / RESPONSIVE ADAPTATION",
-          "title": "Carry the dashboard logic into a mobile view",
-          "body": "I adapted the dashboard presentation for a narrower mobile viewport, considering how the information hierarchy and interface composition translate beyond the desktop layout."
+          "label": "04 / DESIGN DECISION",
+          "title": "Bring the operational picture into one dashboard",
+          "body": "The chosen direction combined data visualisation, task tracking, reminders, status labels and prioritisation in a single overview. The intent was to make the most important information visible without requiring HR to assemble it manually from multiple reports."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A dashboard-first design contribution",
-          "body": "The work represented in this case is the ATS dashboard and its mobile view. The outcome is a focused overview experience; it should not be read as ownership of the wider ATS product or its other workflows."
+          "label": "05 / WORKFLOW CLARITY",
+          "title": "Make overdue work and candidate status easier to recognise",
+          "body": "Clear labels made overdue tasks easier to identify. Candidate status information that HR had said was missing was brought into the initial overview, while priority cues helped users understand what needed attention."
         },
         {
-          "label": "06 / ROLE & SCOPE",
-          "title": "Product Designer · dashboard experience",
-          "body": "My contribution focused on the ATS dashboard and its mobile presentation. Other ATS screens and workflows were outside my design scope. Project shown within the Jobvision employment period, 2023–2025."
+          "label": "06 / OBSERVED OUTCOME",
+          "title": "More engagement and positive feedback—without invented percentages",
+          "body": "The user recalls that analytics showed increased engagement with the dashboard and that HR feedback was positive. They also recall a substantial improvement in the speed of managing HR tasks, but no exact before-and-after timing or analytics figures are available. These observations are reported qualitatively, not converted into a fabricated percentage."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
+          "title": "Product Designer · ATS dashboard and mobile presentation",
+          "body": "My scope was the ATS dashboard and its mobile presentation, not the wider ATS product or every recruitment workflow. The design was informed by direct collaboration and feedback from HR staff. Project dates are not separately confirmed; shown within the Jobvision employment period, November 2023–April 2025."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "A deliberately focused design scope",
-        "note": "Counts describe the supplied design deliverables and presentation contexts—not the full ATS product.",
+        "label": "OBSERVED DESIGN OUTCOME",
+        "title": "From scattered reporting to one operational view",
+        "note": "Qualitative evidence from HR collaboration and product analytics; exact numerical deltas are not available.",
         "metrics": [
           {
-            "value": "02",
-            "unit": "PROJECT VISUALS",
-            "detail": "Dashboard and mobile-view assets"
+            "value": "ONE VIEW",
+            "unit": "INTEGRATED OVERVIEW",
+            "detail": "Data, tasks, reminders and statuses together"
           },
           {
-            "value": "01",
-            "unit": "CORE SURFACE",
-            "detail": "Recruitment dashboard"
+            "value": "VISIBLE",
+            "unit": "OVERDUE WORK",
+            "detail": "Clear labels make late tasks easier to spot"
           },
           {
-            "value": "02",
-            "unit": "PRESENTATION CONTEXTS",
-            "detail": "Desktop web + mobile view"
+            "value": "CLEARER",
+            "unit": "CANDIDATE STATUS",
+            "detail": "Missing context added to the first-view overview"
           },
           {
-            "value": "01",
-            "unit": "DEFINED SCOPE",
-            "detail": "Dashboard experience only"
+            "value": "UP",
+            "unit": "ENGAGEMENT SIGNAL",
+            "detail": "Analytics showed more engagement; no exact figure retained"
           }
         ],
-        "foot": "The impact is the clearer hierarchy and mobile adaptation within the dashboard scope. No claim is made about the complete ATS workflow or hiring-performance metrics."
+        "foot": "HR feedback was positive and task handling felt substantially faster to the user, but no measured time saving or percentage is claimed."
       }
     },
     {
@@ -528,79 +557,86 @@
         "engagement": "In-house product work"
       },
       "editorial": {
-        "intro": "An executive talent platform with a focus on talent discovery and contact flows.",
+        "intro": "An executive talent platform, with design focused on the candidate-side experience from profile discovery to contact.",
         "focus": [
-          "Executive talent interface",
-          "Mobile experience",
-          "Contact flow"
+          "Candidate-side talent profiles",
+          "Search and discovery",
+          "Contact journey",
+          "Mobile candidate experience"
         ],
-        "introFa": "پلتفرم استعدادهای مدیریتی با تمرکز بر کشف استعداد و جریان‌های ارتباطی.",
+        "introFa": "پلتفرم استعدادهای مدیریتی با تمرکز طراحی بر تجربه کاندیدا؛ از معرفی و کشف پروفایل تا ارتباط.",
         "focusFa": [
-          "رابط استعدادهای مدیریتی",
-          "تجربه‌ی موبایل",
-          "جریان ارتباط"
+          "پروفایل استعدادها از سمت کاندیدا",
+          "جست‌وجو و کشف",
+          "مسیر ارتباط",
+          "تجربه موبایل کاندیدا"
         ]
       },
       "platform": "Web · Mobile",
       "caseStudy": [
         {
-          "label": "01 / PROJECT CONTEXT",
-          "title": "A focused platform for executive talent",
-          "body": "Mirana is an executive talent platform centred on discovering relevant profiles and creating a clear path to contact."
+          "label": "01 / PRODUCT CONTEXT",
+          "title": "A more discreet route into executive opportunities",
+          "body": "Mirana is a Jobvision-group executive talent and headhunting service. Unlike a conventional job-board journey, its proposition includes relevant senior opportunities and a more discreet path for candidates to be discovered and contacted."
         },
         {
-          "label": "02 / PROBLEM FRAMING",
-          "title": "Help people move from a profile to a next step",
-          "body": "The experience needed to present executive talent with enough context for profile review, while making the next action—contact—easy to recognise across desktop and mobile."
+          "label": "02 / DESIGN SCOPE",
+          "title": "The candidate experience was my responsibility",
+          "body": "My design scope covered the candidate side only. I worked across talent profiles, search and discovery, the contact journey and the mobile experience. The employer-side panel and workflows were outside my scope."
         },
         {
-          "label": "03 / DISCOVERY & PROFILE PRESENTATION",
-          "title": "Keep talent information connected to the decision",
-          "body": "The design contribution represented here focuses on the executive talent interface: presenting profile information as the central point of discovery rather than separating it from the action that follows."
+          "label": "03 / PROFILE EXPERIENCE",
+          "title": "Give professional context room to speak",
+          "body": "The candidate-facing experience needed to present senior talent and profile information in a way that supports discovery and helps people understand the opportunity to engage, without reducing the journey to a generic job listing."
         },
         {
-          "label": "04 / CONTACT FLOW & MOBILE",
-          "title": "Preserve the journey across touchpoints",
-          "body": "The contact flow and mobile experience extend the profile presentation into the next step. The design focus is continuity between discovering a person, understanding the profile and initiating contact."
+          "label": "04 / DISCOVERY & CONTACT",
+          "title": "Connect being found with the next step",
+          "body": "I designed the search and discovery surfaces alongside the contact flow, keeping profile exploration and the next action connected. This creates a candidate-side journey from being represented on the platform to receiving or responding to relevant contact."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A direct discovery-to-contact experience",
-          "body": "The supplied desktop and mobile screens show a connected direction across talent presentation and contact actions. This describes the designed experience, not a measured increase in contact rates or hiring outcomes."
+          "label": "05 / MOBILE EXPERIENCE",
+          "title": "Keep the candidate journey coherent on mobile",
+          "body": "The mobile experience was part of the design scope, extending the profile and contact journey to a narrower, on-the-go context."
         },
         {
-          "label": "06 / ROLE & SCOPE",
-          "title": "Product Designer · Jobvision product portfolio",
-          "body": "Product design contribution within the Jobvision product portfolio, during the November 2023–April 2025 employment period. Exact project dates are not separately confirmed."
+          "label": "06 / DESIGN OUTCOME",
+          "title": "A connected candidate-side talent experience",
+          "body": "The designed scope connects profile presentation, search and discovery, contact and mobile use. The user recalls substantial traffic arriving from Jobvision, but no reliable user count is available; no adoption, contact-conversion or hiring-placement metric is claimed."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
+          "title": "Product Designer · candidate-side experience",
+          "body": "Product design across candidate profiles, search and discovery, contact flow and mobile experience. Employer panel and employer workflows were not part of my design scope. Project dates are not separately confirmed; shown within the Jobvision employment period, November 2023–April 2025."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "From talent discovery to contact",
-        "note": "Scope indicators reflect the documented project material and confirmed product focus—not usage or recruitment performance.",
+        "label": "DESIGN SCOPE / CANDIDATE EXPERIENCE",
+        "title": "A connected path for executive talent",
+        "note": "The focus areas describe the work owned by the designer, not measured hiring or platform outcomes.",
         "metrics": [
           {
-            "value": "04",
-            "unit": "PROJECT VISUALS",
-            "detail": "Supplied Mirana gallery assets"
+            "value": "PROFILE",
+            "unit": "TALENT PRESENTATION",
+            "detail": "Candidate profile experience"
           },
           {
-            "value": "03",
-            "unit": "DESIGN FOCUS AREAS",
-            "detail": "Talent interface · Mobile · Contact"
+            "value": "DISCOVER",
+            "unit": "SEARCH & EXPLORATION",
+            "detail": "Finding relevant talent opportunities"
           },
           {
-            "value": "02",
-            "unit": "PLATFORMS",
-            "detail": "Web + Mobile"
+            "value": "CONTACT",
+            "unit": "NEXT-STEP FLOW",
+            "detail": "A clear path to initiate contact"
           },
           {
-            "value": "01",
-            "unit": "CONNECTED JOURNEY",
-            "detail": "Profile discovery to contact"
+            "value": "MOBILE",
+            "unit": "CANDIDATE EXPERIENCE",
+            "detail": "The journey extended to mobile"
           }
         ],
-        "foot": "The design contribution connects profile presentation with a clear contact path across web and mobile. No conversion or placement metrics are implied."
+        "foot": "Employer-side product design is explicitly excluded. Traffic volume and recruitment outcomes are not quantified."
       }
     },
     {
@@ -626,83 +662,88 @@
         "engagement": "Employment"
       },
       "editorial": {
-        "intro": "An FMCG marketplace spanning store operations, shopper data and reporting.",
+        "intro": "An FMCG marketplace spanning customer shopping, store operations, shopper workflows, product information and reporting.",
         "focus": [
-          "Store dashboard",
-          "Shopper overview",
+          "Customer shopping journey",
+          "Store dashboard and operations",
+          "Shopper and product selection experience",
           "Product information",
-          "Reporting",
-          "Shopper journey"
+          "Store reports and data"
         ],
-        "introFa": "بازارگاه کالاهای تندمصرف با ابزارهای مدیریت فروشگاه، داده‌ی خریداران و گزارش‌گیری.",
+        "introFa": "بازارگاه کالاهای تندمصرف با تجربه خرید مشتری، عملیات فروشگاه، جریان Shopper، اطلاعات محصول و گزارش‌ها.",
         "focusFa": [
-          "داشبورد فروشگاه",
-          "نمای خریداران",
+          "مسیر خرید مشتری",
+          "داشبورد و عملیات فروشگاه",
+          "تجربه Shopper و انتخاب محصول",
           "اطلاعات محصول",
-          "گزارش‌گیری",
-          "مسیر تجربه‌ی خریدار"
+          "گزارش‌ها و داده‌های فروشگاه"
         ]
       },
       "platform": "Web dashboard · Shopper app",
       "caseStudy": [
         {
-          "label": "01 / PROJECT CONTEXT",
-          "title": "A marketplace with operational and shopper-facing sides",
-          "body": "Pinket is an FMCG marketplace spanning store operations, shopper information, product details, reporting and the shopper journey."
+          "label": "01 / PRODUCT CONTEXT",
+          "title": "A marketplace connecting shoppers and local stores",
+          "body": "Pinket was an online grocery and FMCG marketplace with customer-facing shopping and operational tools for stores and shoppers. My work took place before a later company pivot toward a broader store-data platform."
         },
         {
-          "label": "02 / PROBLEM FRAMING",
-          "title": "Bring different information needs into one product language",
-          "body": "The product serves operational needs as well as the shopper-facing experience. Store data, shopper context, product information and reports each have different purposes; the design challenge was to keep these touchpoints coherent without flattening their differences."
+          "label": "02 / DESIGN SCOPE",
+          "title": "Working across the marketplace, not just one screen",
+          "body": "My design contribution covered almost all of the main product areas I was involved with: the customer shopping journey, store dashboard and operations, shopper and product-selection experience, product information and reporting."
         },
         {
-          "label": "03 / INFORMATION ARCHITECTURE",
-          "title": "Give each operational area a clear role",
-          "body": "The documented design scope covers the store dashboard, shopper overview, product information and reporting. These areas are treated as distinct operational views within the broader marketplace experience."
+          "label": "03 / MULTI-SIDED EXPERIENCE",
+          "title": "Different users, different jobs to be done",
+          "body": "The product connected customer decisions, shopper execution and store operations. Each side needed its own information hierarchy and actions, while still belonging to one marketplace experience."
         },
         {
-          "label": "04 / SHOPPER EXPERIENCE",
-          "title": "Connect operational context with the customer journey",
-          "body": "The shopper app journey forms the customer-facing side of the product. Bringing it into the same design narrative makes the relationship between marketplace operations and the shopper experience visible."
+          "label": "04 / OPERATIONAL DESIGN",
+          "title": "Make store and shopper information usable",
+          "body": "The design work included operational dashboards, shopper-related views, product information and reporting. These surfaces supported the people managing and fulfilling the marketplace experience, alongside the customer shopping flow."
         },
         {
-          "label": "05 / DESIGN OUTCOME",
-          "title": "A broader set of connected marketplace touchpoints",
-          "body": "The supplied designs establish a consistent interface direction across operational dashboards and the shopper journey. This describes the design scope and interface contribution, not a measured commercial uplift."
+          "label": "05 / CUSTOMER JOURNEY",
+          "title": "Keep the shopping experience connected to fulfilment",
+          "body": "The customer-facing journey was part of the same design scope as the operational tools. This made it possible to consider the marketplace as a connected service rather than treating the app and store-side tools as unrelated products."
         },
         {
-          "label": "06 / ROLE & SCOPE",
+          "label": "06 / SCALE CONTEXT",
+          "title": "An early-stage product with roughly 300–1,000 monthly users",
+          "body": "I remember Pinket having approximately 300–1,000 monthly users during my time there. This is a retrospective estimate, not a verified analytics export, and it describes product scale rather than growth caused by my design work."
+        },
+        {
+          "label": "07 / ROLE & SCOPE",
           "title": "UI/UX Designer · two-person design team",
-          "body": "Product interface and experience design as part of a two-person design team at Pinket, January 2022–June 2023."
+          "body": "I worked across the main customer and operational product areas as part of a two-person design team. Employment period: January 2022–June 2023. A later pivot to a Tehran-wide store-data platform happened after my involvement and is not presented as an outcome of my work."
         }
       ],
       "impact": {
-        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
-        "title": "Five touchpoints across the marketplace",
-        "note": "Counts describe the confirmed design focus and supplied portfolio visuals—not transaction volume or business performance.",
+        "label": "PRODUCT CONTEXT / DESIGN SCOPE",
+        "title": "A multi-sided marketplace at an early stage",
+        "note": "Monthly user count is a personal retrospective estimate, not a verified analytics figure or attributable design result.",
         "metrics": [
           {
-            "value": "05",
-            "unit": "PROJECT VISUALS",
-            "detail": "Supplied Pinket gallery assets"
+            "value": "300–1K",
+            "unit": "APPROX. MONTHLY USERS",
+            "detail": "Remembered scale during my involvement"
           },
           {
-            "value": "05",
-            "unit": "DESIGN TOUCHPOINTS",
-            "detail": "Store · Shopper · Product · Reports · App journey"
+            "value": "CUSTOMER",
+            "unit": "SHOPPING EXPERIENCE",
+            "detail": "Browse and purchase journey"
           },
           {
-            "value": "02",
-            "unit": "DESIGN TEAM",
-            "detail": "Two-person team"
+            "value": "STORE",
+            "unit": "OPERATIONS & REPORTING",
+            "detail": "Dashboard, data and store workflows"
           },
           {
-            "value": "02",
-            "unit": "EXPERIENCE SIDES",
-            "detail": "Marketplace operations + shopper journey"
+            "value": "SHOPPER",
+            "unit": "FULFILMENT EXPERIENCE",
+            "detail": "Shopper-facing and product-selection flows"
           }
         ],
-        "foot": "The design contribution spans operational views and the shopper-facing journey. No order growth, GMV or conversion uplift is claimed."
+        "foot": "Two-person design team. Later company pivot and subsequent platform scale are outside this case study’s scope."
       }
     }
   ],

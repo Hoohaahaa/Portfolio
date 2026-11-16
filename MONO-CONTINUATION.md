@@ -11,7 +11,7 @@ Status: active implementation; do not restart from a template.
 - Main branch must not be overwritten or used as the design source. It has an older light editorial template.
 - Vercel project: `mo-portfolio` / project ID `prj_F5vSmSRBm3P1fzl9b71M4uyseaeA`
 - Share URL alias: `https://mono-selected.vercel.app`
-- Latest implementation commit at time of this note: `0adea8bde478aed6d4a3daba2c037a1d64425847`
+- Latest deployed implementation commit: `07d37ffeb9fe88dad22cec3c6a3ac59e683df70a`
 - Keep the stable alias and deploy only from the working branch.
 
 ## Product/design intent
@@ -72,3 +72,13 @@ Seven project covers and galleries come from `mono-assets/manifest.json`. Preser
 
 ## Continuation protocol
 Before editing, fetch the latest `index.html` from the working branch and read this file. Make sequential writes to the same file only (fetch latest SHA before update). Deploy from the working branch, then verify the stable alias. If the conversation context is lost, this handoff plus the working branch is the source of truth.
+
+
+## 2026-11-16 responsive repair (deployed)
+- User supplied two Android screenshots showing severe mobile overlap: project cards ran into each other and the Practice/service list; images and labels exceeded their intended bounds. Treat these screenshots as a regression reference.
+- Root cause: an earlier mobile rule used the more specific selector `#cinema .mobile-project-grid{display:grid!important;grid-template-columns:repeat(2,...)}`. A later generic `.mobile-project-grid{display:flex!important}` could not override it. Fix now uses equally/more specific selectors and explicit flex row constraints.
+- Mobile project list is a horizontal snap rail: `#cinema .mobile-project-grid` is flex row nowrap; each card is 82vw, bounded, non-shrinking, with a 1.28 image stage; image is contain-fit. No two-column mobile grid. Practice section follows in normal document flow and its service rows are full-width, static, wrapping blocks. No overlap or absolute positioning.
+- Hero clarified per user: remove the large text/word resolution and any icon tile/border/container aesthetic. The former headline zone is now a free-floating, irregular field of small UI/product symbols only. Symbols include search, expand, location, communication, route, home, nature, people, compass, layers, cursor, calendar, spark and globe. Each is outline or filled, independently changes orientation only in 90-degree increments, and periodically disperses/reforms. No boxes, frames, grids, captions or words around icons. Motion respects reduced-motion preference.
+- Hero layout is explicit two-column desktop and single-column mobile; icon field is bounded, clipped within its own region, and does not overflow viewport. Hero visual is constrained on mobile.
+- Deployed production code commit: `07d37ffeb9fe88dad22cec3c6a3ac59e683df70a`; Vercel deployment `dpl_3eQE6xJPnhQS3bSRwNpGksF7m9ZE`; stable alias `https://mono-selected.vercel.app`. Server fetch verified HTTP 200 and presence of icon initializer, manifest loading, and high-specificity mobile flex rules.
+- Remaining: user-side Android visual/touch check is still required. Do not claim physical-device QA based only on HTML fetch.

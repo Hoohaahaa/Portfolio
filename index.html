@@ -1522,6 +1522,95 @@ header{display:grid!important;grid-template-columns:1fr auto 1fr!important;align
  #cinema .mobile-project-meta{padding:18px 20px 20px!important;gap:10px 10px!important}
 }
 
+
+/* MO / premium hero contrast + project card theme surfaces */
+:root[data-theme="light"]{
+ --project-card-surface:#e8edf4;
+ --project-card-surface-2:#dfe6ef;
+ --project-card-border:#cbd5e2;
+ --project-card-text:#202b3b;
+ --project-card-muted:#5d6878;
+ --project-card-accent:#647da5;
+}
+:root[data-theme="dark"]{
+ --project-card-surface:#252b40;
+ --project-card-surface-2:#2e3650;
+ --project-card-border:#65739a;
+ --project-card-text:#f1f3ff;
+ --project-card-muted:#c0c8e2;
+ --project-card-accent:#b9c8ff;
+}
+.hero-wordmark .hero-name-main{
+ color:var(--color-ink)!important;
+ font-weight:800!important;
+ text-shadow:0 1px 0 #ffffff20!important;
+}
+.hero-wordmark .hero-name-last{
+ color:#586477!important;
+ font-weight:650!important;
+ opacity:1!important;
+}
+:root[data-theme="dark"] .hero-wordmark .hero-name-main{color:#f6f5f0!important}
+:root[data-theme="dark"] .hero-wordmark .hero-name-last{color:#d4dcf7!important}
+#cinema .project-card{
+ background:var(--project-card-surface)!important;
+ border:1px solid var(--project-card-border)!important;
+ box-shadow:0 30px 90px #0005,0 0 0 1px #ffffff12!important;
+}
+#cinema .project-card .meta{
+ background:linear-gradient(115deg,var(--project-card-surface),var(--project-card-surface-2))!important;
+ border-top:1px solid var(--project-card-border)!important;
+ color:var(--project-card-text)!important;
+}
+#cinema .project-card .meta b{color:var(--project-card-text)!important}
+#cinema .project-card .meta small,
+#cinema .project-card .card-desc,
+#cinema .project-card .card-role,
+#cinema .project-card .card-index{color:var(--project-card-muted)!important}
+#cinema .project-card .card-bottom{border-color:var(--project-card-border)!important}
+#cinema .project-card .meta-tags span{
+ background:color-mix(in srgb,var(--project-card-surface) 65%,white 35%)!important;
+ color:var(--project-card-muted)!important;
+ border-color:var(--project-card-border)!important;
+}
+#cinema .project-card .card-action{color:var(--project-card-text)!important}
+#cinema .project-card .card-action i{
+ background:var(--project-card-accent)!important;
+ border-color:var(--project-card-accent)!important;
+ color:#172033!important;
+}
+#cinema .mobile-project-item{
+ background:var(--project-card-surface)!important;
+ border:1px solid var(--project-card-border)!important;
+ box-shadow:0 12px 30px #1112!important;
+}
+#cinema .mobile-project-meta{
+ background:linear-gradient(115deg,var(--project-card-surface),var(--project-card-surface-2))!important;
+ color:var(--project-card-text)!important;
+}
+#cinema .mobile-project-meta small,
+#cinema .mobile-project-desc,
+#cinema .mobile-project-role{color:var(--project-card-muted)!important}
+#cinema .mobile-project-meta b{color:var(--project-card-text)!important}
+#cinema .mobile-project-meta>i{display:none!important}
+#cinema .mobile-project-tags em{
+ background:color-mix(in srgb,var(--project-card-surface) 65%,white 35%)!important;
+ border-color:var(--project-card-border)!important;
+ color:var(--project-card-muted)!important;
+}
+#cinema .mobile-project-action{color:var(--project-card-text)!important;border-color:var(--project-card-border)!important}
+#cinema .mobile-project-action i{
+ background:var(--project-card-accent)!important;
+ border-color:var(--project-card-accent)!important;
+ color:#172033!important;
+}
+@media(max-width:760px){
+ .hero-wordmark .hero-name-main{color:#171715!important;font-weight:800!important}
+ .hero-wordmark .hero-name-last{color:#586477!important;font-weight:650!important}
+ :root[data-theme="dark"] .hero-wordmark .hero-name-main{color:#f6f5f0!important}
+ :root[data-theme="dark"] .hero-wordmark .hero-name-last{color:#d4dcf7!important}
+}
+
 </style></head>
 <body>
 <header><a class="brand" href="#top" aria-label="MO home">MO</a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a></nav><a class="header-contact" href="#contact"><span>CONTACT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>

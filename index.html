@@ -1922,6 +1922,41 @@ header .header-contact{justify-self:end!important;white-space:nowrap!important;m
  .editorial-heading .passport .passport-card{min-height:88px!important;padding:11px!important}
 }
 
+
+/* Dieter Rams-inspired case-study system: honest scope metrics, clear hierarchy */
+.case-study{align-items:stretch}
+.case-study-card{min-height:190px;position:relative;overflow:hidden}
+.case-study-card:after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #ffffff06;border-radius:inherit}
+.impact-card{grid-column:1/-1;min-width:0;padding:clamp(20px,3vw,34px);border:1px solid #ffffff35;border-radius:12px;background:linear-gradient(145deg,#171719,#0b0b0d);position:relative;overflow:hidden}
+.impact-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.7fr);gap:30px;align-items:end;padding-bottom:22px;border-bottom:1px solid #ffffff28}
+.impact-head .case-study-label{margin-bottom:12px}
+.impact-head h3{font-size:clamp(24px,3.4vw,42px);line-height:1;letter-spacing:-.065em;font-weight:600;margin:0;color:#f1f0eb}
+.impact-head>p{font-size:11px;line-height:1.75;color:#999891;margin:0;max-width:42ch;justify-self:end}
+.impact-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #ffffff28}
+.impact-metric{min-width:0;padding:24px 18px 22px 0;display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:9px;row-gap:10px;border-right:1px solid #ffffff20}
+.impact-metric:not(:first-child){padding-left:18px}
+.impact-metric:last-child{border-right:0}
+.impact-number{font:clamp(42px,6vw,76px)/.9 var(--sans);font-weight:600;letter-spacing:-.09em;color:#f1f0eb;font-variant-numeric:tabular-nums}
+.impact-unit{font:9px var(--mono);letter-spacing:.08em;color:#a5dc58;text-transform:uppercase}
+.impact-detail{grid-column:1/-1;font:9px/1.6 var(--mono);letter-spacing:.06em;color:#8e8d87;text-transform:uppercase}
+.impact-foot{padding-top:15px;font-size:11px;line-height:1.7;color:#c8c6bf;max-width:78ch}
+@media(max-width:760px){
+ .case-study{grid-template-columns:1fr!important}
+ .case-study-card{min-height:0}
+ .impact-card{padding:18px 16px;border-radius:10px}
+ .impact-head{grid-template-columns:1fr;gap:12px;padding-bottom:16px}
+ .impact-head h3{font-size:27px}
+ .impact-head>p{justify-self:start;font-size:10px}
+ .impact-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .impact-metric{padding:18px 10px 16px 0;border-bottom:1px solid #ffffff20}
+ .impact-metric:not(:first-child){padding-left:10px}
+ .impact-metric:nth-child(2){border-right:0}
+ .impact-metric:nth-child(n+3){border-bottom:0}
+ .impact-number{font-size:48px}
+ .impact-unit{font-size:8px}
+ .impact-detail{font-size:8px}
+ .impact-foot{font-size:10px}
+}
 </style></head>
 <body>
 <header><a class="brand" href="#top" aria-label="MO home">MO</a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a><a class="header-cv" href="/cv.pdf" target="_blank" rel="noopener" aria-disabled="true" data-en="CV" data-fa="CV" title="CV PDF will be added">CV</a></nav><a class="header-contact" href="#contact"><span>CONTACT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
@@ -2012,7 +2047,10 @@ function renderProjectCopy(p){
  ].filter(x=>x.value);
  document.getElementById('detailPassport').innerHTML=facts.map(x=>'<article class="proof-card passport-card"><small>'+esc(x.label)+'</small><strong>'+esc(x.value)+'</strong></article>').join('');
  const sections=p.caseStudy||[];
- document.getElementById('detailCaseStudy').innerHTML=sections.map((item,i)=>'<article class="case-study-card"><span class="case-study-index">'+String(i+1).padStart(2,'0')+'</span><div><span class="case-study-label">'+esc(item.label)+'</span><h3>'+esc(item.title)+'</h3><p>'+esc(item.body)+'</p></div></article>').join('');
+ const caseCards=sections.map((item,i)=>'<article class="case-study-card"><span class="case-study-index">'+String(i+1).padStart(2,'0')+'</span><div><span class="case-study-label">'+esc(fa?(item.labelFa||item.label):item.label)+'</span><h3>'+esc(fa?(item.titleFa||item.title):item.title)+'</h3><p>'+esc(fa?(item.bodyFa||item.body):item.body)+'</p></div></article>').join('');
+ const impact=p.impact;
+ const impactCard=impact?'<article class="impact-card"><div class="impact-head"><div><span class="case-study-label">'+esc(fa?(impact.labelFa||impact.label):impact.label)+'</span><h3>'+esc(fa?(impact.titleFa||impact.title):impact.title)+'</h3></div><p>'+esc(fa?(impact.noteFa||impact.note):impact.note)+'</p></div><div class="impact-metrics">'+(impact.metrics||[]).map(metric=>'<div class="impact-metric"><span class="impact-number">'+esc(metric.value)+'</span><span class="impact-unit">'+esc(fa?(metric.unitFa||metric.unit):metric.unit)+'</span><span class="impact-detail">'+esc(fa?(metric.detailFa||metric.detail):metric.detail)+'</span></div>').join('')+'</div><div class="impact-foot">'+esc(fa?(impact.footFa||impact.foot):impact.foot)+'</div></article>':'';
+ document.getElementById('detailCaseStudy').innerHTML=caseCards+impactCard;
  const focus=fa?(p.focusFa||[]):(p.focus||[]);put('focusTitle',fa?'در رابط کاربری':'In the interface');put('focusEyebrow',fa?'دامنه‌ی طراحی':'DESIGN SCOPE');
  document.getElementById('detailAppendix').innerHTML=focus.map((item,i)=>'<div class="focus-item"><span class="focus-index">'+String(i+1).padStart(2,'0')+'</span><span>'+esc(item)+'</span></div>').join('');
 }function openDetail(id){stopDeckAuto();const p=projects.find(x=>x.id===id);if(!p)return;galleryAssets=getAssets(id);galleryIndex=0;const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value||''};document.getElementById('detail').dataset.project=id;renderProjectCopy(p);renderGallery();document.getElementById('detail').classList.add('open');document.getElementById('detail').setAttribute('aria-hidden','false');document.getElementById('detail').scrollTop=0;document.body.style.overflow='hidden'}
@@ -2155,7 +2193,7 @@ async function loadArchives(){
       organization:p.passport?.organization||'',engagement:p.passport?.engagement||'',
       discipline:p.discipline||'',scope:p.passport?.scope||p.discipline||'',
       intro:p.editorial?.intro||'',introFa:p.editorial?.introFa||'',
-      focus:p.editorial?.focus||[],focusFa:p.editorial?.focusFa||[],
+      focus:p.editorial?.focus||[],focusFa:p.editorial?.focusFa||[],impact:p.impact||null,
       files:(p.gallery||[]).slice(),coverPath:p.cover
     }));
     assetMap={};assetOrder={};unassignedAssets=[];

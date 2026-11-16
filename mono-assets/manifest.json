@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "notes": [
     "Paths are relative to the repository root.",
     "Original uploaded files are referenced in place; no source image is resized, cropped, recompressed, or renamed.",
     "Entity is intentionally excluded from the active portfolio.",
     "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed.",
     "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates.",
-    "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels."
+    "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels.",
+    "Case-study narratives and scope infographics expanded on 2026-11-16. Metrics are limited to documented portfolio visuals, confirmed scope dimensions, project periods, platforms and team structure; no product-performance uplift is fabricated."
   ],
   "projects": [
     {
@@ -51,31 +52,64 @@
       "platform": "Interactive digital system · 3D",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "From measurements to form",
-          "body": "An independent exploration of how body measurements and adjustable parameters can shape a garment in a digital environment."
+          "label": "01 / PROJECT CONTEXT",
+          "title": "Exploring how a garment can respond to the body",
+          "body": "Veblen is an independent exploration of a parametric garment system, connecting body form, measurements and adjustable design parameters in a digital environment."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Make complex relationships understandable",
-          "body": "The experience needed to connect body form, measurement inputs and garment outcomes without making the underlying system feel abstract or technical."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "Make the relationship between body, input and outcome legible",
+          "body": "The central design question was how to help someone understand the connection between a body model, its measurements and the garment form those inputs can influence—without exposing the system as a set of disconnected technical controls."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Connect input, model and iteration",
-          "body": "The design exploration focused on visualising the body, mapping measurements and making parametric garment variations easier to understand and compare."
+          "label": "03 / EXPERIENCE MODEL",
+          "title": "Organise the experience around a clear sequence",
+          "body": "I framed the concept around three connected parts: visualising the body, mapping measurements and exploring garment variations. This gives the interaction a comprehensible structure from input to visual outcome."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A clearer model for exploration",
-          "body": "The resulting concept brings body visualisation, measurement mapping and garment exploration into one connected experience."
+          "label": "04 / INTERACTION & VISUALISATION",
+          "title": "Make abstract parameters easier to read",
+          "body": "The design exploration uses 3D body visualisation and measurement mapping to give the parametric system a more tangible interface. Garment exploration is presented as a visual process rather than an isolated set of values."
         },
         {
-          "label": "ROLE & SCOPE",
-          "title": "Independent product design",
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A connected model for parametric exploration",
+          "body": "The concept brings body representation, measurement inputs and garment variation into one product direction. Its value is the clarity of the proposed interaction model—not a claim of production deployment or measured user impact."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
+          "title": "Independent product design exploration",
           "body": "Concept direction and product-interface exploration across the parametric garment system. Independent project, 2025–2026."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "The structure behind the exploration",
+        "note": "Counts describe the documented design scope and portfolio evidence—not production usage or business performance.",
+        "metrics": [
+          {
+            "value": "07",
+            "unit": "PROJECT VISUALS",
+            "detail": "Supplied Veblen gallery assets"
+          },
+          {
+            "value": "03",
+            "unit": "CORE DIMENSIONS",
+            "detail": "Body · Measurements · Garment form"
+          },
+          {
+            "value": "01",
+            "unit": "3D MODEL",
+            "detail": "Body visualisation as the spatial reference"
+          },
+          {
+            "value": "01",
+            "unit": "PARAMETRIC SYSTEM",
+            "detail": "One connected concept direction"
+          }
+        ],
+        "foot": "The impact is expressed through a coherent model for exploring form and fit. No adoption, accuracy or conversion uplift is claimed."
+      }
     },
     {
       "id": "pulse",
@@ -119,31 +153,64 @@
       "platform": "Web · B2B SaaS",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "Turning employee feedback into usable insight",
+          "label": "01 / PROJECT CONTEXT",
+          "title": "From employee feedback to actionable understanding",
           "body": "Pulse Check is an employee experience platform connecting survey creation, employee feedback and people analytics for HR teams."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Connect the full feedback loop",
-          "body": "The product needed to make it coherent to move from setting up a survey, to understanding participation, to interpreting quantitative and qualitative responses."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "Keep the feedback loop understandable end to end",
+          "body": "The experience spans survey setup, active participation and the interpretation of results. The design challenge was to make these stages feel connected, so collecting feedback and understanding it are parts of one workflow."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Design the workflow as one system",
-          "body": "I worked across survey setup, active survey states, reporting, heatmaps and open comments, keeping the information hierarchy consistent from collection to interpretation."
+          "label": "03 / WORKFLOW DESIGN",
+          "title": "Structure the journey from collection to interpretation",
+          "body": "I worked across survey setup, active survey states, reporting, heatmaps and open comments. The design narrative follows the information as it moves from a survey into quantitative patterns and qualitative feedback."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A more legible feedback experience",
-          "body": "The designed experience connects survey operations with visual reporting and employee comments, helping HR teams move between high-level patterns and the feedback behind them."
+          "label": "04 / INFORMATION HIERARCHY",
+          "title": "Let summary and detail support each other",
+          "body": "The reporting experience brings visual patterns and written comments into the same broader context. Heatmaps help surface response patterns, while open comments preserve the detail behind those patterns."
         },
         {
-          "label": "ROLE & SCOPE",
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A more connected feedback and reporting experience",
+          "body": "The designed surfaces connect survey operations with reporting and employee comments, helping HR teams move between an overview of responses and the feedback that adds context. This is a design outcome, not a measured engagement or decision-making uplift."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
           "title": "Product Designer · primary design ownership",
-          "body": "I led the product design work within a two-person design team; the second designer’s involvement was primarily feedback and critique."
+          "body": "I led the product design work within a two-person design team. The second designer’s involvement was primarily feedback and critique. Project shown within the Jobvision employment period, 2023–2025."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "A feedback loop, represented in one system",
+        "note": "Scope indicators are based on the supplied project screens and confirmed team structure; they are not product-performance metrics.",
+        "metrics": [
+          {
+            "value": "06",
+            "unit": "PROJECT VISUALS",
+            "detail": "Supplied Pulse Check gallery assets"
+          },
+          {
+            "value": "04",
+            "unit": "WORKFLOW AREAS",
+            "detail": "Survey · Active state · Reports · Comments"
+          },
+          {
+            "value": "02",
+            "unit": "DESIGN TEAM",
+            "detail": "Two-person team"
+          },
+          {
+            "value": "01",
+            "unit": "PRIMARY DESIGN OWNER",
+            "detail": "Design execution led by me"
+          }
+        ],
+        "foot": "The design contribution connects survey operations with quantitative reporting and qualitative feedback. No survey completion, engagement or retention uplift is inferred."
+      }
     },
     {
       "id": "iran",
@@ -186,31 +253,64 @@
       "platform": "Web · Map-led experience",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "A map as a starting point for discovery",
-          "body": "Iran Unseen is an independent digital experience for discovering places, routes and local experiences across Iran."
+          "label": "01 / PROJECT CONTEXT",
+          "title": "A cultural atlas built around discovery",
+          "body": "Iran Unseen is an independent, map-led digital experience for discovering places, routes and local experiences across Iran."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Make exploration feel connected",
-          "body": "A map-led product has to balance geographic context with enough detail to help people understand a place, compare options and decide where to go next."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "A map needs context to become useful",
+          "body": "A map can show where something is, but discovery also depends on understanding what a place offers and how it relates to other places. The design challenge was to connect geographic orientation with the information needed to choose a next step."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Bring map, place information and routes together",
-          "body": "The concept organises discovery around the map, supported by place cards, categories, routes and saved locations."
+          "label": "03 / DISCOVERY MODEL",
+          "title": "Make the map the organising layer",
+          "body": "I framed the experience around map-based discovery, supported by place cards and categories. This keeps geographic context present while people browse individual destinations."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A structured discovery model",
-          "body": "The experience establishes a connected framework for browsing places and local experiences without separating geographic exploration from the information needed to act on it."
+          "label": "04 / JOURNEY & SUPPORTING ELEMENTS",
+          "title": "Connect places, routes and saved locations",
+          "body": "The concept brings routes and saved places into the discovery model, extending the experience beyond a single point on a map and giving exploration a structure that can continue."
         },
         {
-          "label": "ROLE & SCOPE",
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A connected framework for local exploration",
+          "body": "The design establishes a map-led model that links places, categories, routes and saved locations. It presents geographic discovery and place information as parts of one experience, without claiming validated travel outcomes."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
           "title": "Independent Product Designer",
-          "body": "Independent product and experience design exploration, 2025–2026."
+          "body": "Independent product and experience design exploration. The project is listed under 2025–2026 as a provisional period; exact project dates remain unconfirmed."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "Four building blocks for discovery",
+        "note": "These numbers describe the concept structure and the supplied portfolio material—not usage, destination coverage or travel outcomes.",
+        "metrics": [
+          {
+            "value": "05",
+            "unit": "PROJECT VISUALS",
+            "detail": "Supplied Iran Unseen gallery assets"
+          },
+          {
+            "value": "04",
+            "unit": "DISCOVERY ELEMENTS",
+            "detail": "Map · Places · Routes · Saved locations"
+          },
+          {
+            "value": "01",
+            "unit": "MAP-LED MODEL",
+            "detail": "Geography as the organising layer"
+          },
+          {
+            "value": "01",
+            "unit": "INDEPENDENT PROJECT",
+            "detail": "Product and experience exploration"
+          }
+        ],
+        "foot": "The design impact is the proposed connection between geographic context and place information. No visitor, booking or engagement metrics are claimed."
+      }
     },
     {
       "id": "ats",
@@ -248,31 +348,64 @@
       "platform": "Web dashboard · Responsive mobile view",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "A clearer operational view of recruitment",
-          "body": "Jobvision’s Applicant Tracking System supports recruitment operations. This portfolio case study focuses on the dashboard experience and its mobile presentation."
+          "label": "01 / PROJECT CONTEXT",
+          "title": "A focused view into recruitment operations",
+          "body": "Jobvision’s Applicant Tracking System supports recruitment operations. This case study deliberately focuses on the dashboard experience and its mobile presentation."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Make the overview easier to scan",
-          "body": "Recruitment dashboards bring multiple jobs, applicants and changing statuses into one workspace. The design challenge was to establish a clear hierarchy so the most relevant operational information is easier to find."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "Make a dense overview easier to scan",
+          "body": "Recruitment dashboards bring jobs, applicants and changing statuses into one operational space. The design challenge addressed here was how to establish visual priority across the overview without losing the context of the information."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Prioritise hierarchy and information density",
-          "body": "The dashboard design focuses on grouping key information, creating clear visual priority between summary and detail, and adapting the layout for a narrower mobile viewport."
+          "label": "03 / INFORMATION HIERARCHY",
+          "title": "Separate the overview from supporting detail",
+          "body": "The dashboard design focuses on grouping related information and creating a clear distinction between summary content and supporting detail. The aim is to make the overall workspace easier to read at a glance."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A dashboard-first experience",
-          "body": "The delivered design work in this case is the ATS dashboard and its mobile view. The presentation is centred on the overview experience rather than implying ownership of the wider ATS product."
+          "label": "04 / RESPONSIVE ADAPTATION",
+          "title": "Carry the dashboard logic into a mobile view",
+          "body": "I adapted the dashboard presentation for a narrower mobile viewport, considering how the information hierarchy and interface composition translate beyond the desktop layout."
         },
         {
-          "label": "ROLE & SCOPE",
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A dashboard-first design contribution",
+          "body": "The work represented in this case is the ATS dashboard and its mobile view. The outcome is a focused overview experience; it should not be read as ownership of the wider ATS product or its other workflows."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
           "title": "Product Designer · dashboard experience",
-          "body": "My contribution focused on the ATS dashboard and its mobile presentation. Other ATS screens and workflows were outside my design scope."
+          "body": "My contribution focused on the ATS dashboard and its mobile presentation. Other ATS screens and workflows were outside my design scope. Project shown within the Jobvision employment period, 2023–2025."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "A deliberately focused design scope",
+        "note": "Counts describe the supplied design deliverables and presentation contexts—not the full ATS product.",
+        "metrics": [
+          {
+            "value": "02",
+            "unit": "PROJECT VISUALS",
+            "detail": "Dashboard and mobile-view assets"
+          },
+          {
+            "value": "01",
+            "unit": "CORE SURFACE",
+            "detail": "Recruitment dashboard"
+          },
+          {
+            "value": "02",
+            "unit": "PRESENTATION CONTEXTS",
+            "detail": "Desktop web + mobile view"
+          },
+          {
+            "value": "01",
+            "unit": "DEFINED SCOPE",
+            "detail": "Dashboard experience only"
+          }
+        ],
+        "foot": "The impact is the clearer hierarchy and mobile adaptation within the dashboard scope. No claim is made about the complete ATS workflow or hiring-performance metrics."
+      }
     },
     {
       "id": "humaani",
@@ -349,10 +482,26 @@
         "title": "The footprint of the design work",
         "note": "Verified project-scope indicators. These are not conversion, retention or usability performance metrics.",
         "metrics": [
-          {"value": "04", "unit": "MONTHS", "detail": "May — September 2025"},
-          {"value": "02", "unit": "LANGUAGES", "detail": "Persian + English"},
-          {"value": "02", "unit": "SURFACES", "detail": "Web + Mobile"},
-          {"value": "01", "unit": "DESIGN SYSTEM", "detail": "Shared product foundation"}
+          {
+            "value": "04",
+            "unit": "MONTHS",
+            "detail": "May — September 2025"
+          },
+          {
+            "value": "02",
+            "unit": "LANGUAGES",
+            "detail": "Persian + English"
+          },
+          {
+            "value": "02",
+            "unit": "SURFACES",
+            "detail": "Web + Mobile"
+          },
+          {
+            "value": "01",
+            "unit": "DESIGN SYSTEM",
+            "detail": "Shared product foundation"
+          }
         ],
         "foot": "Impact is expressed through the design foundation delivered: connected architecture, consistent interface patterns and a bilingual, responsive workspace—not through invented outcome statistics."
       }
@@ -395,31 +544,64 @@
       "platform": "Web · Mobile",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "A focused experience for executive talent",
-          "body": "Mirana is an executive talent platform centred on discovering relevant profiles and creating a path to contact."
+          "label": "01 / PROJECT CONTEXT",
+          "title": "A focused platform for executive talent",
+          "body": "Mirana is an executive talent platform centred on discovering relevant profiles and creating a clear path to contact."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Support discovery without losing profile context",
-          "body": "The experience needed to present executive talent clearly and make the next step—reviewing a profile or initiating contact—easy to understand across desktop and mobile."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "Help people move from a profile to a next step",
+          "body": "The experience needed to present executive talent with enough context for profile review, while making the next action—contact—easy to recognise across desktop and mobile."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Connect profile discovery to contact",
-          "body": "The design work represented in this case focuses on the executive talent interface, mobile experience and contact flow."
+          "label": "03 / DISCOVERY & PROFILE PRESENTATION",
+          "title": "Keep talent information connected to the decision",
+          "body": "The design contribution represented here focuses on the executive talent interface: presenting profile information as the central point of discovery rather than separating it from the action that follows."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A more direct discovery-to-contact journey",
-          "body": "The interface brings talent presentation and contact actions into a connected experience across the supplied desktop and mobile screens."
+          "label": "04 / CONTACT FLOW & MOBILE",
+          "title": "Preserve the journey across touchpoints",
+          "body": "The contact flow and mobile experience extend the profile presentation into the next step. The design focus is continuity between discovering a person, understanding the profile and initiating contact."
         },
         {
-          "label": "ROLE & SCOPE",
-          "title": "Product Designer · Jobvision",
-          "body": "Product design contribution within the Jobvision product portfolio, during the November 2023–April 2025 employment period."
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A direct discovery-to-contact experience",
+          "body": "The supplied desktop and mobile screens show a connected direction across talent presentation and contact actions. This describes the designed experience, not a measured increase in contact rates or hiring outcomes."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
+          "title": "Product Designer · Jobvision product portfolio",
+          "body": "Product design contribution within the Jobvision product portfolio, during the November 2023–April 2025 employment period. Exact project dates are not separately confirmed."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "From talent discovery to contact",
+        "note": "Scope indicators reflect the documented project material and confirmed product focus—not usage or recruitment performance.",
+        "metrics": [
+          {
+            "value": "04",
+            "unit": "PROJECT VISUALS",
+            "detail": "Supplied Mirana gallery assets"
+          },
+          {
+            "value": "03",
+            "unit": "DESIGN FOCUS AREAS",
+            "detail": "Talent interface · Mobile · Contact"
+          },
+          {
+            "value": "02",
+            "unit": "PLATFORMS",
+            "detail": "Web + Mobile"
+          },
+          {
+            "value": "01",
+            "unit": "CONNECTED JOURNEY",
+            "detail": "Profile discovery to contact"
+          }
+        ],
+        "foot": "The design contribution connects profile presentation with a clear contact path across web and mobile. No conversion or placement metrics are implied."
+      }
     },
     {
       "id": "pinket",
@@ -464,31 +646,64 @@
       "platform": "Web dashboard · Shopper app",
       "caseStudy": [
         {
-          "label": "PROJECT CONTEXT",
-          "title": "Operational tools for an FMCG marketplace",
+          "label": "01 / PROJECT CONTEXT",
+          "title": "A marketplace with operational and shopper-facing sides",
           "body": "Pinket is an FMCG marketplace spanning store operations, shopper information, product details, reporting and the shopper journey."
         },
         {
-          "label": "DESIGN CHALLENGE",
-          "title": "Serve operational and customer-facing needs",
-          "body": "The product surfaces different kinds of information—from store and shopper data to product details and reports—alongside the shopper-facing journey."
+          "label": "02 / PROBLEM FRAMING",
+          "title": "Bring different information needs into one product language",
+          "body": "The product serves operational needs as well as the shopper-facing experience. Store data, shopper context, product information and reports each have different purposes; the design challenge was to keep these touchpoints coherent without flattening their differences."
         },
         {
-          "label": "DESIGN APPROACH",
-          "title": "Design across connected touchpoints",
-          "body": "The work covered the store dashboard, shopper overview, product information, reporting and shopper journey, with attention to consistent information structure across these touchpoints."
+          "label": "03 / INFORMATION ARCHITECTURE",
+          "title": "Give each operational area a clear role",
+          "body": "The documented design scope covers the store dashboard, shopper overview, product information and reporting. These areas are treated as distinct operational views within the broader marketplace experience."
         },
         {
-          "label": "DESIGN OUTCOME",
-          "title": "A broader marketplace experience",
-          "body": "The designed surfaces connect operational views with the shopper journey, giving the product a consistent visual and interaction foundation across its key touchpoints."
+          "label": "04 / SHOPPER EXPERIENCE",
+          "title": "Connect operational context with the customer journey",
+          "body": "The shopper app journey forms the customer-facing side of the product. Bringing it into the same design narrative makes the relationship between marketplace operations and the shopper experience visible."
         },
         {
-          "label": "ROLE & SCOPE",
+          "label": "05 / DESIGN OUTCOME",
+          "title": "A broader set of connected marketplace touchpoints",
+          "body": "The supplied designs establish a consistent interface direction across operational dashboards and the shopper journey. This describes the design scope and interface contribution, not a measured commercial uplift."
+        },
+        {
+          "label": "06 / ROLE & SCOPE",
           "title": "UI/UX Designer · two-person design team",
-          "body": "Product interface and experience design as part of a two-person design team at Pinket."
+          "body": "Product interface and experience design as part of a two-person design team at Pinket, January 2022–June 2023."
         }
-      ]
+      ],
+      "impact": {
+        "label": "DESIGN IMPACT / SCOPE AT A GLANCE",
+        "title": "Five touchpoints across the marketplace",
+        "note": "Counts describe the confirmed design focus and supplied portfolio visuals—not transaction volume or business performance.",
+        "metrics": [
+          {
+            "value": "05",
+            "unit": "PROJECT VISUALS",
+            "detail": "Supplied Pinket gallery assets"
+          },
+          {
+            "value": "05",
+            "unit": "DESIGN TOUCHPOINTS",
+            "detail": "Store · Shopper · Product · Reports · App journey"
+          },
+          {
+            "value": "02",
+            "unit": "DESIGN TEAM",
+            "detail": "Two-person team"
+          },
+          {
+            "value": "02",
+            "unit": "EXPERIENCE SIDES",
+            "detail": "Marketplace operations + shopper journey"
+          }
+        ],
+        "foot": "The design contribution spans operational views and the shopper-facing journey. No order growth, GMV or conversion uplift is claimed."
+      }
     }
   ],
   "unassigned": [

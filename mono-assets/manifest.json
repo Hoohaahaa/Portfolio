@@ -47,7 +47,35 @@
           "نقشه‌ی اندازه‌ها",
           "کاوش فرم پارامتریک پوشاک"
         ]
-      }
+      },
+      "platform": "Interactive digital system · 3D",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "From measurements to form",
+          "body": "An independent exploration of how body measurements and adjustable parameters can shape a garment in a digital environment."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Make complex relationships understandable",
+          "body": "The experience needed to connect body form, measurement inputs and garment outcomes without making the underlying system feel abstract or technical."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Connect input, model and iteration",
+          "body": "The design exploration focused on visualising the body, mapping measurements and making parametric garment variations easier to understand and compare."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A clearer model for exploration",
+          "body": "The resulting concept brings body visualisation, measurement mapping and garment exploration into one connected experience."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Independent product design",
+          "body": "Concept direction and product-interface exploration across the parametric garment system. Independent project, 2025–2026."
+        }
+      ]
     },
     {
       "id": "pulse",
@@ -87,7 +115,35 @@
           "گزارش و نقشه‌ی حرارتی",
           "دیدگاه‌های متنی"
         ]
-      }
+      },
+      "platform": "Web · B2B SaaS",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "Turning employee feedback into usable insight",
+          "body": "Pulse Check is an employee experience platform connecting survey creation, employee feedback and people analytics for HR teams."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Connect the full feedback loop",
+          "body": "The product needed to make it coherent to move from setting up a survey, to understanding participation, to interpreting quantitative and qualitative responses."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Design the workflow as one system",
+          "body": "I worked across survey setup, active survey states, reporting, heatmaps and open comments, keeping the information hierarchy consistent from collection to interpretation."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A more legible feedback experience",
+          "body": "The designed experience connects survey operations with visual reporting and employee comments, helping HR teams move between high-level patterns and the feedback behind them."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Product Designer · primary design ownership",
+          "body": "I led the product design work within a two-person design team; the second designer’s involvement was primarily feedback and critique."
+        }
+      ]
     },
     {
       "id": "iran",
@@ -126,7 +182,35 @@
           "مسیرها و مکان‌های ذخیره‌شده",
           "تجربه‌های محلی"
         ]
-      }
+      },
+      "platform": "Web · Map-led experience",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "A map as a starting point for discovery",
+          "body": "Iran Unseen is an independent digital experience for discovering places, routes and local experiences across Iran."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Make exploration feel connected",
+          "body": "A map-led product has to balance geographic context with enough detail to help people understand a place, compare options and decide where to go next."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Bring map, place information and routes together",
+          "body": "The concept organises discovery around the map, supported by place cards, categories, routes and saved locations."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A structured discovery model",
+          "body": "The experience establishes a connected framework for browsing places and local experiences without separating geographic exploration from the information needed to act on it."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Independent Product Designer",
+          "body": "Independent product and experience design exploration, 2025–2026."
+        }
+      ]
     },
     {
       "id": "ats",
@@ -160,7 +244,35 @@
           "نمای کلی متقاضیان",
           "رابط موبایل"
         ]
-      }
+      },
+      "platform": "Web dashboard · Responsive mobile view",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "A clearer operational view of recruitment",
+          "body": "Jobvision’s Applicant Tracking System supports recruitment operations. This portfolio case study focuses on the dashboard experience and its mobile presentation."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Make the overview easier to scan",
+          "body": "Recruitment dashboards bring multiple jobs, applicants and changing statuses into one workspace. The design challenge was to establish a clear hierarchy so the most relevant operational information is easier to find."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Prioritise hierarchy and information density",
+          "body": "The dashboard design focuses on grouping key information, creating clear visual priority between summary and detail, and adapting the layout for a narrower mobile viewport."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A dashboard-first experience",
+          "body": "The delivered design work in this case is the ATS dashboard and its mobile view. The presentation is centred on the overview experience rather than implying ownership of the wider ATS product."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Product Designer · dashboard experience",
+          "body": "My contribution focused on the ATS dashboard and its mobile presentation. Other ATS screens and workflows were outside my design scope."
+        }
+      ]
     },
     {
       "id": "humaani",
@@ -198,7 +310,35 @@
           "رابط فارسی",
           "رابط واکنش‌گرای موبایل"
         ]
-      }
+      },
+      "platform": "Web · Mobile · Persian / English",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "A workspace for AI-assisted creativity",
+          "body": "Humaani is an AI creative workspace designed to bring creative tools and related workflows into a coherent product environment."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Make multiple capabilities feel like one product",
+          "body": "The core challenge was to organise distinct creative modules into a system users could understand and move through, while maintaining consistency across languages and screen sizes."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Start with structure, then build consistency",
+          "body": "I worked end to end across information architecture, navigation, cross-module flows and a shared design system, including Persian and English experiences and responsive mobile layouts."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A connected, multi-surface workspace",
+          "body": "The design establishes a consistent foundation across the workspace, its modules, bilingual interfaces and mobile experience."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Product Designer · end-to-end design",
+          "body": "End-to-end product design during a four-month engagement at Rastar, from information architecture and navigation through interface design and design-system work."
+        }
+      ]
     },
     {
       "id": "mirana",
@@ -234,7 +374,35 @@
           "تجربه‌ی موبایل",
           "جریان ارتباط"
         ]
-      }
+      },
+      "platform": "Web · Mobile",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "A focused experience for executive talent",
+          "body": "Mirana is an executive talent platform centred on discovering relevant profiles and creating a path to contact."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Support discovery without losing profile context",
+          "body": "The experience needed to present executive talent clearly and make the next step—reviewing a profile or initiating contact—easy to understand across desktop and mobile."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Connect profile discovery to contact",
+          "body": "The design work represented in this case focuses on the executive talent interface, mobile experience and contact flow."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A more direct discovery-to-contact journey",
+          "body": "The interface brings talent presentation and contact actions into a connected experience across the supplied desktop and mobile screens."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "Product Designer · Jobvision",
+          "body": "Product design contribution within the Jobvision product portfolio, during the November 2023–April 2025 employment period."
+        }
+      ]
     },
     {
       "id": "pinket",
@@ -275,7 +443,35 @@
           "گزارش‌گیری",
           "مسیر تجربه‌ی خریدار"
         ]
-      }
+      },
+      "platform": "Web dashboard · Shopper app",
+      "caseStudy": [
+        {
+          "label": "PROJECT CONTEXT",
+          "title": "Operational tools for an FMCG marketplace",
+          "body": "Pinket is an FMCG marketplace spanning store operations, shopper information, product details, reporting and the shopper journey."
+        },
+        {
+          "label": "DESIGN CHALLENGE",
+          "title": "Serve operational and customer-facing needs",
+          "body": "The product surfaces different kinds of information—from store and shopper data to product details and reports—alongside the shopper-facing journey."
+        },
+        {
+          "label": "DESIGN APPROACH",
+          "title": "Design across connected touchpoints",
+          "body": "The work covered the store dashboard, shopper overview, product information, reporting and shopper journey, with attention to consistent information structure across these touchpoints."
+        },
+        {
+          "label": "DESIGN OUTCOME",
+          "title": "A broader marketplace experience",
+          "body": "The designed surfaces connect operational views with the shopper journey, giving the product a consistent visual and interaction foundation across its key touchpoints."
+        },
+        {
+          "label": "ROLE & SCOPE",
+          "title": "UI/UX Designer · two-person design team",
+          "body": "Product interface and experience design as part of a two-person design team at Pinket."
+        }
+      ]
     }
   ],
   "unassigned": [

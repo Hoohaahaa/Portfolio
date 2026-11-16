@@ -671,10 +671,26 @@ body.fa .detail-top-meta{direction:rtl}
  .contact-heading{margin-bottom:58px!important}
  .contact-title{font-size:clamp(36px,10.4vw,72px)!important;line-height:.98!important;letter-spacing:-.065em!important}
 }
+/* MONO — single wordmark, quiet navigation, more mobile breathing room */
+header{justify-content:flex-end!important;border-bottom:0!important;height:64px!important;padding-inline:6vw!important}
+.nav{gap:clamp(20px,4vw,38px)!important}
+.hero{padding-top:clamp(104px,12vh,150px)!important;padding-bottom:clamp(64px,9vh,110px)!important}
+@media(max-width:760px){
+ header{height:58px!important;padding-inline:6vw!important}
+ .nav{gap:22px!important}
+ .nav a{font-size:9px!important}
+ .hero{min-height:112svh!important;height:auto!important;padding:clamp(142px,19svh,178px) 7vw 58px!important;gap:clamp(30px,6svh,52px)!important;align-content:start!important}
+ .hero-kicker{top:42px!important;left:7vw!important}
+ .hero-index{top:42px!important;right:7vw!important}
+ .hero-copy{padding-top:8px!important}
+ .hero-wordmark{font-size:clamp(68px,18vw,96px)!important}
+ .hero-note{margin-top:22px!important;line-height:1.95!important}
+ .hero-visual{margin-top:8px!important}
+}
 @media(prefers-reduced-motion:reduce){.hero-visual-frame .hero-slide{transition:none!important}}
 </style></head>
 <body>
-<header><a class="brand" href="#top">MONO<span>.</span></a><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
+<header><nav class="nav"><a href="#work" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#about" data-en="ABOUT" data-fa="درباره">ABOUT</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></nav><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>
 <main>
 <section class="hero" id="top"><canvas class="hero-atoms" id="heroAtoms" aria-hidden="true"></canvas><div class="hero-kicker mono">INDEPENDENT PRACTICE&nbsp; / &nbsp;2026</div><span class="hero-index mono" aria-label="Section index">01 / 03</span><div class="hero-copy"><h1 class="hero-wordmark">MONO<span>.</span></h1><p class="hero-note">Independent product designer<br>Product design · UX/UI · Creative technology</p></div><div class="hero-visual" id="heroVisual" aria-label="Selected work preview"><div class="hero-visual-frame"></div><div class="hero-visual-caption mono"><span>SELECTED WORK</span><span id="heroVisualTitle">MONO / AUDIO-VISUAL ENGINE</span></div></div></section>
 

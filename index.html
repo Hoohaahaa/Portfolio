@@ -1611,6 +1611,98 @@ header{display:grid!important;grid-template-columns:1fr auto 1fr!important;align
  :root[data-theme="dark"] .hero-wordmark .hero-name-last{color:#d4dcf7!important}
 }
 
+
+/* MO / Swiss International — neutral surfaces + sport green detail.
+   Keep the existing global primary color untouched. */
+:root[data-theme="light"]{
+ --project-card-surface:#f1f2ed;
+ --project-card-surface-2:#e8eae3;
+ --project-card-border:#b9beb3;
+ --project-card-text:#171b17;
+ --project-card-muted:#62695f;
+ --project-card-accent:#47751c;
+ --project-card-accent-ink:#ffffff;
+ --sport-green:#47751c;
+ --sport-green-ink:#ffffff;
+}
+:root[data-theme="dark"]{
+ --project-card-surface:#1b211d;
+ --project-card-surface-2:#222a24;
+ --project-card-border:#465448;
+ --project-card-text:#f2f4ed;
+ --project-card-muted:#b2bbae;
+ --project-card-accent:#b9f45b;
+ --project-card-accent-ink:#17200f;
+ --sport-green:#b9f45b;
+ --sport-green-ink:#17200f;
+}
+#cinema .project-card,
+#cinema .mobile-project-item{
+ border-radius:0!important;
+ box-shadow:none!important;
+}
+#cinema .project-card{
+ border:1px solid var(--project-card-border)!important;
+ background:var(--project-card-surface)!important;
+}
+#cinema .project-card .media{
+ background:var(--project-card-surface-2)!important;
+}
+#cinema .project-card .media:after{
+ background:linear-gradient(90deg,transparent 49.8%,#7e88751c 50%,transparent 50.2%),
+ linear-gradient(0deg,transparent 49.8%,#7e88751c 50%,transparent 50.2%)!important;
+ background-size:25% 25%!important;
+ mix-blend-mode:normal!important;
+ opacity:.45!important;
+}
+#cinema .project-card .meta,
+#cinema .mobile-project-meta{
+ border-top:1px solid var(--project-card-border)!important;
+ border-radius:0!important;
+ background:var(--project-card-surface)!important;
+ color:var(--project-card-text)!important;
+}
+#cinema .project-card .meta b,
+#cinema .mobile-project-meta b{color:var(--project-card-text)!important}
+#cinema .project-card .meta small,
+#cinema .project-card .card-desc,
+#cinema .project-card .card-role,
+#cinema .project-card .card-index,
+#cinema .mobile-project-meta small,
+#cinema .mobile-project-desc,
+#cinema .mobile-project-role{color:var(--project-card-muted)!important}
+#cinema .project-card .card-bottom,
+#cinema .mobile-project-action{border-color:var(--project-card-border)!important}
+#cinema .project-card .meta-tags span,
+#cinema .mobile-project-tags em{
+ border:1px solid var(--project-card-border)!important;
+ border-radius:0!important;
+ background:transparent!important;
+ color:var(--project-card-muted)!important;
+}
+#cinema .project-card .card-action,
+#cinema .mobile-project-action{
+ color:var(--project-card-text)!important;
+}
+#cinema .project-card .card-action i,
+#cinema .mobile-project-action i{
+ background:var(--project-card-accent)!important;
+ border:1px solid var(--project-card-accent)!important;
+ color:var(--project-card-accent-ink)!important;
+ border-radius:0!important;
+}
+#cinema .mobile-project-item{
+ border:1px solid var(--project-card-border)!important;
+ background:var(--project-card-surface)!important;
+ box-shadow:none!important;
+}
+#cinema .mobile-project-tags em{background:transparent!important}
+#cinema .project-card:after{border:0!important;box-shadow:none!important;background:none!important}
+@media(max-width:760px){
+ #cinema .project-card .meta{padding:15px 17px!important}
+ #cinema .mobile-project-meta{border-top:1px solid var(--project-card-border)!important}
+}
+
 </style></head>
 <body>
 <header><a class="brand" href="#top" aria-label="MO home">MO</a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a></nav><a class="header-contact" href="#contact"><span>CONTACT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>

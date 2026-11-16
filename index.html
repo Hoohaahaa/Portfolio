@@ -1368,6 +1368,160 @@ header{display:grid!important;grid-template-columns:1fr auto 1fr!important;align
  }
 }
 
+
+/* MO / 2026-11-16 — project card hierarchy pass */
+#cinema .project-card .meta{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:space-between!important;
+  gap:15px!important;
+  height:36%!important;
+  min-height:190px!important;
+  padding:20px 26px 19px!important;
+  box-sizing:border-box!important;
+}
+#cinema .project-card .meta-top{
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+#cinema .project-card .meta-top>div{
+  flex:1 1 auto!important;
+  min-width:0!important;
+}
+#cinema .project-card .meta small.card-client{
+  margin:0 0 9px!important;
+  font-size:8px!important;
+  line-height:1.5!important;
+  letter-spacing:.15em!important;
+  color:var(--color-muted)!important;
+}
+#cinema .project-card .meta b{
+  display:block!important;
+  margin:0!important;
+  font-size:clamp(17px,1.65vw,22px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.045em!important;
+  font-weight:750!important;
+}
+#cinema .project-card .card-desc{
+  max-width:42ch!important;
+  margin:8px 0 0!important;
+  font-size:10px!important;
+  line-height:1.55!important;
+  color:var(--color-subtitle)!important;
+  -webkit-line-clamp:2!important;
+}
+#cinema .project-card .card-role{
+  margin-top:7px!important;
+  font-size:7px!important;
+  line-height:1.45!important;
+  letter-spacing:.12em!important;
+  color:var(--color-muted)!important;
+}
+#cinema .project-card .card-index{
+  flex:0 0 auto!important;
+  padding-top:2px!important;
+  font:9px var(--mono)!important;
+  letter-spacing:.08em!important;
+  color:var(--color-muted)!important;
+}
+#cinema .project-card .card-bottom{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:14px!important;
+  width:100%!important;
+  min-width:0!important;
+  padding-top:12px!important;
+  border-top:1px solid var(--color-border)!important;
+}
+#cinema .project-card .meta-tags{
+  display:flex!important;
+  flex:1 1 auto!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:6px!important;
+  min-width:0!important;
+}
+#cinema .project-card .meta-tags span{
+  padding:5px 8px!important;
+  border:1px solid var(--color-border)!important;
+  border-radius:3px!important;
+  background:var(--color-surface-alt)!important;
+  color:var(--color-subtitle)!important;
+  font:7px/1.2 var(--mono)!important;
+  letter-spacing:.035em!important;
+}
+#cinema .project-card .card-action,
+#cinema .mobile-project-action{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:9px!important;
+  width:max-content!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:3px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:var(--color-ink)!important;
+  font:600 8px/1.2 var(--mono)!important;
+  letter-spacing:.11em!important;
+  white-space:nowrap!important;
+}
+#cinema .project-card .card-action:after,
+#cinema .mobile-project-action:after{display:none!important;content:none!important}
+#cinema .project-card .card-action i,
+#cinema .mobile-project-action i{
+  display:inline-grid!important;
+  place-items:center!important;
+  width:25px!important;height:25px!important;
+  flex:0 0 25px!important;
+  margin:0!important;
+  border:1px solid var(--color-primary)!important;
+  border-radius:50%!important;
+  background:var(--color-primary)!important;
+  color:#171715!important;
+  font:600 14px/1 var(--sans)!important;
+  font-style:normal!important;
+  transition:transform .2s ease!important;
+}
+#cinema .project-card:hover .card-action i{transform:translate(2px,-2px)!important}
+@media(max-width:760px){
+ #cinema .mobile-project-meta{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-content:start!important;
+  align-items:start!important;
+  gap:11px 12px!important;
+  padding:20px 24px 22px!important;
+  box-sizing:border-box!important;
+ }
+ #cinema .mobile-project-meta small{margin:0!important;line-height:1.5!important;letter-spacing:.13em!important}
+ #cinema .mobile-project-meta b{font-size:clamp(17px,4.6vw,21px)!important;line-height:1.14!important;font-weight:750!important}
+ #cinema .mobile-project-desc{margin:0!important;line-height:1.65!important}
+ #cinema .mobile-project-role{margin-top:-3px!important;line-height:1.5!important}
+ #cinema .mobile-project-tags{gap:6px!important}
+ #cinema .mobile-project-tags em{padding:5px 8px!important;border-radius:3px!important}
+ #cinema .mobile-project-action{
+  grid-column:1/-1!important;
+  margin-top:5px!important;
+  padding-top:12px!important;
+  border-top:1px solid var(--color-border)!important;
+ }
+}
+@media(max-width:390px){
+ #cinema .mobile-project-meta{padding:18px 20px 20px!important;gap:10px 10px!important}
+}
+
 </style></head>
 <body>
 <header><a class="brand" href="#top" aria-label="MO home">MO</a><nav class="nav"><a href="#cinema" data-en="WORK" data-fa="پروژه‌ها">WORK</a><a href="#experience" data-en="EXPERIENCE" data-fa="تجربه">EXPERIENCE</a><a href="#about" data-en="PRACTICE" data-fa="حوزه‌ها">PRACTICE</a></nav><a class="header-contact" href="#contact"><span>CONTACT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button id="editOpen" type="button" hidden aria-hidden="true" tabindex="-1">ASSETS</button></header>

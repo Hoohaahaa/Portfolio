@@ -858,7 +858,6 @@ function initHeroAtoms(){
   if(!reduce)raf=requestAnimationFrame(draw);
  };
  draw();
- if(!reduce)raf=requestAnimationFrame(draw);
  document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else if(!reduce)raf=requestAnimationFrame(draw)});
  return()=>{cancelAnimationFrame(raf);ro.disconnect();hero.removeEventListener('pointermove',move);hero.removeEventListener('pointerleave',leave)};
 }

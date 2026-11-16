@@ -472,7 +472,7 @@ body.fa .detail-top-meta{direction:rtl}
  .mobile-project-meta small{grid-column:1/-1!important;font:8px var(--mono)!important;letter-spacing:.14em!important;color:var(--muted)!important}
  .mobile-project-meta b{font-size:15px!important;line-height:1.2!important;font-weight:550!important;letter-spacing:-.035em!important}
  .mobile-project-meta i{font-style:normal!important;font-size:19px!important;align-self:center!important}
- .contact-loop{font-size:clamp(42px,12.4vw,70px)!important;line-height:.94!important;min-height:1.95em!important;max-height:1.95em!important;margin:32px 0 48px!important;letter-spacing:-.075em!important}
+ .contact-loop{font-size:clamp(34px,9vw,58px)!important;line-height:.94!important;min-height:1.95em!important;max-height:1.95em!important;margin:32px 0 48px!important;letter-spacing:-.075em!important}
  .contact-loop-lines{min-height:1.95em!important}.contact-line{min-height:.94em!important}
  .detail-gallery{gap:10px!important;padding:0 5vw 34px!important}
  .gallery-stage{height:clamp(240px,43svh,430px)!important;min-height:240px!important;max-height:430px!important;aspect-ratio:1.45!important}
@@ -642,12 +642,12 @@ function initHeroGlyphs(){
 }
 function initContactLoop(){
  const root=document.getElementById("contactLoop"),dots=document.querySelector(".contact-dots");if(!root||root.dataset.ready)return;root.dataset.ready="1";
- const lines=[...root.querySelectorAll(".contact-line")],phrases=[["Let's make it","clear"],["Or make a beautiful","problem."]];
+ const lines=[...root.querySelectorAll(".contact-line")],phrases=[["Let's make it","clear"],["Or make a","beautiful problem."]];
  let phrase=0;
  const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
  async function typeLine(el,text){el.textContent="";for(let i=0;i<text.length;i++){el.textContent+=text[i];await wait(54)}}
  async function eraseLine(el){while(el.textContent.length){el.textContent=el.textContent.slice(0,-1);await wait(25)}}
- async function cycle(){while(true){const pair=phrases[phrase];await typeLine(lines[0],pair[0]);await typeLine(lines[1],pair[1]);if(dots)dots.classList.add("is-blinking");await wait(phrase===0?2200:2600);if(dots)dots.classList.remove("is-blinking");await eraseLine(lines[1]);await eraseLine(lines[0]);phrase=(phrase+1)%phrases.length}}
+ async function cycle(){while(true){const pair=phrases[phrase];await typeLine(lines[0],pair[0]);await typeLine(lines[1],pair[1]);if(dots&&phrase===0){const rr=root.getBoundingClientRect(),lr=lines[1].getBoundingClientRect();dots.style.left=(lr.right-rr.left+10)+"px";dots.style.bottom=(root.clientHeight-(lr.bottom-rr.top)-2)+"px";dots.classList.add("is-blinking")}await wait(phrase===0?2400:2600);if(dots)dots.classList.remove("is-blinking");await eraseLine(lines[1]);await eraseLine(lines[0]);phrase=(phrase+1)%phrases.length}}
  if(matchMedia("(prefers-reduced-motion: reduce)").matches){lines[0].textContent=phrases[0][0];lines[1].textContent=phrases[0][1];return}cycle();
 }
 function renderHeroVisual(){const node=document.querySelector('.hero-visual-frame');if(node){const src=fileURL('mono-assets/mono audio visual engine.jpg');node.innerHTML='<img loading="eager" decoding="async" fetchpriority="high" src="'+esc(src)+'" alt="MONO Audio Visual Engine — particle field interface" onload="fitFrame(this)">'}const caption=document.querySelector('.hero-visual-caption span:last-child');if(caption)caption.textContent='MONO / AUDIO-VISUAL ENGINE';if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.from('.hero-copy > *',{y:18,opacity:0,duration:.8,stagger:.08,ease:'power3.out',delay:.08});gsap.from('.hero-visual-frame',{clipPath:'inset(0 0 8% 0)',opacity:0,duration:.9,ease:'power3.out',delay:.16})}}

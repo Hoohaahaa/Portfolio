@@ -9,7 +9,7 @@ This file is the persistent product UX debt register. New feedback from real use
 - Area: Studio navigation / Field Test
 - Observed: Moving between collection, editing, content, and field testing does not consistently communicate where the user is or how to return to the parent.
 - Expected: Persistent breadcrumbs, clear parent navigation, preserved selected location/space, and predictable Back behavior.
-- Status: In progress — breadcrumbs added to the editor and Field Test; deeper Collection → Location → Space → Content hierarchy remains a product-level redesign.
+- Status: In progress — breadcrumbs added to the editor and Field Test. Latest adjustment adds top/side whitespace and removes any breadcrumb container treatment; hierarchy redesign remains open.
 - Verification: Check narrow mobile layout, browser Back, dirty-form confirmation, and Field Test exit paths.
 
 ### UX-002 — Content image is not reliably visible in the spatial experience
@@ -17,8 +17,10 @@ This file is the persistent product UX debt register. New feedback from real use
 - Area: Content authoring / Field Test / Viewer
 - Observed: Image can be entered in Content and appear in a collection card while remaining absent from the actual spatial surface.
 - Expected: One canonical media asset reference must render consistently in authoring preview, outdoor surface, indoor experience, and visitor view; broken/blocked URLs need an explicit error state.
-- Status: In progress — authoring preview added; outdoor/indoor rendering paths exist and are being reinforced. Direct public HTTPS file URLs are required by the current URL-based field.
-- Verification: Test a direct JPG/PNG/WebP URL, a blocked URL, a redirect/share-page URL, and a local file selection if upload support is added. Verify image visibility on both outdoor and indoor Field Test.
+- Root-cause findings: Outdoor visibility was incorrectly gated on all alignment conditions being true (compass heading available, surface facing user, within range, and inside estimated FOV). When any condition failed, the actual surface node was hidden, so valid content appeared to disappear. Indoor rendering had no explicit media container, loading state, empty state, or image error feedback; it could silently degrade to text-only.
+- Status: Partially corrected — Outdoor now keeps a spatial content preview visible when sensors/alignment are unavailable and shows alignment separately. Indoor now has a dedicated media region, empty state and image-load error feedback. This is a structural correction to rendering behavior, not proof every image URL will load.
+- Remaining: The current authoring control is still a URL field, not a true file upload. A canonical managed media asset/upload pipeline remains required.
+- Verification: Test direct JPG/PNG/WebP URL, blocked URL, redirect/share-page URL, and actual file upload after storage is implemented. Verify outdoor and indoor on Android and iOS.
 
 ### UX-003 — Outdoor surface projection is visually unstable and not dimensionally convincing
 - Severity: Critical
@@ -44,3 +46,12 @@ This file is the persistent product UX debt register. New feedback from real use
 
 ## Operating rule
 Every new user-reported UX issue is recorded here with a stable ID. Keep it open until the expected behavior is implemented and verified on the relevant device/browser. Separate implemented, tested, and physically verified states. Never mark hardware-dependent spatial behavior as verified from desktop tests alone.
+
+ 
+### UX-005 — Breadcrumb spacing is cramped
+- Severity: Medium
+- Area: Studio / Field Test navigation
+- Observed: Breadcrumb sat too close to the frame above and felt compressed.
+- Expected: Quiet text-only navigation with consistent padding and whitespace on all sides; no colored container or decorative card.
+- Status: Corrected in CSS; visual verification on phone still required.
+- Verification: Inspect top safe-area spacing and horizontal padding on narrow and wide viewports.

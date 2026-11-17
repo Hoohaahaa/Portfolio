@@ -10,7 +10,7 @@ Monument now has a durable product documentation workspace and a working Studio 
 - Studio implementation branch: `monument-studio-v1`
 - Studio implementation PR: https://github.com/Hoohaahaa/Portfolio/pull/3 (draft; not merged)
 - Base application branch: `monument/main`
-- Studio branch commit: `8377f90d255a33fdf9baef641f63a38e0a221fac`
+- Studio branch commit: `0de7a37adc25564a9db670295735a126fb944351` (latest UX iteration)
 
 The documentation workspace contains nine files:
 - `README.md`
@@ -25,21 +25,27 @@ The documentation workspace contains nine files:
 
 The vision/opportunity document consolidates the product north star, Places/Campaigns/Infrastructure architecture, first user workflow, customer and channel opportunities, monetization ladder, deferred payment direction, design principles, privacy constraints and implementation truth boundaries. It is a structured consolidation of context recovered so far, not a verbatim archive of every chat.
 
-## Latest Studio deployment — successful
+## Latest Studio deployments — isolated and successful
 
+**Latest UX preview**
 - Vercel project: `monument-studio-preview`
 - Project ID: `prj_TAMIGx67fj1D1nzyVIpMRWdby3tA`
+- Deployment ID: `dpl_6RJPd2ZdMo9TLEkLpMFdd9XdwPBu`
+- Preview URL: https://monument-studio-preview-jo5afnk5e-mos-projects-efbc27a5.vercel.app
+- State: READY
+- Source: `Hoohaahaa/Portfolio`, branch `monument-studio-v1`
+- Commit: `0de7a37adc25564a9db670295735a126fb944351`
+- Build: passed; Vercel build log confirms the 13 unit tests passed, 0 failed.
+- Deployment target is Preview (target is null in the Vercel API, which defaults to Preview). Use this unique preview URL for the latest changes.
+
+**Earlier project-root deployment**
 - Deployment ID: `dpl_6xGM1Cr5ZEeCphbCcECu2aDrayCZ`
 - URL: https://monument-studio-preview.vercel.app
-- State: READY
-- HTTP check: 200 OK
-- Source: `Hoohaahaa/Portfolio`, branch `monument-studio-v1`
+- State: READY; HTTP 200 was verified for that earlier deployment.
 - Commit: `8377f90d255a33fdf9baef641f63a38e0a221fac`
-- Build: passed
-- Tests: 13 passed, 0 failed
-- Build log confirms Vercel cloned the requested Git branch and commit.
+- Vercel labels that earlier deployment target as `production` inside the dedicated project named `monument-studio-preview`. It is not the old Monument production project. Do not assume the stable project-root URL has the latest UX changes; use the unique Preview URL above.
 
-**Environment naming caveat:** Vercel reports this deployment target as `production` inside the dedicated project named `monument-studio-preview`. It is not a Preview-environment deployment. The project is separate from the older Monument production project, has its own domain, and no existing production project/deployment was changed. Keep this distinction explicit.
+The dedicated Vercel project remains separate from `monument-spatial-22`. No existing Monument production project or deployment was changed.
 
 The new project has Node 24, SSO protection disabled for device testing, and no environment variables configured. No Neon database is connected. The deployed Studio therefore operates in local-first mode: drafts remain in the same browser/device; cross-device sync, permanent public publishing and account persistence are not enabled by this deployment.
 
@@ -59,6 +65,18 @@ Implemented on `monument-studio-v1`:
 - Vercel build passed and deployment is READY.
 - Deployment root returned HTTP 200 and served the expected Monument app shell.
 
+## Latest feedback iteration — 2026-11-17
+
+User-tested feedback led to a focused UX iteration on `monument-studio-v1`:
+- Collection rows now show image/place context and actions for Field Test, Edit, View and Delete.
+- Local-first drafts can be deleted from the collection with confirmation.
+- Owner-authenticated API deletion removes a work and its revision history after ownership and same-origin checks; this path still requires an isolated database connection to exercise.
+- Field Test now lets the user switch among their own saved experiences of the same spatial type, keeps the live scene visually primary, and moves GPS/bearing/FOV/manual-heading diagnostics into a collapsed panel.
+- User-provided HTTPS images are rendered in the field target card and projected content surface; indoor experiences also show their image and content in the field screen.
+- Studio primary accent now matches the portfolio landing page orange `#ff573d`; the green/lime primary theme has been replaced by orange with neutral charcoal surfaces.
+- Service-worker cache version incremented; local development server now serves `field.js`.
+
+**Validation:** all modified JavaScript files passed syntax parsing; Vercel build passed; 13 unit tests passed. Real Android camera/GPS/compass and remote-media rendering still need direct phone verification. The backend delete endpoint is implemented but not live-tested because this Vercel project has no database environment variable.
 ### Not yet validated
 - Real Android/iOS camera, GPS and compass behavior.
 - Actual camera/heading calibration and movement tests on a physical device.
@@ -96,8 +114,8 @@ The outdoor Field Test is a GPS/compass projection instrument, not persistent ge
 
 ## Next exact actions
 
-1. Open https://monument-studio-preview.vercel.app on the user's Android phone.
-2. Test camera permission, GPS accuracy, compass heading, manual heading, target bearing and movement closer/farther.
+1. Open the latest Preview URL https://monument-studio-preview-jo5afnk5e-mos-projects-efbc27a5.vercel.app on the user's Android phone.
+2. Test collection delete, switch between field-test targets, and image rendering; then test camera permission, GPS accuracy, compass heading, manual heading, target bearing and movement closer/farther.
 3. Record device model, browser, permission behavior and observed errors—do not infer accuracy from desktop tests.
 4. Decide whether to connect the isolated Neon QA branch; never use production credentials for this.
 5. Run browser/live tests against QA and document the results.

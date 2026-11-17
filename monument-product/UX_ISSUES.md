@@ -20,5 +20,14 @@
 - Severity: Critical
 - Area: Asset infrastructure
 - Expected: Authenticated upload-intent endpoint, private object storage, server-validated MIME/size, canonical Asset ID, metadata record, safe delivery URLs, cleanup and ownership checks. Store bytes in object storage, not Postgres or localStorage.
-- Status: A private `monument-assets` bucket exists on the isolated Neon preview branch. The Vercel preview project currently has no environment variables, so the application cannot yet access the bucket. Local IndexedDB upload is an interim phone workflow, not a cloud asset service.
+- Status: A private `monument-assets` bucket exists on the isolated Neon preview branch. `DATABASE_URL` is now configured as an encrypted Preview-only Vercel variable pointing to that isolated branch; Production is untouched. The app still has no upload-intent API wired to the bucket. Local IndexedDB upload is an interim phone workflow, not a cloud asset service.
 - Verification: Upload from mobile, reopen on another device, publish/replace/delete, verify private access and signed delivery URLs, and test preview/production branch isolation.
+
+
+### DEPLOY-001 — Latest feature commit blocked by Vercel daily deployment quota
+- Severity: High
+- Area: Preview delivery
+- Observed: Vercel accepted a Preview deployment for commit `079078e`, then rejected a newer deployment request with HTTP 402 (`api-deployments-free-per-day`, retry after 24 hours). The later mobile upload UI and visitor video rendering commits are on GitHub but not deployed.
+- Expected: Every handoff link must point to the exact feature commit and show READY before device testing.
+- Status: Waiting for Vercel quota reset or user billing/plan action. Existing READY preview is older and must not be represented as containing the latest upload UI.
+- Verification: Deploy latest branch head, confirm deployment commit SHA, run build/tests, then perform Android device test.

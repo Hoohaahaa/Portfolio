@@ -161,3 +161,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Preserved the approved burnt-orange fill (#C75A2A), dark text in both themes, rounded corners, and responsive layout. Mobile sizing and date wrapping have dedicated rules.
 - No resume PDF changes. No production deployment or main-branch changes.
 - Visual browser QA remains pending; verify the rendered desktop and mobile appearance after preview deployment.
+
+
+## Revision 10 — Theme consistency and accessible header
+- Explicitly lock the Experience panel to the approved burnt-orange (#C75A2A) surface in both light and dark themes, including its dark text, labels, and timeline borders.
+- Right-align the header navigation links while keeping the wordmark on the left and Contact at the far right.
+- Increase navigation text weight/size and link hit area; increase spacing between items; add visible keyboard focus outlines and hover underlines. Responsive rules retain readable minimum sizes on narrow screens.
+- Changes are scoped to the header and Experience panel. No project content, assets, PDF, production domain, or main branch changes.
+- Browser-rendered visual QA remains pending; inspect light/dark desktop and mobile previews.

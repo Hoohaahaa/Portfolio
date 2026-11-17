@@ -21,3 +21,20 @@ Record decisions with date, status, rationale and consequences. Supersede old de
 ## 2026-11-17 — Privacy/geofencing
 **Status:** Product constraint. No continuous location history or unsolicited background notifications in MVP. Default to foreground location use, explicit opt-in, frequency caps and aggregate reporting.  
 **Reason:** Trust, mobile OS constraints and lower integration friction.
+
+
+## 2026-11-17 — Studio v1 field-first authoring
+**Status:** Accepted for the first usable product slice. Separate outdoor Earth-referenced surfaces from indoor marker-based experiences. Make the primary workflow location → surface → content → preview → field test.  
+**Reason:** The user needs to place a real surface, inspect its bearing/range/apparent size and test it with a phone before adding enterprise administration, campaigns or partner SDKs.
+
+## 2026-11-17 — Local-first preview while backend is isolated
+**Status:** Accepted as a temporary preview mode. Save drafts in browser localStorage when DATABASE_URL is not connected. No cross-device sync or public publishing is implied.  
+**Reason:** Allow safe UX and field-flow validation without pointing a preview deployment at production data.
+
+## 2026-11-17 — Field Test is not geospatial AR
+**Status:** Accepted constraint. GPS/compass field test is a rough alignment instrument only. Indoor QR is 2D marker tracking; WebXR local placement is session-scoped.  
+**Reason:** Browser GPS, compass and camera projections are not stable enough to claim a persistent world anchor, terrain occlusion or survey-grade placement. A native geospatial anchor/VPS strategy is a later milestone.
+
+## 2026-11-17 — Production safety during preview setup
+**Status:** Accepted. No existing production Vercel project, deployment, Neon main branch or repository default branch was changed. Use an isolated Neon QA branch and a separate Vercel preview project.  
+**Reason:** Avoid accidental test writes or incomplete UI releases against the live service.

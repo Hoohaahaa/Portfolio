@@ -151,3 +151,5 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - The PDF is a one-page A4 file and is served as a static asset by Vercel.
 - Header CV link is active and opens the PDF in a new tab.
 - Keep the CV content consistent with the source resume; the source says 4+ years in its profile while the portfolio hero says 5+ years. Do not silently rewrite either claim without user approval.
+
+- Consistency correction: hero experience claim now reads 4+ years, matching the supplied CV and the documented employment timeline; initial project counters now read 7, matching the seven active manifest projects.

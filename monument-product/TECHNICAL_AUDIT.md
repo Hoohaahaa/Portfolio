@@ -9,6 +9,7 @@ _Audit date: 2026-11-17. Read-only inspection; no production code or data was ch
 - State: READY, target: production
 - URL: https://monument-spatial-22.vercel.app
 - Preview deployments have SSO protection enabled; project metadata reports no password protection on production.
+- Production environment variable names observed: `DATABASE_URL`, `PUBLISH_SECRET`. Secret values were not retrieved.
 
 ## Other Monument projects discovered
 Vercel search returned 19 projects. Relevant names:
@@ -32,12 +33,16 @@ READY means Vercel completed a deployment; it is not a functional QA pass or pro
 - Frontend: app, spatial geometry, XR, marker and service worker.
 - SQL tables: `monument_accounts`, `monument_sessions`, `monument_registry`, `monument_revisions`.
 
+## Git/source connection finding
+The Vercel team Git context currently lists only four linked projects: `mo-portfolio` → `Hoohaahaa/Portfolio`, `mono-ln1f` → `Hoohaahaa/mono`, `vesperine` → `Hoohaahaa/vesperine`, and `paxia` → `Hoohaahaa/paxia`. No Monument project appears in this linked-project list. The inspected Spatial 22 deployment metadata also did not expose a Git source object. This strongly suggests the Monument deployments may have been created from uploaded source rather than a currently connected Git repository; verify in the Vercel project dashboard before concluding.
+The deployment README references a canonical source path in `Hoohaahaa/Portfolio`, but that path did not resolve in the inspected repository tree. The documentation branch created for this workspace is not the Monument application source.
+
 ## Audit limitations
-Vercel file listing was complete (43 entries), but several large source-file content responses were truncated. No claim is made that all source code has been reviewed. The deployment README references a canonical source path in `Hoohaahaa/Portfolio`, but the referenced subpath did not resolve in the inspected repository tree. A deployed bundle is not a reproducible source repository.
+Vercel file listing was complete (43 entries), but several large source-file content responses were truncated. No claim is made that all source code has been reviewed. A deployed bundle is not a reproducible source repository.
 
 ## Next technical actions
-1. Inspect Git connection, source commit, production domain and env-var names for all Monument projects. Never print secret values.
-2. Identify authoritative source repository/commit and resolve README path discrepancy.
+1. Identify authoritative source repository/commit or recover source from the best deployment; resolve README path discrepancy.
+2. Compare all 19 Monument projects and classify production, QA, experiment and obsolete.
 3. Export source into a clean, version-controlled location without replacing current production.
 4. Run tests against a disposable QA database.
 5. Smoke-test account, login, draft, publish, update, QR/deep link, map, AR/XR entry and mobile browser.

@@ -1,35 +1,50 @@
-# MONUMENT
+# MONUMENT / Spatial Studio v1
 
-Canonical source: https://github.com/Hoohaahaa/Portfolio/tree/monument/main . This isolated branch does not modify the repository default branch or PRODUCT / ZERO branches.
+This feature branch is based on the canonical source branch `monument/main` and does not modify that branch, the repository default branch, the existing Monument production projects or the portfolio website.
 
-Canonical continuation of Spatial 22, with the accepted V18 local Sky geometry retained. Production project: `prj_PmLdYwtatZGy5HuiQ92U9tTt6s0C`. Neon project: `dry-bread-48106461`.
+## What this iteration adds
 
-## Run
+- A guided Studio start screen with separate outdoor and indoor creation paths.
+- Outdoor location presets for Tehran, Khomein, Golpayegan, Isfahan, Aligudarz and Mahallat.
+- Map-first placement with editable coordinates, surface dimensions and orientation.
+- A local-first authoring mode when no publishing database is connected. Drafts are stored in this browser on this device; they can be reopened and previewed locally.
+- A phone Field Test using the rear camera, foreground GPS, device compass when available, adjustable manual heading and an estimated camera field of view. The projected surface changes horizontal bearing and apparent width as the observer moves.
+- A dedicated `/field/:id` route and a separate QR/link for the field test once a record is published by a connected backend.
+- Indoor guidance that keeps the QR marker and session-local XR flows separate from outdoor GPS/compass testing.
+- A rounded, card-based design system with shared spacing, surface, border, typography and mobile-responsive rules.
 
-Node 24+, `npm ci`, `npm test`, `npm run build`, `npm start`. Supply `DATABASE_URL` in the process environment for accounts and persistence. Apply `migration.sql` additively before deploying. Existing V22 records remain readable through the legacy API. They are not automatically assigned to new accounts.
+## Important distinction: field test is not yet geospatial AR
 
-`npm run verify:live` creates labeled QA records in the configured database and verifies the real handlers. `node tests/browser.cjs` verifies the mobile browser journey against that database. Both require write access; neither deletes existing records. Do not run these against an unrelated database. Verification accounts have random credentials, and are not customer accounts.
+The outdoor field view is a **GPS/compass alignment instrument**, not a persistent world anchor. It estimates target bearing, distance and apparent width. It does not yet calibrate device pitch, camera intrinsics, terrain line-of-sight, atmospheric refraction or vertical datum; it has no VPS/ARCore Geospatial anchor and no occlusion. Use it to validate location, facing, range and rough screen placement in the field, not as proof of survey-grade registration.
 
-## Owner workflow
+Indoor mode uses the printed QR as a repeatable 2D marker. The existing WebXR local placement remains session-scoped and may drift. It is not a persistent 3D room anchor.
 
-Create an account with a password of at least 12 characters. Store the one-time recovery code in a password manager. Create a Landscape or Venue work, save a draft, publish, copy the permanent URL or download its QR. Draft edits do not alter the published snapshot. Republish to update the same URL. Revision conflicts prevent overwriting another session's changes.
+## Local-first preview mode
 
-## Architecture and security
+When `DATABASE_URL` is not configured, account APIs remain unavailable and Studio switches to local mode:
+- `Save locally` and `Save & preview` store drafts in browser `localStorage`.
+- The collection, editor, visitor preview and field test work on that same device/browser.
+- Local drafts do not sync, do not create public links, and cannot be opened on a different device. Clearing browser data can remove them.
+- A connected Neon QA database is required before account-based publishing, permanent URLs, revisions and cross-device access can be tested.
 
-`api/auth.js`: salted scrypt password hashes, hashed recovery codes, random hashed server-side sessions, HttpOnly/Secure/SameSite cookie, origin checks, persistent request limits. Recovery invalidates existing sessions. `api/registry.js`: ownership checks, separate draft/public snapshots, optimistic concurrency, revision audit in a single SQL statement, validated content/media URLs, schedule enforcement. CSP, no client database credentials, no public source, no location uploads. Remote media are user-supplied HTTPS links, not proxied or uploaded. No payment processing or third-party AI calls.
+No production database is connected to the preview project. A separate Neon branch `monument-studio-preview` was created for isolated QA, but it has not been connected to Vercel or used for live verification.
 
-## Honest limits
+## Run and verify
 
-- Landscape uses a real terrain-contour tile map, draggable position and orientation, spherical geodesy, projected width and curvature. It does not sample a terrain elevation model along the sightline. MSL/ellipsoid mismatch is labeled. GPS and city-height uncertainty is explicit.
-- Landscape does not draw an unregistered camera overlay. Accurate geographic AR and field readability remain unverified.
-- V18 `computeAnchor` and `vertices` are preserved in `xr.js`. The rejected screen-fixed camera-composite fallback is removed. This is session-local AR, not persistent geographic registration. No occlusion. Baseline source is retained in `baseline/xr-v18.js`.
-- Venue QR camera mode tracks the exact QR in 2D. It is not a calibrated 3D exhibit anchor. Unsupported QR detection or camera denial leaves useful content accessible.
-- Offline explicitly saves published text/menu on a previously connected device. Shell assets are cached. Images/audio/map tiles are not downloaded. Browser storage can be evicted. Revocation cannot recall already downloaded copies; expiry is checked against the device clock.
-- A standalone HTML reading copy can also be downloaded and transferred offline. It labels its snapshot time and blocks expired content using the device clock; it cannot receive corrections or revocations.
-- First-time offline visitors without a downloaded copy require a locally operated server and local network. A city-wide resilient deployment additionally needs power, hardware, connectivity/backhaul and operational ownership. This release does not provision that infrastructure.
-- Source credits are required for news/sponsored publication. There is no autonomous news collector or fact-checking claim. No translation is generated automatically.
-- Accounts have no email verification, MFA or administrative moderation console. This is a controlled pilot, not an unrestricted high-volume public publishing service.
+Node 24+, `npm ci`, `npm run build`, `npm test`, `npm start`. The current checked-in Vercel build command runs syntax/build checks and the 13 unit tests. The live Neon verification and browser E2E scripts remain opt-in because they write QA records and require an isolated database.
 
-## Release
+Latest local verification on Node 24:
+- Build: passed.
+- Unit tests: 13 passed, 0 failed.
+- Real-device camera/GPS/compass QA: not yet performed.
+- Browser E2E against Neon: not run in this local-only preview.
 
-Use the same Vercel project. The checked-in build command gates publication on build, unit checks, live persistence checks, and mobile browser E2E. Preserve the prior deployment ID as a rollback point. A new release should update the service-worker shell version. Secrets must remain in Vercel environment variables, never in source or test output.
+## Deployment checkpoint
+
+A separate Vercel project `monument-studio-preview` was created with Node 24, no production environment variables and deployment protection disabled for easy phone testing. Its project ID is `prj_TAMIGx67fj1D1nzyVIpMRWdby3tA`. The deployment API rejected the first deployment request because the team reached its daily deployment API quota (`402 api-deployments-free-per-day`, retry after 24 hours). The Vercel CLI fallback was checked but is logged out in the isolated build environment. Therefore **there is no deployed preview URL yet**. No existing production deployment was changed.
+
+## Existing architecture and limits retained
+
+`api/auth.js`: salted scrypt password hashes, hashed recovery codes, random hashed server-side sessions, HttpOnly/Secure/SameSite cookie, origin checks and request limits. `api/registry.js`: owner checks, separate draft/public snapshots, optimistic concurrency, revision audit and schedule enforcement. `spatial.js`: spherical geodesy and apparent geometry. `xr.js`: V18 local session geometry. `marker.js`: 2D QR marker camera. `field.js`: foreground GPS/compass field test.
+
+Do not run `npm run verify:live` or migrations against an unknown or production database. Never expose `DATABASE_URL`, `PUBLISH_SECRET`, session tokens or recovery codes. Keep the old Vercel deployments as rollback references.

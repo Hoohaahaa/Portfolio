@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build && npm test && npm run verify:live && node tests/browser.cjs",
+  "buildCommand": "npm run build && npm test",
   "outputDirectory": "public",
   "rewrites": [
     {

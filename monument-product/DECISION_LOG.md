@@ -22,7 +22,6 @@ Record decisions with date, status, rationale and consequences. Supersede old de
 **Status:** Product constraint. No continuous location history or unsolicited background notifications in MVP. Default to foreground location use, explicit opt-in, frequency caps and aggregate reporting.  
 **Reason:** Trust, mobile OS constraints and lower integration friction.
 
-
 ## 2026-11-17 — Studio v1 field-first authoring
 **Status:** Accepted for the first usable product slice. Separate outdoor Earth-referenced surfaces from indoor marker-based experiences. Make the primary workflow location → surface → content → preview → field test.  
 **Reason:** The user needs to place a real surface, inspect its bearing/range/apparent size and test it with a phone before adding enterprise administration, campaigns or partner SDKs.
@@ -38,3 +37,8 @@ Record decisions with date, status, rationale and consequences. Supersede old de
 ## 2026-11-17 — Production safety during preview setup
 **Status:** Accepted. No existing production Vercel project, deployment, Neon main branch or repository default branch was changed. Use an isolated Neon QA branch and a separate Vercel preview project.  
 **Reason:** Avoid accidental test writes or incomplete UI releases against the live service.
+
+## 2026-11-17 — Studio v1 deployment
+**Status:** Accepted. Deploy the Studio v1 feature branch to the dedicated Vercel project `monument-studio-preview`; keep the older `monument-spatial-22` project and its deployment untouched. The dedicated project's first deployment is READY at https://monument-studio-preview.vercel.app and was built from `monument-studio-v1` commit `8377f90d255a33fdf9baef641f63a38e0a221fac`.  
+**Environment caveat:** Vercel reports the deployment target as `production` within the isolated project named `monument-studio-preview`. This is not a Preview-environment deployment and must not be confused with the separate Monument production baseline.  
+**Reason:** Restore a live phone-testable build while protecting the existing production deployment and data.

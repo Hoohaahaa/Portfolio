@@ -183,3 +183,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Updated the portfolio header's `CV` navigation item from the PDF file to the same-origin `/cv/` route. It opens in the same tab.
 - Added a visible `← BACK TO PORTFOLIO` link at the top of the CV page, returning to `/`.
 - The PDF file itself was not modified. Work remains on `chatgpt/mo-shahmohamadi-profile-2026-11-16`; `main` remains untouched.
+
+
+## Revision 13 — short shareable domain
+- Added `mo.monomatter.dev` to the `mo-portfolio` Vercel project and mapped it to the active working branch `chatgpt/mo-shahmohamadi-profile-2026-11-16`.
+- Verified the new domain is marked verified in Vercel and both `https://mo.monomatter.dev/` and `https://mo.monomatter.dev/cv/` return HTTP 200.
+- The apex `monomatter.dev` was already assigned to another project and redirects to `www.monomatter.dev`; it was deliberately left unchanged. Existing projects and their domain assignments were not modified.
+- `mo.monomatter.dev` is the recommended stable share URL for the portfolio; `/cv/` remains the direct HTML CV route.
+- All portfolio source changes remain on the working branch. `main` was not modified. Browser-rendered visual QA remains separate from HTTP/domain verification.

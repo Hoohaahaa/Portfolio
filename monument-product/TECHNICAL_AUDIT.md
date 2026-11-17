@@ -55,3 +55,27 @@ Vercel file listing was complete (43 entries), but several large source-file con
 - Never expose DATABASE_URL, PUBLISH_SECRET, session tokens or recovery codes.
 - Never delete old Vercel projects/deployments during consolidation.
 - Never point production at an unreviewed branch.
+
+
+## 2026-11-17 follow-up — source and Studio v1
+
+The README's referenced source path is now resolved: Hoohaahaa/Portfolio branch monument/main exists at commit b6041834dda59303d5eb4575db5d22c73e36e18a. The implementation branch monument-studio-v1 was created from that baseline; draft PR: https://github.com/Hoohaahaa/Portfolio/pull/3. This establishes a reproducible working source branch, but it still does not prove that older Vercel production artifacts were deployed from that exact Git commit.
+
+### Implemented and locally verified
+- Studio start flow separates outdoor Earth-referenced works from indoor venue/marker experiences.
+- Quick target-location presets and map-first coordinate/orientation editing.
+- field.js foreground camera + GPS + compass/manual-heading field instrument.
+- /field/:id route and separate field-test QR destination.
+- Local-first browser drafts for use without an attached backend.
+- Card-based responsive design system and service-worker shell version update.
+- Node 24 build passed; 13 unit tests passed.
+- Local mobile viewport smoke test covered the create/place/content/save/field-overlay/field-route/collection path.
+
+### New QA resources and limits
+- Neon branch monument-studio-preview exists as a copy-on-write branch from Neon main; no tests or writes have been run against it.
+- Vercel project monument-studio-preview exists with Node 24, no environment variables, SSO protection disabled, and no deployments.
+- Vercel deployment API returned 402 api-deployments-free-per-day (retry after 24 hours). CLI fallback is unauthenticated in the sandbox.
+- Do not describe this as deployed or field-verified.
+
+### Field-test accuracy boundary
+The outdoor Field Test projects the target horizontally from GPS distance/bearing and device compass, with an estimated horizontal FOV and approximate apparent width. It is not a persistent geospatial anchor and is not survey-grade. Phone pitch, camera intrinsics, terrain occlusion, atmospheric refraction and vertical datum are not calibrated. Indoor QR remains 2D; WebXR remains session-local. Real-device testing and a true geospatial anchor strategy remain open.

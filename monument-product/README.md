@@ -3,13 +3,14 @@
 This directory is the durable product source of truth for Monument. It is intentionally isolated from the portfolio website and production application code.
 
 ## Start here
-1. [Project context](PROJECT_CONTEXT.md) — what Monument is and what is verified.
-2. [Technical audit](TECHNICAL_AUDIT.md) — identified Vercel build and known architecture.
-3. [Product strategy](PRODUCT_STRATEGY.md) — positioning, customer wedge, monetization and pilot.
-4. [Roadmap](ROADMAP.md) — staged delivery plan and acceptance gates.
-5. [Decision log](DECISION_LOG.md) — durable decisions.
-6. [Latest handoff](LATEST_HANDOFF.md) — continuation point for the next chat.
-7. [Feature template](FEATURE_TEMPLATE.md) — use for every new feature.
+1. [Vision and opportunities](VISION_AND_OPPORTUNITIES.md) — north star, product surfaces, user direction, markets, business models, design principles and open questions.
+2. [Project context](PROJECT_CONTEXT.md) — what Monument is and what is verified.
+3. [Technical audit](TECHNICAL_AUDIT.md) — identified Vercel build and known architecture.
+4. [Product strategy](PRODUCT_STRATEGY.md) — positioning, customer wedge, monetization and pilot.
+5. [Roadmap](ROADMAP.md) — staged delivery plan and acceptance gates.
+6. [Decision log](DECISION_LOG.md) — durable decisions.
+7. [Latest handoff](LATEST_HANDOFF.md) — continuation point for the next chat.
+8. [Feature template](FEATURE_TEMPLATE.md) — use for every new feature.
 
 ## Operating rules
 - Documentation is not proof a feature is implemented. Status requires code, deployment or test evidence.

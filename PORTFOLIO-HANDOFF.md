@@ -129,3 +129,17 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Explicit project image manifest template: `assets/manifest.template.json`.
 - Next required user input: upload one `mono-assets.zip` with project-separated folders and chosen `cover.webp` files. Do not delete or overwrite the original ZIP archives.
 - The production migration from runtime ZIP parsing to static manifest + thumbnail/cover/gallery assets is intentionally pending until that normalized asset pack exists. This avoids another speculative assignment pass.
+
+
+## Revision 08 — responsive stabilization and current delivery state
+- Working branch: `chatgpt/mo-shahmohamadi-profile-2026-11-16`.
+- Latest code commit: `7999af2a37d1729291822c6b9a3ceabfcec815ed`.
+- Preview deployment: https://mo-portfolio-kwllw45jq-mos-projects-efbc27a5.vercel.app (Vercel READY; HTTP 200).
+- Added one authoritative final responsive override for the mobile project archive: one centered card per row, bounded width, consistent image containment, consistent card padding, readable project metadata and full-width action.
+- Stabilized mobile impact metrics into a two-column layout with a one-column fallback on narrow phones; labels wrap safely and cannot collide with adjacent metrics.
+- Reasserted the approved burnt-orange Experience panel (#C75A2A) with dark text, spacing and mobile-safe date alignment across themes.
+- Reasserted dark-theme passport surfaces so the top project information cards retain their intended dark surfaces.
+- Static delivery verification: HTML and manifest return HTTP 200; manifest contains 7 projects and 33 gallery images; all 7 cover assets return HTTP 200.
+- Visual browser QA is still not confirmed. HTTP success and CSS inspection do not prove the exact rendered mobile/desktop appearance. Do not claim pixel-level visual approval without a rendered browser inspection.
+- CV source file `Mo_Product_Design_Resume.pdf` was found in the user's ChatGPT Library (74,510 bytes) but is not present in this repository tree. The header still points to the disabled placeholder `/cv.pdf`. Do not enable a dead link. Next step is to add the exact PDF binary to this branch at a public static path, then point the header CV link to it and remove the disabled state.
+- Do not change `main`, team-wide Vercel settings, or any security setting. Keep all future portfolio edits on this working branch.

@@ -42,3 +42,11 @@ Record decisions with date, status, rationale and consequences. Supersede old de
 **Status:** Accepted. Deploy the Studio v1 feature branch to the dedicated Vercel project `monument-studio-preview`; keep the older `monument-spatial-22` project and its deployment untouched. The dedicated project's first deployment is READY at https://monument-studio-preview.vercel.app and was built from `monument-studio-v1` commit `8377f90d255a33fdf9baef641f63a38e0a221fac`.  
 **Environment caveat:** Vercel reports the deployment target as `production` within the isolated project named `monument-studio-preview`. This is not a Preview-environment deployment and must not be confused with the separate Monument production baseline.  
 **Reason:** Restore a live phone-testable build while protecting the existing production deployment and data.
+
+## 2026-11-17 — Field Test selection and progressive disclosure
+**Status:** Accepted. Field Test must let the user select among saved experiences of the same spatial type. Keep the target image/content visible in the scene; keep technical telemetry, manual heading and FOV controls inside a collapsed diagnostics panel by default.  
+**Reason:** The first phone test showed that telemetry crowded the screen and obscured the actual experience. The scene and content must remain the primary focus.
+
+## 2026-11-17 — Portfolio-aligned primary accent
+**Status:** Accepted. Use the portfolio landing page's vivid orange `#ff573d` as Monument Studio's primary accent, with neutral charcoal and warm-paper surfaces. Avoid the previous green/lime primary theme unless the user explicitly requests another direction.  
+**Reason:** Keep a coherent, recognizable visual language across the user's projects while preserving flexibility for project-specific exceptions.

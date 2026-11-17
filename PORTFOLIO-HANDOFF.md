@@ -176,3 +176,10 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Removed the filled/pill container treatment from the desktop cinematic project-card action and the mobile project action. “VIEW PROJECT” now reads as plain text with its inline arrow; no white/colored button fill, border, shadow, or circular arrow badge.
 - Resume PDF intentionally unchanged, as requested. All work remains on `chatgpt/mo-shahmohamadi-profile-2026-11-16`; `main` untouched.
 - Browser-rendered visual QA is still pending; verify the preview on desktop and mobile before calling the visual result final.
+
+
+## Revision 12 — HTML CV route and return navigation
+- Added the HTML CV as `/cv/index.html`, preserving the supplied CV page content and styling.
+- Updated the portfolio header's `CV` navigation item from the PDF file to the same-origin `/cv/` route. It opens in the same tab.
+- Added a visible `← BACK TO PORTFOLIO` link at the top of the CV page, returning to `/`.
+- The PDF file itself was not modified. Work remains on `chatgpt/mo-shahmohamadi-profile-2026-11-16`; `main` remains untouched.

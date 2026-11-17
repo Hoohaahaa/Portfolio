@@ -52,3 +52,12 @@ P0 source-of-truth and QA → P1 publisher + QR/deep link → P2 measurable venu
 
 ## Explicitly not in first release
 Nationwide ad network; always-on background tracking; unsolicited push notifications; programmatic bidding; complex audience profiling; payment rails before commercial model validation.
+
+
+## Studio v1 progress update — 2026-11-17
+
+**Completed locally:** Guided Studio start, outdoor/indoor split, quick place presets, map-first surface editing, local draft/preview mode, GPS/compass Field Test, separate field route/QR, card-based responsive UI. Build passed and 13 unit tests passed.
+
+**Not yet completed:** Vercel preview deployment (daily API quota block), Neon QA environment connection, live persistence/browser E2E, real-device camera/GPS/compass validation, cross-device publishing. Do not mark Phase 1 complete until these pass.
+
+**Next sequence:** deploy preview → connect isolated QA DB → live/browser verification → real-device field QA → calibrate and select geospatial anchor technology → then build durable publisher accounts, media upload, roles, audit and venue pilot controls.

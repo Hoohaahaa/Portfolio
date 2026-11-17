@@ -51,3 +51,12 @@ The SQL migration defines account, session, registry and revision tables. This i
 5. Build platform capabilities once; expose through dashboard, API and SDK.
 6. Privacy by design: minimum location data, on-device processing where possible, short retention and aggregate reporting.
 7. Separate demo, QA and customer data.
+
+
+## 2026-11-17 implementation direction
+
+The first usable Monument slice is now defined as a guided spatial authoring workflow: choose an outdoor or indoor context, place the surface, add content, preview, then field-test on a phone. Outdoor surfaces use geographic coordinates, orientation, width/height and a GPS/compass field instrument. Indoor experiences use QR entry and a temporary local WebXR session until a repeatable 3D indoor anchor is selected.
+
+The working implementation is on Hoohaahaa/Portfolio branch monument-studio-v1 with draft PR #3 targeting monument/main. The local-first mode is a temporary safe preview: browser-local drafts only, no account sync or public publishing without a connected QA backend. Build and 13 unit tests pass on Node 24.
+
+Do not describe the GPS/compass field view as persistent AR. True geographic anchoring, VPS/ARCore Geospatial integration, camera calibration, phone pitch, terrain occlusion and real-device testing remain later work. See LATEST_HANDOFF.md for the current Vercel deployment quota blocker and exact next steps.

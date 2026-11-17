@@ -60,6 +60,37 @@ h1{font-size:clamp(42px,7.2vw,88px);line-height:.98;letter-spacing:-.085em;margi
  .cap-group{grid-template-columns:1fr;gap:7px}
  .contact{gap:12px 18px;font-size:10px}
 }
+
+/* Layout comparison */
+.layout-switch{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin:18px 0 0}
+.layout-switch-label{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#777;margin-right:8px}
+.layout-switch button{appearance:none;border:1px solid #ffffff30;background:transparent;color:#aaa;padding:9px 12px;font:10px var(--mono);cursor:pointer;transition:.2s}
+.layout-switch button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#101010}
+.layout-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.page[data-layout="cards"] .topline{border:0;padding-bottom:0}
+.page[data-layout="cards"] header{margin-top:22px;padding:34px 38px;background:linear-gradient(135deg,#151515,#0e0e0e);border:1px solid #ffffff1c;border-radius:3px}
+.page[data-layout="cards"] h1{margin-top:12px}
+.page[data-layout="cards"] .section{grid-template-columns:155px minmax(0,1fr);gap:28px;margin-top:18px;padding:28px 30px;background:#101010;border:1px solid #ffffff1c;border-radius:3px}
+.page[data-layout="cards"] .section:first-of-type{margin-top:18px}
+.page[data-layout="cards"] .section-label{padding-top:3px}
+.page[data-layout="cards"] .section-label .num{color:var(--accent)}
+.page[data-layout="cards"] .section-label h2{color:#e2e1db}
+.page[data-layout="cards"] .entry{padding:17px 18px;margin:0 0 10px;border:1px solid #ffffff18;background:#141414;border-radius:2px}
+.page[data-layout="cards"] .entry:last-child{margin-bottom:0}
+.page[data-layout="cards"] .entry-head{align-items:flex-start}
+.page[data-layout="cards"] .cap-group{padding:13px 0}
+.page[data-layout="cards"] .tool{background:#171717}
+.page[data-layout="simple"] .layout-switch{margin-bottom:0}
+@media(max-width:700px){
+ .layout-switch{justify-content:flex-start;margin-top:16px}
+ .page[data-layout="cards"] header{padding:25px 20px;margin-top:18px}
+ .page[data-layout="cards"] .section{grid-template-columns:1fr;gap:17px;padding:22px 19px;margin-top:12px}
+ .page[data-layout="cards"] .section:first-of-type{margin-top:12px}
+ .page[data-layout="cards"] .section-label{display:flex;gap:12px;align-items:center}
+ .page[data-layout="cards"] .section-label .num{margin:0}
+ .page[data-layout="cards"] .entry{padding:15px 14px}
+}
+
 @media print{
  :root{color-scheme:light;--bg:#fff;--panel:#fff;--fg:#111;--muted:#555;--line:#ccc}
  body{background:#fff;color:#111}
@@ -72,8 +103,9 @@ h1{font-size:clamp(42px,7.2vw,88px);line-height:.98;letter-spacing:-.085em;margi
 </style>
 </head>
 <body>
-<main class="page">
+<main class="page" data-layout="cards">
   <div class="topline"><span class="mono">MONO. / PROFILE</span><span class="mono index">PRODUCT DESIGN · 2026</span></div>
+  <nav class="layout-switch" aria-label="Choose CV layout"><span class="layout-switch-label">VIEW</span><button type="button" data-set-layout="cards" aria-pressed="true">Card layout</button><button type="button" data-set-layout="simple" aria-pressed="false">Simple layout</button></nav>
   <header>
     <h1>MOHAMADREZA<br>(MO) SHAHMOHAMADI</h1>
     <div class="role">Senior Product Designer · UI/UX</div>
@@ -156,5 +188,18 @@ h1{font-size:clamp(42px,7.2vw,88px);line-height:.98;letter-spacing:-.085em;margi
     <div class="edu">Bachelor of Industrial Design<span>Iran University of Science and Technology · 2009–2014</span></div>
   </section>
 </main>
+<script>
+(() => {
+  const page = document.querySelector('.page');
+  const controls = document.querySelectorAll('[data-set-layout]');
+  controls.forEach((button) => {
+    button.addEventListener('click', () => {
+      const layout = button.dataset.setLayout;
+      page.dataset.layout = layout;
+      controls.forEach((control) => control.setAttribute('aria-pressed', String(control === button)));
+    });
+  });
+})();
+</script>
 </body>
 </html>

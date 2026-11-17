@@ -153,3 +153,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Keep the CV content consistent with the source resume; the source says 4+ years in its profile while the portfolio hero says 5+ years. Do not silently rewrite either claim without user approval.
 
 - Consistency correction: hero experience claim now reads 4+ years, matching the supplied CV and the documented employment timeline; initial project counters now read 7, matching the seven active manifest projects.
+
+
+## Revision 09 — Hero experience and Experience card finish
+- Updated the Hero proof metric from 4+ to 5+ years in product design, as explicitly requested.
+- Expanded the burnt-orange Experience card into a wide editorial surface with a stronger title scale, subtle oversized section index, timeline rail and nodes, bold role titles, quieter company/context labels, and date pills aligned opposite the role.
+- Preserved the approved burnt-orange fill (#C75A2A), dark text in both themes, rounded corners, and responsive layout. Mobile sizing and date wrapping have dedicated rules.
+- No resume PDF changes. No production deployment or main-branch changes.
+- Visual browser QA remains pending; verify the rendered desktop and mobile appearance after preview deployment.

@@ -169,3 +169,10 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Increase navigation text weight/size and link hit area; increase spacing between items; add visible keyboard focus outlines and hover underlines. Responsive rules retain readable minimum sizes on narrow screens.
 - Changes are scoped to the header and Experience panel. No project content, assets, PDF, production domain, or main branch changes.
 - Browser-rendered visual QA remains pending; inspect light/dark desktop and mobile previews.
+
+
+## Revision 11 — sample orange and unboxed project actions
+- Matched the Experience panel accent to the exact orange in the previously supplied `MONOBAA — Portfolio v1` HTML sample: `--acid: #ff573d`. Replaced the previous muted burnt orange in the Experience panel and its related timeline accents; the color remains consistent in light and dark themes.
+- Removed the filled/pill container treatment from the desktop cinematic project-card action and the mobile project action. “VIEW PROJECT” now reads as plain text with its inline arrow; no white/colored button fill, border, shadow, or circular arrow badge.
+- Resume PDF intentionally unchanged, as requested. All work remains on `chatgpt/mo-shahmohamadi-profile-2026-11-16`; `main` untouched.
+- Browser-rendered visual QA is still pending; verify the preview on desktop and mobile before calling the visual result final.

@@ -164,3 +164,16 @@ input[type=range],#fieldControls input{accent-color:var(--accent)}
 @media(max-width:760px){.breadcrumb{font-size:9px}.contentMediaPreview img{width:78px;height:64px}}
 
 #fieldSurface{max-width:88vw}
+
+/* Breadcrumb spacing: quiet navigation, no colored container */
+#root>.breadcrumb{box-sizing:border-box;width:100%;margin:0;padding:22px clamp(18px,3vw,40px) 18px;background:transparent;border:0;border-radius:0;min-height:58px;gap:11px}
+#root>.editorhead{margin-top:0;padding-top:20px}
+.fieldTop .fieldBreadcrumb{box-sizing:border-box;margin:0 0 14px;padding:7px 0 5px;gap:12px;background:transparent;border:0}
+.fieldIndoorMedia{min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:7px}
+.fieldIndoorMedia img{display:block;width:100%;max-height:38dvh;min-height:140px;object-fit:contain;border-radius:10px;background:#252622}
+.fieldIndoorMedia img[hidden]{display:none!important}
+#fieldImageStatus{margin:0;color:#d4d0c7;font-size:10px;line-height:1.5}
+.fieldImageEmpty{min-height:150px;display:grid;place-items:center;padding:18px;border:1px dashed #ffffff50;border-radius:10px;color:#d4d0c7;font-size:11px;text-align:center}
+#fieldSurface{min-height:70px;min-width:110px;box-sizing:border-box}
+#fieldSurface img{display:block;width:100%;max-height:32dvh;min-height:60px;object-fit:contain}
+@media(max-width:760px){#root>.breadcrumb{padding:18px 16px 15px;min-height:52px}#root>.editorhead{padding-top:17px}.fieldTop .fieldBreadcrumb{margin-bottom:12px;padding-top:5px}.fieldIndoorMedia img{max-height:30dvh;min-height:120px}}

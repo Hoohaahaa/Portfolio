@@ -50,12 +50,13 @@ The SQL migration defines account, session, registry and revision tables. This i
 5. Build platform capabilities once; expose through dashboard, API and SDK.
 6. Privacy by design: minimum location data, on-device processing where possible, short retention and aggregate reporting.
 7. Separate demo, QA and customer data.
+8. For Monument Studio, use the portfolio landing page orange `#ff573d` as the primary accent, supported by warm-paper and charcoal neutrals. This is the user's preferred default visual direction across most projects unless they specify otherwise.
 
 ## 2026-11-17 implementation direction
 
 The first usable Monument slice is a guided spatial authoring workflow: choose an outdoor or indoor context, place the surface, add content, preview, then field-test on a phone. Outdoor surfaces use geographic coordinates, orientation, width/height and a GPS/compass field instrument. Indoor experiences use QR entry and a temporary local WebXR session until a repeatable 3D indoor anchor is selected.
 
-The working implementation is on Hoohaahaa/Portfolio branch `monument-studio-v1`, commit `8377f90d255a33fdf9baef641f63a38e0a221fac`, with draft PR #3 targeting `monument/main`. The local-first mode stores drafts in the same browser/device; it does not provide cross-device sync or permanent public publishing without a connected backend. Build and 13 unit tests pass.
+The working implementation is on Hoohaahaa/Portfolio branch `monument-studio-v1`, commit `0de7a37adc25564a9db670295735a126fb944351`, with draft PR #3 targeting `monument/main`. The local-first mode stores drafts in the same browser/device; it does not provide cross-device sync or permanent public publishing without a connected backend. Build and 13 unit tests pass.
 
 Do not describe the GPS/compass field view as persistent AR. True geographic anchoring, VPS/ARCore Geospatial integration, camera calibration, phone pitch, terrain occlusion and real-device testing remain later work.
 
@@ -80,3 +81,7 @@ The new project has no environment variables and no Neon connection. The current
 - Do not use production DATABASE_URL for Studio QA.
 - Real-device Android/iOS camera, GPS and compass testing is still required.
 - No claim is made that the older production candidate and the Studio v1 implementation are already unified into one canonical production product.
+
+## 2026-11-17 UX feedback update
+
+The first user phone interaction identified three priority gaps: collection lifecycle controls, image rendering in the field scene, and Field Test information hierarchy/target selection. The latest Studio iteration adds collection deletion, image-aware collection rows, field target switching, in-scene image rendering, and progressive disclosure for diagnostics. The latest Preview deployment is documented in `LATEST_HANDOFF.md`; use its unique Preview URL rather than assuming the stable project-root URL has the latest code.

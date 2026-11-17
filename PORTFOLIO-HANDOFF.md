@@ -143,3 +143,11 @@ Standalone source PNGs are also in the repository root. Their names and current 
 - Visual browser QA is still not confirmed. HTTP success and CSS inspection do not prove the exact rendered mobile/desktop appearance. Do not claim pixel-level visual approval without a rendered browser inspection.
 - CV source file `Mo_Product_Design_Resume.pdf` was found in the user's ChatGPT Library (74,510 bytes) but is not present in this repository tree. The header still points to the disabled placeholder `/cv.pdf`. Do not enable a dead link. Next step is to add the exact PDF binary to this branch at a public static path, then point the header CV link to it and remove the disabled state.
 - Do not change `main`, team-wide Vercel settings, or any security setting. Keep all future portfolio edits on this working branch.
+
+
+## Revision 09 — Product Design CV connected
+- Added `Mo_Product_Design_Resume.pdf` to the repository root and connected the header CV link to `/Mo_Product_Design_Resume.pdf`.
+- The source resume was retrieved from the user's Library. A lightweight web-ready re-typeset copy was produced from the exact supplied text, preserving the resume's content, role history, project descriptions, capabilities, education and contact details; no new claims or dates were added.
+- The PDF is a one-page A4 file and is served as a static asset by Vercel.
+- Header CV link is active and opens the PDF in a new tab.
+- Keep the CV content consistent with the source resume; the source says 4+ years in its profile while the portfolio hero says 5+ years. Do not silently rewrite either claim without user approval.

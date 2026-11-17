@@ -1,57 +1,24 @@
-# Monument UX Issue Log
-
-This file is the persistent product UX debt register. New feedback from real use should be added here before implementation. Every issue must have a severity, observed behavior, expected behavior, status, and a verification note. Do not silently close an issue because a visual workaround exists.
-
-## Active issues
-
-### UX-001 — Navigation lacks orientation and hierarchy
-- Severity: High
-- Area: Studio navigation / Field Test
-- Observed: Moving between collection, editing, content, and field testing does not consistently communicate where the user is or how to return to the parent.
-- Expected: Persistent breadcrumbs, clear parent navigation, preserved selected location/space, and predictable Back behavior.
-- Status: In progress — breadcrumbs added to the editor and Field Test. Latest adjustment adds top/side whitespace and removes any breadcrumb container treatment; hierarchy redesign remains open.
-- Verification: Check narrow mobile layout, browser Back, dirty-form confirmation, and Field Test exit paths.
-
-### UX-002 — Content image is not reliably visible in the spatial experience
-- Severity: Critical
-- Area: Content authoring / Field Test / Viewer
-- Observed: Image can be entered in Content and appear in a collection card while remaining absent from the actual spatial surface.
-- Expected: One canonical media asset reference must render consistently in authoring preview, outdoor surface, indoor experience, and visitor view; broken/blocked URLs need an explicit error state.
-- Root-cause findings: Outdoor visibility was incorrectly gated on all alignment conditions being true (compass heading available, surface facing user, within range, and inside estimated FOV). When any condition failed, the actual surface node was hidden, so valid content appeared to disappear. Indoor rendering had no explicit media container, loading state, empty state, or image error feedback; it could silently degrade to text-only.
-- Status: Partially corrected — Outdoor now keeps a spatial content preview visible when sensors/alignment are unavailable and shows alignment separately. Indoor now has a dedicated media region, empty state and image-load error feedback. This is a structural correction to rendering behavior, not proof every image URL will load.
-- Remaining: The current authoring control is still a URL field, not a true file upload. A canonical managed media asset/upload pipeline remains required.
-- Verification: Test direct JPG/PNG/WebP URL, blocked URL, redirect/share-page URL, and actual file upload after storage is implemented. Verify outdoor and indoor on Android and iOS.
-
-### UX-003 — Outdoor surface projection is visually unstable and not dimensionally convincing
-- Severity: Critical
-- Area: Field Test / spatial geometry
-- Observed: Surface jitters with camera/device movement and does not convincingly reflect its configured dimensions and position. Current display is a camera overlay driven by GPS, compass, and estimated field of view.
-- Expected: Screen projection should reflect bearing, vertical elevation, width, height, orientation and observer movement; motion should be filtered without concealing uncertainty.
-- Status: In progress — added approximate vertical projection from configured height/elevation and low-pass smoothing. This remains a visual estimate, not a world-locked anchor.
-- Verification: Test with known dimensions at several observer distances and headings; compare portrait/landscape; inspect jitter and vertical placement on physical devices.
-
-### PLATFORM-001 — Persistent world-locked outdoor anchors
-- Severity: Critical / architectural blocker
-- Area: Spatial runtime
-- Observed: GPS + compass + browser camera cannot provide stable, persistent multi-kilometer world anchoring or camera-pose tracking.
-- Expected: Evaluate ARCore Geospatial/VPS or equivalent localization and pose tracking, calibrated camera intrinsics, coordinate/altitude datum handling, terrain occlusion and confidence reporting.
-- Status: Not implemented — requires a dedicated native-capable or supported geospatial runtime. Do not describe the current camera overlay as persistent AR.
-
-### UX-004 — Spatial authoring hierarchy is too flat
-- Severity: High
-- Area: Information architecture
-- Observed: Current experience model bundles a place, surface and one content payload; this becomes hard to control when a real venue has many locations, surfaces and content items.
-- Expected: Collection/Project → Location → Space/Surface → Content, with independent selection, editing, ordering, scheduling and preview.
-- Status: Planned — data-model and migration design required before UI implementation.
-
-## Operating rule
-Every new user-reported UX issue is recorded here with a stable ID. Keep it open until the expected behavior is implemented and verified on the relevant device/browser. Separate implemented, tested, and physically verified states. Never mark hardware-dependent spatial behavior as verified from desktop tests alone.
-
+{"name":"monument-studio-v1","commit":{"sha":"edb2380f9e95ef4602dba394b3dc6dd3d497a5fc","node_id":"C_kwDOTPuXetoAKGVkYjIzODBmOWU5NWVmNDYwMmRiYTM5NGIzZGM2ZGQzZDQ5N2E1ZmM","commit":{"author":{"name":"Mono","email":"shahmohamadvi@gmail.com","date":"2026-11-17T19:25:17Z"},"committer":{"name":"Mono","email":"shahmohamadvi@gmail.com","date":"2026-11-17T19:25:17Z"},"message":"Document root cause and remediation for missing spatial media","tree":{"sha":"4f94010c5716a43f014213951471d5dbaa0637ca","url":"https://api.github.com/repos/Hoohaahaa/Portfolio/git/trees/4f94010c5716a43f014213951471d5dbaa0637ca"},"url":"https://api.github.com/repos/Hoohaahaa/Portfolio/git/commits/edb2380f9e95ef4602dba394b3dc6dd3d497a5fc","comment_count":0,"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}},"url":"https://api.github.com/repos/Hoohaahaa/Portfolio/commits/edb2380f9e95ef4602dba394b3dc6dd3d497a5fc","html_url":"https://github.com/Hoohaahaa/Portfolio/commit/edb2380f9e95ef4602dba394b3dc6dd3d497a5fc","comments_url":"https://api.github.com/repos/Hoohaahaa/Portfolio/commits/edb2380f9e95ef4602dba394b3dc6dd3d497a5fc/comments","author":{"login":"Hoohaahaa","id":187856011,"node_id":"U_kgDOCzJ0iw","avatar_url":"https://avatars.githubusercontent.com/u/187856011?v=4","gravatar_id":"","url":"https://api.github.com/users/Hoohaahaa","html_url":"https://github.com/Hoohaahaa","followers_url":"https://api.github.com/users/Hoohaahaa/followers","following_url":"https://api.github.com/users/Hoohaahaa/following{/other_user}","gists_url":"https://api.github.com/users/Hoohaahaa/gists{/gist_id}","starred_url":"https://api.github.com/users/Hoohaahaa/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Hoohaahaa/subscriptions","organizations_url":"https://api.github.com/users/Hoohaahaa/orgs","repos_url":"https://api.github.com/users/Hoohaahaa/repos","events_url":"https://api.github.com/users/Hoohaahaa/events{/privacy}","received_events_url":"https://api.github.com/users/Hoohaahaa/received_events","type":"User","user_view_type":"public","site_admin":false},"committer":{"login":"Hoohaahaa","id":187856011,"node_id":"U_kgDOCzJ0iw","avatar_url":"https://avatars.githubusercontent.com/u/187856011?v=4","gravatar_id":"","url":"https://api.github.com/users/Hoohaahaa","html_url":"https://github.com/Hoohaahaa","followers_url":"https://api.github.com/users/Hoohaahaa/followers","following_url":"https://api.github.com/users/Hoohaahaa/following{/other_user}","gists_url":"https://api.github.com/users/Hoohaahaa/gists{/gist_id}","starred_url":"https://api.github.com/users/Hoohaahaa/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Hoohaahaa/subscriptions","organizations_url":"https://api.github.com/users/Hoohaahaa/orgs","repos_url":"https://api.github.com/users/Hoohaahaa/repos","events_url":"https://api.github.com/users/Hoohaahaa/events{/privacy}","received_events_url":"https://api.github.com/users/Hoohaahaa/received_events","type":"User","user_view_type":"public","site_admin":false},"parents":[{"sha":"50f40648a0ba6ee5ce2631d998f8179d31160492","url":"https://api.github.com/repos/Hoohaahaa/Portfolio/commits/50f40648a0ba6ee5ce2631d998f8179d31160492","html_url":"https://github.com/Hoohaahaa/Portfolio/commit/50f40648a0ba6ee5ce2631d998f8179d31160492"}]},"_links":{"self":"https://api.github.com/repos/Hoohaahaa/Portfolio/branches/monument-studio-v1","html":"https://github.com/Hoohaahaa/Portfolio/tree/monument-studio-v1"},"protected":false,"protection":{"enabled":false,"required_status_checks":{"enforcement_level":"off","contexts":[],"checks":[]}},"protection_url":"https://api.github.com/repos/Hoohaahaa/Portfolio/branches/monument-studio-v1/protection"}
  
-### UX-005 — Breadcrumb spacing is cramped
-- Severity: Medium
-- Area: Studio / Field Test navigation
-- Observed: Breadcrumb sat too close to the frame above and felt compressed.
-- Expected: Quiet text-only navigation with consistent padding and whitespace on all sides; no colored container or decorative card.
-- Status: Corrected in CSS; visual verification on phone still required.
-- Verification: Inspect top safe-area spacing and horizontal padding on narrow and wide viewports.
+### UX-006 — Field Test rendering is frame-loop bound and unstable
+- Severity: Critical
+- Area: Outdoor Field Test / mobile runtime
+- Observed: The surface was recalculated and layout-affecting position, width and height styles were written on every animation frame, including when sensor data had not changed. The preview path recursively requested frames forever. Live camera video was combined with multiple backdrop blurs.
+- Expected: Coalesce sensor updates into a single render, update only on sensor changes, animate composited transforms, and avoid expensive blur over live camera frames. No idle perpetual animation loop.
+- Status: Event-driven rendering, reduced camera resolution/frame rate, and blur removal implemented on the feature branch; build and physical-device verification pending.
+- Verification: Compare idle CPU, camera-on frame stability, compass jitter, GPS update cadence, portrait/landscape, and camera-denied states on Android and iOS.
+
+### UX-007 — Indoor media surface did not support uploaded video
+- Severity: High
+- Area: Content / Indoor Field Test
+- Observed: Indoor Field Test rendered an image-only media region and the authoring UI accepted only a URL.
+- Expected: Render image or video from a canonical media asset; show a visible empty/error state; use native controls for video.
+- Status: Local device upload and video rendering added. Files are stored in IndexedDB on this device only; cross-device sync and public publishing remain blocked until a backend upload endpoint is connected.
+- Verification: Upload JPG, PNG, WebP, GIF, MP4, WebM and MOV on Android/iOS; reload; test offline and browser codec support.
+
+### PLATFORM-002 — Managed media upload and asset API
+- Severity: Critical
+- Area: Asset infrastructure
+- Expected: Authenticated upload-intent endpoint, private object storage, server-validated MIME/size, canonical Asset ID, metadata record, safe delivery URLs, cleanup and ownership checks. Store bytes in object storage, not Postgres or localStorage.
+- Status: A private `monument-assets` bucket exists on the isolated Neon preview branch. The Vercel preview project currently has no environment variables, so the application cannot yet access the bucket. Local IndexedDB upload is an interim phone workflow, not a cloud asset service.
+- Verification: Upload from mobile, reopen on another device, publish/replace/delete, verify private access and signed delivery URLs, and test preview/production branch isolation.

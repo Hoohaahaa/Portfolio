@@ -1,13 +1,14 @@
 # Latest Handoff — 2026-11-17
 
 ## Current checkpoint
-Documentation workspace created on branch `monument-product-foundation` in `Hoohaahaa/Portfolio`. No production application code, Vercel project, Neon database or default Git branch was changed.
+Documentation workspace created and verified on branch `monument-product-foundation` in `Hoohaahaa/Portfolio`. Draft PR: https://github.com/Hoohaahaa/Portfolio/pull/2. Eight documentation files; 395 lines added. No production application code, Vercel project, Neon database or default Git branch was changed.
 
 ## Candidate deployment
 - Project: `monument-spatial-22`
 - URL: https://monument-spatial-22.vercel.app
 - Latest observed deployment: `dpl_AShnjXbq6afJxE7bevzcyzqZ4sAB`
 - State: READY
+- Project metadata lists production aliases and SSO protection for previews.
 - Other relevant projects: `monument-spatial-lab`, `monument-city-21`, `monument-world-20`, `monument-spatial-qa-19`, `monument-spatial-publishing-12`.
 
 ## Inspected evidence
@@ -16,12 +17,13 @@ Documentation workspace created on branch `monument-product-foundation` in `Hooh
 - README, package metadata, parts of works API, spatial geometry, XR module and SQL migration. Several large source-file responses were truncated; full code audit remains outstanding.
 - README describes Spatial 22 retaining accepted V18 local Sky geometry.
 - Works API schema includes advertisement content type and geospatial fields. This is not proof of a complete ad campaign feature.
+- Production environment variable names include `DATABASE_URL` and `PUBLISH_SECRET`; secret values were not requested or recorded.
 
 ## Source discrepancy
-Deployment README references `Hoohaahaa/Portfolio/tree/monument/main`, but the referenced path did not resolve in the inspected repository. Do not assume Vercel deployment is reproducibly linked to that source. Resolve this before development.
+Deployment README references `Hoohaahaa/Portfolio/tree/monument/main`, but the referenced path did not resolve in the inspected repository. The Vercel deployment metadata response did not expose Git source metadata. Do not assume the deployment is reproducibly linked to that repository. Resolve this before development.
 
 ## Next actions
-1. Inspect Git connection and source commit for each Monument Vercel project.
+1. Inspect Git connection and source commit for all Monument Vercel projects using project settings/dashboard and Vercel Git context.
 2. Resolve canonical source and record repository/path/commit here.
 3. Compare Spatial 22 with Spatial Lab, City 21, World 20 and Publishing 12; preserve all originals.
 4. Build clean QA environment and run tests. Never run verification against unknown production DB.

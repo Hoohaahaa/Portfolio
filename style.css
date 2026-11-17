@@ -162,3 +162,5 @@ input[type=range],#fieldControls input{accent-color:var(--accent)}
 #fieldSurface{max-height:88dvh;height:auto;overflow:hidden;transform:translate(-50%,-50%);transition:left .12s linear,top .12s linear,width .12s linear,height .12s linear}
 #fieldSurface img{max-height:45%;min-height:0;object-fit:contain}
 @media(max-width:760px){.breadcrumb{font-size:9px}.contentMediaPreview img{width:78px;height:64px}}
+
+#fieldSurface{max-width:88vw}

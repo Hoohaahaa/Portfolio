@@ -5,7 +5,7 @@ _Last reviewed: 2026-11-17_
 ## Product in one sentence
 Monument is a spatial publishing and location-aware experience platform: creators, venues or brands publish place-anchored digital content that people can discover in context, with a path to partner-powered location experiences and measurable campaigns.
 
-## Confirmed from the currently identified deployment
+## Confirmed from the previously identified production candidate
 Vercel project `monument-spatial-22` has a READY Production deployment:
 - https://monument-spatial-22.vercel.app
 - Deployment: `dpl_AShnjXbq6afJxE7bevzcyzqZ4sAB`
@@ -35,9 +35,8 @@ The SQL migration defines account, session, registry and revision tables. This i
 - QR/NFC/deep-link pilot can validate demand before native SDK or background geofencing.
 
 ## Unknowns
-- Which of the 19 Monument Vercel projects is canonical versus experiment/QA.
-- Exact source repository, Git connection and commit. The deployment README references a Portfolio path that did not resolve in the inspected repository tree.
-- End-to-end behavior of auth, AR/XR, publishing and mobile flows.
+- Which of the Monument Vercel projects is canonical versus experiment/QA.
+- End-to-end behavior of auth, AR/XR, publishing and mobile flows in the older production candidate.
 - Current Neon schema/data and production migration state.
 - Real mobile location permission/background behavior.
 - Security, abuse controls, analytics accuracy, performance and accessibility.
@@ -52,11 +51,32 @@ The SQL migration defines account, session, registry and revision tables. This i
 6. Privacy by design: minimum location data, on-device processing where possible, short retention and aggregate reporting.
 7. Separate demo, QA and customer data.
 
-
 ## 2026-11-17 implementation direction
 
-The first usable Monument slice is now defined as a guided spatial authoring workflow: choose an outdoor or indoor context, place the surface, add content, preview, then field-test on a phone. Outdoor surfaces use geographic coordinates, orientation, width/height and a GPS/compass field instrument. Indoor experiences use QR entry and a temporary local WebXR session until a repeatable 3D indoor anchor is selected.
+The first usable Monument slice is a guided spatial authoring workflow: choose an outdoor or indoor context, place the surface, add content, preview, then field-test on a phone. Outdoor surfaces use geographic coordinates, orientation, width/height and a GPS/compass field instrument. Indoor experiences use QR entry and a temporary local WebXR session until a repeatable 3D indoor anchor is selected.
 
-The working implementation is on Hoohaahaa/Portfolio branch monument-studio-v1 with draft PR #3 targeting monument/main. The local-first mode is a temporary safe preview: browser-local drafts only, no account sync or public publishing without a connected QA backend. Build and 13 unit tests pass on Node 24.
+The working implementation is on Hoohaahaa/Portfolio branch `monument-studio-v1`, commit `8377f90d255a33fdf9baef641f63a38e0a221fac`, with draft PR #3 targeting `monument/main`. The local-first mode stores drafts in the same browser/device; it does not provide cross-device sync or permanent public publishing without a connected backend. Build and 13 unit tests pass.
 
-Do not describe the GPS/compass field view as persistent AR. True geographic anchoring, VPS/ARCore Geospatial integration, camera calibration, phone pitch, terrain occlusion and real-device testing remain later work. See LATEST_HANDOFF.md for the current Vercel deployment quota blocker and exact next steps.
+Do not describe the GPS/compass field view as persistent AR. True geographic anchoring, VPS/ARCore Geospatial integration, camera calibration, phone pitch, terrain occlusion and real-device testing remain later work.
+
+## 2026-11-17 deployment update — Studio v1 is live
+
+A separate Vercel project now exists and has a successful deployment:
+- Project: `monument-studio-preview`
+- Project ID: `prj_TAMIGx67fj1D1nzyVIpMRWdby3tA`
+- Deployment: `dpl_6xGM1Cr5ZEeCphbCcECu2aDrayCZ`
+- URL: https://monument-studio-preview.vercel.app
+- State: READY; HTTP 200 verified.
+- Source: branch `monument-studio-v1`, commit `8377f90d255a33fdf9baef641f63a38e0a221fac`.
+- Build passed; 13 tests passed.
+
+Vercel labels this deployment target as `production` inside the isolated project named `monument-studio-preview`. It is separate from the older `monument-spatial-22` production project; that older project and deployment were not changed.
+
+The new project has no environment variables and no Neon connection. The current deployed workflow is local-first only. It is suitable for UI and device field testing, not yet for shared accounts, durable public publishing or cross-device sync.
+
+## QA resources and constraints
+
+- Neon branch `monument-studio-preview` exists as a copy-on-write branch from Neon main. It has not been connected to Vercel or used for test writes.
+- Do not use production DATABASE_URL for Studio QA.
+- Real-device Android/iOS camera, GPS and compass testing is still required.
+- No claim is made that the older production candidate and the Studio v1 implementation are already unified into one canonical production product.

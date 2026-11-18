@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id),bus=new Core.EventBus();
 const STORAGE_KEY='monument-spatial-lab-draft-v1';
 let initial;try{initial=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(_){initial=null}
 const store=new Core.SpatialStore(bus,initial||Core.DEFAULT);
-let map,baseline,anchorMarker,observerMarker,locationWatch=null,mediaStream=null,deviceHeading=null,headingSamples=[],lastLocation=null,locationAccuracy=null,orientationPermission='unknown',cameraState='stopped',sheetMode='half',activeView='split',dragStartY=null,toastTimer=null,diagnosticsOpen=false,lastAbsoluteAt=0,lastHeadingEventAt=0,lastEmittedHeading=null;
+let map,baseline,anchorMarker,observerMarker,locationWatch=null,mediaStream=null,deviceHeading=null,headingSamples=[],lastLocation=null,locationAccuracy=null,orientationPermission='unknown',cameraState='stopped',sheetMode='half',activeView='split',dragStartY=null,dragStartHeight=54,toastTimer=null,diagnosticsOpen=false,lastAbsoluteAt=0,lastHeadingEventAt=0,lastEmittedHeading=null;
 const setText=(id,value)=>{const el=$(id);if(el)el.textContent=value};
 const showToast=message=>{const el=$('toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,2600)};
 const emit=(type,payload)=>bus.emit(type,payload);
@@ -94,7 +94,7 @@ function stopSession(){
  if(locationWatch!==null)navigator.geolocation.clearWatch(locationWatch);locationWatch=null;
  if(mediaStream)mediaStream.getTracks().forEach(t=>t.stop());mediaStream=null;$('sceneVideo').srcObject=null;$('sceneVideo').hidden=true;$('sceneFallback').hidden=false;
  window.removeEventListener('deviceorientationabsolute',handleOrientation,true);window.removeEventListener('deviceorientation',handleOrientation,true);
- cameraState='stopped';deviceHeading=null;headingSamples=[];setText('diagCamera','Stopped');setText('diagCompass','Stopped');setText('poseState','IDLE');setText('sceneModeLabel','SCENE PREVIEW');$('projectedSurface').hidden=true;$('sceneHint').textContent='Camera alignment is not active.';$('startSession').hidden=false;$('startSession').disabled=false;$('startSession').innerHTML='Start field session <span>↗</span>';$('stopSession').disabled=true;emit('session.stopped');
+ cameraState='stopped';deviceHeading=null;headingSamples=[];lastAbsoluteAt=0;lastEmittedHeading=null;setText('diagCamera','Stopped');setText('diagCompass','Stopped');setText('diagLocation','Paused');setText('mapState','SESSION STOPPED');setText('poseState','IDLE');setText('sceneModeLabel','SCENE PREVIEW');$('projectedSurface').hidden=true;$('sceneHint').textContent='Camera alignment is not active.';$('startSession').hidden=false;$('startSession').disabled=false;$('startSession').innerHTML='Start field session <span>↗</span>';$('stopSession').disabled=true;emit('session.stopped');
 }
 function setView(mode){activeView=mode;$('engineApp').dataset.view=mode;emit('ui.view_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
 function setSheet(mode){sheetMode=mode;$('engineApp').dataset.sheet=mode;emit('ui.map_sheet_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}

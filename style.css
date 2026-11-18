@@ -187,3 +187,4 @@ input[type=range],#fieldControls input{accent-color:var(--accent)}
 .mediaUploadLabel{display:flex;flex-direction:column;gap:9px;padding:14px;border:1px dashed var(--line);border-radius:12px;background:#fff8;font-size:12px}
 .mediaUploadLabel input{width:100%;padding:8px;border:0;background:transparent}
 .contentMediaPreview video{width:min(100%,420px);max-height:260px;border-radius:9px;background:#20221f}
+\n.engine-nav-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--ink);text-decoration:none;font-size:11px;letter-spacing:.03em}.engine-nav-link:hover{background:var(--ink);color:var(--white)}@media(max-width:700px){.masthead{padding:0 14px;gap:10px}.masthead nav{gap:5px}.engine-nav-link{min-height:38px;padding:7px 9px;font-size:10px}.masthead nav button{min-height:38px;padding:7px 9px;font-size:10px}}\n

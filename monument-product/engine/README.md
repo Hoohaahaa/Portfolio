@@ -13,7 +13,7 @@ Open `/engine.html` or the Vercel route `/engine`.
 - Vertical panel baseline computed geodesically from width and face heading.
 - Width, height and face direction controls.
 - Approximate camera projection when the surface is in front and inside a nominal 64° horizontal field of view.
-- Resizable map/control sheet, map fullscreen, camera fullscreen and split view.
+- Continuously draggable map/control sheet, map fullscreen, camera fullscreen and split view.
 - Local draft persistence, undo/redo and bounded diagnostic event stream.
 - JSON export of surface and diagnostic events.
 

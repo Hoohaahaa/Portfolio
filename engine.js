@@ -2,7 +2,9 @@
 const Core=window.MonumentSpatialCore;if(!Core)throw new Error('Spatial Core failed to load');
 const $=id=>document.getElementById(id),bus=new Core.EventBus();
 const STORAGE_KEY='monument-spatial-lab-draft-v1';
-let initial;try{initial=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(_){initial=null}
+let initial,invalidSavedDraft=false;
+try{initial=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(_){initial=null}
+if(initial&&!Core.validateSurface(initial).valid){initial=null;invalidSavedDraft=true}
 const store=new Core.SpatialStore(bus,initial||Core.DEFAULT);
 let map,baseline,anchorMarker,observerMarker,locationWatch=null,mediaStream=null,deviceHeading=null,headingSamples=[],lastLocation=null,locationAccuracy=null,orientationPermission='unknown',cameraState='stopped',sheetMode='half',activeView='split',dragStartY=null,dragStartHeight=54,toastTimer=null,diagnosticsOpen=false,lastAbsoluteAt=0,lastHeadingEventAt=0,lastEmittedHeading=null;
 const setText=(id,value)=>{const el=$(id);if(el)el.textContent=value};
@@ -101,9 +103,9 @@ function stopSession(){
 function setView(mode){activeView=mode;$('engineApp').dataset.view=mode;emit('ui.view_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
 function setSheet(mode){sheetMode=mode;$('engineApp').dataset.sheet=mode;if(mode!=='custom')$('engineApp').style.removeProperty('--sheet-height');emit('ui.map_sheet_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
 function setupSheet(){
- const grip=$('sheetGrip');
- grip.addEventListener('pointerdown',e=>{dragStartY=e.clientY;dragStartHeight=$('controlsPanel').parentElement.getBoundingClientRect().height/innerHeight*100;grip.setPointerCapture(e.pointerId)});
- grip.addEventListener('pointermove',e=>{if(dragStartY===null||activeView!=='split')return;const next=Core.clamp(dragStartHeight-(e.clientY-dragStartY)/innerHeight*100,28,88);sheetMode='custom';$('engineApp').dataset.sheet='custom';$('engineApp').style.setProperty('--sheet-height',next.toFixed(1)+'%')});
+ const grip=$('sheetGrip'),mainHeight=()=>Math.max(1,$('engineApp').querySelector('.engine-main').getBoundingClientRect().height);
+ grip.addEventListener('pointerdown',e=>{dragStartY=e.clientY;dragStartHeight=$('controlsPanel').parentElement.getBoundingClientRect().height/mainHeight()*100;grip.setPointerCapture(e.pointerId)});
+ grip.addEventListener('pointermove',e=>{if(dragStartY===null||activeView!=='split')return;const next=Core.clamp(dragStartHeight-(e.clientY-dragStartY)/mainHeight()*100,28,88);sheetMode='custom';$('engineApp').dataset.sheet='custom';$('engineApp').style.setProperty('--sheet-height',next.toFixed(1)+'%')});
  grip.addEventListener('pointerup',()=>{if(dragStartY===null)return;const h=$('controlsPanel').parentElement.getBoundingClientRect().height/mainHeight()*100;dragStartY=null;if(h<35)setSheet('collapsed');else if(h>80)setSheet('expanded');else{sheetMode='custom';$('engineApp').dataset.sheet='custom';$('engineApp').style.setProperty('--sheet-height',h.toFixed(1)+'%');emit('ui.map_sheet_changed',{mode:'custom',heightPercent:Math.round(h)})}setTimeout(()=>map.invalidateSize({pan:false}),220)});
  grip.addEventListener('keydown',e=>{if(e.key==='ArrowUp'){setSheet(sheetMode==='collapsed'?'half':'expanded');e.preventDefault()}if(e.key==='ArrowDown'){setSheet(sheetMode==='expanded'?'half':'collapsed');e.preventDefault()}});
 }
@@ -130,6 +132,7 @@ function bind(){
  setupSheet();
 }
 function boot(){
+ if(invalidSavedDraft)showToast('Saved draft was invalid. Started a clean surface.');
  initMap();bind();renderAll();if(initial){setText('draftState','LOCAL DRAFT · RESTORED');emit('draft.restored',{revision:store.surface.revision})}
  bus.on('surface.changed',()=>{setText('draftState','UNSAVED CHANGES');$('undoEdit').disabled=!store.undoStack.length;$('redoEdit').disabled=!store.redoStack.length});
  emit('engine.ready',{version:'0.1.0',geometry:'vertical-curtain',terrainMode:'follow-lower-edge',renderer:'camera-projection-preview'});

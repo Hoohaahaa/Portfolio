@@ -3,6 +3,15 @@
 Status: living product documentation. Last updated: 2026-11-18.
 
 ## Start here
+- [Spatial Engine Lab](../engine.html) — interactive browser prototype for camera, compass, map, surface geometry and diagnostics.
+- [Spatial Engine implementation notes](engine/README.md)
+- [Geometry notes](architecture/ENGINE_GEOMETRY.md) — geodesic, bearing, projection and terrain-curtain equations.
+- [Research register](research/RESEARCH_REGISTER.md) — open questions, evidence and verification backlog.
+- [Spatial Lab UX issues](engine/ENGINE_ISSUES.md) — carried-forward interface constraints and device verification status.
+- [Engine system map](architecture/ENGINE_SYSTEM_MAP.md)
+- [Event catalog](architecture/EVENT_CATALOG.md)
+- [Core contract](architecture/ENGINE_CORE.md)
+- [Engine test matrix](architecture/ENGINE_TEST_MATRIX.md)
 - [Spatial system architecture](architecture/SPATIAL_SYSTEM.md)
 - [Live Edit specification](architecture/LIVE_EDIT.md)
 - [ADR-001: Vertical / Follow geometry](architecture/ADR-001-VERTICAL-FOLLOW.md)

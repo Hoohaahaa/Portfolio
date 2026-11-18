@@ -4,7 +4,7 @@ const $=id=>document.getElementById(id),bus=new Core.EventBus();
 const STORAGE_KEY='monument-spatial-lab-draft-v1';
 let initial;try{initial=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(_){initial=null}
 const store=new Core.SpatialStore(bus,initial||Core.DEFAULT);
-let map,baseline,anchorMarker,observerMarker,locationWatch=null,mediaStream=null,deviceHeading=null,headingSamples=[],lastLocation=null,locationAccuracy=null,orientationPermission='unknown',cameraState='stopped',sheetMode='half',activeView='split',dragStartY=null,lastRenderKey='',toastTimer=null;
+let map,baseline,anchorMarker,observerMarker,locationWatch=null,mediaStream=null,deviceHeading=null,headingSamples=[],lastLocation=null,locationAccuracy=null,orientationPermission='unknown',cameraState='stopped',sheetMode='half',activeView='split',dragStartY=null,toastTimer=null,diagnosticsOpen=false,lastAbsoluteAt=0,lastHeadingEventAt=0,lastEmittedHeading=null;
 const setText=(id,value)=>{const el=$(id);if(el)el.textContent=value};
 const showToast=message=>{const el=$('toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,2600)};
 const emit=(type,payload)=>bus.emit(type,payload);
@@ -27,7 +27,7 @@ function initMap(){
 }
 function drawSurface(tempLat,tempLon,updateMarker=true){
  if(!map)return;const s=store.surface,anchor={lat:tempLat??s.anchor.lat,lon:tempLon??s.anchor.lon};
- if(anchor.lat===0&&anchor.lon===0&&!lastLocation){baseline.setLatLngs([]);anchorMarker.setOpacity(0);setText('mapCoordinates','Waiting for location or map placement');return}
+ if(!s.anchorSet&&!lastLocation){baseline.setLatLngs([]);anchorMarker.setOpacity(0);setText('mapCoordinates','Waiting for location or map placement');return}
  const ends=Core.footprint({...s,anchor});
  baseline.setLatLngs(ends.map(p=>[p.lat,p.lon]));
  if(updateMarker){anchorMarker.setLatLng([anchor.lat,anchor.lon]);anchorMarker.setOpacity(1)}
@@ -54,10 +54,10 @@ function renderEvents(){
  for(const e of items){const li=document.createElement('li');li.className='event-item';const time=new Date(e.at).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});const payload=Object.entries(e.payload||{}).map(([k,v])=>k+': '+(typeof v==='object'?JSON.stringify(v):String(v))).join(' · ');li.innerHTML='<span class="event-time"></span><span class="event-mark"></span><div><b class="event-name"></b><small class="event-payload"></small></div>';li.querySelector('.event-time').textContent=time;li.querySelector('.event-name').textContent=e.type;li.querySelector('.event-payload').textContent=payload;list.appendChild(li)}
  setText('eventCounter',bus.history.length+' EVENTS');setText('eventCountDrawer',String(bus.history.length));setText('diagEvents',bus.history.length+' recorded');
 }
-bus.on('*',renderEvents);
+bus.on('*',event=>{setText('eventCounter',bus.history.length+' EVENTS');if(diagnosticsOpen)renderEvents()});
 function setLocation(position){
  const c=position.coords;lastLocation={lat:c.latitude,lon:c.longitude,altitude:Number.isFinite(c.altitude)?c.altitude:0};locationAccuracy=c.accuracy;
- if(!store.surface.anchor.lat&&!store.surface.anchor.lon){store.move({lat:c.latitude,lon:c.longitude});}
+ if(!store.surface.anchorSet){store.move({lat:c.latitude,lon:c.longitude});}
  observerMarker.setLatLng([c.latitude,c.longitude]);observerMarker.setStyle({opacity:1,fillOpacity:1});
  if(map&&map.getZoom()<5)map.setView([c.latitude,c.longitude],16,{animate:true});else if(map)observerMarker.setLatLng([c.latitude,c.longitude]);
  setText('mapState','LOCATION FIX · ±'+Math.round(c.accuracy)+' M');setText('poseAccuracy','±'+Math.round(c.accuracy)+' m');setText('poseState',c.accuracy>50?'LOW ACCURACY':'GPS ACTIVE');setText('diagLocation','±'+Math.round(c.accuracy)+' m');setText('mapCoordinates',store.surface.anchor.lat.toFixed(5)+'°, '+store.surface.anchor.lon.toFixed(5)+'°');
@@ -70,7 +70,7 @@ function handleOrientation(e){
  let h=null;if(Number.isFinite(e.webkitCompassHeading))h=e.webkitCompassHeading;else if(Number.isFinite(e.alpha)){h=Core.normalize(360-e.alpha+(screen.orientation?.angle||0))}
  if(h===null)return;headingSamples.push(h);if(headingSamples.length>7)headingSamples.shift();deviceHeading=circularMean(headingSamples);
  setText('sceneHeading','HEADING '+String(Math.round(deviceHeading)).padStart(3,'0')+'°');setText('poseAzimuth',Math.round(deviceHeading)+'°');setText('diagCompass',Math.round(deviceHeading)+'°');setText('poseState',lastLocation?'GPS + COMPASS':'COMPASS ACTIVE');
- $('northArrow').style.transform='rotate(0deg)';updateProjection();emit('orientation.updated',{heading:Math.round(deviceHeading),source:Number.isFinite(e.webkitCompassHeading)?'webkitCompassHeading':e.type,absolute:!!e.absolute});
+ $('northArrow').style.transform='rotate(0deg)';updateProjection();const now=Date.now(),rounded=Math.round(deviceHeading);if(lastEmittedHeading===null||Math.abs(Core.signedDelta(rounded,lastEmittedHeading))>=2||now-lastHeadingEventAt>1000){lastEmittedHeading=rounded;lastHeadingEventAt=now;emit('orientation.updated',{heading:rounded,source:Number.isFinite(e.webkitCompassHeading)?'webkitCompassHeading':e.type,absolute:!!e.absolute});}
 }
 async function startSession(){
  $('startSession').disabled=true;setText('startSession','Starting…');emit('session.start_requested');
@@ -117,8 +117,8 @@ function bind(){
  $('locateMe').addEventListener('click',()=>{if(lastLocation){map.setView([lastLocation.lat,lastLocation.lon],17,{animate:true});emit('map.centered_on_user')}else{showToast('Start a field session to request your location.')}});
  $('resetView').addEventListener('click',()=>{if(lastLocation)map.setView([lastLocation.lat,lastLocation.lon],16);else map.setView([20,0],2);setSheet('half');setView('split');emit('ui.reset_view')});
  $('mapFullscreen').addEventListener('click',()=>setView(activeView==='map'?'split':'map'));$('mapExpand').addEventListener('click',()=>setView(activeView==='map'?'split':'map'));$('sceneFullscreen').addEventListener('click',()=>setView(activeView==='camera'?'split':'camera'));
- $('openDiagnostics').addEventListener('click',()=>{$('diagnosticsDrawer').classList.add('open');$('diagnosticsDrawer').setAttribute('aria-hidden','false');emit('diagnostics.opened')});
- $('closeDiagnostics').addEventListener('click',()=>{$('diagnosticsDrawer').classList.remove('open');$('diagnosticsDrawer').setAttribute('aria-hidden','true')});
+ $('openDiagnostics').addEventListener('click',()=>{diagnosticsOpen=true;$('diagnosticsDrawer').classList.add('open');$('diagnosticsDrawer').setAttribute('aria-hidden','false');renderEvents();emit('diagnostics.opened')});
+ $('closeDiagnostics').addEventListener('click',()=>{diagnosticsOpen=false;$('diagnosticsDrawer').classList.remove('open');$('diagnosticsDrawer').setAttribute('aria-hidden','true')});
  $('exportEvents').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schemaVersion:'1.0.0',exportedAt:new Date().toISOString(),surface:store.snapshot(),events:bus.history},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='monument-spatial-diagnostics.json';a.click();URL.revokeObjectURL(url);emit('diagnostics.exported',{eventCount:bus.history.length})});
  $('clearEvents').addEventListener('click',()=>{bus.clear();renderEvents()});
  window.addEventListener('resize',()=>map.invalidateSize({pan:false}));

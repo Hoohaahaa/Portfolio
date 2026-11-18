@@ -2,7 +2,11 @@
   "version": 2,
   "buildCommand": "npm run build && npm test",
   "outputDirectory": "public",
-  "rewrites": [\n    {\n      "source": "/engine",\n      "destination": "/engine.html"\n    },
+  "rewrites": [
+    {
+      "source": "/engine",
+      "destination": "/engine.html"
+    },
     {
       "source": "/field/:id",
       "destination": "/index.html"

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://monument.local/schemas/spatial-event-1.0.0.json",
+  "title": "Monument Spatial Event",
+  "type": "object",
+  "required": ["id", "type", "at", "payload"],
+  "properties": {
+    "id": {"type": "integer", "minimum": 1},
+    "type": {"type": "string", "pattern": "^[a-z]+(\\.[a-z_]+)+$"},
+    "at": {"type": "string", "format": "date-time"},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -26,7 +26,7 @@ The core must not depend on DOM, Leaflet, browser sensor APIs, Vercel or Neon. I
   "updatedAt": null
 }
 ```
-Coordinates are latitude/longitude in degrees; width and height are meters; heading is degrees clockwise from true north as a desired semantic. Browser compass may be magnetic/uncalibrated and must be marked approximate until corrected by a geospatial runtime. Do not silently mix magnetic north, true north and map bearing.
+Coordinates are latitude/longitude in degrees; width and height are meters; heading is degrees clockwise from true north as a desired semantic. Browser compass may be magnetic/uncalibrated and must be marked approximate until corrected by a geospatial runtime. The prototype uses an explicit `anchorSet` flag so a valid anchor at 0°, 0° is not mistaken for an unset location. Do not silently mix magnetic north, true north and map bearing.
 
 ## Geometry
 - Face heading is the outward normal direction.

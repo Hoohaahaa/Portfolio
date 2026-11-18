@@ -27,8 +27,8 @@ Open `/engine.html` or the Vercel route `/engine`.
 ## Event and data contracts
 - `../architecture/ENGINE_CORE.md`
 - `../architecture/EVENT_CATALOG.md`
-- `../architecture/ENGINE_TEST_MATRIX.md`
+- `../architecture/ENGINE_TEST_MATRIX.md`\n- `../architecture/ENGINE_GEOMETRY.md`\n- `../research/RESEARCH_REGISTER.md`\n- `ENGINE_ISSUES.md`
 - `../architecture/ENGINE_SYSTEM_MAP.md`
 
-## Privacy
+## UX constraints carried forward\n- Keep the orange Portfolio accent (#FF573D); do not restore the rejected green theme.\n- Keep diagnostics secondary and collapsible.\n- Preserve Location → Space → Content hierarchy when content authoring is integrated.\n- Do not reintroduce an idle animation loop or layout writes on every sensor frame.\n\n## Privacy
 The local draft contains the selected surface coordinates. Raw camera frames and continuous device coordinates are not stored in the event history. The event export is user initiated. The app asks for camera and location only after Start field session.

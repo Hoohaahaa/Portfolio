@@ -31,3 +31,13 @@
 - Expected: Every handoff link must point to the exact feature commit and show READY before device testing.
 - Status: Waiting for Vercel quota reset or user billing/plan action. Existing READY preview is older and must not be represented as containing the latest upload UI.
 - Verification: Deploy latest branch head, confirm deployment commit SHA, run build/tests, then perform Android device test.
+
+
+### UX-008 — Indoor camera action is buried and QR camera can appear blank
+- Severity: Critical
+- Area: Indoor Field Test / mobile camera
+- Observed: The primary camera action was only available inside the Place editor tab and the field-test experience presented one selected item without a useful overview of related indoor experiences. The QR scanner depended on BarcodeDetector support before a camera preview could be useful.
+- Expected: Keep the indoor camera action visible regardless of editor tab; show the selected experience as a clear media-led feature; group related indoor experiences into selectable cards by place; keep Session AR secondary; open a live camera preview even when browser QR detection is unavailable.
+- Status: Implemented on feature branch. Camera startup now requests the rear camera, waits for video metadata, starts playback, and treats QR detection as optional. Indoor Field Test now groups related experiences into cards and keeps the camera action in a persistent dock.
+- Verification: Pending real Android/iOS device test. Confirm HTTPS permission flow, live video on screen, camera denial/retry, app background/foreground, QR detection supported/unsupported, video media, multiple experiences at one place, long titles, small screens and safe-area layout.
+- Known limitation: Browser BarcodeDetector support varies. Without it, the camera preview opens but automatic QR matching is unavailable; the content remains accessible in the Field Test page.

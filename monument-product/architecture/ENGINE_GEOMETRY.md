@@ -102,7 +102,11 @@ The normalized horizontal screen coordinate is approximated by:
 x_{screen}=50+50\frac{\tan(\Delta\psi)}{\tan(F/2)}
 ]
 
-A nominal vertical FOV is used to scale apparent height: \n\n\\[h_{screen}=100\\,\\frac{2\\arctan(h/(2d))}{F_v}\\]\\\n\nThis is only a directional projection. The prototype does not know the phone camera's calibrated intrinsics, lens distortion, camera pose in a world coordinate frame, device pitch calibration, depth occlusion or VPS correction. It must never be called world-locked AR.
+A nominal vertical FOV is used to scale apparent height:
+
+`h_screen = 100 × (2 × atan(h / (2d))) / F_v`
+
+This is only a directional projection. The prototype does not know the phone camera's calibrated intrinsics, lens distortion, camera pose in a world coordinate frame, device pitch calibration, depth occlusion or VPS correction. It must never be called world-locked AR.
 
 ## Terrain-following vertical curtain (future mesh)
 

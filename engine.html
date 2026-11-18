@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111210">
+<meta name="description" content="MONUMENT Spatial Lab — live geographic surface editor and device sensor test.">
+<title>MONUMENT / Spatial Lab</title>
+<link rel="stylesheet" href="/vendor/leaflet.css">
+<link rel="stylesheet" href="/engine.css">
+<script defer src="/vendor/leaflet.js"></script>
+<script defer src="/engine-core.js"></script>
+<script defer src="/engine.js"></script>
+</head>
+<body>
+<div id="engineApp" class="engine-app">
+<header class="engine-header">
+  <a class="engine-brand" href="/" aria-label="Monument home">MONUMENT<span>↗</span></a>
+  <div class="engine-title"><span>SPATIAL SYSTEM / 001</span><strong>Live Edit Lab</strong></div>
+  <div class="header-actions"><span class="build-tag">PROTOTYPE 0.1</span><button id="openDiagnostics" class="icon-button" type="button" aria-label="Open diagnostics" title="Diagnostics">⌁</button><a class="exit-link" href="/">Exit</a></div>
+</header>
+<main class="engine-main">
+  <section class="scene-column" aria-label="Live camera scene">
+    <div class="scene-frame" id="sceneFrame">
+      <video id="sceneVideo" autoplay muted playsinline></video>
+      <div class="scene-fallback" id="sceneFallback">
+        <div class="fallback-grid"></div>
+        <div class="fallback-copy"><span class="eyebrow">CAMERA VIEW / WAITING</span><strong>Point your phone<br>toward the landscape.</strong><p>Start the field session to enable camera, location and compass.</p></div>
+      </div>
+      <div class="scene-vignette"></div>
+      <div class="scene-topline">
+        <span class="live-indicator"><i></i><b id="sceneModeLabel">SCENE PREVIEW</b></span>
+        <span class="scene-heading" id="sceneHeading">HEADING --°</span>
+      </div>
+      <div class="scene-reticle" aria-hidden="true"><i></i></div>
+      <div id="projectedSurface" class="projected-surface" hidden>
+        <div class="projected-topline"><span>MONUMENT / SURFACE 01</span><span id="projectedDistance">-- m</span></div>
+        <div class="projected-content"><b id="projectedName">Untitled surface</b><span id="projectedDimensions">120 m × 18 m</span></div>
+        <div class="projected-base"></div>
+      </div>
+      <div id="sceneHint" class="scene-hint">Camera alignment is not active.</div>
+      <div class="scene-bottom">
+        <div class="pose-readout"><span>AZIMUTH <b id="poseAzimuth">--°</b></span><span>GPS <b id="poseAccuracy">--</b></span><span>POSE <b id="poseState">IDLE</b></span></div>
+        <div class="scene-actions"><button id="startSession" class="action-primary" type="button">Start field session <span>↗</span></button><button id="stopSession" class="action-secondary" type="button" disabled>Stop</button></div>
+      </div>
+      <button id="sceneFullscreen" class="float-control" type="button" aria-label="Fullscreen camera" title="Fullscreen camera">⛶</button>
+    </div>
+    <div class="scene-caption"><span>LIVE CAMERA / APPROXIMATE PROJECTION</span><span id="sceneFootnote">Not world-locked · no VPS verification</span></div>
+  </section>
+  <section class="editor-column" aria-label="Spatial surface editor">
+    <div class="editor-head">
+      <div><span class="eyebrow">GEOGRAPHIC CANVAS / DRAFT 01</span><h1>Place your surface.</h1><p>Move it on the map. See the camera preview respond.</p></div>
+      <div class="editor-head-actions"><button id="resetView" class="quiet-button" type="button">Reset view</button><button id="mapFullscreen" class="icon-button" type="button" aria-label="Fullscreen map" title="Fullscreen map">⛶</button></div>
+    </div>
+    <div class="map-stage" id="mapStage">
+      <div id="engineMap" role="application" aria-label="Interactive map. Drag the orange surface handle to move it."></div>
+      <div class="map-overlay-top"><span class="map-state"><i></i><b id="mapState">WAITING FOR LOCATION</b></span><button id="locateMe" type="button">◎ Locate me</button></div>
+      <div class="map-north" aria-label="North indicator"><span id="northArrow">↑</span><small>N</small></div>
+      <div class="map-scale" id="mapScale">Map / WGS84</div>
+      <div class="map-coordinates" id="mapCoordinates">No anchor selected</div>
+      <div class="map-legend"><i></i> Surface baseline <span>·</span><b id="mapBearing">000°</b></div>
+      <button id="mapExpand" class="map-expand" type="button" aria-label="Expand map">↗</button>
+    </div>
+    <div class="sheet-grip" id="sheetGrip" role="separator" aria-label="Resize map panel" aria-orientation="horizontal" tabindex="0"><span></span></div>
+    <div class="controls-panel" id="controlsPanel">
+      <div class="controls-title"><div><span class="eyebrow">SURFACE TRANSFORM</span><h2>Geometry controls</h2></div><span class="draft-state" id="draftState">LOCAL DRAFT</span></div>
+      <div class="control-grid">
+        <label class="control-card"><span>WIDTH <b id="widthValue">120 m</b></span><input id="widthControl" type="range" min="10" max="2000" step="10" value="120"><small>Along the baseline</small></label>
+        <label class="control-card"><span>HEIGHT <b id="heightValue">18 m</b></span><input id="heightControl" type="range" min="2" max="300" step="1" value="18"><small>Above local terrain</small></label>
+      </div>
+      <div class="bearing-control"><label for="bearingControl"><span>FACE DIRECTION <b id="bearingValue">000°</b></span></label><div class="bearing-row"><button id="rotateMinus" type="button" aria-label="Rotate left 5 degrees">−5°</button><input id="bearingControl" type="range" min="0" max="359" step="1" value="0"><button id="rotatePlus" type="button" aria-label="Rotate right 5 degrees">+5°</button></div><small>Heading is the direction the front face looks toward.</small></div>
+      <div class="terrain-row"><div><span class="eyebrow">TERRAIN PROFILE</span><strong>Follow · lower edge</strong><small id="terrainStatus">Elevation source not connected — flat preview fallback.</small></div><span class="terrain-chip">UNVERIFIED</span></div>
+      <div class="control-footer"><button id="undoEdit" class="quiet-button" type="button" disabled>↶ Undo</button><button id="redoEdit" class="quiet-button" type="button" disabled>↷ Redo</button><span class="footer-spacer"></span><button id="saveDraft" class="save-button" type="button">Save local draft</button></div>
+    </div>
+  </section>
+</main>
+<footer class="engine-footer"><span>MONUMENT SPATIAL ENGINE / EARLY FIELD PROTOTYPE</span><span id="eventCounter">0 EVENTS</span><span>GPS + DEVICE ORIENTATION · NO VPS</span></footer>
+</div>
+<aside id="diagnosticsDrawer" class="diagnostics-drawer" aria-hidden="true">
+  <div class="drawer-head"><div><span class="eyebrow">OBSERVABILITY / LIVE EVENT STREAM</span><h2>System diagnostics</h2></div><button id="closeDiagnostics" class="icon-button" type="button" aria-label="Close diagnostics">×</button></div>
+  <div class="diagnostic-cards">
+    <div><span>LOCATION</span><b id="diagLocation">Unavailable</b></div><div><span>COMPASS</span><b id="diagCompass">Unavailable</b></div><div><span>CAMERA</span><b id="diagCamera">Stopped</b></div><div><span>EVENT BUS</span><b id="diagEvents">Idle</b></div>
+  </div>
+  <div class="event-toolbar"><span>RECENT EVENTS <b id="eventCountDrawer">0</b></span><div><button id="exportEvents" type="button">Export JSON</button><button id="clearEvents" type="button">Clear</button></div></div>
+  <ol id="eventStream" class="event-stream"><li class="empty-events">Waiting for the first system event.</li></ol>
+  <div class="drawer-note">Privacy: raw camera frames and continuous GPS coordinates are not written to the event log. Draft geometry stays on this device in this prototype.</div>
+</aside>
+<div id="toast" class="engine-toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

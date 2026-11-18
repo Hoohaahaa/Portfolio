@@ -48,7 +48,7 @@ function updateProjection(){
  const s=store.surface,el=$('projectedSurface');if(!lastLocation||deviceHeading===null){el.hidden=true;setText('sceneHint',deviceHeading===null?'Compass heading unavailable · projection is not aligned.':'Waiting for a location fix.');return}
  const p=Core.projectToCamera(lastLocation,deviceHeading,s,64);
  if(!p.visible){el.hidden=true;setText('sceneHint',p.reason==='back_face'?'The back face is toward you. Rotate the surface or walk around it.':'Surface is outside the approximate camera field of view.');return}
- el.hidden=false;el.style.left=p.x+'%';el.style.width=Math.max(18,Math.min(76,p.apparentWidth/64*100))+'%';setText('projectedDistance',p.distance>999?(p.distance/1000).toFixed(2)+' km':Math.round(p.distance)+' m');setText('sceneHint','Approximate compass projection · '+Math.round(p.relativeBearing)+'° relative bearing');setText('sceneFootnote','Approximate GPS + compass projection · NOT WORLD-LOCKED');
+ el.hidden=false;el.style.left=p.x+'%';el.style.width=Math.max(18,Math.min(76,p.apparentWidth/64*100))+'%';el.style.height=Math.max(12,Math.min(72,p.apparentHeight/50*100))+'%';setText('projectedDistance',p.distance>999?(p.distance/1000).toFixed(2)+' km':Math.round(p.distance)+' m');setText('sceneHint','Approximate compass projection · '+Math.round(p.relativeBearing)+'° relative bearing');setText('sceneFootnote','Approximate GPS + compass projection · NOT WORLD-LOCKED');
 }
 function renderEvents(){
  const list=$('eventStream'),items=bus.history.slice(0,45);list.innerHTML='';

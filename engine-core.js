@@ -28,7 +28,7 @@ function projectToCamera(observer,heading,surface,fov=64){
  const frontFacing=frontDelta<=90,insideFov=Math.abs(relative)<=fov/2;
  const x=50+(Math.tan(relative*RAD)/Math.tan(fov*RAD/2))*50;
  const apparentWidth=2*Math.atan2(surface.width/2,Math.max(1,g.distance))*DEG;
- return {visible:frontFacing&&insideFov,reason:!frontFacing?'back_face':!insideFov?'outside_fov':'visible',distance:g.distance,bearing:g.bearing,relativeBearing:relative,x:clamp(x,-100,200),frontFacing,insideFov,apparentWidth};
+ return {visible:frontFacing&&insideFov,reason:!frontFacing?'back_face':!insideFov?'outside_fov':'visible',distance:g.distance,bearing:g.bearing,relativeBearing:relative,x:clamp(x,-100,200),frontFacing,insideFov,apparentWidth,apparentHeight};
 }
 function validateSurface(s){
  const errors=[];

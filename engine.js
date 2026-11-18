@@ -75,6 +75,12 @@ function handleOrientation(e){
 async function startSession(){
  $('startSession').disabled=true;setText('startSession','Starting…');emit('session.start_requested');
  try{
+  if(typeof DeviceOrientationEvent==='undefined')throw new Error('Device orientation is not supported in this browser.');
+  if(typeof DeviceOrientationEvent.requestPermission==='function'){orientationPermission=await DeviceOrientationEvent.requestPermission();if(orientationPermission!=='granted')throw new Error('Motion permission was not granted.')}
+  window.addEventListener('deviceorientationabsolute',handleOrientation,true);window.addEventListener('deviceorientation',handleOrientation,true);
+  emit('orientation.listener_started',{permission:orientationPermission});
+ }catch(e){setText('diagCompass','Unavailable');emit('orientation.error',{message:e.message});showToast('Compass unavailable: '+e.message)}
+ try{
   if(!navigator.mediaDevices?.getUserMedia)throw new Error('Camera API unavailable. Open this page over HTTPS in a supported browser.');
   mediaStream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720},frameRate:{ideal:24,max:30}}});
   $('sceneVideo').srcObject=mediaStream;await $('sceneVideo').play();$('sceneVideo').hidden=false;$('sceneFallback').hidden=true;cameraState='running';setText('diagCamera','Running');setText('sceneModeLabel','LIVE CAMERA');emit('camera.started',{width:$('sceneVideo').videoWidth,height:$('sceneVideo').videoHeight});
@@ -84,11 +90,7 @@ async function startSession(){
   locationWatch=navigator.geolocation.watchPosition(setLocation,locationError,{enableHighAccuracy:true,maximumAge:2500,timeout:18000});
   emit('location.watch_started',{highAccuracy:true});
  }catch(e){locationError({code:0,message:e.message})}
- try{
-  if(typeof DeviceOrientationEvent!=='undefined'&&typeof DeviceOrientationEvent.requestPermission==='function'){orientationPermission=await DeviceOrientationEvent.requestPermission();if(orientationPermission!=='granted')throw new Error('Motion permission was not granted.')}
-  window.addEventListener('deviceorientationabsolute',handleOrientation,true);window.addEventListener('deviceorientation',handleOrientation,true);emit('orientation.listener_started',{permission:orientationPermission});
- }catch(e){setText('diagCompass','Permission needed');emit('orientation.error',{message:e.message});showToast('Compass unavailable. Try allowing motion sensors in browser settings.')}
- $('startSession').hidden=true;$('stopSession').disabled=false;setText('startSession','Session active');setText('mapState',lastLocation?'LOCATION ACTIVE':'WAITING FOR LOCATION');updateProjection();emit('session.started',{camera:cameraState,orientationPermission});
+ $('startSession').hidden=true;$('stopSession').disabled=false;setText('mapState',lastLocation?'LOCATION ACTIVE':'WAITING FOR LOCATION');updateProjection();emit('session.started',{camera:cameraState,orientationPermission});
 }
 function stopSession(){
  if(locationWatch!==null)navigator.geolocation.clearWatch(locationWatch);locationWatch=null;
@@ -97,10 +99,12 @@ function stopSession(){
  cameraState='stopped';deviceHeading=null;headingSamples=[];lastAbsoluteAt=0;lastEmittedHeading=null;setText('diagCamera','Stopped');setText('diagCompass','Stopped');setText('diagLocation','Paused');setText('mapState','SESSION STOPPED');setText('poseState','IDLE');setText('sceneModeLabel','SCENE PREVIEW');$('projectedSurface').hidden=true;$('sceneHint').textContent='Camera alignment is not active.';$('startSession').hidden=false;$('startSession').disabled=false;$('startSession').innerHTML='Start field session <span>↗</span>';$('stopSession').disabled=true;emit('session.stopped');
 }
 function setView(mode){activeView=mode;$('engineApp').dataset.view=mode;emit('ui.view_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
-function setSheet(mode){sheetMode=mode;$('engineApp').dataset.sheet=mode;emit('ui.map_sheet_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
+function setSheet(mode){sheetMode=mode;$('engineApp').dataset.sheet=mode;if(mode!=='custom')$('engineApp').style.removeProperty('--sheet-height');emit('ui.map_sheet_changed',{mode});setTimeout(()=>map.invalidateSize({pan:false}),220)}
 function setupSheet(){
- const grip=$('sheetGrip');grip.addEventListener('pointerdown',e=>{dragStartY=e.clientY;grip.setPointerCapture(e.pointerId)});
- grip.addEventListener('pointerup',e=>{if(dragStartY===null)return;const d=e.clientY-dragStartY;setSheet(d<-35?'expanded':d>35?'collapsed':'half');dragStartY=null});
+ const grip=$('sheetGrip');
+ grip.addEventListener('pointerdown',e=>{dragStartY=e.clientY;dragStartHeight=$('controlsPanel').parentElement.getBoundingClientRect().height/innerHeight*100;grip.setPointerCapture(e.pointerId)});
+ grip.addEventListener('pointermove',e=>{if(dragStartY===null||activeView!=='split')return;const next=Core.clamp(dragStartHeight-(e.clientY-dragStartY)/innerHeight*100,28,88);sheetMode='custom';$('engineApp').dataset.sheet='custom';$('engineApp').style.setProperty('--sheet-height',next.toFixed(1)+'%')});
+ grip.addEventListener('pointerup',()=>{if(dragStartY===null)return;const h=$('controlsPanel').parentElement.getBoundingClientRect().height/innerHeight*100;dragStartY=null;if(h<35)setSheet('collapsed');else if(h>80)setSheet('expanded');else{sheetMode='custom';$('engineApp').dataset.sheet='custom';$('engineApp').style.setProperty('--sheet-height',h.toFixed(1)+'%');emit('ui.map_sheet_changed',{mode:'custom',heightPercent:Math.round(h)})}setTimeout(()=>map.invalidateSize({pan:false}),220)});
  grip.addEventListener('keydown',e=>{if(e.key==='ArrowUp'){setSheet(sheetMode==='collapsed'?'half':'expanded');e.preventDefault()}if(e.key==='ArrowDown'){setSheet(sheetMode==='expanded'?'half':'collapsed');e.preventDefault()}});
 }
 function bind(){

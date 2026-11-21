@@ -18,6 +18,7 @@ The portfolio uses a static `index.html` site. A manifest-driven asset layer has
 5. Humaani — AI Creative Workspace
 6. Mirana — Executive Talent Platform
 7. Pinket — FMCG Marketplace
+8. Entity — Interactive AI
 
 The owner explicitly requested this sequence. The `order` property in `mono-assets/manifest.json` is the source of truth and the landing-page cards are reordered from it at runtime.
 
@@ -34,9 +35,13 @@ The owner explicitly requested this sequence. The `order` property in `mono-asse
 - Do not crop, stretch, recompress or upscale original screenshots.
 - Use `object-fit: contain` for screenshots and long mobile flows.
 - Preserve exact file paths, including current filename typos, unless the file is actually renamed and the manifest is updated in the same change.
-- Do not add Entity back unless the owner explicitly asks.
+- Entity was explicitly re-enabled by the owner on 2026-11-21 and is now active as project 08.
 - Do not assign `mono audio visual engine.jpg` to FIELD without confirmation.
 - Keep the portfolio static-host friendly: no build step is currently required for the asset manifest.
+
+## Project brand headers
+
+Project detail views now include compact brand marks above the title: Iran Unseen and Entity use owner-supplied marks; Pulse Check uses HRCanDo styling; ATS uses the Jobvision mark; Humaani uses Rastaar's official site wordmark. Entity is the final project in the active sequence.
 
 ## Gallery behavior
 

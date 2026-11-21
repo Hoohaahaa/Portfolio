@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-21",
   "notes": [
     "Paths are relative to the repository root.",
     "Original uploaded files are referenced in place; no source image is resized, cropped, recompressed, or renamed.",
-    "Entity is intentionally excluded from the active portfolio.",
     "mono audio visual engine.jpg is retained as unassigned until its project identity is confirmed.",
     "Project passport dates and roles are recorded separately from image mapping. Read each passport.periodBasis: dates tied to employment windows are not necessarily exact project start/end dates.",
-    "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels."
+    "Portfolio presentation order confirmed by owner: Veblen, Pulse Check, Iran Unseen, ATS, Humaani, Mirana, Pinket. This order controls landing-page card order and project index labels.",
+    "Entity was explicitly re-enabled on 2026-11-21 and is placed last in the active project sequence."
   ],
   "projects": [
     {
@@ -274,6 +274,31 @@
           "اطلاعات محصول",
           "گزارش‌گیری",
           "مسیر تجربه‌ی خریدار"
+        ]
+      }
+    },
+    {
+      "id": "entity",
+      "order": 8,
+      "displayTitle": "Entity",
+      "client": "Entity",
+      "discipline": "Interactive AI",
+      "cover": "mono-assets/entity-hand-instrument-1600.jpg",
+      "gallery": [
+        "mono-assets/entity-hand-instrument-1600.jpg"
+      ],
+      "editorial": {
+        "intro": "An interactive AI project with a spatial interface and body-aware input.",
+        "focus": [
+          "Spatial interface",
+          "Body-aware input",
+          "Interactive AI"
+        ],
+        "introFa": "پروژه‌ای تعاملی مبتنی بر هوش مصنوعی، با رابط فضایی و ورودی آگاه از حرکت و بدن.",
+        "focusFa": [
+          "رابط فضایی",
+          "ورودی آگاه از بدن",
+          "هوش مصنوعی تعاملی"
         ]
       }
     }
